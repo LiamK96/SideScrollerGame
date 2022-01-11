@@ -113,6 +113,9 @@ public class Window {
         // bindings available for use.
         GL.createCapabilities();
 
+        //Enable Alpha blending
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
 
         Window.changeScene(0);
     }
@@ -129,7 +132,7 @@ public class Window {
             glClearColor(r,g,b,a);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            if (dt >= 0) {
+            if (dt >= 0.0f) {
                 currentScene.update(dt);
             }
 
