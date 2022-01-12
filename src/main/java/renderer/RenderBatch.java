@@ -14,7 +14,7 @@ import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL30.glBindVertexArray;
 import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
-public class RenderBatch {
+public class RenderBatch implements Comparable<RenderBatch>{
 
     //Vertex
     //======================
@@ -43,8 +43,10 @@ public class RenderBatch {
     private int vaoID, vboID;
     private int maxBatchSize;
     private Shader shader;
+    private int zIndex;
 
-    public RenderBatch(int maxBatchSize){
+    public RenderBatch(int maxBatchSize, int zIndex){
+        this.zIndex = zIndex;
         this.shader = AssetPool.getShader("assets/shaders/default.glsl");
         this.sprites = new SpriteRenderer[maxBatchSize];
         this.maxBatchSize = maxBatchSize;
@@ -103,10 +105,6 @@ public class RenderBatch {
 
         //Add properties to local vertices array
         loadVertexProperties(index);
-
-        //MIGHT CHANGE IN FUTURE!!!!!!!!!!!!!!!!!!!!!! BUGFIX BUT NOT SUSTAINABLE
-        glBindBuffer(GL_ARRAY_BUFFER, vboID);
-        glBufferSubData(GL_ARRAY_BUFFER,0,vertices);
 
         if (numSprites >= this.maxBatchSize){
             this.hasRoom = false;
@@ -258,4 +256,12 @@ public class RenderBatch {
         return this.textures.contains(texture);
     }
 
+    public int zIndex(){
+        return this.zIndex;
+    }
+
+    @Override
+    public int compareTo(RenderBatch o) {
+        return Integer.compare(this.zIndex, o.zIndex);
+    }
 }
