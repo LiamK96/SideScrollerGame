@@ -24,7 +24,7 @@ project.ext.lwjglNatives = "natives-windows"
 dependencies {
 
     //imgui
-    implementation fileTree('libs'){include '*.jar'}
+    implementation "io.github.spair:imgui-java-app:1.85.1"
 
     //lwjgl
     implementation platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
