@@ -199,7 +199,7 @@ public class ImGuiLayer {
         final ImGuiIO io = ImGui.getIO();
         io.setDisplaySize(winWidth[0], winHeight[0]);
         io.setDisplayFramebufferScale(1f,1f);
-        io.setMousePos((float) mousePosX[0], (float) mousePosY[0]);
+        io.setMousePos((float)mousePosX[0], (float)mousePosY[0]);
         io.setDeltaTime(deltaTime);
 
         // Update the mouse cursor

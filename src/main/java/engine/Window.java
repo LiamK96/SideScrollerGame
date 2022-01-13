@@ -89,13 +89,16 @@ public class Window {
         glfwDefaultWindowHints();
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
         glfwWindowHint(GLFW_RESIZABLE,GLFW_TRUE);
-        glfwWindowHint(GLFW_MAXIMIZED,GLFW_TRUE);
+        //glfwWindowHint(GLFW_MAXIMIZED,GLFW_TRUE);
+
 
         //create window;
         glfwWindow = glfwCreateWindow(this.width,this.height,this.title, NULL,NULL);
         if (glfwWindow==NULL){
             throw new IllegalStateException("Failed to create window");
         }
+
+
 
         glfwSetCursorPosCallback(glfwWindow,MouseListener::mousePosCallback);
         glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
@@ -110,6 +113,8 @@ public class Window {
         glfwMakeContextCurrent(glfwWindow);
         //Enable v-sync;
         glfwSwapInterval(1);
+
+        glfwMaximizeWindow(glfwWindow);
 
         //make window visible
         glfwShowWindow(glfwWindow);
