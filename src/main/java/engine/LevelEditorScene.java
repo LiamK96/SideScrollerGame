@@ -27,6 +27,11 @@ public class LevelEditorScene extends Scene{
         loadResources();
         this.camera = new Camera(new Vector2f());
 
+        System.out.println("init");
+        if (levelLoaded){
+            return;
+        }
+
         sprites = AssetPool.getSpriteSheet("assets/images/spritesheet.png");
 
         obj1 = new GameObject("Object 1", new Transform(new Vector2f(200,100), new Vector2f(256,256)),1);
@@ -45,11 +50,9 @@ public class LevelEditorScene extends Scene{
         obj2.addComponent(obj2SpriteRenderer);
         this.addGameObjectToScene(obj2);
 
-        Gson gson = new GsonBuilder()
-                .setPrettyPrinting()
-                .create();
 
-        System.out.println(gson.toJson(obj2SpriteRenderer));
+
+
 
     }
 

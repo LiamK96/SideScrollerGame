@@ -142,6 +142,8 @@ public class Window {
         float endTime;
         float dt = -1.0f;
 
+        currentScene.load();
+        System.out.println("loading");
         while (!glfwWindowShouldClose(glfwWindow)){
             //Poll events
             glfwPollEvents();
@@ -168,6 +170,7 @@ public class Window {
             beginTime = endTime;
 
         }
+        currentScene.saveExit();
     }
 
     public static int getWidth(){
