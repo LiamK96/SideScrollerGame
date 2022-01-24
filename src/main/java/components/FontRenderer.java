@@ -1,8 +1,5 @@
 package components;
 
-import engine.Component;
-import engine.GameObject;
-
 public class FontRenderer extends Component {
 
     @Override

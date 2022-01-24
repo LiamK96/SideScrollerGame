@@ -1,11 +1,15 @@
-package engine;
+package scenes;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import components.Component;
+import components.ComponentDeserializer;
+import engine.Camera;
+import engine.GameObject;
+import engine.GameObjectDeserializer;
 import imgui.ImGui;
 import renderer.Renderer;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;

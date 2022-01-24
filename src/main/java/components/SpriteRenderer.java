@@ -1,6 +1,5 @@
 package components;
 
-import engine.Component;
 import engine.Transform;
 import imgui.ImGui;
 import org.joml.Vector2f;
@@ -13,7 +12,7 @@ public class SpriteRenderer extends Component {
     private Sprite sprite = new Sprite();
 
     private transient Transform lastTransform;
-    private transient boolean isDirty = false;
+    private transient boolean isDirty = true;
 
 
 //    public SpriteRenderer(Vector4f color){

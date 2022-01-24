@@ -1,8 +1,10 @@
-package engine;
+package scenes;
 
-public class LevelScene extends Scene{
+import scenes.Scene;
 
-    public LevelScene(){
+public class LevelScene extends Scene {
+
+    public LevelScene() {
         System.out.println("Inside level scene");
     }
 
