@@ -1,11 +1,9 @@
 package scenes;
 
-import components.RigidBody;
-import components.Sprite;
-import components.SpriteRenderer;
-import components.Spritesheet;
+import components.*;
 import engine.Camera;
 import engine.GameObject;
+import engine.Prefabs;
 import engine.Transform;
 import imgui.ImGui;
 import imgui.ImVec2;
@@ -19,6 +17,8 @@ public class LevelEditorScene extends Scene {
     private GameObject obj2;
 
     private Spritesheet sprites;
+
+    public MouseControls mouseControls = new MouseControls();
 
     public LevelEditorScene(){
 
@@ -74,6 +74,8 @@ public class LevelEditorScene extends Scene {
     @Override
     public void update(float dt) {
 
+        mouseControls.update(dt);
+
         for (GameObject go : this.gameObjects){
             go.update(dt);
         }
@@ -92,6 +94,8 @@ public class LevelEditorScene extends Scene {
         ImGui.getStyle().getItemSpacing(itemSpacing);
 
         float windowX2 = windowPos.x + windowSize.x;
+
+        //Generate available tiles
         for (int i = 0; i < sprites.size(); i++){
             Sprite sprite = sprites.getSprite(i);
             float spriteWidth = sprite.getWidth() * 4;
@@ -102,8 +106,11 @@ public class LevelEditorScene extends Scene {
             //Push Custom ID to sprite, since without this they all share the spritesheet id
             ImGui.pushID(i);
 
-            if (ImGui.imageButton(id,spriteWidth,spriteHeight,texCoords[0].x,texCoords[0].y,texCoords[2].x,texCoords[2].y)){
-                System.out.println("Button "+ i +" Clicked");
+            if (ImGui.imageButton(id,spriteWidth,spriteHeight,texCoords[2].x,texCoords[0].y,texCoords[0].x,texCoords[2].y)){
+                GameObject object = Prefabs.generateSpriteObject(sprite,spriteWidth, spriteHeight);
+
+                //Attach to mouse cursor
+                mouseControls.pickupObject(object);
             }
             //Pop custom ID
             ImGui.popID();
