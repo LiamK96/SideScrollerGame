@@ -8,7 +8,9 @@ import engine.Transform;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
 import org.joml.Vector4f;
+import renderer.DebugDraw;
 import util.AssetPool;
 
 public class LevelEditorScene extends Scene {
@@ -70,11 +72,19 @@ public class LevelEditorScene extends Scene {
 
     }
 
-
+    float t = 0.0f;
     @Override
     public void update(float dt) {
 
         mouseControls.update(dt);
+
+        float x = ((float)Math.sin(t) * 200.0f) + 1000.0f;
+        float y = ((float)Math.cos(t) * 200.0f) + 400.0f;
+        t += 0.05f;
+        DebugDraw.addLine2D(new Vector2f(1000,400), new Vector2f(x,y),new Vector3f(0,1,1), 126);
+
+
+
 
         for (GameObject go : this.gameObjects){
             go.update(dt);
