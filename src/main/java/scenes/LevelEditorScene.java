@@ -78,12 +78,11 @@ public class LevelEditorScene extends Scene {
 
         mouseControls.update(dt);
 
+
         float x = ((float)Math.sin(t) * 200.0f) + 1000.0f;
         float y = ((float)Math.cos(t) * 200.0f) + 400.0f;
         t += 0.05f;
         DebugDraw.addLine2D(new Vector2f(1000,400), new Vector2f(x,y),new Vector3f(0,1,1), 126);
-
-
 
 
         for (GameObject go : this.gameObjects){
