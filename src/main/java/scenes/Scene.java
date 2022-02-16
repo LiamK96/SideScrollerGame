@@ -98,10 +98,12 @@ public abstract class Scene {
         try {
             inFile = new String(Files.readAllBytes(Paths.get("level.txt")));
         } catch (IOException e){
+            System.out.println("inFile(No Space after :):"+inFile);
             e.printStackTrace();
+
         }
 
-        if (!inFile.equals("")){
+        if (!inFile.equals("")&&!inFile.equals("[]")){
             int maxCompId = -1;
             int maxGoId = -1;
             GameObject[] objs = gson.fromJson(inFile,GameObject[].class);

@@ -87,7 +87,6 @@ public class MouseListener {
         Vector4f temp = new Vector4f(0,currentY,0,1);
         temp.mul(Window.get().getScene().getCamera().getInverseProjection().mul(Window.get().getScene().getCamera().getInverseView()));
         currentY = temp.y;
-        System.out.println(currentY);
         return currentY;
     }
 

@@ -45,7 +45,7 @@ public class DebugDraw {
         glVertexAttribPointer(1,3,GL_FLOAT,false,6*Float.BYTES,3*Float.BYTES);
         glEnableVertexAttribArray(1);
 
-        glLineWidth(3.0f);
+        glLineWidth(2.0f);
 
 
     }
@@ -116,11 +116,11 @@ public class DebugDraw {
     /////////////////////
     public static void addLine2D(Vector2f from, Vector2f to){
         // ToDo add constants for common colours
-        addLine2D(from, to, new Vector3f(0,1,0), 10);
+        addLine2D(from, to, new Vector3f(0,1,0), 1);
     }
 
     public static void addLine2D(Vector2f from, Vector2f to, Vector3f color){
-        addLine2D(from, to, color, 10);
+        addLine2D(from, to, color, 1);
     }
 
     public static void addLine2D(Vector2f from, Vector2f to, Vector3f color, int lifetime){
