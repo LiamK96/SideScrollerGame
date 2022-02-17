@@ -3,13 +3,15 @@ package engine;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
+import org.lwjgl.glfw.GLFWVidMode;
+import org.lwjgl.opengl.GL11;
 
 public class Camera {
 
     private Matrix4f projectionMatrix, viewMatrix, inverseProjection, inverseView;
     public Vector2f position;
 
-    private Vector2f projectionSize = new Vector2f(1920.0f,1080.0f);
+    private Vector2f projectionSize = new Vector2f(Window.getWidth()*1.0f,Window.getHeight()*1.0f);
 
     public Camera(Vector2f pos){
         this.position = pos;
@@ -24,6 +26,7 @@ public class Camera {
         projectionMatrix.identity();
         projectionMatrix.ortho(0.0f, projectionSize.x, 0.0f, projectionSize.y, 0.0f, 100.0f );
         projectionMatrix.invert(inverseProjection);
+
     }
 
     public Matrix4f getViewMatrix(){

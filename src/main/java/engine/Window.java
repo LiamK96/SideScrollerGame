@@ -2,6 +2,7 @@ package engine;
 
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
+import org.lwjgl.glfw.GLFWWindowSizeCallback;
 import org.lwjgl.opengl.GL;
 import renderer.DebugDraw;
 import scenes.LevelEditorScene;
@@ -92,7 +93,7 @@ public class Window {
         glfwDefaultWindowHints();
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
         glfwWindowHint(GLFW_RESIZABLE,GLFW_TRUE);
-        //glfwWindowHint(GLFW_MAXIMIZED,GLFW_TRUE);
+        //glfwWindowHint(GLFW_MAXIMIZED,GLFW_TRUE); //Error if placed here
 
 
         //create window;
@@ -112,12 +113,13 @@ public class Window {
             Window.setHeight(newHeight);
         });
 
+
         //make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
         //Enable v-sync;
         glfwSwapInterval(1);
 
-        glfwMaximizeWindow(glfwWindow);
+        glfwMaximizeWindow(glfwWindow); //Maximise window
 
         //make window visible
         glfwShowWindow(glfwWindow);
