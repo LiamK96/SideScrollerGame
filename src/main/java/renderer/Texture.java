@@ -1,6 +1,7 @@
 package renderer;
 
 import org.lwjgl.BufferUtils;
+import org.w3c.dom.Text;
 
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
@@ -16,6 +17,23 @@ public class Texture {
 
 
 //    public Texture(String filePath){}
+
+    //Causes error, this should not be used like this.
+    public Texture(){
+        this.width = -1;
+        this.height = -1;
+        this.texID = -1;
+    }
+    //for framebuffers
+    public Texture(int width, int height){
+        this.filepath = "Generated";
+
+        //Generate texture on GPU
+        texID = glGenTextures();
+        glBindTexture(GL_TEXTURE_2D,texID);
+
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE,0);
+    }
 
     public void init(String filePath){
         this.filepath = filePath;
@@ -85,4 +103,20 @@ public class Texture {
         return this.texID;
     }
 
+    public String getFilepath(){
+        return this.filepath;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if (o == null){
+            return false;
+        }
+        if (!(o instanceof Texture)){
+            return false;
+        }
+        Texture oText = (Texture) o;
+        return oText.getWidth()==this.width && oText.getHeight() == this.height && oText.getTexID() == this.texID
+                && oText.getFilepath() == this.filepath;
+    }
 }

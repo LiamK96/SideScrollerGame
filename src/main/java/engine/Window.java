@@ -5,6 +5,7 @@ import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWWindowSizeCallback;
 import org.lwjgl.opengl.GL;
 import renderer.DebugDraw;
+import renderer.Framebuffer;
 import scenes.LevelEditorScene;
 import scenes.LevelScene;
 import scenes.Scene;
@@ -20,6 +21,7 @@ public class Window {
     private String title;
     private long glfwWindow;
     private ImGuiLayer imGuiLayer;
+    private Framebuffer framebuffer;
 
     public float r,g,b,a;
 
@@ -139,6 +141,9 @@ public class Window {
         this.imGuiLayer = new ImGuiLayer(glfwWindow);
         this.imGuiLayer.initImGui();
 
+        //Framebuffer
+        this.framebuffer = new Framebuffer(1920, 1080);
+
         Window.changeScene(0);
     }
 
@@ -159,10 +164,12 @@ public class Window {
             glClearColor(r,g,b,a);
             glClear(GL_COLOR_BUFFER_BIT);
 
+            this.framebuffer.bind();
             if (dt >= 0.0f) {
                 DebugDraw.draw(); //draw lines and other objects
                 currentScene.update(dt);
             }
+            this.framebuffer.unbind();
 
 
             if (KeyListener.isKeyPressed(GLFW_KEY_ESCAPE)){
