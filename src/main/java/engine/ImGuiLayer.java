@@ -166,7 +166,6 @@ public class ImGuiLayer {
         fontConfig.setGlyphRanges(fontAtlas.getGlyphRangesDefault());
 
 
-
         // Fonts merge example
         fontConfig.setPixelSnapH(true);
 
@@ -193,7 +192,7 @@ public class ImGuiLayer {
         setupDockspace();
         currentScene.sceneImgui();
         ImGui.showDemoWindow();
-        ImGui.end();
+        ImGui.end(); //Used with setupDockspace()
 
         ImGui.render();
 
@@ -226,8 +225,6 @@ public class ImGuiLayer {
         // After Dear ImGui prepared a draw data, we use it in the LWJGL3 renderer.
         // At that moment ImGui will be rendered to the current OpenGL context.
         imGuiGl3.renderDrawData(ImGui.getDrawData());
-
-
     }
 
     // If you want to clean a room after yourself - do it by yourself

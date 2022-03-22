@@ -61,8 +61,6 @@ public class LevelEditorScene extends Scene {
     public void update(float dt) {
         levelEditorStuff.update(dt);
 
-        //DebugDraw.addCircle(new Vector2f(600,600),200.0f,new Vector3f(0,0,0),1);
-
         for (GameObject go : this.gameObjects){
             go.update(dt);
         }
@@ -109,10 +107,7 @@ public class LevelEditorScene extends Scene {
             if (i+1 < sprites.size() && nextButtonX2 < windowX2){
                 ImGui.sameLine();
             }
-
         }
-
-
         ImGui.end();
     }
 

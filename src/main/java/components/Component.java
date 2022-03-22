@@ -36,7 +36,6 @@ public abstract class Component {
                 boolean isPrivate = Modifier.isPrivate(field.getModifiers());
                 if (isPrivate){
                     field.setAccessible(true);
-
                 }
 
                 Class type = field.getType();
@@ -72,7 +71,6 @@ public abstract class Component {
                     float[] imVec4 = {val.x,val.y,val.z,val.w};
                     if (ImGui.dragFloat4(name + ": ", imVec4)){
                         val.set(imVec4[0],imVec4[1],imVec4[2],imVec4[3]);
-
                     }
                 }
 

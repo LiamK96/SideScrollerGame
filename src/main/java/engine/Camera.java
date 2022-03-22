@@ -26,7 +26,6 @@ public class Camera {
         projectionMatrix.identity();
         projectionMatrix.ortho(0.0f, projectionSize.x, 0.0f, projectionSize.y, 0.0f, 100.0f );
         projectionMatrix.invert(inverseProjection);
-
     }
 
     public Matrix4f getViewMatrix(){

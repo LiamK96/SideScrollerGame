@@ -104,8 +104,6 @@ public class Window {
             throw new IllegalStateException("Failed to create window");
         }
 
-
-
         glfwSetCursorPosCallback(glfwWindow,MouseListener::mousePosCallback);
         glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
         glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
