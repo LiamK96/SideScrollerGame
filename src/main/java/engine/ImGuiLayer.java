@@ -251,6 +251,6 @@ public class ImGuiLayer {
         ImGui.popStyleVar(2); //Pushed 2 onto the stack
 
         //Dockspace
-        ImGui.dockSpace(ImGui.getID("Rackspace"));
+        ImGui.dockSpace(ImGui.getID("Dockspace"));
     }
 }
