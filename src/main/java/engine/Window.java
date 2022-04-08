@@ -141,6 +141,7 @@ public class Window {
 
         //Framebuffer
         this.framebuffer = new Framebuffer(1920, 1080);
+        glViewport(0,0,1920,1080);
 
         Window.changeScene(0);
     }
@@ -159,10 +160,13 @@ public class Window {
             //drawing setup
             DebugDraw.beginFrame();
 
+            //bind framebuffer
+            this.framebuffer.bind();
+
             glClearColor(r,g,b,a);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            this.framebuffer.bind();
+
             if (dt >= 0.0f) {
                 DebugDraw.draw(); //draw lines and other objects
                 currentScene.update(dt);
@@ -201,6 +205,10 @@ public class Window {
 
     public static void setHeight(int newHeight){
         get().height = newHeight;
+    }
+
+    public static Framebuffer getFramebuffer(){
+        return get().framebuffer;
     }
 
 }
