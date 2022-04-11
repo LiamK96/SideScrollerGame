@@ -8,8 +8,6 @@ import engine.Transform;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
-import org.joml.Vector3f;
-import renderer.DebugDraw;
 import util.AssetPool;
 
 public class LevelEditorScene extends Scene {
