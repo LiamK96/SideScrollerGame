@@ -126,8 +126,8 @@ public class ImGuiLayer {
             if (!io.getWantCaptureMouse() && mouseDown[1]) {
                 ImGui.setWindowFocus(null);
             }
-
-            if (!io.getWantCaptureMouse()){
+            //Allow engine to override ImGUI mouselistener if ImGUI does not need mouse or in gameView Window
+            if (!io.getWantCaptureMouse() || GameViewWindow.getWantCaptureMouse()){
                 MouseListener.mouseButtonCallback(w,button,action,mods);
             }
         });

@@ -1,5 +1,7 @@
 package engine;
 
+import org.joml.Matrix4f;
+import org.joml.Vector2f;
 import org.joml.Vector4f;
 import scenes.Scene;
 
@@ -12,6 +14,9 @@ public class MouseListener {
     private double xPos, yPos, lastY, lastX;
     private boolean mouseButtonPressed[] = new boolean[GLFW_MOUSE_BUTTON_LAST+1];
     private boolean isDragging;
+
+    private Vector2f gameViewportPos = new Vector2f();
+    private Vector2f gameViewportSize = new Vector2f();
 
     private MouseListener() {
         this.scrollX = 0.0;
@@ -72,24 +77,6 @@ public class MouseListener {
         return (float) get().yPos;
     }
 
-    public static float getOrthoX() {
-        float currentX = getX();
-        currentX = (currentX / (float)Window.getWidth()) * 2.0f - 1.0f;
-        Vector4f temp = new Vector4f(currentX,0,0,1);
-        temp.mul(Window.get().getScene().getCamera().getInverseProjection().mul(Window.get().getScene().getCamera().getInverseView()));
-        currentX = temp.x;
-        return currentX;
-    }
-
-    public static float getOrthoY() {
-        float currentY = Window.getHeight() - getY();
-        currentY = (currentY / (float)Window.getHeight()) * 2.0f - 1.0f;
-        Vector4f temp = new Vector4f(0,currentY,0,1);
-        temp.mul(Window.get().getScene().getCamera().getInverseProjection().mul(Window.get().getScene().getCamera().getInverseView()));
-        currentY = temp.y;
-        return currentY;
-    }
-
     public static float getDx(){
         return (float) (get().lastX-get().xPos);
     }
@@ -117,4 +104,43 @@ public class MouseListener {
         return false;
     }
 
+    public static float getOrthoX() {
+        float currentX = getX() - get().gameViewportPos.x;
+        currentX = (currentX / (float)get().gameViewportSize.x) * 2.0f - 1.0f;
+        Vector4f temp = new Vector4f(currentX,0,0,1);
+
+        Camera camera = Window.getScene().getCamera();
+        Matrix4f viewProjection = new Matrix4f();
+        camera.getInverseView().mul(camera.getInverseProjection(), viewProjection);
+        temp.mul(viewProjection);
+
+        currentX = temp.x;
+        return currentX;
+    }
+
+    public static float getOrthoY() {
+        float currentY = getY() - get().gameViewportPos.y;
+
+        //ImGUI uses flipped vec.y than openGL, therefor we need to make the result negative thus the minus.
+        currentY = -((currentY / (float)get().gameViewportSize.y) * 2.0f - 1.0f);
+        Vector4f temp = new Vector4f(0,currentY,0,1);
+
+        Camera camera = Window.getScene().getCamera();
+        Matrix4f viewProjection = new Matrix4f();
+        camera.getInverseView().mul(camera.getInverseProjection(), viewProjection);
+        temp.mul(viewProjection);
+
+        currentY = temp.y;
+        return currentY;
+    }
+
+
+    //TODO find a better way to set mouse position in viewport
+    public static void setGameViewportPos(Vector2f gameViewportPos) {
+        get().gameViewportPos.set(gameViewportPos);
+    }
+
+    public static void setGameViewportSize(Vector2f gameViewportSize) {
+        get().gameViewportSize.set(gameViewportSize);
+    }
 }
