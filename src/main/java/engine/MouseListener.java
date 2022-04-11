@@ -104,6 +104,22 @@ public class MouseListener {
         return false;
     }
 
+    //TODO remove hardcoded window sizes for getScreenX and getScreenY
+    public static float getScreenX(){
+        float currentX = getX() - get().gameViewportPos.x;
+        currentX = (currentX / (float)get().gameViewportSize.x) * 1920.0f;
+
+        return currentX;
+    }
+
+    public static float getScreenY(){
+        float currentY = getY() - get().gameViewportPos.y;
+
+        currentY = 1080.0f - ((currentY / (float)get().gameViewportSize.y) * 1080.0f);
+
+        return currentY;
+    }
+
     public static float getOrthoX() {
         float currentX = getX() - get().gameViewportPos.x;
         currentX = (currentX / (float)get().gameViewportSize.x) * 2.0f - 1.0f;
