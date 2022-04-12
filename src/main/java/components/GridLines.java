@@ -1,5 +1,6 @@
 package components;
 
+import engine.Camera;
 import engine.Window;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
@@ -10,17 +11,18 @@ public class GridLines extends Component{
 
     @Override
     public void update(float dt){
-        Vector2f cameraPos = Window.getScene().getCamera().position;
-        Vector2f projectionSize = Window.getScene().getCamera().getProjectionSize();
+        Camera camera = Window.getScene().getCamera();
+        Vector2f cameraPos = camera.position;
+        Vector2f projectionSize = camera.getProjectionSize();
 
         int firstX = ((int)(cameraPos.x / Settings.gridWidth) * Settings.gridWidth);
         int firstY = ((int)(cameraPos.y / Settings.gridHeight) * Settings.gridHeight);
 
-        int numVerticalLines = (int)(projectionSize.x / Settings.gridWidth);
-        int numHorizontalLine = (int)(projectionSize.y / Settings.gridHeight);
+        int numVerticalLines = (int)(projectionSize.x * camera.getZoom() / Settings.gridWidth);
+        int numHorizontalLine = (int)(projectionSize.y * camera.getZoom() / Settings.gridHeight);
 
-        int height = (int)projectionSize.y;
-        int width = (int)projectionSize.x;
+        int height = (int) ((int)projectionSize.y * camera.getZoom());
+        int width = (int) ((int)projectionSize.x * camera.getZoom());
 
         int maxLines = Math.max(numHorizontalLine,numVerticalLines);
 
