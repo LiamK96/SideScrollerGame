@@ -235,4 +235,8 @@ public class Window {
         return get().framebuffer;
     }
 
+    public static ImGuiLayer getImGuiLayer(){
+        return get().imGuiLayer;
+    }
+
 }
