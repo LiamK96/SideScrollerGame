@@ -1,12 +1,16 @@
 package engine;
 
+import components.Component;
+import editor.EImGui;
+import imgui.ImGui;
 import org.joml.Vector2f;
 
-public class Transform {
+public class Transform extends Component {
 
     public Vector2f position;
     public Vector2f scale;
     public float rotation = 0.0f;
+    public int zIndex;
 
     public Transform(){
         this.init(new Vector2f(), new Vector2f());
@@ -23,6 +27,7 @@ public class Transform {
     public void init(Vector2f position, Vector2f scale){
         this.position = position;
         this.scale = scale;
+        this.zIndex = 0;
     }
 
     public Transform copy(){
@@ -41,7 +46,15 @@ public class Transform {
         if (!(o instanceof Transform)) return false;
 
         Transform t = (Transform)o;
-        return this.position.equals(t.position) && this.scale.equals(t.scale);
+        return this.position.equals(t.position) && this.scale.equals(t.scale)
+                && this.rotation == t.rotation && this.zIndex == t.zIndex;
     }
 
+    @Override
+    public void imgui(){
+        EImGui.drawVec2Control("Position", this.position);
+        EImGui.drawVec2Control("Scale", this.scale, 64.0f);
+        EImGui.dragFloat("Rotation", this.rotation);
+        EImGui.dragInt("Z-Index", this.zIndex);
+    }
 }

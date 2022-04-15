@@ -7,6 +7,7 @@ import components.ComponentDeserializer;
 import engine.Camera;
 import engine.GameObject;
 import engine.GameObjectDeserializer;
+import engine.Transform;
 import imgui.ImGui;
 import renderer.Renderer;
 
@@ -67,6 +68,13 @@ public abstract class Scene {
     }
 
     public void imgui(){
+    }
+
+    public GameObject createGameobject(String name){
+        GameObject go = new GameObject(name);
+        go.addComponent(new Transform());
+        go.transform = go.getComponent(Transform.class);
+        return go;
     }
 
     public void saveExit(){
