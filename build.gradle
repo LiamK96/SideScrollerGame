@@ -6,6 +6,9 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 repositories {
+    flatDir {
+        dirs 'libs'
+    }
     mavenCentral()
 }
 
@@ -22,6 +25,9 @@ project.ext.jomlVersion = "1.10.2"
 project.ext.lwjglNatives = "natives-windows"
 
 dependencies {
+
+    //Box2d
+    implementation name: 'jbox2d-library'
 
     //GSON
     implementation 'com.google.code.gson:gson:2.8.9'
