@@ -1,5 +1,9 @@
 package engine;
 
+import observers.EventSystem;
+import observers.Observer;
+import observers.events.Event;
+import observers.events.EventType;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWWindowSizeCallback;
@@ -15,7 +19,7 @@ import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11C.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
-public class Window {
+public class Window implements Observer {
 
     private int width, height;
     private String title;
@@ -24,8 +28,6 @@ public class Window {
     private Framebuffer framebuffer;
     private PickingTexture pickingTexture;
 
-    public float r,g,b,a;
-
     private static Window window = null;
 
     private static Scene currentScene = null;
@@ -33,11 +35,9 @@ public class Window {
     private Window(){
         this.width = 1920;
         this.height = 1080;
-        this.title = "Mario";
-        r=1;
-        g=1;
-        b=1;
-        a=1;
+        this.title = "Definitely not an Italian Plumber";
+
+        EventSystem.addObserver(this);
     }
 
     public static void changeScene(int newScene){
@@ -66,6 +66,15 @@ public class Window {
 
     public static Scene getScene(){
         return get().currentScene;
+    }
+
+    @Override
+    public void onNotify(GameObject go, Event event) {
+        if (event.type == EventType.GameEngineStartPlay){
+            System.out.println("Starting Play");
+        } else if (event.type == EventType.GameEngineStopPlay){
+            System.out.println("Stopping Play");
+        }
     }
 
     public void run(){
@@ -183,7 +192,7 @@ public class Window {
             //bind framebuffer
             this.framebuffer.bind();
 
-            glClearColor(r,g,b,a);
+            glClearColor(1,1,1,1);
             glClear(GL_COLOR_BUFFER_BIT);
 
 
@@ -238,5 +247,6 @@ public class Window {
     public static ImGuiLayer getImGuiLayer(){
         return get().imGuiLayer;
     }
+
 
 }
