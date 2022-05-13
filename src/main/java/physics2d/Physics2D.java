@@ -51,7 +51,7 @@ public class Physics2D {
             if ((circleCollider = go.getComponent(Circle2DCollider.class)) != null){
                 shape.setRadius(circleCollider.getRadius());
             } else if ((boxCollider = go.getComponent(Box2DCollider.class)) != null){
-                //mul by Half is to match with box2d physics engine
+                //mul by Half is to match with box2d physics engine, box2d draws shape from center
                 Vector2f halfSize = new Vector2f(boxCollider.getHalfSize()).mul(0.5f);
                 Vector2f offset = boxCollider.getOffset();
                 Vector2f origin = new Vector2f(boxCollider.getOrigin());
