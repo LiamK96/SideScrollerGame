@@ -10,6 +10,7 @@ public class RigidBody2D extends Component {
     private Vector2f velocity = new Vector2f();
     private float angularDamping = 0.8f;
     private float linearDamping = 0.9f;
+    private float mass = 0.0f;
     private BodyType bodyType = BodyType.DYNAMIC;
 
     private boolean fixedRotation = false;
@@ -48,6 +49,14 @@ public class RigidBody2D extends Component {
 
     public void setLinearDamping(float linearDamping) {
         this.linearDamping = linearDamping;
+    }
+
+    public float getMass() {
+        return mass;
+    }
+
+    public void setMass(float mass){
+        this.mass = mass;
     }
 
     public BodyType getBodyType() {
