@@ -4,9 +4,6 @@ import engine.Camera;
 import engine.KeyListener;
 import engine.MouseListener;
 import org.joml.Vector2f;
-import scenes.LevelEditorScene;
-
-import java.lang.management.MonitorInfo;
 
 import static org.lwjgl.glfw.GLFW.*;
 
