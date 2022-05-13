@@ -69,6 +69,16 @@ public class Physics2D {
         }
     }
 
+    public void destroyGameObject(GameObject go){
+        RigidBody2D rb = go.getComponent(RigidBody2D.class);
+        if (rb != null){
+            if (rb.getRawBody() != null){
+                world.destroyBody(rb.getRawBody());
+                rb.setRawBody(null);
+            }
+        }
+    }
+
     public void update(float dt){
         physicsTime += dt;
         //Update physics every 60 frames

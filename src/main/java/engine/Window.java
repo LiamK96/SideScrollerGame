@@ -3,7 +3,6 @@ package engine;
 import observers.EventSystem;
 import observers.Observer;
 import observers.events.Event;
-import observers.events.EventType;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
@@ -26,10 +25,12 @@ public class Window implements Observer {
     private ImGuiLayer imGuiLayer;
     private Framebuffer framebuffer;
     private PickingTexture pickingTexture;
+    private boolean runtimePlaying = false;
 
     private static Window window = null;
 
     private static Scene currentScene = null;
+
 
     private Window(){
         this.width = 1920;
@@ -41,8 +42,9 @@ public class Window implements Observer {
 
     public static void changeScene(SceneInitializer sceneInitializer){
         if (currentScene != null){
-            //todo:Destroy it
+            currentScene.destroy();
         }
+        getImGuiLayer().getPropertiesWindow().setActiveGameObject(null);
         currentScene = new Scene(sceneInitializer);
         currentScene.load();
         currentScene.init();
@@ -62,10 +64,24 @@ public class Window implements Observer {
 
     @Override
     public void onNotify(GameObject go, Event event) {
-        if (event.type == EventType.GameEngineStartPlay){
-            System.out.println("Starting Play");
-        } else if (event.type == EventType.GameEngineStopPlay){
-            System.out.println("Stopping Play");
+        switch (event.type){
+            case GameEngineStartPlay:
+                this.runtimePlaying = true;
+                currentScene.save();
+                Window.changeScene(new LevelEditorSceneInitializer());
+                break;
+            case GameEngineStopPlay:
+                this.runtimePlaying = false;
+                Window.changeScene(new LevelEditorSceneInitializer());
+                break;
+            case SaveLevel:
+                currentScene.save();
+                break;
+            case LoadLevel:
+                Window.changeScene(new LevelEditorSceneInitializer());
+                break;
+            case UserEvent:
+                break;
         }
     }
 
@@ -191,7 +207,11 @@ public class Window implements Observer {
             if (dt >= 0.0f) {
                 DebugDraw.draw(); //draw lines and other objects
                 Renderer.bindShader(defaultShader);
-                currentScene.update(dt);
+                if (runtimePlaying) {
+                    currentScene.update(dt);
+                } else{
+                    currentScene.editorUpdate(dt);
+                }
                 currentScene.render();
             }
             this.framebuffer.unbind();
@@ -213,7 +233,6 @@ public class Window implements Observer {
             beginTime = endTime;
 
         }
-        currentScene.saveExit();
     }
 
     public static int getWidth(){
