@@ -9,7 +9,7 @@ public class Transform extends Component {
 
     public Vector2f position;
     public Vector2f scale;
-    public float rotation = 0.0f;
+    public float rotation;
     public int zIndex;
 
     public Transform(){
@@ -27,6 +27,7 @@ public class Transform extends Component {
     public void init(Vector2f position, Vector2f scale){
         this.position = position;
         this.scale = scale;
+        this.rotation = 0.0f;
         this.zIndex = 0;
     }
 

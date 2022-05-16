@@ -136,12 +136,12 @@ public class DebugDraw {
     /////////////////////
     public static void addBox2D(Vector2f center, Vector2f dimensions){
         // ToDo add constants for common colours
-        addBox2D(center, dimensions, 0, new Vector3f(0,1,0), 1);
+        addBox2D(center, dimensions, 0, new Vector3f(0,0,1), 1);
     }
 
     public static void addBox2D(Vector2f center, Vector2f dimensions, float rotation){
 
-        addBox2D(center, dimensions, rotation, new Vector3f(0,1,0), 1);
+        addBox2D(center, dimensions, rotation, new Vector3f(0,0,1), 1);
     }
 
     public static void addBox2D(Vector2f center, Vector2f dimensions, Vector3f color){
