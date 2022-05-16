@@ -16,9 +16,11 @@ import renderer.DebugDraw;
 import renderer.Renderer;
 
 import java.awt.font.GlyphMetrics;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -158,7 +160,7 @@ public class Scene {
         }
     }
 
-    public void load(){
+    public void load() {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .registerTypeAdapter(Component.class, new ComponentDeserializer())
@@ -167,10 +169,17 @@ public class Scene {
         String inFile = "";
         try {
             inFile = new String(Files.readAllBytes(Paths.get("level.txt")));
+        } catch (NoSuchFileException e){
+            try {
+                FileWriter writer = new FileWriter("level.txt",false);
+                writer.write("[]");
+                writer.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         } catch (IOException e){
-            System.out.println("inFile(No Space after :):"+inFile);
+            System.out.println("level.txt file not found:"+inFile);
             e.printStackTrace();
-
         }
 
         if (!inFile.equals("")&&!inFile.equals("[]")){
