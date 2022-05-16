@@ -55,7 +55,7 @@ public class Transform extends Component {
     public void imgui(){
         EImGui.drawVec2Control("Position", this.position);
         EImGui.drawVec2Control("Scale", this.scale, 64.0f);
-        EImGui.dragFloat("Rotation", this.rotation);
-        EImGui.dragInt("Z-Index", this.zIndex);
+        this.rotation = EImGui.dragFloat("Rotation", this.rotation);
+        this.zIndex = EImGui.dragInt("Z-Index", this.zIndex);
     }
 }
