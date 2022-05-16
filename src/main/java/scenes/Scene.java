@@ -10,7 +10,9 @@ import engine.GameObjectDeserializer;
 import engine.Transform;
 import imgui.ImGui;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
 import physics2d.Physics2D;
+import renderer.DebugDraw;
 import renderer.Renderer;
 
 import java.awt.font.GlyphMetrics;
@@ -86,7 +88,6 @@ public class Scene {
 
     public void editorUpdate(float dt){
         this.camera.adjustProjection();
-
         for (int i = 0; i < gameObjects.size(); i++) {
             GameObject go = gameObjects.get(i);
             go.editorUpdate(dt);

@@ -5,6 +5,7 @@ import engine.*;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
+import renderer.DebugDraw;
 import util.AssetPool;
 
 public class LevelEditorSceneInitializer extends SceneInitializer {
