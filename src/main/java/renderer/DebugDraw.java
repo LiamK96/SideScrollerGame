@@ -149,6 +149,11 @@ public class DebugDraw {
         addBox2D(center, dimensions,0, color, 1);
     }
 
+    public static void addBox2D(Vector2f center, Vector2f dimensions, float rotation, Vector3f color){
+
+        addBox2D(center, dimensions, rotation, color, 1);
+    }
+
     public static void addBox2D(Vector2f center, Vector2f dimensions, float rotation, Vector3f color, int lifetime){
         Vector2f min = new Vector2f(center).sub(new Vector2f(dimensions).div(2.0f));
         Vector2f max = new Vector2f(center).add(new Vector2f(dimensions).div(2.0f));
