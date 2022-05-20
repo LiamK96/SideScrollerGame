@@ -48,7 +48,9 @@ public class RenderBatch implements Comparable<RenderBatch>{
     private int maxBatchSize;
     private int zIndex;
 
-    public RenderBatch(int maxBatchSize, int zIndex){
+    private Renderer renderer;
+
+    public RenderBatch(int maxBatchSize, int zIndex, Renderer renderer){
         this.zIndex = zIndex;
         this.sprites = new SpriteRenderer[maxBatchSize];
         this.maxBatchSize = maxBatchSize;
@@ -59,6 +61,8 @@ public class RenderBatch implements Comparable<RenderBatch>{
         this.numSprites = 0;
         this.hasRoom = true;
         this.textures = new ArrayList<>();
+
+        this.renderer = renderer;
     }
 
     public void start(){
@@ -127,7 +131,16 @@ public class RenderBatch implements Comparable<RenderBatch>{
                 spr.setClean();
                 rebufferData = true;
             }
+
+            //todo: Find better solution for this
+            if (spr.gameObject.transform.zIndex != this.zIndex){
+                destroyIfExists(spr.gameObject);
+                renderer.add(spr.gameObject);
+
+                i--;
+            }
         }
+
         if (rebufferData){
             glBindBuffer(GL_ARRAY_BUFFER, vboID);
             glBufferSubData(GL_ARRAY_BUFFER,0,vertices);
