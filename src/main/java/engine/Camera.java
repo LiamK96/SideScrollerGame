@@ -13,7 +13,9 @@ public class Camera {
 
     private float zoom = 1.0f;
 
-    private Vector2f projectionSize = new Vector2f(Window.getWidth()*1.0f,Window.getHeight()*1.0f);
+    private float projectionWidth = 6;
+    private float projectionHeight = 3;
+    private Vector2f projectionSize = new Vector2f(projectionWidth,projectionHeight);
 
     public Camera(Vector2f pos){
         this.position = pos;
