@@ -1,14 +1,11 @@
 package components;
 
 import editor.PropertiesWindow;
-import engine.GameObject;
-import engine.MouseListener;
-import engine.Prefabs;
-import engine.Window;
+import engine.*;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 
-import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
+import static org.lwjgl.glfw.GLFW.*;
 
 public class Gizmo extends Component{
     private Vector4f xAxisColor = new Vector4f(1,0.3f,0.3f,1);
@@ -76,6 +73,20 @@ public class Gizmo extends Component{
         this.activeGameObject = this.propertiesWindow.getActiveGameObject();
         if (this.activeGameObject != null){
             setActive();
+
+            //todo: move into own keyeditor component class
+            if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)
+                    && KeyListener.keyBeginPress(GLFW_KEY_D)){
+                GameObject newObject = this.activeGameObject.copy();
+                Window.getScene().addGameObjectToScene(newObject);
+                newObject.transform.position.add(new Vector2f(0.1f,0.1f));
+                return;
+            } else if(KeyListener.keyBeginPress(GLFW_KEY_DELETE)){
+                activeGameObject.destroy();
+                this.setInactive();
+                this.propertiesWindow.setActiveGameObject(null);
+                return;
+            }
         } else{
             setInactive();
             return;

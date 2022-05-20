@@ -1,7 +1,12 @@
 package engine;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import components.Component;
+import components.ComponentDeserializer;
+import components.SpriteRenderer;
 import imgui.ImGui;
+import util.AssetPool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,6 +95,26 @@ public class GameObject {
         }
     }
 
+    //Todo: Find better way to do this
+    public GameObject copy(){
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Component.class, new ComponentDeserializer())
+                .registerTypeAdapter(GameObject.class, new GameObjectDeserializer())
+                .create();
+        String objAsJson = gson.toJson(this);
+        GameObject obj = gson.fromJson(objAsJson,GameObject.class);
+        obj.generateUid();
+        for (Component c : this.getAllComponents()){
+            c.generateId();
+        }
+
+        SpriteRenderer spr = obj.getComponent(SpriteRenderer.class);
+        if (spr != null && spr.getTexture() != null){
+            spr.setTexture(AssetPool.getTexture(spr.getTexture().getFilepath()));
+        }
+        return obj;
+    }
+
     public static void init(int maxId){
         ID_COUNTER = maxId;
     }
@@ -112,5 +137,9 @@ public class GameObject {
 
     public boolean doSerialization(){
         return this.doSerialization;
+    }
+
+    public void generateUid(){
+        this.uid = ID_COUNTER++;
     }
 }
