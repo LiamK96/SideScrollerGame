@@ -3,6 +3,7 @@ package engine;
 import editor.GameViewWindow;
 import editor.MenuBar;
 import editor.PropertiesWindow;
+import editor.SceneHierarchyWindow;
 import imgui.*;
 import imgui.callback.ImStrConsumer;
 import imgui.callback.ImStrSupplier;
@@ -10,7 +11,6 @@ import imgui.flag.*;
 import imgui.gl3.ImGuiImplGl3;
 import imgui.glfw.ImGuiImplGlfw;
 import imgui.type.ImBoolean;
-import org.lwjgl.opengl.GL30;
 import renderer.PickingTexture;
 import scenes.Scene;
 
@@ -33,12 +33,15 @@ public class ImGuiLayer {
     private PropertiesWindow propertiesWindow;
     //MenuBar
     private MenuBar menuBar;
+    //Scene Hierarchy
+    private SceneHierarchyWindow sceneHierarchyWindow;
 
     public ImGuiLayer(long glfwWindow, PickingTexture pickingTexture){
         this.glfwWindow = glfwWindow;
         this.gameViewWindow = new GameViewWindow();
         this.propertiesWindow = new PropertiesWindow(pickingTexture);
         this.menuBar = new MenuBar();
+        this.sceneHierarchyWindow = new SceneHierarchyWindow();
     }
 
     // Initialize Dear ImGui.
@@ -166,6 +169,7 @@ public class ImGuiLayer {
         gameViewWindow.imgui();
         propertiesWindow.update(dt, currentScene);
         propertiesWindow.imgui();
+        sceneHierarchyWindow.imgui();
 
 
             //Imgui.render moved to endFrame

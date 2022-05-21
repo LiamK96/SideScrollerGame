@@ -142,4 +142,12 @@ public class GameObject {
     public void generateUid(){
         this.uid = ID_COUNTER++;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
