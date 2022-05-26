@@ -57,8 +57,8 @@ public class ImGuiLayer {
 
         io.setIniFilename("imgui.ini"); // Save window config,  save with .ini file or null for no .ini
 
-        io.setConfigFlags(ImGuiConfigFlags.DockingEnable); // Enable docking
-        //io.setConfigFlags(ImGuiConfigFlags.ViewportsEnable); //todo: Fix viewports
+        io.addConfigFlags(ImGuiConfigFlags.DockingEnable); // Enable docking
+        io.addConfigFlags(ImGuiConfigFlags.ViewportsEnable); //Enable viewports
         io.setBackendPlatformName("imgui_java_impl_glfw");
 
         // ------------------------------------------------------------
@@ -194,15 +194,14 @@ public class ImGuiLayer {
         imGuiGl3.renderDrawData(ImGui.getDrawData());
 
 
-        //todo: fix viewports
-//        //Make backup for current window
-//        long backupWindowPtr = glfwGetCurrentContext();
-//        //Update all windows,
-//        ImGui.updatePlatformWindows();
-//        //render all windows
-//        ImGui.renderPlatformWindowsDefault();
-//        //backup to the main window
-//        glfwMakeContextCurrent(backupWindowPtr);
+        //Make backup for current window
+        long backupWindowPtr = glfwGetCurrentContext();
+        //Update all windows,
+        ImGui.updatePlatformWindows();
+        //render all windows
+        ImGui.renderPlatformWindowsDefault();
+        //backup to the main window
+        glfwMakeContextCurrent(backupWindowPtr);
     }
 
     // If you want to clean a room after yourself - do it by yourself
@@ -214,11 +213,10 @@ public class ImGuiLayer {
     private void setupDockspace(){
         int windowFlags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
 
-        //todo: fix Viewport
-//        ImGuiViewport mainViewport = ImGui.getMainViewport();
-//        ImGui.setNextWindowPos(mainViewport.getWorkPosX(),mainViewport.getWorkPosY());
-//        ImGui.setNextWindowSize(mainViewport.getWorkSizeX(), mainViewport.getWorkSizeY());
-//        ImGui.setNextWindowViewport(mainViewport.getID());
+        ImGuiViewport mainViewport = ImGui.getMainViewport();
+        ImGui.setNextWindowPos(mainViewport.getWorkPosX(),mainViewport.getWorkPosY());
+        ImGui.setNextWindowSize(mainViewport.getWorkSizeX(), mainViewport.getWorkSizeY());
+        ImGui.setNextWindowViewport(mainViewport.getID());
 
         ImGui.setNextWindowPos(0.0f, 0.0f);
         ImGui.setNextWindowSize(Window.getWidth(), Window.getHeight());
