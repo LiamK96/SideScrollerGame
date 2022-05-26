@@ -16,7 +16,7 @@ public class GameObject {
     private static int ID_COUNTER = 0;
     private int uid = -1;
 
-    private String name;
+    public String name;
     private List<Component> components;
     public transient Transform transform;
 
@@ -27,7 +27,7 @@ public class GameObject {
     public GameObject(String name){
         this.name = name;
         this.components = new ArrayList<>();
-        this.transform = transform;
+        this.transform = new Transform();
 
         this.uid = ID_COUNTER++; //May cause issues in the future with unintentional updating of the uid.
                                  // refer to drag n drop.
@@ -143,11 +143,4 @@ public class GameObject {
         this.uid = ID_COUNTER++;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
