@@ -11,7 +11,7 @@ import static org.lwjgl.glfw.GLFW.*;
 public class MouseListener {
     private static MouseListener instance;
     private double scrollX, scrollY;
-    private double xPos, yPos, lastY, lastX, worldX, worldY, lastWorldX, lastWorldY;
+    private double xPos, yPos, worldX, worldY;
     private boolean mouseButtonPressed[] = new boolean[GLFW_MOUSE_BUTTON_LAST+1];
     private boolean isDragging;
 
@@ -25,8 +25,6 @@ public class MouseListener {
         this.scrollY = 0.0;
         this.xPos = 0.0;
         this.yPos = 0.0;
-        this.lastX = 0.0;
-        this.lastY = 0.0;
     }
 
     public static MouseListener get(){
@@ -41,14 +39,8 @@ public class MouseListener {
             get().isDragging = true;
         }
 
-        get().lastX = get().xPos;
-        get().lastY = get().yPos;
-        get().lastWorldX = get().worldX;
-        get().lastWorldY = get().worldY;
         get().xPos = xpos;
         get().yPos = ypos;
-        calcOrthoX();
-        calcOrthoY();
     }
 
     public static void mouseButtonCallback(long window, int button, int action, int mods){
@@ -74,10 +66,6 @@ public class MouseListener {
     public static void endFrame(){
         get().scrollX = 0.0;
         get().scrollY = 0.0;
-        get().lastX = get().xPos;
-        get().lastY = get().yPos;
-        get().lastWorldX = get().worldX;
-        get().lastWorldY = get().worldY;
 
     }
 
@@ -87,22 +75,6 @@ public class MouseListener {
 
     public static float getY(){
         return (float) get().yPos;
-    }
-
-    public static float getDx(){
-        return (float) (get().lastX-get().xPos);
-    }
-
-    public static float getWorldDx(){
-        return (float)(get().lastWorldX - get().worldX);
-    }
-
-    public static float getDy(){
-        return (float) (get().lastY-get().yPos);
-    }
-
-    public static float getWorldDy() {
-        return (float)(get().lastWorldY - get().worldY);
     }
 
     public static float getScrollX(){
@@ -124,55 +96,49 @@ public class MouseListener {
         return false;
     }
 
-    //TODO remove hardcoded window sizes for getScreenX and getScreenY
-    public static float getScreenX(){
-        float currentX = getX() - get().gameViewportPos.x;
-        currentX = (currentX / (float)get().gameViewportSize.x) * 1920.0f;
 
-        return currentX;
+    public static float getScreenX(){
+        return getScreen().x;
     }
 
     public static float getScreenY(){
-        float currentY = getY() - get().gameViewportPos.y;
-        currentY = 1080.0f - ((currentY / (float)get().gameViewportSize.y) * 1080.0f);
-
-        return currentY;
+        return getScreen().y;
     }
-
-    public static float getOrthoX() {
-        return (float)get().worldX;
-    }
-
-    private static void calcOrthoX(){
+    //TODO lookup how glfwgetWindowSize works
+    public static Vector2f getScreen(){
+        int windowWidth[] = new int[1];
+        int windowHeight[] = new int[1];
+        glfwGetWindowSize(Window.getGlfwWindow(),windowWidth,windowHeight);
         float currentX = getX() - get().gameViewportPos.x;
-        currentX = (currentX / (float)get().gameViewportSize.x) * 2.0f - 1.0f;
-        Vector4f temp = new Vector4f(currentX,0,0,1);
-
-        Camera camera = Window.getScene().getCamera();
-        Matrix4f viewProjection = new Matrix4f();
-        camera.getInverseView().mul(camera.getInverseProjection(), viewProjection);
-        temp.mul(viewProjection);
-
-        get().worldX = temp.x;
-    }
-
-    public static float getOrthoY() {
-        return (float)get().worldY;
-    }
-
-    private static void calcOrthoY(){
+        currentX = (currentX / get().gameViewportSize.x) * (float)windowWidth[0];
         float currentY = getY() - get().gameViewportPos.y;
+        currentY = windowHeight[0] - ((currentY / get().gameViewportSize.y) * (float)windowHeight[0]);
 
-        //ImGUI uses flipped vec.y than openGL, therefor we need to make the result negative thus the minus.
-        currentY = -((currentY / (float)get().gameViewportSize.y) * 2.0f - 1.0f);
-        Vector4f temp = new Vector4f(0,currentY,0,1);
+        return new Vector2f(currentX,currentY);
+    }
+
+    public static float getWorldX(){
+        return getWorld().x;
+    }
+
+
+    public static float getWorldY(){
+        return getWorld().y;
+    }
+
+    public static Vector2f getWorld(){
+        float currentX = getX() - get().gameViewportPos.x;
+        currentX = (currentX / get().gameViewportSize.x) * 2.0f - 1.0f;
+        float currentY = getY() - get().gameViewportPos.y;
+        //ImGUI uses flipped vec.y than openGL, therefore we need to make the result negative thus the minus.
+        currentY = -((currentY / get().gameViewportSize.y) * 2.0f - 1.0f);
+        Vector4f temp = new Vector4f(currentX,currentY,0,1);
 
         Camera camera = Window.getScene().getCamera();
-        Matrix4f viewProjection = new Matrix4f();
-        camera.getInverseView().mul(camera.getInverseProjection(), viewProjection);
-        temp.mul(viewProjection);
-
-        get().worldY = temp.y;
+        Matrix4f inverseView = new Matrix4f(camera.getInverseView());
+        Matrix4f inverseProjection = new Matrix4f(camera.getInverseProjection());
+        temp.mul(inverseView.mul(inverseProjection));
+        return new Vector2f(temp.x,temp.y);
     }
 
 

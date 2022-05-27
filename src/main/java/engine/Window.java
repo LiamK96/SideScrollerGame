@@ -154,9 +154,9 @@ public class Window implements Observer {
         glBlendFunc(GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
 
         //Framebuffer and Picking Texture MUST have the same width and height
-        this.framebuffer = new Framebuffer(1920, 1080);
-        this.pickingTexture = new PickingTexture(1920, 1080);
-        glViewport(0,0,1920,1080);
+        this.framebuffer = new Framebuffer(Window.getWidth(), Window.getHeight());
+        this.pickingTexture = new PickingTexture(Window.getWidth(), Window.getHeight());
+        glViewport(0,0,Window.getWidth(),Window.getHeight());
 
         //ImGui creation and init
         this.imGuiLayer = new ImGuiLayer(glfwWindow, pickingTexture);
@@ -182,7 +182,7 @@ public class Window implements Observer {
             glDisable(GL_BLEND);
             pickingTexture.enableWriting();
 
-            glViewport(0,0,1920,1080);
+            glViewport(0,0,Window.getWidth(),Window.getHeight());
             glClearColor(0.0f,0.0f,0.0f,0.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -257,6 +257,10 @@ public class Window implements Observer {
 
     public static ImGuiLayer getImGuiLayer(){
         return get().imGuiLayer;
+    }
+
+    public static long getGlfwWindow(){
+        return get().glfwWindow;
     }
 
 

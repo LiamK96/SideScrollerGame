@@ -1,5 +1,6 @@
 package engine;
 
+import com.sun.tools.javac.Main;
 import editor.GameViewWindow;
 import editor.MenuBar;
 import editor.PropertiesWindow;
@@ -58,7 +59,7 @@ public class ImGuiLayer {
         io.setIniFilename("imgui.ini"); // Save window config,  save with .ini file or null for no .ini
 
         io.addConfigFlags(ImGuiConfigFlags.DockingEnable); // Enable docking
-        io.addConfigFlags(ImGuiConfigFlags.ViewportsEnable); //Enable viewports
+        //io.addConfigFlags(ImGuiConfigFlags.ViewportsEnable); //Enable viewports
         io.setBackendPlatformName("imgui_java_impl_glfw");
 
         // ------------------------------------------------------------

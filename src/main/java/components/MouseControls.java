@@ -22,10 +22,10 @@ public class MouseControls extends Component {
     @Override
     public void editorUpdate(float dt){
         if (holdingObject != null){
-            holdingObject.transform.position.x = MouseListener.getOrthoX();
-            holdingObject.transform.position.y = MouseListener.getOrthoY();
-            holdingObject.transform.position.x = (int)(holdingObject.transform.position.x / Settings.gridWidth) * Settings.gridWidth;
-            holdingObject.transform.position.y = (int)(holdingObject.transform.position.y / Settings.gridHeight) * Settings.gridHeight;
+            holdingObject.transform.position.x = MouseListener.getWorldX();
+            holdingObject.transform.position.y = MouseListener.getWorldY();
+            holdingObject.transform.position.x = ((int)Math.floor(holdingObject.transform.position.x / Settings.gridWidth) * Settings.gridWidth)+ Settings.gridWidth / 2.0f;
+            holdingObject.transform.position.y = ((int)Math.floor(holdingObject.transform.position.y / Settings.gridHeight) * Settings.gridHeight) + Settings.gridHeight / 2.0f;
 
             if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)){
                 place();
