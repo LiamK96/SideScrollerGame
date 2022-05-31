@@ -1,9 +1,11 @@
 package engine;
 
+import imgui.ImGui;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 import scenes.Scene;
+import util.Settings;
 
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -17,8 +19,8 @@ public class MouseListener {
 
     private int mouseButtonsDown = 0;
 
-    private Vector2f gameViewportPos = new Vector2f();
-    private Vector2f gameViewportSize = new Vector2f();
+    public Vector2f gameViewportPos = new Vector2f();
+    public Vector2f gameViewportSize = new Vector2f();
 
     private MouseListener() {
         this.scrollX = 0.0;
@@ -41,6 +43,11 @@ public class MouseListener {
 
         get().xPos = xpos;
         get().yPos = ypos;
+
+        //Todo find a fix for this bug
+        if (ImGuiLayer.isViewportsEnabled){
+            get().yPos+=30.0f;
+        }
     }
 
     public static void mouseButtonCallback(long window, int button, int action, int mods){
@@ -106,13 +113,10 @@ public class MouseListener {
     }
     //TODO lookup how glfwgetWindowSize works
     public static Vector2f getScreen(){
-        int windowWidth[] = new int[1];
-        int windowHeight[] = new int[1];
-        glfwGetWindowSize(Window.getGlfwWindow(),windowWidth,windowHeight);
         float currentX = getX() - get().gameViewportPos.x;
-        currentX = (currentX / get().gameViewportSize.x) * (float)windowWidth[0];
+        currentX = (currentX / get().gameViewportSize.x) * (float)Settings.getWindowWidth();
         float currentY = getY() - get().gameViewportPos.y;
-        currentY = windowHeight[0] - ((currentY / get().gameViewportSize.y) * (float)windowHeight[0]);
+        currentY = ((float)Settings.getWindowHeight()) - ((currentY / get().gameViewportSize.y) * ((float)Settings.getWindowHeight()));
 
         return new Vector2f(currentX,currentY);
     }
@@ -129,7 +133,7 @@ public class MouseListener {
     public static Vector2f getWorld(){
         float currentX = getX() - get().gameViewportPos.x;
         currentX = (currentX / get().gameViewportSize.x) * 2.0f - 1.0f;
-        float currentY = getY() - get().gameViewportPos.y;
+        float currentY = (getY() - get().gameViewportPos.y);
         //ImGUI uses flipped vec.y than openGL, therefore we need to make the result negative thus the minus.
         currentY = -((currentY / get().gameViewportSize.y) * 2.0f - 1.0f);
         Vector4f temp = new Vector4f(currentX,currentY,0,1);

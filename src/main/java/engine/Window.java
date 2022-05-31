@@ -11,6 +11,7 @@ import scenes.LevelEditorSceneInitializer;
 import scenes.Scene;
 import scenes.SceneInitializer;
 import util.AssetPool;
+import util.Settings;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
@@ -235,12 +236,18 @@ public class Window implements Observer {
         }
     }
 
+//    public static int getWidth(){
+//        return get().width;
+//    }
     public static int getWidth(){
-        return get().width;
+        return Settings.getWindowWidth();
     }
 
+//    public static int getHeight(){
+//        return get().height;
+//    }
     public static int getHeight(){
-        return get().height;
+        return Settings.getWindowHeight();
     }
 
     public static void setWidth(int newWidth){

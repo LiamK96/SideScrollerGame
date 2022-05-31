@@ -5,6 +5,7 @@ import engine.*;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
+import org.joml.Vector4f;
 import renderer.DebugDraw;
 import util.AssetPool;
 
@@ -60,6 +61,18 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
     public void imgui(){
 
         ImGui.begin("Level Editor Stuff");
+        if (ImGui.collapsingHeader("Mouse Stuff")){
+            ImGui.text("Mouse World Coords ("+MouseListener.getWorldX()+" : "+MouseListener.getWorldY()+")");
+            ImGui.text("Mouse Screen Coords ("+MouseListener.getScreenX()+" : "+MouseListener.getScreenY()+")");
+            ImGui.text("Current ("+(MouseListener.getX()-MouseListener.get().gameViewportPos.x)+" : "
+                    +(MouseListener.getY()-MouseListener.get().gameViewportPos.y)+")");
+            ImGui.text("GameViewPort Pos Y: "+MouseListener.get().gameViewportPos.y);
+            ImGui.text("GameViewPort Size Y: "+MouseListener.get().gameViewportSize.y);
+            ImGui.text("Inverse View:\n" +Window.getScene().getCamera().getInverseView());
+            ImGui.text("Inverse Projection:\n" +Window.getScene().getCamera().getInverseProjection());
+        }
+
+
         levelEditorStuff.imgui();
         ImGui.end();
 

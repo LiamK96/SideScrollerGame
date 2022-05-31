@@ -14,6 +14,7 @@ import imgui.glfw.ImGuiImplGlfw;
 import imgui.type.ImBoolean;
 import renderer.PickingTexture;
 import scenes.Scene;
+import util.Settings;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
@@ -27,6 +28,8 @@ public class ImGuiLayer {
     //LWJGL3 Renderer, must be initialised
     private final ImGuiImplGl3 imGuiGl3 = new ImGuiImplGl3();
     private final ImGuiImplGlfw imGuiGlfw = new ImGuiImplGlfw();
+
+    public static boolean isViewportsEnabled = false;
 
     //GameViewWindow
     private GameViewWindow gameViewWindow;
@@ -59,8 +62,11 @@ public class ImGuiLayer {
         io.setIniFilename("imgui.ini"); // Save window config,  save with .ini file or null for no .ini
 
         io.addConfigFlags(ImGuiConfigFlags.DockingEnable); // Enable docking
-        //io.addConfigFlags(ImGuiConfigFlags.ViewportsEnable); //Enable viewports
+        //todo this changes mousecallback for Y by 30.0f, find a fix
+        io.addConfigFlags(ImGuiConfigFlags.ViewportsEnable); //Enable viewports
+        isViewportsEnabled = true;
         io.setBackendPlatformName("imgui_java_impl_glfw");
+
 
         // ------------------------------------------------------------
         // GLFW callbacks to handle user input
@@ -185,7 +191,7 @@ public class ImGuiLayer {
 
     private void endFrame() {
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        glViewport(0,0,Window.getWidth(), Window.getHeight());
+        glViewport(0,0, Settings.getWindowWidth(), Settings.getWindowHeight());
         glClearColor(0,0,0,1);
         glClear(GL_COLOR_BUFFER_BIT);
 
@@ -215,8 +221,8 @@ public class ImGuiLayer {
         int windowFlags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
 
         ImGuiViewport mainViewport = ImGui.getMainViewport();
-        ImGui.setNextWindowPos(mainViewport.getWorkPosX(),mainViewport.getWorkPosY());
-        ImGui.setNextWindowSize(mainViewport.getWorkSizeX(), mainViewport.getWorkSizeY());
+        ImGui.setNextWindowPos(mainViewport.getPosX(),mainViewport.getPosY());
+        ImGui.setNextWindowSize(mainViewport.getSizeX(), mainViewport.getSizeY());
         ImGui.setNextWindowViewport(mainViewport.getID());
 
         ImGui.setNextWindowPos(0.0f, 0.0f);
