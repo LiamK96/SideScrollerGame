@@ -45,9 +45,9 @@ public class MouseListener {
         get().yPos = ypos;
 
         //Todo find a fix for this bug
-        if (ImGuiLayer.isViewportsEnabled){
-            get().yPos+=30.0f;
-        }
+//        if (ImGuiLayer.isViewportsEnabled){
+//            get().yPos+=30.0f;
+//        }
     }
 
     public static void mouseButtonCallback(long window, int button, int action, int mods){
