@@ -41,7 +41,7 @@ public class GameViewWindow {
 
         ImGui.setWindowPos(windowPos.x,windowPos.y);
 
-
+        //todo: find the reason for this offset
         int offsetY = 54;
         int offsetX = 10;
         //Set static variables

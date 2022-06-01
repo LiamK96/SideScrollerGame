@@ -1,12 +1,13 @@
 package scenes;
 
 import components.*;
-import engine.*;
+import engine.GameObject;
+import engine.MouseListener;
+import engine.Prefabs;
+import engine.Window;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
-import org.joml.Vector4f;
-import renderer.DebugDraw;
 import util.AssetPool;
 
 public class LevelEditorSceneInitializer extends SceneInitializer {

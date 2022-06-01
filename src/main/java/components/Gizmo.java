@@ -74,7 +74,7 @@ public class Gizmo extends Component{
         if (this.activeGameObject != null){
             setActive();
 
-            //todo: move into own keyeditor component class
+            //todo: move into own key editor component class
             if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)
                     && KeyListener.keyBeginPress(GLFW_KEY_D)){
                 GameObject newObject = this.activeGameObject.copy();

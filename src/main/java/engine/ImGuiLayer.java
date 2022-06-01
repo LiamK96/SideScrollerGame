@@ -1,6 +1,5 @@
 package engine;
 
-import com.sun.tools.javac.Main;
 import editor.GameViewWindow;
 import editor.MenuBar;
 import editor.PropertiesWindow;
@@ -8,7 +7,9 @@ import editor.SceneHierarchyWindow;
 import imgui.*;
 import imgui.callback.ImStrConsumer;
 import imgui.callback.ImStrSupplier;
-import imgui.flag.*;
+import imgui.flag.ImGuiConfigFlags;
+import imgui.flag.ImGuiStyleVar;
+import imgui.flag.ImGuiWindowFlags;
 import imgui.gl3.ImGuiImplGl3;
 import imgui.glfw.ImGuiImplGlfw;
 import imgui.type.ImBoolean;

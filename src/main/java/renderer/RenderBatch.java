@@ -6,7 +6,6 @@ import engine.Window;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
-import util.AssetPool;
 
 import java.util.ArrayList;
 import java.util.List;

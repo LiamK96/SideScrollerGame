@@ -1,22 +1,11 @@
 package engine;
 
-import components.RigidBody;
-import components.Sprite;
-import components.SpriteRenderer;
-import components.Spritesheet;
-import imgui.ImGui;
-import imgui.ImVec2;
-import org.joml.Vector2f;
-import org.joml.Vector4f;
-import scenes.Scene;
-import util.AssetPool;
-
 import static org.lwjgl.glfw.GLFW.*;
 
 public class KeyListener {
     private static KeyListener instance;
-    private boolean keyPressed[] = new boolean[GLFW_KEY_LAST+2];
-    private boolean keyBeginPress[] = new boolean[GLFW_KEY_LAST+2];
+    private boolean[] keyPressed = new boolean[GLFW_KEY_LAST+2];
+    private boolean[] keyBeginPress = new boolean[GLFW_KEY_LAST+2];
 
     private KeyListener(){
 

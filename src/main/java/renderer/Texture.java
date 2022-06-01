@@ -1,7 +1,6 @@
 package renderer;
 
 import org.lwjgl.BufferUtils;
-import org.w3c.dom.Text;
 
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;

@@ -1,6 +1,5 @@
 package components;
 
-import engine.GameObject;
 import engine.KeyListener;
 import engine.Window;
 

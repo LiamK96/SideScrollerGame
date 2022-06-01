@@ -1,6 +1,5 @@
 package util;
 
-import components.Sprite;
 import components.Spritesheet;
 import renderer.Shader;
 import renderer.Texture;
