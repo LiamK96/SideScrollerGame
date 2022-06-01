@@ -2,6 +2,7 @@ package components;
 
 import editor.PropertiesWindow;
 import engine.MouseListener;
+import scenes.Scene;
 
 
 public class TranslateGizmo extends Gizmo{
@@ -12,12 +13,12 @@ public class TranslateGizmo extends Gizmo{
 
     @Override
     public void editorUpdate(float dt){
-        if (activeGameObject != null){
+        if (Scene.getActiveGameObject() != null){
             if (xAxisActive && !yAxisActive){
 
-                activeGameObject.transform.position.x = MouseListener.getWorldX();
+                Scene.getActiveGameObject().transform.position.x = MouseListener.getWorldX();
             } else if (yAxisActive){
-                activeGameObject.transform.position.y = MouseListener.getWorldY();
+                Scene.getActiveGameObject().transform.position.y = MouseListener.getWorldY();
             }
         }
 

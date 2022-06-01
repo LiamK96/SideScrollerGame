@@ -7,10 +7,12 @@ import engine.Window;
 import org.joml.Vector4f;
 import util.Settings;
 
+import java.util.List;
+
 import static org.lwjgl.glfw.GLFW.*;
 
 public class MouseControls extends Component {
-    GameObject holdingObject = null;
+    private GameObject holdingObject = null;
     private float debounceTime = 0.05f;
     private float debounce = debounceTime;
 
@@ -25,9 +27,21 @@ public class MouseControls extends Component {
     }
 
     public void place(){
+        List<GameObject> gameObjects = Window.getScene().getGameObjects();
+        for (GameObject go : gameObjects){
+            if (go.equals(this.holdingObject)){
+                continue;
+            }
+            if (go.transform.position.x == this.holdingObject.transform.position.x &&
+                go.transform.position.y == this.holdingObject.transform.position.y &&
+                go.transform.zIndex == this.holdingObject.transform.zIndex){
+                return;
+            }
+        }
         GameObject newObj = this.holdingObject.copy();
         newObj.getComponent(SpriteRenderer.class).setColor(new Vector4f(1,1,1,1));
         newObj.removeComponent(NonPickable.class);
+
         Window.getScene().addGameObjectToScene(newObj);
     }
 
@@ -52,4 +66,7 @@ public class MouseControls extends Component {
         }
     }
 
+    public GameObject getHoldingObject() {
+        return holdingObject;
+    }
 }

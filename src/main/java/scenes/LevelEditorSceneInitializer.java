@@ -78,7 +78,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         ImGui.end();
 
 
-        ImGui.begin("Test window");
+        ImGui.begin("Sprite Picker");
 
         ImVec2 windowPos = new ImVec2();
         ImGui.getWindowPos(windowPos);

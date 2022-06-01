@@ -4,6 +4,7 @@ import editor.PropertiesWindow;
 import engine.*;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
+import scenes.Scene;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -17,7 +18,7 @@ public class Gizmo extends Component{
     private GameObject yAxisObject;
     private SpriteRenderer xAxisSprite;
     private SpriteRenderer yAxisSprite;
-    protected GameObject activeGameObject = null;
+    //protected GameObject activeGameObject = Scene.getActiveGameObject();
 
     private Vector2f xAxisOffset = new Vector2f(15f/80f,-8f/80f);
     private Vector2f yAxisOffset = new Vector2f(-6f/80f, 15f/80f);
@@ -70,21 +71,23 @@ public class Gizmo extends Component{
             return;
         }
 
-        this.activeGameObject = this.propertiesWindow.getActiveGameObject();
-        if (this.activeGameObject != null){
+
+        //this.activeGameObject = Scene.getActiveGameObject();
+        System.out.println("Gizmo "+Scene.getActiveGameObject());
+        if (Scene.getActiveGameObject() != null){
             setActive();
 
             //todo: move into own key editor component class
             if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)
                     && KeyListener.keyBeginPress(GLFW_KEY_D)){
-                GameObject newObject = this.activeGameObject.copy();
+                GameObject newObject = Scene.getActiveGameObject().copy();
                 Window.getScene().addGameObjectToScene(newObject);
                 newObject.transform.position.add(new Vector2f(0.1f,0.1f));
                 return;
             } else if(KeyListener.keyBeginPress(GLFW_KEY_DELETE)){
-                activeGameObject.destroy();
+                Scene.getActiveGameObject().destroy();
                 this.setInactive();
-                this.propertiesWindow.setActiveGameObject(null);
+                Scene.setActiveGameObject(null);
                 return;
             }
         } else{
@@ -108,9 +111,9 @@ public class Gizmo extends Component{
             yAxisActive = false;
         }
 
-        if (this.activeGameObject != null){
-            this.xAxisObject.transform.position.set(this.activeGameObject.transform.position);
-            this.yAxisObject.transform.position.set(this.activeGameObject.transform.position);
+        if (Scene.getActiveGameObject() != null){
+            this.xAxisObject.transform.position.set(Scene.getActiveGameObject().transform.position);
+            this.yAxisObject.transform.position.set(Scene.getActiveGameObject().transform.position);
             this.xAxisObject.transform.position.add(xAxisOffset);
             this.yAxisObject.transform.position.add(yAxisOffset);
         }
@@ -122,7 +125,7 @@ public class Gizmo extends Component{
     }
 
     private void setInactive(){
-        this.activeGameObject = null;
+        //todo:Scene.setActiveGameObject(null);
         this.xAxisSprite.setColor(new Vector4f(0,0,0,0));
         this.yAxisSprite.setColor(new Vector4f(0,0,0,0));
     }

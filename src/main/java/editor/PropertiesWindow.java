@@ -3,6 +3,7 @@ package editor;
 import components.NonPickable;
 import engine.GameObject;
 import engine.MouseListener;
+import engine.Window;
 import imgui.ImGui;
 import physics2d.components.Box2DCollider;
 import physics2d.components.Circle2DCollider;
@@ -14,7 +15,7 @@ import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
 
 public class PropertiesWindow {
 
-    private GameObject activeGameObject = null;
+    //private GameObject activeGameObject = Scene.getActiveGameObject();
     private PickingTexture pickingTexture;
 
     private float debounceTime = 0.2f;
@@ -24,6 +25,7 @@ public class PropertiesWindow {
     }
 
     public void update(float dt, Scene currentScene){
+        System.out.println("Properties Window: "+Scene.getActiveGameObject());
         debounceTime -= dt;
 
         if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && debounceTime < 0 && !MouseListener.isDragging()){
@@ -32,9 +34,9 @@ public class PropertiesWindow {
             int gameObjectId = pickingTexture.readPixel(x,y);
             GameObject pickedObj = currentScene.getGameObject(gameObjectId);
             if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null){
-                activeGameObject = pickedObj;
+                Scene.setActiveGameObject(pickedObj);
             } else if (pickedObj == null && !MouseListener.isDragging()){
-                activeGameObject = null;
+                Scene.setActiveGameObject(null);
             }
 
             this.debounceTime = 0.2f;
@@ -42,41 +44,41 @@ public class PropertiesWindow {
     }
 
     public void imgui(){
-        if (activeGameObject != null){
+        if (Scene.getActiveGameObject() != null){
             ImGui.begin("Properties");
 
             if (ImGui.beginPopupContextWindow("ComponentAdder")){
                 if (ImGui.menuItem("Add RigidBody")){
-                    if (activeGameObject.getComponent(RigidBody2D.class) == null){
-                        activeGameObject.addComponent(new RigidBody2D());
+                    if (Scene.getActiveGameObject().getComponent(RigidBody2D.class) == null){
+                        Scene.getActiveGameObject().addComponent(new RigidBody2D());
                     }
                 }
                 if (ImGui.menuItem("Add Box Collider")){
-                    if (activeGameObject.getComponent(Box2DCollider.class) == null
-                            && activeGameObject.getComponent(Circle2DCollider.class) == null){
-                        activeGameObject.addComponent(new Box2DCollider());
+                    if (Scene.getActiveGameObject().getComponent(Box2DCollider.class) == null
+                            && Scene.getActiveGameObject().getComponent(Circle2DCollider.class) == null){
+                        Scene.getActiveGameObject().addComponent(new Box2DCollider());
                     }
                 }
                 if (ImGui.menuItem("Add Circle Collider")){
-                    if (activeGameObject.getComponent(Circle2DCollider.class) == null
-                            && activeGameObject.getComponent(Box2DCollider.class) == null){
-                        activeGameObject.addComponent(new Circle2DCollider());
+                    if (Scene.getActiveGameObject().getComponent(Circle2DCollider.class) == null
+                            && Scene.getActiveGameObject().getComponent(Box2DCollider.class) == null){
+                        Scene.getActiveGameObject().addComponent(new Circle2DCollider());
                     }
                 }
 
                 ImGui.endPopup();
             }
 
-            activeGameObject.imgui();
+            Scene.getActiveGameObject().imgui();
             ImGui.end();
         }
     }
 
     public GameObject getActiveGameObject(){
-        return this.activeGameObject;
+        return Scene.getActiveGameObject();
     }
 
-    public void setActiveGameObject(GameObject go) {
-        this.activeGameObject = go;
-    }
+//    public void setActiveGameObject(GameObject go) {
+//        this.activeGameObject = Scene.setActiveGameObject(go);
+//    }
 }
