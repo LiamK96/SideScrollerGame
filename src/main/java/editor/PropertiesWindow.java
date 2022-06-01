@@ -25,7 +25,6 @@ public class PropertiesWindow {
     }
 
     public void update(float dt, Scene currentScene){
-        System.out.println("Properties Window: "+Scene.getActiveGameObject());
         debounceTime -= dt;
 
         if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && debounceTime < 0 && !MouseListener.isDragging()){

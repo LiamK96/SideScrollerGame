@@ -5,6 +5,7 @@ import engine.KeyListener;
 import engine.MouseListener;
 import engine.Window;
 import org.joml.Vector4f;
+import scenes.Scene;
 import util.Settings;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class MouseControls extends Component {
         Window.getScene().addGameObjectToScene(go);
     }
 
-    public void place(){
+    public boolean place(){
         List<GameObject> gameObjects = Window.getScene().getGameObjects();
         for (GameObject go : gameObjects){
             if (go.equals(this.holdingObject)){
@@ -35,7 +36,7 @@ public class MouseControls extends Component {
             if (go.transform.position.x == this.holdingObject.transform.position.x &&
                 go.transform.position.y == this.holdingObject.transform.position.y &&
                 go.transform.zIndex == this.holdingObject.transform.zIndex){
-                return;
+                return false;
             }
         }
         GameObject newObj = this.holdingObject.copy();
@@ -43,6 +44,7 @@ public class MouseControls extends Component {
         newObj.removeComponent(NonPickable.class);
 
         Window.getScene().addGameObjectToScene(newObj);
+        return true;
     }
 
     @Override
@@ -55,7 +57,9 @@ public class MouseControls extends Component {
             holdingObject.transform.position.y = ((int)Math.floor(holdingObject.transform.position.y / Settings.gridHeight) * Settings.gridHeight) + Settings.gridHeight / 2.0f;
 
             if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)){
-                place();
+                if(!place()){
+                    Scene.setActiveGameObject(null);
+                }
                 debounce = debounceTime;
             }
 

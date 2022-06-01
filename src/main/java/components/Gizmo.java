@@ -73,7 +73,6 @@ public class Gizmo extends Component{
 
 
         //this.activeGameObject = Scene.getActiveGameObject();
-        System.out.println("Gizmo "+Scene.getActiveGameObject());
         if (Scene.getActiveGameObject() != null){
             setActive();
 
@@ -125,7 +124,7 @@ public class Gizmo extends Component{
     }
 
     private void setInactive(){
-        //todo:Scene.setActiveGameObject(null);
+        //Scene.setActiveGameObject(null);
         this.xAxisSprite.setColor(new Vector4f(0,0,0,0));
         this.yAxisSprite.setColor(new Vector4f(0,0,0,0));
     }
