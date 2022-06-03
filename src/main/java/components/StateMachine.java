@@ -49,6 +49,25 @@ public class StateMachine extends Component {
         this.states.add(state);
     }
 
+    public void refeshTextures(){
+        for (AnimationState state : states){
+            state.refreshTextures();
+        }
+    }
+
+    public void setDefaultState(String animationTitle){
+        for (AnimationState state : states){
+            if (state.title.equals(animationTitle)){
+                defaultStateTitle = animationTitle;
+                if (currentState == null){
+                    currentState = state;
+                    return;
+                }
+            }
+        }
+        System.out.println("StateMachine: Unable to find state: "+animationTitle);
+    }
+
     public void trigger(String trigger){
         for (StateTrigger state : stateTransfers.keySet()){
             if (state.state.equals(currentState.title) && state.trigger.equals(trigger)){

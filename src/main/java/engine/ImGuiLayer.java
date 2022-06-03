@@ -222,8 +222,8 @@ public class ImGuiLayer {
         int windowFlags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
 
         ImGuiViewport mainViewport = ImGui.getMainViewport();
-        ImGui.setNextWindowPos(mainViewport.getPosX(),mainViewport.getPosY());
-        ImGui.setNextWindowSize(mainViewport.getSizeX(), mainViewport.getSizeY());
+        ImGui.setNextWindowPos(mainViewport.getWorkPosX(),mainViewport.getWorkPosY());
+        ImGui.setNextWindowSize(mainViewport.getWorkSizeX(), mainViewport.getWorkSizeY());
         ImGui.setNextWindowViewport(mainViewport.getID());
 
         ImGui.setNextWindowPos(0.0f, 0.0f);

@@ -63,6 +63,9 @@ public class Gizmo extends Component{
         if (using){
             this.setInactive();
         }
+
+        xAxisObject.getComponent(SpriteRenderer.class).setColor(new Vector4f(0,0,0,0));
+        yAxisObject.getComponent(SpriteRenderer.class).setColor(new Vector4f(0,0,0,0));
     }
 
     @Override

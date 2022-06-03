@@ -81,7 +81,7 @@ public class GameViewWindow {
         ImGui.getContentRegionAvail(windowSize);
 
         float centerX = (windowSize.x/2.0f) - (gameScreenSize.x/2.0f);
-        float centerY = (windowSize.y/2.0f) - (gameScreenSize.y/2.0f);
+        float centerY = (windowSize.y/2.0f) - (gameScreenSize.y/2.0f) - 30.0f;
 
         return new ImVec2(centerX + ImGui.getCursorPosX(),centerY + ImGui.getCursorPosY());
     }

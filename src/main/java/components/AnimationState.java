@@ -1,6 +1,7 @@
 package components;
 
 import org.jbox2d.dynamics.Body;
+import util.AssetPool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,12 @@ public class AnimationState {
             return animationFrames.get(currentSprite).sprite;
         }
         return defaultSprite;
+    }
+
+    public void refreshTextures(){
+        for (Frame frame : animationFrames){
+            frame.sprite.setTexture(AssetPool.getTexture(frame.sprite.getTexture().getFilepath()));
+        }
     }
 
 }
