@@ -1,14 +1,15 @@
 package scenes;
 
 import components.*;
-import engine.GameObject;
-import engine.MouseListener;
-import engine.Prefabs;
-import engine.Window;
+import engine.*;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
 import util.AssetPool;
+
+import java.io.File;
+import java.util.Collection;
+import java.util.Collections;
 
 public class LevelEditorSceneInitializer extends SceneInitializer {
 
@@ -167,6 +168,25 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                     levelEditorStuff.getComponent(MouseControls.class).pickupObject(object);
                 }
                 ImGui.sameLine();
+
+                ImGui.endTabItem();
+            }
+
+            if (ImGui.beginTabItem("Sounds")){
+                Collection<Sound> sounds = AssetPool.getAllSounds();
+                for (Sound sound : sounds){
+                    File tmp = new File(sound.getFilepath());
+                    if (ImGui.button(tmp.getName())){
+                        if (!sound.isPlaying()){
+                            sound.play();
+                        } else {
+                            sound.stop();
+                        }
+                    }
+                    if (ImGui.getContentRegionAvailX() > 100){
+                        ImGui.sameLine();
+                    }
+                }
 
                 ImGui.endTabItem();
             }
