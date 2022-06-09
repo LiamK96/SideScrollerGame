@@ -31,7 +31,7 @@ public class Gizmo extends Component{
 
     private boolean using = false;
 
-    private PropertiesWindow propertiesWindow;
+    protected PropertiesWindow propertiesWindow;
 
     public Gizmo(Sprite arrowSprite, PropertiesWindow propertiesWindow){
         this.xAxisObject = Prefabs.generateSpriteObject(arrowSprite, gizmoWidth, gizmoHeight);
@@ -73,25 +73,9 @@ public class Gizmo extends Component{
         if (!using){
             return;
         }
-
-
         //this.activeGameObject = Scene.getActiveGameObject();
-        if (Scene.getActiveGameObject() != null){
+        if (propertiesWindow.getActiveGameObject() != null){
             setActive();
-
-            //todo: move into own key editor component class
-            if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)
-                    && KeyListener.keyBeginPress(GLFW_KEY_D)){
-                GameObject newObject = Scene.getActiveGameObject().copy();
-                Window.getScene().addGameObjectToScene(newObject);
-                newObject.transform.position.add(new Vector2f(0.1f,0.1f));
-                return;
-            } else if(KeyListener.keyBeginPress(GLFW_KEY_DELETE)){
-                Scene.getActiveGameObject().destroy();
-                this.setInactive();
-                Scene.setActiveGameObject(null);
-                return;
-            }
         } else{
             setInactive();
             return;
@@ -113,9 +97,9 @@ public class Gizmo extends Component{
             yAxisActive = false;
         }
 
-        if (Scene.getActiveGameObject() != null){
-            this.xAxisObject.transform.position.set(Scene.getActiveGameObject().transform.position);
-            this.yAxisObject.transform.position.set(Scene.getActiveGameObject().transform.position);
+        if (propertiesWindow.getActiveGameObject() != null){
+            this.xAxisObject.transform.position.set(propertiesWindow.getActiveGameObject().transform.position);
+            this.yAxisObject.transform.position.set(propertiesWindow.getActiveGameObject().transform.position);
             this.xAxisObject.transform.position.add(xAxisOffset);
             this.yAxisObject.transform.position.add(yAxisOffset);
         }

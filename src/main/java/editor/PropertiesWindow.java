@@ -11,11 +11,15 @@ import physics2d.components.RigidBody2D;
 import renderer.PickingTexture;
 import scenes.Scene;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
 
 public class PropertiesWindow {
 
-    //private GameObject activeGameObject = Scene.getActiveGameObject();
+    private List<GameObject> activeGameObjects = new ArrayList<>();
+    private GameObject activeGameObject = null;
     private PickingTexture pickingTexture;
 
     private float debounceTime = 0.2f;
@@ -33,9 +37,9 @@ public class PropertiesWindow {
             int gameObjectId = pickingTexture.readPixel(x,y);
             GameObject pickedObj = currentScene.getGameObject(gameObjectId);
             if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null){
-                Scene.setActiveGameObject(pickedObj);
+                setActiveGameObject(pickedObj);
             } else if (pickedObj == null && !MouseListener.isDragging()){
-                Scene.setActiveGameObject(null);
+                setActiveGameObject(null);
             }
 
             this.debounceTime = 0.2f;
@@ -43,41 +47,59 @@ public class PropertiesWindow {
     }
 
     public void imgui(){
-        if (Scene.getActiveGameObject() != null){
+        if (getActiveGameObject() != null){
             ImGui.begin("Properties");
 
             if (ImGui.beginPopupContextWindow("ComponentAdder")){
                 if (ImGui.menuItem("Add RigidBody")){
-                    if (Scene.getActiveGameObject().getComponent(RigidBody2D.class) == null){
-                        Scene.getActiveGameObject().addComponent(new RigidBody2D());
+                    if (getActiveGameObject().getComponent(RigidBody2D.class) == null){
+                        getActiveGameObject().addComponent(new RigidBody2D());
                     }
                 }
                 if (ImGui.menuItem("Add Box Collider")){
-                    if (Scene.getActiveGameObject().getComponent(Box2DCollider.class) == null
-                            && Scene.getActiveGameObject().getComponent(Circle2DCollider.class) == null){
-                        Scene.getActiveGameObject().addComponent(new Box2DCollider());
+                    if (getActiveGameObject().getComponent(Box2DCollider.class) == null
+                            && getActiveGameObject().getComponent(Circle2DCollider.class) == null){
+                        getActiveGameObject().addComponent(new Box2DCollider());
                     }
                 }
                 if (ImGui.menuItem("Add Circle Collider")){
-                    if (Scene.getActiveGameObject().getComponent(Circle2DCollider.class) == null
-                            && Scene.getActiveGameObject().getComponent(Box2DCollider.class) == null){
-                        Scene.getActiveGameObject().addComponent(new Circle2DCollider());
+                    if (getActiveGameObject().getComponent(Circle2DCollider.class) == null
+                            && getActiveGameObject().getComponent(Box2DCollider.class) == null){
+                        getActiveGameObject().addComponent(new Circle2DCollider());
                     }
                 }
 
                 ImGui.endPopup();
             }
 
-            Scene.getActiveGameObject().imgui();
+            getActiveGameObject().imgui();
             ImGui.end();
         }
     }
 
-    public GameObject getActiveGameObject(){
-        return Scene.getActiveGameObject();
+    public void clearSelected(){
+        this.activeGameObjects.clear();
     }
 
-//    public void setActiveGameObject(GameObject go) {
-//        this.activeGameObject = Scene.setActiveGameObject(go);
-//    }
+    public GameObject getActiveGameObject(){
+        return activeGameObjects.isEmpty() ? activeGameObject : null;
+    }
+
+    public void setActiveGameObject(GameObject go) {
+        if (activeGameObjects.size() > 1){
+            clearSelected();
+        }
+        this.activeGameObject = go;
+    }
+
+    public List<GameObject> getActiveGameObjects(){
+        return activeGameObjects;
+    }
+
+    public void addActiveGameObject(GameObject go){
+        if (activeGameObject != null){
+            activeGameObject =null;
+        }
+        this.activeGameObjects.add(go);
+    }
 }

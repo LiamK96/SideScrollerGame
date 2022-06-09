@@ -31,7 +31,7 @@ public class Scene {
     private SceneInitializer sceneInitializer;
     private Physics2D physics2D;
 
-    private static GameObject activeGameObject = null;
+    //private static GameObject activeGameObject = null;
 
     public Scene(SceneInitializer sceneInitializer){
         this.sceneInitializer = sceneInitializer;
@@ -202,12 +202,12 @@ public class Scene {
         }
     }
 
-    public static GameObject getActiveGameObject() {
-        return activeGameObject;
-    }
+//    public static GameObject getActiveGameObject() {
+//        return activeGameObject;
+//    }
 
-    public static GameObject setActiveGameObject(GameObject go){
-        activeGameObject = go;
-        return activeGameObject;
-    }
+//    public static GameObject setActiveGameObject(GameObject go){
+//        activeGameObject = go;
+//        return activeGameObject;
+//    }
 }

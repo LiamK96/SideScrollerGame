@@ -13,12 +13,12 @@ public class TranslateGizmo extends Gizmo{
 
     @Override
     public void editorUpdate(float dt){
-        if (Scene.getActiveGameObject() != null){
+        if (propertiesWindow.getActiveGameObject() != null){
             if (xAxisActive && !yAxisActive){
 
-                Scene.getActiveGameObject().transform.position.x = MouseListener.getWorldX();
+                propertiesWindow.getActiveGameObject().transform.position.x = MouseListener.getWorldX();
             } else if (yAxisActive){
-                Scene.getActiveGameObject().transform.position.y = MouseListener.getWorldY();
+                propertiesWindow.getActiveGameObject().transform.position.y = MouseListener.getWorldY();
             }
         }
 

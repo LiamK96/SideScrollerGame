@@ -12,12 +12,12 @@ public class ScaleGizmo extends Gizmo{
 
     @Override
     public void editorUpdate(float dt){
-        if (Scene.getActiveGameObject() != null){
+        if (propertiesWindow.getActiveGameObject() != null){
             if (xAxisActive && !yAxisActive){
                 //todo fix scale gizmo mouse bug
-                Scene.getActiveGameObject().transform.scale.x -= MouseListener.getWorldX();
+                propertiesWindow.getActiveGameObject().transform.scale.x -= MouseListener.getWorldX();
             } else if (yAxisActive){
-                Scene.getActiveGameObject().transform.scale.y -= MouseListener.getWorldY();
+                propertiesWindow.getActiveGameObject().transform.scale.y -= MouseListener.getWorldY();
             }
         }
 

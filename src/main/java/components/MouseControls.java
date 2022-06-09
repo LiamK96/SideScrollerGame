@@ -62,7 +62,7 @@ public class MouseControls extends Component {
 
             if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)){
                 if(!place()){
-                    Scene.setActiveGameObject(null);
+                    Window.getImGuiLayer().getPropertiesWindow().setActiveGameObject(null);
                 }
                 debounce = debounceTime;
             }
