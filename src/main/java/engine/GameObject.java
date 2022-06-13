@@ -82,6 +82,7 @@ public class GameObject {
     }
 
     public void imgui(){
+        ImGui.text("Unique ID: "+ uid);
         for (Component c : components){
             if (ImGui.collapsingHeader(c.getClass().getSimpleName()))
                 c.imgui();

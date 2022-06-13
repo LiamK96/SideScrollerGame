@@ -15,18 +15,29 @@ import static org.lwjgl.glfw.GLFW.*;
 
 public class KeyControls extends Component{
 
+    private float debounceTime = 0.1f;
+    private float debounce = debounceTime;
+
     private PropertiesWindow propertiesWindow = Window.getImGuiLayer().getPropertiesWindow();
 
     @Override
     public void editorUpdate(float dt) {
+        debounce -=dt;
+
         if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)
-                && KeyListener.keyBeginPress(GLFW_KEY_D) && propertiesWindow.getActiveGameObject() != null) {
+                && KeyListener.keyBeginPress(GLFW_KEY_D)
+                && propertiesWindow.getActiveGameObject() != null
+                && debounce<=0) {
             GameObject newObject = propertiesWindow.getActiveGameObject().copy();
             Window.getScene().addGameObjectToScene(newObject);
             newObject.transform.position.add(new Vector2f(Settings.gridWidth, 0.0f));
             propertiesWindow.setActiveGameObject(newObject);
-        } else if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL) &&
-                    KeyListener.isKeyPressed(GLFW_KEY_D) && !propertiesWindow.getActiveGameObjects().isEmpty()){
+
+            debounce = debounceTime;
+        } else if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)
+                && KeyListener.isKeyPressed(GLFW_KEY_D)
+                && !propertiesWindow.getActiveGameObjects().isEmpty()
+                && debounce <= 0){
             List<GameObject> gameObjects = new ArrayList<>(propertiesWindow.getActiveGameObjects());
             propertiesWindow.clearSelected();
             for (GameObject go : gameObjects){
@@ -34,15 +45,18 @@ public class KeyControls extends Component{
                 Window.getScene().addGameObjectToScene(copy);
                 propertiesWindow.addActiveGameObject(copy);
             }
-        } else if(KeyListener.keyBeginPress(GLFW_KEY_DELETE)){
+            debounce = debounceTime;
+        } else if(KeyListener.keyBeginPress(GLFW_KEY_DELETE)
+                && debounce <= 0){
             for (GameObject go : propertiesWindow.getActiveGameObjects()){
                 go.destroy();
             }
-            propertiesWindow.clearSelected();
             if (propertiesWindow.getActiveGameObject() != null){
                 propertiesWindow.getActiveGameObject().destroy();
-                propertiesWindow.setActiveGameObject(null);
             }
+            propertiesWindow.clearSelected();
+
+            debounce = debounceTime;
         }
     }
 

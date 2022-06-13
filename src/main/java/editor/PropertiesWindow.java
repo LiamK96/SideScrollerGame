@@ -69,7 +69,7 @@ public class PropertiesWindow {
     }
 
     public void setActiveGameObject(GameObject go) {
-        if (activeGameObjects.size() > 1){
+        if (activeGameObjects.size() > 0){
             clearSelected();
         }
         this.activeGameObject = go;
@@ -80,9 +80,7 @@ public class PropertiesWindow {
     }
 
     public void addActiveGameObject(GameObject go){
-        if (activeGameObject != null){
-            activeGameObject =null;
-        }
+        this.activeGameObject = null;
         this.activeGameObjects.add(go);
     }
 

@@ -1,17 +1,22 @@
 package components;
 
+import editor.PropertiesWindow;
 import engine.GameObject;
 import engine.KeyListener;
 import engine.MouseListener;
 import engine.Window;
 import org.joml.Vector2f;
+import org.joml.Vector2i;
 import org.joml.Vector4f;
 import renderer.DebugDraw;
 import renderer.PickingTexture;
 import scenes.Scene;
 import util.Settings;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -115,8 +120,50 @@ public class MouseControls extends Component {
             DebugDraw.addBox2D(new Vector2f(boxSelectStartWorld).add(halfSize),
                     new Vector2f(halfSize).mul(2.0f), 0);
 
-        } else {
+        } else if (boxSelectSet){
             boxSelectSet = false;
+            int screenStartX = (int)boxSelectStart.x;
+            int screenStartY = (int)boxSelectStart.y;
+            int screenEndX = (int)boxSelectEnd.x;
+            int screenEndY = (int)boxSelectEnd.y;
+            boxSelectStart.zero();
+            boxSelectEnd.zero();
+
+            if (screenEndX < screenStartX){
+                int temp = screenStartX;
+                screenStartX = screenEndX;
+                screenEndX = temp;
+            }
+            if (screenEndY < screenStartY){
+                int temp = screenStartY;
+                screenStartY = screenEndY;
+                screenEndY = temp;
+            }
+
+            float[] gameObjectIds = pickingTexture.readPixels(
+                    new Vector2i(screenStartX,screenStartY),
+                    new Vector2i(screenEndX,screenEndY));
+
+
+
+            Set<Integer> uniqueGameObjectIds = new HashSet<>();
+
+            for (float objId : gameObjectIds){
+                uniqueGameObjectIds.add((int)objId);
+            }
+
+            for (Integer objId : uniqueGameObjectIds){
+                GameObject pickedObj = Window.getScene().getGameObject(objId);
+                if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null){
+                    Window.getImGuiLayer().getPropertiesWindow().addActiveGameObject(pickedObj);
+                }
+            }
+
+            if (Window.getImGuiLayer().getPropertiesWindow().getActiveGameObjects().size() == 1){
+                Window.getImGuiLayer().getPropertiesWindow().setActiveGameObject(
+                        Window.getImGuiLayer().getPropertiesWindow().getActiveGameObjects().get(0));
+            }
+
         }
     }
 
