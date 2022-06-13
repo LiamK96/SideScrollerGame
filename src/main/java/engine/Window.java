@@ -42,8 +42,7 @@ public class Window implements Observer {
 
 
     private Window(){
-        this.width = 1920;
-        this.height = 1080;
+
         this.title = "Definitely not an Italian Plumber";
 
         EventSystem.addObserver(this);
@@ -121,6 +120,10 @@ public class Window implements Observer {
         if (!glfwInit()){
             throw new IllegalStateException("Unable to initialise GLFW");
         }
+
+        //Get window Resolution
+        this.width = Settings.getMonitorWidth();
+        this.height = Settings.getMonitorHeight();
 
         //Configure GLFW
         glfwDefaultWindowHints();
@@ -233,7 +236,7 @@ public class Window implements Observer {
 
 
             if (dt >= 0.0f) {
-                DebugDraw.draw(); //draw lines and other objects
+
                 Renderer.bindShader(defaultShader);
                 if (runtimePlaying) {
                     currentScene.update(dt);
@@ -241,6 +244,7 @@ public class Window implements Observer {
                     currentScene.editorUpdate(dt);
                 }
                 currentScene.render();
+                DebugDraw.draw(); //draw lines and other objects
             }
             this.framebuffer.unbind();
 

@@ -2,11 +2,13 @@ package util;
 
 import engine.Window;
 import org.lwjgl.glfw.GLFW;
+import org.lwjgl.glfw.GLFWVidMode;
 
 public class Settings {
 
     public static float gridWidth = 0.25f;
     public static float gridHeight = 0.25f;
+    public static GLFWVidMode vidMode = null;
 
     public static int[] getWindowSizes(){
         int[] windowSize = new int[2];
@@ -26,5 +28,21 @@ public class Settings {
 
     public static int getWindowHeight(){
         return getWindowSizes()[1];
+    }
+
+    public static int[] getMonitorSizes(){
+        if (vidMode == null){
+            System.out.println(GLFW.glfwGetMonitors());
+            vidMode = GLFW.glfwGetVideoMode(GLFW.glfwGetPrimaryMonitor());
+        }
+        return new int[] {vidMode.width(), vidMode.height()};
+    }
+
+    public static int getMonitorWidth(){
+        return getMonitorSizes()[0];
+    }
+
+    public static int getMonitorHeight(){
+        return getMonitorSizes()[1];
     }
 }

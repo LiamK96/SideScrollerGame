@@ -102,6 +102,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
         ImGui.begin("Level Editor Stuff");
         if (ImGui.collapsingHeader("Mouse Stuff")){
+            ImGui.text("Mouse is dragging: "+MouseListener.isDragging());
             ImGui.text("Mouse World Coords ("+MouseListener.getWorldX()+" : "+MouseListener.getWorldY()+")");
             ImGui.text("Mouse Screen Coords ("+MouseListener.getScreenX()+" : "+MouseListener.getScreenY()+")");
             ImGui.text("Current ("+(MouseListener.getX()-MouseListener.get().gameViewportPos.x)+" : "
