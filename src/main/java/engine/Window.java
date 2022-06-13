@@ -25,7 +25,10 @@ import static org.lwjgl.system.MemoryUtil.NULL;
 
 public class Window implements Observer {
 
-    private int width, height;
+    //These are defaults and will change in init()
+    private int width = 1080;
+    private int height = 1920;
+
     private String title;
     private long glfwWindow;
     private ImGuiLayer imGuiLayer;
@@ -42,7 +45,6 @@ public class Window implements Observer {
 
 
     private Window(){
-
         this.title = "Definitely not an Italian Plumber";
 
         EventSystem.addObserver(this);
@@ -122,8 +124,10 @@ public class Window implements Observer {
         }
 
         //Get window Resolution
-        this.width = Settings.getMonitorWidth();
-        this.height = Settings.getMonitorHeight();
+        if (Settings.getVidMode() != null) {
+            this.width = Settings.getMonitorWidth();
+            this.height = Settings.getMonitorHeight();
+        }
 
         //Configure GLFW
         glfwDefaultWindowHints();

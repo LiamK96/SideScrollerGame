@@ -30,12 +30,16 @@ public class Settings {
         return getWindowSizes()[1];
     }
 
-    public static int[] getMonitorSizes(){
+    public static GLFWVidMode getVidMode(){
         if (vidMode == null){
             System.out.println(GLFW.glfwGetMonitors());
             vidMode = GLFW.glfwGetVideoMode(GLFW.glfwGetPrimaryMonitor());
         }
-        return new int[] {vidMode.width(), vidMode.height()};
+        return vidMode;
+    }
+
+    public static int[] getMonitorSizes(){
+        return new int[] {getVidMode().width(), getVidMode().height()};
     }
 
     public static int getMonitorWidth(){
