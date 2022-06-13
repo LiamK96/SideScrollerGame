@@ -1,10 +1,12 @@
 package editor;
 
 import components.NonPickable;
+import components.SpriteRenderer;
 import engine.GameObject;
 import engine.MouseListener;
 import engine.Window;
 import imgui.ImGui;
+import org.joml.Vector4f;
 import physics2d.components.Box2DCollider;
 import physics2d.components.Circle2DCollider;
 import physics2d.components.RigidBody2D;
@@ -19,6 +21,7 @@ import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
 public class PropertiesWindow {
 
     private List<GameObject> activeGameObjects = new ArrayList<>();
+    private List<Vector4f> activeGameObjectsOgColor = new ArrayList<>();
     private GameObject activeGameObject = null;
     private PickingTexture pickingTexture;
 
@@ -60,6 +63,17 @@ public class PropertiesWindow {
     }
 
     public void clearSelected(){
+        if (activeGameObjectsOgColor.size()>0){
+            int i = 0;
+            for (GameObject go : activeGameObjects){
+                SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
+                if (spr != null){
+                    spr.setColor(this.activeGameObjectsOgColor.get(i));
+                }
+                i++;
+            }
+            activeGameObjectsOgColor.clear();
+        }
         this.activeGameObjects.clear();
         this.activeGameObject = null;
     }
@@ -81,6 +95,13 @@ public class PropertiesWindow {
 
     public void addActiveGameObject(GameObject go){
         this.activeGameObject = null;
+        SpriteRenderer spriteRenderer = go.getComponent(SpriteRenderer.class);
+        if (spriteRenderer != null){
+            this.activeGameObjectsOgColor.add(new Vector4f(spriteRenderer.getColor()));
+            spriteRenderer.setColor(new Vector4f(0.8f,0.8f,0.0f,0.8f));
+        } else {
+            this.activeGameObjectsOgColor.add(new Vector4f());
+        }
         this.activeGameObjects.add(go);
     }
 

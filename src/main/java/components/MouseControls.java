@@ -105,8 +105,10 @@ public class MouseControls extends Component {
             }
 
             this.debounce = 0.2f;
-        } else if (MouseListener.isDragging() && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) &&
-                    Window.getImGuiLayer().getPropertiesWindow().getActiveGameObject() == null){
+        } else if (MouseListener.isDragging()
+                && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)
+                && Window.getImGuiLayer().getPropertiesWindow().getActiveGameObject() == null
+                && this.holdingObject == null){
             if (!boxSelectSet){
                 Window.getImGuiLayer().getPropertiesWindow().clearSelected();
                 boxSelectStart = MouseListener.getScreen();
