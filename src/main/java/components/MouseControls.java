@@ -45,9 +45,10 @@ public class MouseControls extends Component {
             if (go.equals(this.holdingObject)){
                 continue;
             }
-            if (go.transform.position.x == this.holdingObject.transform.position.x &&
-                go.transform.position.y == this.holdingObject.transform.position.y &&
-                go.transform.zIndex == this.holdingObject.transform.zIndex){
+            if (go.transform.position.x == this.holdingObject.transform.position.x
+                    && go.transform.position.y == this.holdingObject.transform.position.y
+                    && go.transform.zIndex == this.holdingObject.transform.zIndex
+                    && go.getComponent(NonPickable.class) == null){
                 return false;
             }
         }

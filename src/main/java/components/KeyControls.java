@@ -15,7 +15,7 @@ import static org.lwjgl.glfw.GLFW.*;
 
 public class KeyControls extends Component{
 
-    private float debounceTime = 0.1f;
+    private float debounceTime = 0.05f;
     private float debounce = debounceTime;
 
     private PropertiesWindow propertiesWindow = Window.getImGuiLayer().getPropertiesWindow();
@@ -45,7 +45,7 @@ public class KeyControls extends Component{
                 Window.getScene().addGameObjectToScene(copy);
                 propertiesWindow.addActiveGameObject(copy);
             }
-            debounce = debounceTime;
+            debounce = 0.5f;
         } else if(KeyListener.keyBeginPress(GLFW_KEY_DELETE)
                 && debounce <= 0){
             for (GameObject go : propertiesWindow.getActiveGameObjects()){
