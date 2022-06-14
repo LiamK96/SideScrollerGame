@@ -4,10 +4,7 @@ import engine.GameObject;
 import engine.Transform;
 import org.jbox2d.collision.shapes.PolygonShape;
 import org.jbox2d.common.Vec2;
-import org.jbox2d.dynamics.Body;
-import org.jbox2d.dynamics.BodyDef;
-import org.jbox2d.dynamics.BodyType;
-import org.jbox2d.dynamics.World;
+import org.jbox2d.dynamics.*;
 import org.joml.Vector2f;
 import physics2d.components.Box2DCollider;
 import physics2d.components.Circle2DCollider;
@@ -22,6 +19,10 @@ public class Physics2D {
     private int velocityIterations = 8;
     private int positionIterations = 3;
 
+    public Physics2D(){
+        world.setContactListener(new EngineContactListener());
+    }
+
     public void add(GameObject go){
         RigidBody2D rb = go.getComponent(RigidBody2D.class);
         if (rb != null && rb.getRawBody() == null){
@@ -34,6 +35,7 @@ public class Physics2D {
             bodyDef.angularDamping = rb.getAngularDamping();
             bodyDef.linearDamping = rb.getLinearDamping();
             bodyDef.fixedRotation = rb.isFixedRotation();
+            bodyDef.userData = rb.gameObject; //all userdata will always be gameObject
             bodyDef.bullet = rb.isContinuousCollision();
 
             switch (rb.getBodyType()){
@@ -43,29 +45,19 @@ public class Physics2D {
             }
 
             //Determine collision shape
-            PolygonShape shape = new PolygonShape();
+            Body body = this.world.createBody(bodyDef);
+            rb.setRawBody(body);
             Circle2DCollider circleCollider = null;
             Box2DCollider boxCollider = null;
 
             //If statement structure assigns the object then checks to see if its null
             if ((circleCollider = go.getComponent(Circle2DCollider.class)) != null){
-                shape.setRadius(circleCollider.getRadius());
-            } else if ((boxCollider = go.getComponent(Box2DCollider.class)) != null){
-                //mul by Half is to match with box2d physics engine, box2d draws shape from center
-                Vector2f halfSize = new Vector2f(boxCollider.getHalfSize()).mul(0.5f);
-                Vector2f offset = boxCollider.getOffset();
-                Vector2f origin = new Vector2f(boxCollider.getOrigin());
-                shape.setAsBox(halfSize.x,halfSize.y, new Vec2(origin.x,origin.y),0);
-
-                //Fit physics box over sprite box
-                Vec2 pos = bodyDef.position;
-                float xPos = pos.x + offset.x;
-                float yPos = pos.y + offset.y;
-                bodyDef.position.set(xPos,yPos);
+                //todo: implement addCircleCollider
+                //shape.setRadius(circleCollider.getRadius());
             }
-            Body body = this.world.createBody(bodyDef);
-            rb.setRawBody(body);
-            body.createFixture(shape, rb.getMass());
+            if ((boxCollider = go.getComponent(Box2DCollider.class)) != null){
+                addBox2DCollider(rb, boxCollider);
+            }
         }
     }
 
@@ -86,6 +78,35 @@ public class Physics2D {
             physicsTime -= physicsTimeStep;
             world.step(physicsTimeStep, velocityIterations, positionIterations);
         }
-
     }
+
+    public void addBox2DCollider(RigidBody2D rb, Box2DCollider boxCollider){
+        Body body = rb.getRawBody();
+        assert body != null : "Raw body must not be null";
+
+        PolygonShape shape = new PolygonShape();
+
+        //mul by Half is to match with box2d physics engine, box2d draws shape from center
+        Vector2f halfSize = new Vector2f(boxCollider.getHalfSize()).mul(0.5f);
+        Vector2f offset = boxCollider.getOffset();
+        Vector2f origin = new Vector2f(boxCollider.getOrigin());
+        shape.setAsBox(halfSize.x,halfSize.y, new Vec2(offset.x,offset.y),0);
+
+        FixtureDef fixtureDef = new FixtureDef();
+        fixtureDef.shape = shape;
+        fixtureDef.density = 1.0f;
+        //todo: implement rb.getFriction();
+        //fixtureDef.friction = rb.getFriction();
+        fixtureDef.userData = boxCollider.gameObject;
+        //todo: implemennt rb.isSensor();
+        //fixtureDef.isSensor = rb.isSensor();
+        body.createFixture(fixtureDef);
+    }
+
+    public RaycastInfo raycast(GameObject requestingObject, Vector2f point1, Vector2f point2){
+        RaycastInfo callback = new RaycastInfo(requestingObject);
+        world.raycast(callback, new Vec2(point1.x,point1.y),new Vec2(point2.x,point2.y));
+        return callback;
+    }
+
 }
