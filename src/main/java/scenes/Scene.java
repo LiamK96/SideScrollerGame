@@ -202,6 +202,10 @@ public class Scene {
         }
     }
 
+    public Physics2D getPhysics(){
+        return this.physics2D;
+    }
+
 //    public static GameObject getActiveGameObject() {
 //        return activeGameObject;
 //    }

@@ -1,6 +1,8 @@
 package physics2d.components;
 
 import components.Component;
+import engine.Window;
+import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.Body;
 import org.joml.Vector2f;
 import physics2d.enums.BodyType;
@@ -12,6 +14,10 @@ public class RigidBody2D extends Component {
     private float linearDamping = 0.9f;
     private float mass = 0.0f;
     private BodyType bodyType = BodyType.DYNAMIC;
+    private float friction = 0.1f;
+    private float angularVelocity = 0.0f;
+    private float gravityScale = 1.0f;
+    private boolean isSensor = false;
 
     private boolean fixedRotation = false;
     private boolean continuousCollision = false;
@@ -27,12 +33,27 @@ public class RigidBody2D extends Component {
         }
     }
 
+    public void addVelocity(Vector2f force){
+        if (rawBody != null) {
+            rawBody.applyForceToCenter(new Vec2(force.x, force.y));
+        }
+    }
+
+    public void addImpulse(Vector2f impulse){
+        if (rawBody != null){
+            rawBody.applyLinearImpulse(new Vec2(impulse.x,impulse.y), rawBody.getWorldCenter());
+        }
+    }
+
     public Vector2f getVelocity() {
         return velocity;
     }
 
     public void setVelocity(Vector2f velocity) {
-        this.velocity = velocity;
+        this.velocity.set(velocity);
+        if (rawBody != null){
+            this.rawBody.setLinearVelocity(new Vec2(velocity.x,velocity.y));
+        }
     }
 
     public float getAngularDamping() {
@@ -90,4 +111,54 @@ public class RigidBody2D extends Component {
     public void setRawBody(Body rawBody) {
         this.rawBody = rawBody;
     }
+
+    public float getFriction() {
+        return friction;
+    }
+
+    public void setFriction(float friction) {
+        this.friction = friction;
+    }
+
+    public float getAngularVelocity() {
+        return angularVelocity;
+    }
+
+    public void setAngularVelocity(float angularVelocity) {
+        this.angularVelocity = angularVelocity;
+        if (rawBody != null){
+            this.rawBody.setAngularVelocity(angularVelocity);
+        }
+    }
+
+    public float getGravityScale() {
+        return gravityScale;
+    }
+
+    public void setGravityScale(float gravityScale) {
+        this.gravityScale = gravityScale;
+        if (rawBody != null){
+            this.rawBody.setGravityScale(gravityScale);
+        }
+    }
+
+    public boolean isSensor() {
+        return isSensor;
+    }
+
+    public void setAsSensor(){
+        isSensor = true;
+        if (rawBody != null){
+            Window.getPhysics().setIsSensor(this);
+        }
+    }
+    public void setAsNotSensor(){
+        isSensor = false;
+        if (rawBody != null){
+            Window.getPhysics().setNotSensor(this);
+        }
+    }
+
+
+
 }

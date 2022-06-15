@@ -10,6 +10,7 @@ import org.lwjgl.openal.ALC;
 import org.lwjgl.openal.ALCCapabilities;
 import org.lwjgl.openal.ALCapabilities;
 import org.lwjgl.opengl.GL;
+import physics2d.Physics2D;
 import renderer.*;
 import scenes.LevelEditorSceneInitializer;
 import scenes.Scene;
@@ -304,6 +305,10 @@ public class Window implements Observer {
 
     public static long getGlfwWindow(){
         return get().glfwWindow;
+    }
+
+    public static Physics2D getPhysics(){
+        return currentScene.getPhysics();
     }
 
 
