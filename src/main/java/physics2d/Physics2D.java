@@ -10,6 +10,7 @@ import org.jbox2d.dynamics.*;
 import org.joml.Vector2f;
 import physics2d.components.Box2DCollider;
 import physics2d.components.Circle2DCollider;
+import physics2d.components.PillboxCollider;
 import physics2d.components.RigidBody2D;
 
 public class Physics2D {
@@ -114,6 +115,30 @@ public class Physics2D {
 
     }
 
+    public void resetPillboxCollider(RigidBody2D rb, PillboxCollider pillboxCollider){
+        Body body = rb.getRawBody();
+        if (body == null){
+            return;
+        }
+        int size = fixtureListSize(body);
+        for (int i = 0; i < size; i++){
+            body.destroyFixture(body.getFixtureList());
+        }
+
+        addPillboxCollider(rb, pillboxCollider);
+        body.resetMassData();
+
+    }
+
+    public void addPillboxCollider(RigidBody2D rb, PillboxCollider pillbox){
+        Body body = rb.getRawBody();
+        assert body != null : "Raw body must not be null";
+
+        addBox2DCollider(rb, pillbox.getBox());
+        addCircleCollider(rb, pillbox.getTopCircle());
+        addCircleCollider(rb, pillbox.getBottomCircle());
+    }
+
     public void addBox2DCollider(RigidBody2D rb, Box2DCollider boxCollider){
         Body body = rb.getRawBody();
         assert body != null : "Raw body must not be null";
@@ -189,6 +214,10 @@ public class Physics2D {
             fixture.m_isSensor = false;
             fixture = fixture.m_next;
         }
+    }
+
+    public boolean isLocked(){
+        return world.isLocked();
     }
 
 }
