@@ -12,12 +12,15 @@ public class EImGui {
     private static float defaultColumnWidth = 150.0f;
 
     public static void drawVec2Control(String label, Vector2f values){
-        drawVec2Control(label,values,0.0f,defaultColumnWidth);
+        drawVec2Control(label,values,0.0f,defaultColumnWidth, 0.1f);
     }
     public static void drawVec2Control(String label, Vector2f values, float resetValue){
-        drawVec2Control(label, values, resetValue, defaultColumnWidth);
+        drawVec2Control(label, values, resetValue, defaultColumnWidth, 0.1f);
     }
     public static void drawVec2Control(String label, Vector2f values, float resetValue, float columnWidth){
+        drawVec2Control(label,values,resetValue,columnWidth,0.1f);
+    }
+    public static void drawVec2Control(String label, Vector2f values, float resetValue, float columnWidth, float stepSize){
         ImGui.pushID(label);
 
         ImGui.columns(2);
@@ -43,7 +46,7 @@ public class EImGui {
 
         ImGui.sameLine();
         float[] vecValuesX = {values.x};
-        ImGui.dragFloat("##x", vecValuesX, 0.1f);
+        ImGui.dragFloat("##x", vecValuesX, stepSize);
         ImGui.popItemWidth();
         ImGui.sameLine();
 
@@ -59,7 +62,7 @@ public class EImGui {
 
         ImGui.sameLine();
         float[] vecValuesY = {values.y};
-        ImGui.dragFloat("##y", vecValuesY, 0.1f);
+        ImGui.dragFloat("##y", vecValuesY, stepSize);
         ImGui.popItemWidth();
         ImGui.sameLine();
 

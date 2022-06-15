@@ -53,8 +53,8 @@ public class Transform extends Component {
     @Override
     public void imgui(){
         gameObject.name = EImGui.inputText("Name: ", gameObject.name);
-        EImGui.drawVec2Control("Position", this.position);
-        EImGui.drawVec2Control("Scale", this.scale, .250f);
+        EImGui.drawVec2Control("Position", this.position, 0.125f,150.0f, 0.01f);
+        EImGui.drawVec2Control("Scale", this.scale, .250f, 150.0f, 0.01f);
         this.rotation = EImGui.dragFloat("Rotation", this.rotation);
         this.zIndex = EImGui.dragInt("Z-Index", this.zIndex);
     }
