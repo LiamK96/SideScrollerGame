@@ -7,3 +7,5 @@ Tools used:
 - Dear ImGui
 - GSON
 - Box2D Physics
+- OpenAL
+- Gradle
