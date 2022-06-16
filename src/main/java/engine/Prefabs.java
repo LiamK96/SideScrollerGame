@@ -209,18 +209,18 @@ public class Prefabs {
 
         player.addComponent(stateMachine);
 
-//        PillboxCollider pb = new PillboxCollider();
-//        pb.width = 0.39f;
-//        pb.height =0.31f;
-//        RigidBody2D rb = new RigidBody2D();
-//        rb.setBodyType(BodyType.DYNAMIC);
-//        rb.setContinuousCollision(false);
-//        rb.setFixedRotation(true);
-//        rb.setMass(25.0f);
-//
-//        player.addComponent(rb);
-//        player.addComponent(pb);
-//        player.addComponent(new PlayerController());
+        PillboxCollider pb = new PillboxCollider();
+        pb.width = 0.39f;
+        pb.height =0.31f;
+        RigidBody2D rb = new RigidBody2D();
+        rb.setBodyType(BodyType.DYNAMIC);
+        rb.setContinuousCollision(false);
+        rb.setFixedRotation(true);
+        rb.setMass(25.0f);
+
+        player.addComponent(rb);
+        player.addComponent(pb);
+        player.addComponent(new PlayerController());
 
         return player;
     }
