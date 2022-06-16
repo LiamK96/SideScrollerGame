@@ -2,6 +2,7 @@ package components;
 
 import imgui.ImGui;
 import imgui.type.ImBoolean;
+import imgui.type.ImInt;
 import imgui.type.ImString;
 
 import java.util.ArrayList;
@@ -126,11 +127,39 @@ public class StateMachine extends Component {
 
     @Override
     public void imgui(){
+
+        //todo: fix animation selection
+        String[] stateTitles = new String[states.size()];
+        for (int i = 0; i < stateTitles.length; i++){
+            stateTitles[i] = states.get(i).title;
+        }
+        ImInt imIndex = new ImInt(0);
+
+        if (ImGui.combo("test", imIndex, stateTitles, stateTitles.length)){
+            this.currentState = states.get(imIndex.get());
+        }
+
         int index = 0;
         for (AnimationState state : states){
             ImString title = new ImString(state.title);
             ImGui.inputText("State: ", title);
             state.title = title.get();
+
+//            String[] enumValues = getEnumValues(type);
+//            String enumType = ((Enum)value).name();
+//            ImInt index = new ImInt(indexOf(enumType, enumValues));
+//            index.
+//            if (ImGui.combo(field.getName(), index, enumValues, enumValues.length)){
+//                field.set(this, type.getEnumConstants()[index.get()]);
+//            }
+//
+//            String[] stateTitles = new String[states.size()];
+//            for (int i = 0; i < stateTitles.length; i++){
+//                stateTitles[i] = states.get(i).title;
+//            }
+//            ImGui.combo();
+
+
             ImBoolean doesLoop = new ImBoolean(state.doesLoop);
             ImGui.checkbox("Loops: ", doesLoop);
             state.setLoop(doesLoop.get());

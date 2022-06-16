@@ -9,7 +9,6 @@ import util.AssetPool;
 
 import java.io.File;
 import java.util.Collection;
-import java.util.Collections;
 
 public class LevelEditorSceneInitializer extends SceneInitializer {
 
@@ -45,9 +44,18 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         AssetPool.addSpriteSheet("assets/images/spritesheets/decorationsAndBlocks.png",
                 new Spritesheet(AssetPool.getTexture("assets/images/spritesheets/decorationsAndBlocks.png"),
                         16,16,81,0));
+        AssetPool.addSpriteSheet("assets/images/spritesheets/pipes.png",
+                new Spritesheet(AssetPool.getTexture("assets/images/spritesheets/pipes.png"),
+                        16,16,7,0));
         AssetPool.addSpriteSheet("assets/images/spritesheet.png",
                 new Spritesheet(AssetPool.getTexture("assets/images/spritesheet.png"),
                         16,16,26,0));
+        AssetPool.addSpriteSheet("assets/images/bigSpritesheet.png",
+                new Spritesheet(AssetPool.getTexture("assets/images/bigSpritesheet.png"),
+                        16,32,42,0));
+        AssetPool.addSpriteSheet("assets/images/turtle.png",
+                new Spritesheet(AssetPool.getTexture("assets/images/turtle.png"),
+                        16,24,4,0));
         AssetPool.addSpriteSheet("assets/images/items.png",
                 new Spritesheet(AssetPool.getTexture("assets/images/items.png"),
                         16,16,33,0));
@@ -173,7 +181,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 Vector2f[] texCoords = sprite.getTexCoords();
 
                 if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
-                    GameObject object = Prefabs.generateMario();
+                    GameObject object = Prefabs.generatePlayer();
 
                     //Attach to mouse cursor
                     levelEditorStuff.getComponent(MouseControls.class).pickupObject(object);
