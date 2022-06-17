@@ -37,7 +37,7 @@ public class DebugDraw {
         //Create the VBO and bind some buffers
         vboID = glGenBuffers();
         glBindBuffer(GL_ARRAY_BUFFER,vboID);
-        glBufferData(GL_ARRAY_BUFFER, vertexArray.length * Float.BYTES, GL_DYNAMIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, (long)vertexArray.length * Float.BYTES, GL_DYNAMIC_DRAW);
 
         //Enable Vertex array attributes
         glVertexAttribPointer(0,3,GL_FLOAT, false, 6*Float.BYTES,0);
@@ -116,7 +116,6 @@ public class DebugDraw {
     // Draw 2d line    //
     /////////////////////
     public static void addLine2D(Vector2f from, Vector2f to){
-        // ToDo add constants for common colours
         addLine2D(from, to, new Vector3f(0,1,0), 1);
     }
 
@@ -135,7 +134,6 @@ public class DebugDraw {
     // Draw 2d Box     //
     /////////////////////
     public static void addBox2D(Vector2f center, Vector2f dimensions){
-        // ToDo add constants for common colours
         addBox2D(center, dimensions, 0, new Vector3f(0,0,1), 1);
     }
 
@@ -181,7 +179,6 @@ public class DebugDraw {
     // Draw 2d Circle  //
     /////////////////////
     public static void addCircle(Vector2f center, float radius){
-        // ToDo add constants for common colours
         addCircle(center, radius, new Vector3f(0,1,0), 1);
     }
 

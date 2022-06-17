@@ -96,7 +96,6 @@ public class GameObject {
         }
     }
 
-    //Todo: Find better way to do this
     public GameObject copy(){
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(Component.class, new ComponentDeserializer())

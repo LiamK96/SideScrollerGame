@@ -140,17 +140,6 @@ public class StateMachine extends Component {
 
         ImGui.text("Current State : "+currentState.title);
 
-//        //todo: fix animation selection
-//        String[] stateTitles = new String[states.size()];
-//        for (int i = 0; i < stateTitles.length; i++){
-//            stateTitles[i] = states.get(i).title;
-//        }
-//        ImInt imIndex = new ImInt(0);
-//
-//        if (ImGui.combo("test", imIndex, stateTitles, stateTitles.length)){
-//            this.currentState = states.get(imIndex.get());
-//        }
-
         int index = 0;
         for (AnimationState state : states){
             ImString title = new ImString(state.title);
