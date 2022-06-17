@@ -42,7 +42,7 @@ public class StateMachine extends Component {
     private transient AnimationState currentState = null;
     private String defaultStateTitle = "";
 
-    public void addStateTrigger(String to, String from, String onTrigger){
+    public void addStateTrigger(String from, String to, String onTrigger){
         this.stateTransfers.put(new StateTrigger(from, onTrigger), to);
     }
 
@@ -50,7 +50,7 @@ public class StateMachine extends Component {
         this.states.add(state);
     }
 
-    public void refeshTextures(){
+    public void refreshTextures(){
         for (AnimationState state : states){
             state.refreshTextures();
         }
@@ -73,24 +73,25 @@ public class StateMachine extends Component {
         for (StateTrigger state : stateTransfers.keySet()){
             if (state.state.equals(currentState.title) && state.trigger.equals(trigger)){
                 if (stateTransfers.get(state) != null){
-                    int newStateIndex = -1;
-                    int index = 0;
-                    for (AnimationState s : states){
-                        if (s.title.equals(stateTransfers.get(state))){
-                            newStateIndex = index;
-                            break;
-                        }
-                        index++;
-                    }
-
-                    if (newStateIndex>-1){
+                    int newStateIndex = stateIndexOf(stateTransfers.get(state));
+                    if (newStateIndex > -1){
                         currentState = states.get(newStateIndex);
                     }
                 }
-                return;
             }
         }
         System.out.println("Unable to find trigger: "+trigger);
+    }
+
+    public int stateIndexOf(String stateTitle){
+        int index = 0;
+        for (AnimationState state : states){
+            if (state.title.equals(stateTitle)){
+                return index;
+            }
+            index++;
+        }
+        return -1;
     }
 
     @Override
@@ -128,16 +129,18 @@ public class StateMachine extends Component {
     @Override
     public void imgui(){
 
-        //todo: fix animation selection
-        String[] stateTitles = new String[states.size()];
-        for (int i = 0; i < stateTitles.length; i++){
-            stateTitles[i] = states.get(i).title;
-        }
-        ImInt imIndex = new ImInt(0);
+        ImGui.text("Current State : "+currentState.title);
 
-        if (ImGui.combo("test", imIndex, stateTitles, stateTitles.length)){
-            this.currentState = states.get(imIndex.get());
-        }
+//        //todo: fix animation selection
+//        String[] stateTitles = new String[states.size()];
+//        for (int i = 0; i < stateTitles.length; i++){
+//            stateTitles[i] = states.get(i).title;
+//        }
+//        ImInt imIndex = new ImInt(0);
+//
+//        if (ImGui.combo("test", imIndex, stateTitles, stateTitles.length)){
+//            this.currentState = states.get(imIndex.get());
+//        }
 
         int index = 0;
         for (AnimationState state : states){

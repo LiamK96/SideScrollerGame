@@ -225,4 +225,8 @@ public class Physics2D {
         return world.isLocked();
     }
 
+    public Vector2f getGravity(){
+        return new Vector2f(world.getGravity().x,world.getGravity().y);
+    }
+
 }

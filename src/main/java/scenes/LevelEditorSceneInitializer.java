@@ -102,7 +102,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
             if (go.getComponent(StateMachine.class) != null){
                 StateMachine stateMachine = go.getComponent(StateMachine.class);
-                stateMachine.refeshTextures();
+                stateMachine.refreshTextures();
             }
         }
 

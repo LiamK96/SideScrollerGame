@@ -6,7 +6,6 @@ import org.joml.Vector2i;
 import org.joml.Vector4f;
 import renderer.DebugDraw;
 import renderer.PickingTexture;
-import scenes.LevelEditorSceneInitializer;
 import scenes.Scene;
 import util.Settings;
 
@@ -53,7 +52,7 @@ public class MouseControls extends Component {
         newObj.removeComponent(NonPickable.class);
         if (newObj.getComponent(StateMachine.class) != null){
             StateMachine stateMachine = newObj.getComponent(StateMachine.class);
-            stateMachine.refeshTextures();
+            stateMachine.refreshTextures();
         }
 
         Window.getScene().addGameObjectToScene(newObj);
