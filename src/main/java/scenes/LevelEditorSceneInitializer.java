@@ -5,6 +5,9 @@ import engine.*;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
+import physics2d.components.Box2DCollider;
+import physics2d.components.RigidBody2D;
+import physics2d.enums.BodyType;
 import util.AssetPool;
 
 import java.io.File;
@@ -142,6 +145,10 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
                 //Generate available tiles
                 for (int i = 0; i < sprites.size(); i++) {
+
+                    if (i == 34) continue;
+                    if (i >= 38 && i < 61) continue;
+
                     Sprite sprite = sprites.getSprite(i);
                     float spriteWidth = sprite.getWidth() * 4;
                     float spriteHeight = sprite.getHeight() * 4;
@@ -153,7 +160,17 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
                     if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
                         GameObject object = Prefabs.generateSpriteObject(sprite, 0.25f, 0.25f); //old (sprite, spriteWidth, spriteHeight)
-
+                        RigidBody2D rb = new RigidBody2D();
+                        rb.setBodyType(BodyType.STATIC);
+                        object.addComponent(rb);
+                        Box2DCollider b2d = new Box2DCollider();
+                        b2d.setHalfSize(new Vector2f(0.25f,0.25f));
+                        object.addComponent(b2d);
+                        object.addComponent(new Ground());
+                        if (i ==12){
+                            //todo: add BreakableBrick
+                            //object.addComponent(new BreakableBrick());
+                        }
                         //Attach to mouse cursor
                         levelEditorStuff.getComponent(MouseControls.class).pickupObject(object);
                     }
@@ -232,5 +249,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         }
         ImGui.end();
     }
+
+
 
 }

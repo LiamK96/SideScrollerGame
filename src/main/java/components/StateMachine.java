@@ -145,21 +145,6 @@ public class StateMachine extends Component {
             ImGui.inputText("State: ", title);
             state.title = title.get();
 
-//            String[] enumValues = getEnumValues(type);
-//            String enumType = ((Enum)value).name();
-//            ImInt index = new ImInt(indexOf(enumType, enumValues));
-//            index.
-//            if (ImGui.combo(field.getName(), index, enumValues, enumValues.length)){
-//                field.set(this, type.getEnumConstants()[index.get()]);
-//            }
-//
-//            String[] stateTitles = new String[states.size()];
-//            for (int i = 0; i < stateTitles.length; i++){
-//                stateTitles[i] = states.get(i).title;
-//            }
-//            ImGui.combo();
-
-
             ImBoolean doesLoop = new ImBoolean(state.doesLoop);
             ImGui.checkbox("Loops: ", doesLoop);
             state.setLoop(doesLoop.get());

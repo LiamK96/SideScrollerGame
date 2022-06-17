@@ -53,8 +53,10 @@ public class Physics2D {
             Body body = this.world.createBody(bodyDef);
             body.m_mass = rb.getMass();
             rb.setRawBody(body);
+
             Circle2DCollider circleCollider = null;
             Box2DCollider boxCollider = null;
+            PillboxCollider pillboxCollider = null;
 
             //If statement structure assigns the object then checks to see if its null
             if ((circleCollider = go.getComponent(Circle2DCollider.class)) != null){
@@ -62,6 +64,9 @@ public class Physics2D {
             }
             if ((boxCollider = go.getComponent(Box2DCollider.class)) != null){
                 addBox2DCollider(rb, boxCollider);
+            }
+            if ((pillboxCollider = go.getComponent(PillboxCollider.class)) != null){
+                addPillboxCollider(rb, pillboxCollider);
             }
         }
     }

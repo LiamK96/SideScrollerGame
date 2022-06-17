@@ -4,7 +4,6 @@ import editor.PropertiesWindow;
 import engine.*;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
-import scenes.Scene;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -23,13 +22,14 @@ public class Gizmo extends Component{
     private Vector2f xAxisOffset = new Vector2f(15f/80f,-8f/80f);
     private Vector2f yAxisOffset = new Vector2f(-6f/80f, 15f/80f);
 
-    private float gizmoWidth = 15f / 80f;
-    private float gizmoHeight = 30f / 80f;
+    private float gizmoWidth = 15f / 100f;
+    private float gizmoHeight = 30f / 100f;
 
     protected boolean xAxisActive = false;
     protected boolean yAxisActive = false;
 
     private boolean using = false;
+    private boolean isBeingUsed = false;
 
     protected PropertiesWindow propertiesWindow;
 
@@ -116,6 +116,23 @@ public class Gizmo extends Component{
         this.yAxisSprite.setColor(new Vector4f(0,0,0,0));
     }
 
+    public boolean isHoveringOver(){
+        return propertiesWindow.getActiveGameObject() != null && isBeingUsed();
+    }
+
+    private boolean isBeingUsed(){
+        if (isBeingUsed) {
+            if (!MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)){
+                isBeingUsed = false;
+            }
+        } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)
+                && this.using
+                && (checkXHoverState() || checkYHoverState())){
+            this.isBeingUsed = true;
+        }
+        return isBeingUsed;
+    }
+
     private boolean checkXHoverState(){
         Vector2f mousePos = MouseListener.getWorld();
         if (mousePos.x <= xAxisObject.transform.position.x + (gizmoHeight/2.0f) &&
@@ -149,5 +166,9 @@ public class Gizmo extends Component{
     public void notUsing(){
         this.using = false;
         this.setInactive();
+    }
+
+    public boolean isUsing(){
+        return this.using;
     }
 }

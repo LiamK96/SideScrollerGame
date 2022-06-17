@@ -11,6 +11,8 @@ public class GizmoSystem extends Component{
 
     private float debounceTime = 0.2f;
 
+    protected static boolean isUsingGizmos = false;
+
     public GizmoSystem(Spritesheet gizmoSprites){
         this.gizmoSprites = gizmoSprites;
     }
@@ -29,9 +31,11 @@ public class GizmoSystem extends Component{
         if (usingGizmo == 0){
             gameObject.getComponent(TranslateGizmo.class).setUsing();
             gameObject.getComponent(ScaleGizmo.class).notUsing();
+            isUsingGizmos = gameObject.getComponent(TranslateGizmo.class).isHoveringOver();
         } else if (usingGizmo == 1){
             gameObject.getComponent(TranslateGizmo.class).notUsing();
             gameObject.getComponent(ScaleGizmo.class).setUsing();
+            isUsingGizmos = gameObject.getComponent(ScaleGizmo.class).isHoveringOver();
         }
 
         if (KeyListener.isKeyPressed(GLFW_KEY_E) && debounceTime <= 0){
@@ -42,5 +46,7 @@ public class GizmoSystem extends Component{
             }
             debounceTime = 0.2f;
         }
+
     }
+
 }

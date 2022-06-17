@@ -65,7 +65,7 @@ public class PillboxCollider extends Component {
         topCircle.setRadius(circleRadius);
         bottomCircle.setRadius(circleRadius);
         topCircle.setOffset(new Vector2f(offset).add(0, boxHeight / 4.0f));
-        topCircle.setOffset(new Vector2f(offset).sub(0, boxHeight / 4.0f));
+        bottomCircle.setOffset(new Vector2f(offset).sub(0, boxHeight / 4.0f));
         box.setHalfSize(new Vector2f(width/2.0f, boxHeight/2.0f));
         box.setOffset(offset);
     }

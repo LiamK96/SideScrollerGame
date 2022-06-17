@@ -1,19 +1,15 @@
 package components;
 
-import editor.PropertiesWindow;
-import engine.GameObject;
-import engine.KeyListener;
-import engine.MouseListener;
-import engine.Window;
+import engine.*;
 import org.joml.Vector2f;
 import org.joml.Vector2i;
 import org.joml.Vector4f;
 import renderer.DebugDraw;
 import renderer.PickingTexture;
+import scenes.LevelEditorSceneInitializer;
 import scenes.Scene;
 import util.Settings;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -108,8 +104,9 @@ public class MouseControls extends Component {
             this.debounce = 0.2f;
         } else if (MouseListener.isDragging()
                 && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)
-                && Window.getImGuiLayer().getPropertiesWindow().getActiveGameObject() == null
+                && !GizmoSystem.isUsingGizmos
                 && this.holdingObject == null){
+
             if (!boxSelectSet){
                 Window.getImGuiLayer().getPropertiesWindow().clearSelected();
                 boxSelectStart = MouseListener.getScreen();
