@@ -108,7 +108,7 @@ public class Prefabs {
 
         //Death animation
         AnimationState die = new AnimationState();
-        die.title = "die";
+        die.title = "Die";
         die.addFrame(playerSprites.getSprite(6), 01.f);
         die.setLoop(false);
 
