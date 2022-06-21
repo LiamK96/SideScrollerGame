@@ -17,7 +17,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
     private Spritesheet sprites;
 
-    private GameObject levelEditorStuff;
+    private GameObject levelEditorComponents;
 
     public LevelEditorSceneInitializer(){
 
@@ -29,15 +29,15 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         sprites = AssetPool.getSpriteSheet("assets/images/spritesheets/decorationsAndBlocks.png");
         Spritesheet gizmos = AssetPool.getSpriteSheet("assets/images/gizmos.png");
 
-        levelEditorStuff = scene.createGameobject("LevelEditor");
-        levelEditorStuff.setNoSerialize();
-        levelEditorStuff.addComponent(new MouseControls());
-        levelEditorStuff.addComponent(new KeyControls());
-        levelEditorStuff.addComponent(new GridLines());
-        levelEditorStuff.addComponent(new EditorCamera(scene.getCamera()));
-        levelEditorStuff.addComponent(new GizmoSystem(gizmos));
+        levelEditorComponents = scene.createGameobject("LevelEditor");
+        levelEditorComponents.setNoSerialize();
+        levelEditorComponents.addComponent(new MouseControls());
+        levelEditorComponents.addComponent(new KeyControls());
+        levelEditorComponents.addComponent(new GridLines());
+        levelEditorComponents.addComponent(new EditorCamera(scene.getCamera()));
+        levelEditorComponents.addComponent(new GizmoSystem(gizmos));
 
-        scene.addGameObjectToScene(levelEditorStuff);
+        scene.addGameObjectToScene(levelEditorComponents);
 
     }
 
@@ -125,7 +125,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         }
 
 
-        levelEditorStuff.imgui();
+        levelEditorComponents.imgui();
         ImGui.end();
 
 
@@ -172,7 +172,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                             //object.addComponent(new BreakableBrick());
                         }
                         //Attach to mouse cursor
-                        levelEditorStuff.getComponent(MouseControls.class).pickupObject(object);
+                        levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
                     }
                     //Pop custom ID
                     ImGui.popID();
@@ -201,7 +201,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                     GameObject object = Prefabs.generatePlayer();
 
                     //Attach to mouse cursor
-                    levelEditorStuff.getComponent(MouseControls.class).pickupObject(object);
+                    levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
                 }
                 ImGui.sameLine();
 
@@ -217,7 +217,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                     GameObject object = Prefabs.generateQuestionBlock();
 
                     //Attach to mouse cursor
-                    levelEditorStuff.getComponent(MouseControls.class).pickupObject(object);
+                    levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
                 }
                 ImGui.sameLine();
 
@@ -250,6 +250,10 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         ImGui.end();
     }
 
+    @Override
+    public GameObject getSceneComponentObject(){
+        return this.levelEditorComponents;
+    }
 
 
 }

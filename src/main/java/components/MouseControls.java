@@ -31,6 +31,7 @@ public class MouseControls extends Component {
         this.holdingObject = go;
         this.holdingObject.getComponent(SpriteRenderer.class).setColor(new Vector4f(0.8f,0.8f,0.8f,0.5f));
         this.holdingObject.addComponent(new NonPickable());
+        this.holdingObject.name = "Holding Object";
         Window.getScene().addGameObjectToScene(go);
     }
 
@@ -162,11 +163,17 @@ public class MouseControls extends Component {
                 Window.getImGuiLayer().getPropertiesWindow().setActiveGameObject(
                         Window.getImGuiLayer().getPropertiesWindow().getActiveGameObjects().get(0));
             }
-
         }
     }
 
     public GameObject getHoldingObject() {
         return holdingObject;
+    }
+
+    public void destroyHoldingObject(){
+        if (holdingObject != null) {
+            holdingObject.destroy();
+            holdingObject = null;
+        }
     }
 }

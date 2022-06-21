@@ -1,5 +1,6 @@
 package engine;
 
+import components.MouseControls;
 import observers.EventSystem;
 import observers.Observer;
 import observers.events.Event;
@@ -77,6 +78,11 @@ public class Window implements Observer {
     public void onNotify(GameObject go, Event event) {
         switch (event.type){
             case GameEngineStartPlay:
+                if (currentScene.getSceneInitializerComponentsObject().getComponent(MouseControls.class) != null){
+                    currentScene.getSceneInitializerComponentsObject()
+                            .getComponent(MouseControls.class).destroyHoldingObject();
+                    currentScene.editorUpdate(0.0f);
+                }
                 this.runtimePlaying = true;
                 currentScene.save();
                 Window.changeScene(new LevelEditorSceneInitializer());

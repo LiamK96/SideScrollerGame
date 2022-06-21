@@ -208,6 +208,10 @@ public class Scene {
         return this.physics2D;
     }
 
+    public GameObject getSceneInitializerComponentsObject(){
+        return sceneInitializer.getSceneComponentObject();
+    }
+
 //    public static GameObject getActiveGameObject() {
 //        return activeGameObject;
 //    }

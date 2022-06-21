@@ -24,6 +24,7 @@ public class GameViewWindow {
 
         if (ImGui.menuItem("Play", "", isPlaying, !isPlaying)){
             isPlaying = true;
+
             EventSystem.notify(null, new Event(EventType.GameEngineStartPlay));
         }
         if (ImGui.menuItem("Stop", "", !isPlaying, isPlaying)){
