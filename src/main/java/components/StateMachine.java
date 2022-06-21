@@ -69,15 +69,8 @@ public class StateMachine extends Component {
         System.out.println("StateMachine: Unable to find state: "+animationTitle);
     }
 
-    private boolean triggerCheck(String title, String trigger){
-        if (title.equals("Run") && trigger.equals("startRunning")) return false;
-        if (title.equals("Switch Direction") && trigger.equals("switchDirection")) return false;
-        if (title.equals("Idle") && trigger.equals("stopRunning")) return false;
-        return true;
-    }
 
     public void trigger(String trigger){
-        if (!triggerCheck(currentState.title, trigger)) return;
         for (StateTrigger state : stateTransfers.keySet()){
             if (state.state.equals(currentState.title) && state.trigger.equals(trigger)){
                 if (stateTransfers.get(state) != null){
@@ -89,7 +82,6 @@ public class StateMachine extends Component {
                 }
             }
         }
-        System.out.println("Unable to find trigger: "+trigger + " From: "+ currentState.title);
     }
 
     public int stateIndexOf(String stateTitle){
