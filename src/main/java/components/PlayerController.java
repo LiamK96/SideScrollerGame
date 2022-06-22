@@ -1,7 +1,9 @@
 package components;
 
+import engine.GameObject;
 import engine.KeyListener;
 import engine.Window;
+import org.jbox2d.dynamics.contacts.Contact;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 import physics2d.RaycastInfo;
@@ -149,4 +151,22 @@ public class PlayerController extends Component {
         //DebugDraw.addLine2D(raycastRightBegin,raycastRightEnd,new Vector3f(1,0,0));
     }
 
+    @Override
+    public void beginCollision(GameObject collidingObject, Contact contact, Vector2f contactNormal){
+        if (isDead) return;
+
+        if (collidingObject.getComponent(Ground.class) != null){
+            if (Math.abs(contactNormal.x)>0.8f){
+                this.velocity.x = 0;
+            } else if (contactNormal.y > 0.8f){
+                this.velocity.y = 0;
+                this.acceleration.y = 0;
+                this.jumpTime = 0;
+            }
+        }
+    }
+
+    public boolean isSmall(){
+        return this.playerState == PlayerState.Small;
+    }
 }

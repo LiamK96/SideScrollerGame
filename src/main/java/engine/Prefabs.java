@@ -221,6 +221,7 @@ public class Prefabs {
         player.addComponent(rb);
         player.addComponent(pb);
         player.addComponent(new PlayerController());
+        player.name = "player";
 
         return player;
     }

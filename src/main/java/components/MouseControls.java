@@ -31,7 +31,9 @@ public class MouseControls extends Component {
         this.holdingObject = go;
         this.holdingObject.getComponent(SpriteRenderer.class).setColor(new Vector4f(0.8f,0.8f,0.8f,0.5f));
         this.holdingObject.addComponent(new NonPickable());
-        this.holdingObject.name = "Holding Object";
+        if (this.holdingObject.name.equals("Sprite_Object_Gen")) {
+            this.holdingObject.name = "Holding Object";
+        }
         Window.getScene().addGameObjectToScene(go);
     }
 
@@ -51,6 +53,9 @@ public class MouseControls extends Component {
         GameObject newObj = this.holdingObject.copy();
         newObj.getComponent(SpriteRenderer.class).setColor(new Vector4f(1,1,1,1));
         newObj.removeComponent(NonPickable.class);
+        if (newObj.name.equals("Holding Object")) {
+            newObj.name = "Block: " + newObj.getUid();
+        }
         if (newObj.getComponent(StateMachine.class) != null){
             StateMachine stateMachine = newObj.getComponent(StateMachine.class);
             stateMachine.refreshTextures();

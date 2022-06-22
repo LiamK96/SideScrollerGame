@@ -26,10 +26,18 @@ public class RigidBody2D extends Component {
 
     @Override
     public void update(float dt){
-        //match physics engine change to game engine change.
-        if (rawBody != null){
-            this.gameObject.transform.position.set(rawBody.getPosition().x, rawBody.getPosition().y);
-            this.gameObject.transform.rotation = (float)Math.toDegrees(rawBody.getAngle());
+        if (this.bodyType == BodyType.DYNAMIC || this.bodyType == BodyType.KINEMATIC) {
+            //match physics engine change to game engine change.
+            if (rawBody != null) {
+                this.gameObject.transform.position.set(rawBody.getPosition().x, rawBody.getPosition().y);
+                this.gameObject.transform.rotation = (float) Math.toDegrees(rawBody.getAngle());
+                Vec2 vel = rawBody.getLinearVelocity();
+                this.velocity.set(vel.x,vel.y);
+            }
+        } else if (this.bodyType == BodyType.STATIC){
+            this.rawBody.setTransform(
+                    new Vec2(this.gameObject.transform.position.x,this.gameObject.transform.position.y)
+                    ,this.gameObject.transform.rotation);
         }
     }
 
