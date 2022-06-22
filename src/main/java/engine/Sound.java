@@ -82,6 +82,9 @@ public class Sound {
             alSourcePlay(sourceId);
             isPlaying = true;
         }
+    }    public void playWithOverlap(){
+            alSourcePlay(sourceId);
+            isPlaying = true;
     }
 
     public void stop(){
