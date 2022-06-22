@@ -70,18 +70,19 @@ public class StateMachine extends Component {
     }
 
 
-    public void trigger(String trigger){
+    public boolean trigger(String trigger){
         for (StateTrigger state : stateTransfers.keySet()){
             if (state.state.equals(currentState.title) && state.trigger.equals(trigger)){
                 if (stateTransfers.get(state) != null){
                     int newStateIndex = stateIndexOf(stateTransfers.get(state));
                     if (newStateIndex > -1){
                         currentState = states.get(newStateIndex);
-                        return;
+                        return true;
                     }
                 }
             }
         }
+        return false;
     }
 
     public int stateIndexOf(String stateTitle){

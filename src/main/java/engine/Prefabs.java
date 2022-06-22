@@ -1,6 +1,8 @@
 package engine;
 
 import components.*;
+import org.joml.Vector2f;
+import physics2d.components.Box2DCollider;
 import physics2d.components.PillboxCollider;
 import physics2d.components.RigidBody2D;
 import physics2d.enums.BodyType;
@@ -227,21 +229,40 @@ public class Prefabs {
     }
 
     public static GameObject generateQuestionBlock(){
-        Spritesheet playerSprites = AssetPool.getSpriteSheet("assets/images/items.png");
-        GameObject questionBlock = generateSpriteObject(playerSprites.getSprite(0),0.25f,0.25f);
+        Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
+        GameObject questionBlock = generateSpriteObject(items.getSprite(0),0.25f,0.25f);
 
         AnimationState blink = new AnimationState();
-        blink.title = "blink";
+        blink.title = "Blink";
         float defaultFrameTime = 0.23f;
-        blink.addFrame(playerSprites.getSprite(0), 0.57f);
-        blink.addFrame(playerSprites.getSprite(1), defaultFrameTime);
-        blink.addFrame(playerSprites.getSprite(2), defaultFrameTime);
+        blink.addFrame(items.getSprite(0), 0.57f);
+        blink.addFrame(items.getSprite(1), defaultFrameTime);
+        blink.addFrame(items.getSprite(2), defaultFrameTime);
         blink.setLoop(true);
+
+        AnimationState inactive = new AnimationState();
+        inactive.title = "Inactive";
+        inactive.addFrame(items.getSprite(3), 0.1f);
+        inactive.setLoop(false);
 
         StateMachine stateMachine = new StateMachine();
         stateMachine.addState(blink);
+        stateMachine.addState(inactive);
+
         stateMachine.setDefaultState(blink.title);
+
+        stateMachine.addStateTrigger(blink.title,inactive.title,"setInactive");
+
         questionBlock.addComponent(stateMachine);
+        questionBlock.addComponent(new QuestionBlock());
+
+        RigidBody2D rb = new RigidBody2D();
+        rb.setBodyType(BodyType.STATIC);
+        questionBlock.addComponent(rb);
+        Box2DCollider b2d = new Box2DCollider();
+        b2d.setHalfSize(new Vector2f(0.25f,0.25f));
+        questionBlock.addComponent(b2d);
+        questionBlock.addComponent(new Ground());
 
         return questionBlock;
     }
