@@ -43,9 +43,9 @@ public class QuestionBlock extends Block{
     }
 
     private void doCoin(PlayerController playerController) {
-//        GameObject coin = Prefabs.generateBlockCoin();
-//        coin.transform.position.set(this.gameObject.transform.position);
-//        coin.transform.position.y += 0.25f;
-//        Window.getScene().addGameObjectToScene(coin);
+        GameObject coin = Prefabs.generateBlockCoin();
+        coin.transform.position.set(this.gameObject.transform.position);
+        coin.transform.position.y += 0.25f;
+        Window.getScene().addGameObjectToScene(coin);
     }
 }
