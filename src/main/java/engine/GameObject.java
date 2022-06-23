@@ -113,6 +113,7 @@ public class GameObject {
         if (spr != null && spr.getTexture() != null){
             spr.setTexture(AssetPool.getTexture(spr.getTexture().getFilepath()));
         }
+        obj.name = "Block: "+obj.getUid();
         return obj;
     }
 

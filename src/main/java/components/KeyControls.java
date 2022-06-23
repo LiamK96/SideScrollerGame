@@ -32,6 +32,9 @@ public class KeyControls extends Component{
             Window.getScene().addGameObjectToScene(newObject);
             newObject.transform.position.add(new Vector2f(Settings.gridWidth, 0.0f));
             propertiesWindow.setActiveGameObject(newObject);
+            if (newObject.getComponent(StateMachine.class) !=null){
+                newObject.getComponent(StateMachine.class).refreshTextures();
+            }
 
             debounce = debounceTime;
         } else if (KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)
@@ -44,6 +47,9 @@ public class KeyControls extends Component{
                 GameObject copy = go.copy();
                 Window.getScene().addGameObjectToScene(copy);
                 propertiesWindow.addActiveGameObject(copy);
+                if (copy.getComponent(StateMachine.class) !=null){
+                    copy.getComponent(StateMachine.class).refreshTextures();
+                }
             }
             debounce = 0.5f;
         } else if(KeyListener.keyBeginPress(GLFW_KEY_DELETE)
