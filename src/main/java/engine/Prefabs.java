@@ -3,6 +3,7 @@ package engine;
 import components.*;
 import org.joml.Vector2f;
 import physics2d.components.Box2DCollider;
+import physics2d.components.Circle2DCollider;
 import physics2d.components.PillboxCollider;
 import physics2d.components.RigidBody2D;
 import physics2d.enums.BodyType;
@@ -291,6 +292,44 @@ public class Prefabs {
         coin.addComponent(new BlockCoin());
 
         return coin;
+    }
+
+    public static GameObject generateMushroom(){
+        Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
+        GameObject mushroom = generateSpriteObject(items.getSprite(10),0.25f,0.25f);
+
+        RigidBody2D rb = new RigidBody2D();
+        rb.setBodyType(BodyType.DYNAMIC);
+        rb.setFixedRotation(true);
+        rb.setContinuousCollision(false);
+        mushroom.addComponent(rb);
+
+        Circle2DCollider circleCollider = new Circle2DCollider();
+        circleCollider.setRadius(0.14f);
+        mushroom.addComponent(circleCollider);
+
+        mushroom.addComponent(new MushroomAI());
+
+        return mushroom;
+    }
+
+    public static GameObject generateFlower(){
+        Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
+        GameObject flower = generateSpriteObject(items.getSprite(20),0.25f,0.25f);
+
+        RigidBody2D rb = new RigidBody2D();
+        rb.setBodyType(BodyType.STATIC);
+        rb.setFixedRotation(true);
+        rb.setContinuousCollision(false);
+        flower.addComponent(rb);
+
+        Circle2DCollider circleCollider = new Circle2DCollider();
+        circleCollider.setRadius(0.14f);
+        flower.addComponent(circleCollider);
+
+        flower.addComponent(new Flower());
+
+        return flower;
     }
 
 }

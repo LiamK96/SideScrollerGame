@@ -5,10 +5,9 @@ import engine.KeyListener;
 import engine.Window;
 import org.jbox2d.dynamics.contacts.Contact;
 import org.joml.Vector2f;
-import org.joml.Vector3f;
 import physics2d.RaycastInfo;
+import physics2d.components.PillboxCollider;
 import physics2d.components.RigidBody2D;
-import renderer.DebugDraw;
 import util.AssetPool;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -35,7 +34,7 @@ public class PlayerController extends Component {
     private transient final float groundDebounceTime = 0.1f;
     private transient RigidBody2D rb;
     private transient StateMachine stateMachine;
-    private transient float bigJumpBoostFactor  = 1.05f;
+    private final transient float BIG_BOOST_FACTOR = 1.05f;
     private transient float playerWidth = 0.25f;
     private transient int jumpTime = 0;
     private transient Vector2f acceleration = new Vector2f();
@@ -164,6 +163,24 @@ public class PlayerController extends Component {
                 this.jumpTime = 0;
             }
         }
+    }
+
+    public void powerUp(){
+        if (playerState == PlayerState.Small){
+            playerState = PlayerState.Big;
+            AssetPool.getSound("assets/sounds/powerup.ogg").play();
+            gameObject.transform.scale.y = 0.42f;
+            PillboxCollider pb = gameObject.getComponent(PillboxCollider.class);
+            if (pb != null){
+                jumpBoost *= BIG_BOOST_FACTOR;
+                walkSpeed *= BIG_BOOST_FACTOR;
+                pb.setHeight(0.63f);
+            }
+        } else if (playerState == PlayerState.Big){
+            playerState = PlayerState.Fire;
+            AssetPool.getSound("assets/sounds/powerup.ogg").play();
+        }
+        stateMachine.trigger("powerup");
     }
 
     public boolean isSmall(){
