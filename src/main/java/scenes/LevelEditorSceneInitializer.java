@@ -132,7 +132,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         ImGui.begin("Objects");
 
         if (ImGui.beginTabBar("WindowTabBar")) {
-            if (ImGui.beginTabItem("Blocks")) {
+            if (ImGui.beginTabItem("Solid Blocks")) {
 
                 ImVec2 windowPos = new ImVec2();
                 ImGui.getWindowPos(windowPos);
@@ -184,6 +184,51 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                         ImGui.sameLine();
                     }
                 }
+                ImGui.endTabItem();
+            }
+            if (ImGui.beginTabItem("Decoration Blocks")){
+
+                ImVec2 windowPos = new ImVec2();
+                ImGui.getWindowPos(windowPos);
+                ImVec2 windowSize = new ImVec2();
+                ImGui.getWindowSize(windowSize);
+                ImVec2 itemSpacing = new ImVec2();
+                ImGui.getStyle().getItemSpacing(itemSpacing);
+
+                float windowX2 = windowPos.x + windowSize.x;
+
+                //Generate available tiles
+                for (int i = 34; i < 61; i++) {
+
+                    if (i >= 35 && i < 38) continue;
+                    if (i >= 42 && i < 45) continue;
+
+                    Sprite sprite = sprites.getSprite(i);
+                    float spriteWidth = sprite.getWidth() * 4;
+                    float spriteHeight = sprite.getHeight() * 4;
+                    int id = sprite.getTexId();
+                    Vector2f[] texCoords = sprite.getTexCoords();
+
+                    //Push Custom ID to sprite, since without this they all share the spritesheet id
+                    ImGui.pushID(i);
+
+                    if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
+                        GameObject object = Prefabs.generateSpriteObject(sprite, 0.25f, 0.25f); //old (sprite, spriteWidth, spriteHeight)
+                        //Attach to mouse cursor
+                        levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
+                    }
+                    //Pop custom ID
+                    ImGui.popID();
+
+                    ImVec2 lastButtonPos = new ImVec2();
+                    ImGui.getItemRectMax(lastButtonPos);
+                    float lastButtonX2 = lastButtonPos.x;
+                    float nextButtonX2 = lastButtonX2 + itemSpacing.x + spriteWidth;
+                    if (i + 1 < sprites.size() && nextButtonX2 < windowX2) {
+                        ImGui.sameLine();
+                    }
+                }
+
                 ImGui.endTabItem();
             }
             if (ImGui.beginTabItem("Prefabs")){
