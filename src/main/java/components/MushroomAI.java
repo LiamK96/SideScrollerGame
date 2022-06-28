@@ -36,7 +36,11 @@ public class MushroomAI extends Component{
         if (playerController != null){
             contact.setEnabled(false);
             if (!hitPlayer){
-                playerController.powerUp();
+                if (playerController.isSmall()) {
+                    playerController.powerUp();
+                } else {
+                    AssetPool.getSound("assets/sounds/powerup.ogg").play();
+                }
                 this.gameObject.destroy();
                 hitPlayer = true;
             }
