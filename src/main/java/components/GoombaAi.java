@@ -64,6 +64,15 @@ public class GoombaAi extends Component{
         this.rb.setVelocity(velocity);
 
     }
+//
+//    @Override
+//    public void preSolve(GameObject go, Contact contact, Vector2f contactNormal){
+//        if (isDead) return;
+//        PlayerController playerController = go.getComponent(PlayerController.class);
+//        if (playerController != null && playerController.isHurtInvincible() && !playerController.isDead()){
+//            contact.setEnabled(false);
+//        }
+//    }
 
     @Override
     public void beginCollision(GameObject go, Contact contact, Vector2f contactNormal){
@@ -80,6 +89,8 @@ public class GoombaAi extends Component{
                 stomp();
             } else if (!playerController.isDead() && !playerController.isInvincible()){
                 playerController.die();
+            } else if (!playerController.isDead() && playerController.isHurtInvincible()){
+                playerController.enemyBounce();
             }
         } else if (Math.abs(contactNormal.y) < 0.1f){
             goingRight = contactNormal.x < 0;

@@ -247,8 +247,8 @@ public class Physics2D {
         RaycastInfo infoRight = Window.getPhysics().raycast(gameObject,raycastRightBegin,raycastRightEnd);
 
         //Used to see raycasts
-        DebugDraw.addLine2D(raycastLeftBegin,raycastLeftEnd, new Vector3f(1,0,0));
-        DebugDraw.addLine2D(raycastRightBegin,raycastRightEnd,new Vector3f(1,0,0));
+        //DebugDraw.addLine2D(raycastLeftBegin,raycastLeftEnd, new Vector3f(1,0,0));
+        //DebugDraw.addLine2D(raycastRightBegin,raycastRightEnd,new Vector3f(1,0,0));
 
         return  (infoLeft.hit && infoLeft.hitObj != null && infoLeft.hitObj.getComponent(Ground.class)!=null)
                 || (infoRight.hit && infoRight.hitObj != null && infoRight.hitObj.getComponent(Ground.class)!=null);

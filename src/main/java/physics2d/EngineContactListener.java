@@ -11,8 +11,6 @@ import org.joml.Vector2f;
 
 public class EngineContactListener implements ContactListener{
 
-
-
     @Override
     public void beginContact(Contact contact) {
         GameObject objA = (GameObject)contact.getFixtureA().getUserData();
