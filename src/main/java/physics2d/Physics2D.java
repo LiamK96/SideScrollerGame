@@ -1,17 +1,22 @@
 package physics2d;
 
+import components.Ground;
+import components.PlayerController;
 import components.RigidBody;
 import engine.GameObject;
 import engine.Transform;
+import engine.Window;
 import org.jbox2d.collision.shapes.CircleShape;
 import org.jbox2d.collision.shapes.PolygonShape;
 import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.*;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
 import physics2d.components.Box2DCollider;
 import physics2d.components.Circle2DCollider;
 import physics2d.components.PillboxCollider;
 import physics2d.components.RigidBody2D;
+import renderer.DebugDraw;
 
 public class Physics2D {
 
@@ -227,6 +232,27 @@ public class Physics2D {
 
     public Vector2f getGravity(){
         return new Vector2f(world.getGravity().x,world.getGravity().y);
+    }
+
+    public static boolean checkOnGround(GameObject gameObject, float innerPlayerWidth, float height){
+        Vector2f raycastLeftBegin = new Vector2f(gameObject.transform.position);
+        raycastLeftBegin.sub(innerPlayerWidth / 2.0f, 0.0f);
+        Vector2f raycastLeftEnd = new Vector2f(raycastLeftBegin).add(0.0f, height);
+
+        RaycastInfo infoLeft = Window.getPhysics().raycast(gameObject,raycastLeftBegin,raycastLeftEnd);
+
+        Vector2f raycastRightBegin = new Vector2f(raycastLeftBegin).add(innerPlayerWidth,0.0f);
+        Vector2f raycastRightEnd = new Vector2f(raycastLeftEnd).add(innerPlayerWidth,0.0f);
+
+        RaycastInfo infoRight = Window.getPhysics().raycast(gameObject,raycastRightBegin,raycastRightEnd);
+
+        //Used to see raycasts
+        DebugDraw.addLine2D(raycastLeftBegin,raycastLeftEnd, new Vector3f(1,0,0));
+        DebugDraw.addLine2D(raycastRightBegin,raycastRightEnd,new Vector3f(1,0,0));
+
+        return  (infoLeft.hit && infoLeft.hitObj != null && infoLeft.hitObj.getComponent(Ground.class)!=null)
+                || (infoRight.hit && infoRight.hitObj != null && infoRight.hitObj.getComponent(Ground.class)!=null);
+
     }
 
 }

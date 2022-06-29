@@ -201,14 +201,14 @@ public class Prefabs {
         stateMachine.addStateTrigger(switchDirection.title, die.title, "die");
         stateMachine.addStateTrigger(idle.title, die.title, "die");
         stateMachine.addStateTrigger(jump.title, die.title, "die");
-        stateMachine.addStateTrigger(bigRun.title, die.title, "die");
-        stateMachine.addStateTrigger(bigSwitchDirection.title, die.title, "die");
-        stateMachine.addStateTrigger(bigIdle.title, die.title, "die");
-        stateMachine.addStateTrigger(bigJump.title, die.title, "die");
-        stateMachine.addStateTrigger(fireRun.title, die.title, "die");
-        stateMachine.addStateTrigger(fireSwitchDirection.title, die.title, "die");
-        stateMachine.addStateTrigger(fireIdle.title, die.title, "die");
-        stateMachine.addStateTrigger(fireJump.title, die.title, "die");
+        stateMachine.addStateTrigger(bigRun.title, run.title, "die");
+        stateMachine.addStateTrigger(bigSwitchDirection.title, switchDirection.title, "die");
+        stateMachine.addStateTrigger(bigIdle.title, idle.title, "die");
+        stateMachine.addStateTrigger(bigJump.title, jump.title, "die");
+        stateMachine.addStateTrigger(fireRun.title, bigRun.title, "die");
+        stateMachine.addStateTrigger(fireSwitchDirection.title, bigSwitchDirection.title, "die");
+        stateMachine.addStateTrigger(fireIdle.title, bigIdle.title, "die");
+        stateMachine.addStateTrigger(fireJump.title, bigJump.title, "die");
 
         player.addComponent(stateMachine);
 
@@ -227,6 +227,47 @@ public class Prefabs {
         player.name = "player";
 
         return player;
+    }
+
+    public static GameObject generateGoomba(){
+        Spritesheet sprites = AssetPool.getSpriteSheet("assets/images/spritesheet.png");
+        GameObject goomba = generateSpriteObject(sprites.getSprite(14),0.25f,0.25f);
+
+        AnimationState walk = new AnimationState();
+        walk.title = "Walk";
+        float defaultFrameTime = 0.23f;
+        walk.addFrame(sprites.getSprite(14), defaultFrameTime);
+        walk.addFrame(sprites.getSprite(15), defaultFrameTime);
+        walk.setLoop(true);
+
+        AnimationState squash = new AnimationState();
+        squash.title = "Squash";
+        squash.addFrame(sprites.getSprite(16), 0.1f);
+        squash.setLoop(false);
+
+
+        StateMachine stateMachine = new StateMachine();
+        stateMachine.addState(walk);
+        stateMachine.addState(squash);
+
+        stateMachine.addStateTrigger(walk.title, squash.title, "squashMe");
+
+        stateMachine.setDefaultState(walk.title);
+        goomba.addComponent(stateMachine);
+
+        RigidBody2D rb = new RigidBody2D();
+        rb.setBodyType(BodyType.DYNAMIC);
+        rb.setMass(0.1f);
+        rb.setFixedRotation(true);
+        goomba.addComponent(rb);
+
+        Circle2DCollider circle = new Circle2DCollider();
+        circle.setRadius(0.12f);
+        goomba.addComponent(circle);
+
+        goomba.addComponent(new GoombaAi());
+
+        return goomba;
     }
 
     public static GameObject generateQuestionBlock(){
@@ -279,7 +320,6 @@ public class Prefabs {
         coinFlip.addFrame(items.getSprite(8), defaultFrameTime);
         coinFlip.addFrame(items.getSprite(9), defaultFrameTime);
         coinFlip.setLoop(true);
-
 
         StateMachine stateMachine = new StateMachine();
         stateMachine.addState(coinFlip);
