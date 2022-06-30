@@ -21,7 +21,7 @@ public class Flower extends Component{
     public void beginCollision(GameObject go, Contact contact, Vector2f contactNormal){
         PlayerController playerController = go.getComponent(PlayerController.class);
         if (playerController != null){
-            playerController.powerUp();
+            playerController.powerUp(true);
             this.gameObject.destroy();
         }
     }
