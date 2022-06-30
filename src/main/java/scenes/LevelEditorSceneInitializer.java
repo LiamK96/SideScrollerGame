@@ -1,6 +1,7 @@
 package scenes;
 
 import components.*;
+import components.enums.Direction;
 import engine.*;
 import imgui.ImGui;
 import imgui.ImVec2;
@@ -12,6 +13,8 @@ import util.AssetPool;
 
 import java.io.File;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LevelEditorSceneInitializer extends SceneInitializer {
 
@@ -49,7 +52,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                         16,16,81,0));
         AssetPool.addSpriteSheet("assets/images/spritesheets/pipes.png",
                 new Spritesheet(AssetPool.getTexture("assets/images/spritesheets/pipes.png"),
-                        16,16,7,0));
+                        32,32,4,0));
         AssetPool.addSpriteSheet("assets/images/spritesheet.png",
                 new Spritesheet(AssetPool.getTexture("assets/images/spritesheet.png"),
                         16,16,26,0));
@@ -232,61 +235,29 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 ImGui.endTabItem();
             }
             if (ImGui.beginTabItem("Prefabs")){
-                int uid = 0;
 
                 //SpriteSheets used
                 Spritesheet playerSprites = AssetPool.getSpriteSheet("assets/images/spritesheet.png");
                 Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
+                Spritesheet pipes = AssetPool.getSpriteSheet("assets/images/spritesheets/pipes.png");
 
-                //Player
-                Sprite sprite = playerSprites.getSprite(0);
-                float spriteWidth = sprite.getWidth() * 4;
-                float spriteHeight = sprite.getHeight() * 4;
-                int id = sprite.getTexId();
-                Vector2f[] texCoords = sprite.getTexCoords();
+                Map<String, Sprite> prefabs = new HashMap<>();
+                //Add prefabs
+                prefabs.put("player", playerSprites.getSprite(0));
+                prefabs.put("questionBlock", items.getSprite(0));
+                prefabs.put("goomba", playerSprites.getSprite(14));
+                prefabs.put("pipeLeft", pipes.getSprite(0));
+                prefabs.put("pipeRight", pipes.getSprite(1));
+                prefabs.put("pipeTop", pipes.getSprite(2));
+                prefabs.put("pipeBottom", pipes.getSprite(3));
 
-                ImGui.pushID(uid++);
-                if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
-                    GameObject object = Prefabs.generatePlayer();
+                int uid = 0;
 
-                    //Attach to mouse cursor
-                    levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
+                for (String prefab : prefabs.keySet()){
+                    createPrefab(prefabs.get(prefab), uid, prefab);
+                    uid++;
+                    ImGui.sameLine();
                 }
-                ImGui.popID();
-
-                //Question Block
-                ImGui.sameLine();
-
-                sprite = items.getSprite(0);
-                spriteWidth = sprite.getWidth() * 4;
-                spriteHeight = sprite.getHeight() * 4;
-                id = sprite.getTexId();
-                texCoords = sprite.getTexCoords();
-
-                ImGui.pushID(uid++);
-                if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
-                    GameObject object = Prefabs.generateQuestionBlock();
-                    //Attach to mouse cursor
-                    levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
-                }
-                ImGui.popID();
-
-                //Goomba
-                ImGui.sameLine();
-
-                sprite = playerSprites.getSprite(14);
-                spriteWidth = sprite.getWidth() * 4;
-                spriteHeight = sprite.getHeight() * 4;
-                id = sprite.getTexId();
-                texCoords = sprite.getTexCoords();
-
-                ImGui.pushID(uid++);
-                if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
-                    GameObject object = Prefabs.generateGoomba();
-                    //Attach to mouse cursor
-                    levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
-                }
-                ImGui.popID();
 
                 ImGui.sameLine();
 
@@ -322,6 +293,50 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
     @Override
     public GameObject getSceneComponentObject(){
         return this.levelEditorComponents;
+    }
+
+    private void createPrefab(Sprite sprite, int uid, String prefab){
+
+        float spriteWidth = sprite.getWidth() * 4;
+        float spriteHeight = sprite.getHeight() * 4;
+        if (prefab.contains("pipe")){
+            spriteWidth = sprite.getWidth() * 2;
+            spriteHeight = sprite.getHeight() * 2;
+        }
+        int id = sprite.getTexId();
+        Vector2f[] texCoords = sprite.getTexCoords();
+
+        ImGui.pushID(uid);
+        if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
+            GameObject object = getPrefabObject(prefab);
+
+            //Attach to mouse cursor
+            levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
+        }
+        ImGui.popID();
+    }
+
+    private GameObject getPrefabObject(String prefab){
+        switch (prefab){
+            case "player":
+                return Prefabs.generatePlayer();
+            case "questionBlock":
+                return Prefabs.generateQuestionBlock();
+            case "goomba":
+                return Prefabs.generateGoomba();
+            case "pipeLeft":
+                return Prefabs.generatePipe(Direction.left);
+            case "pipeRight":
+                return Prefabs.generatePipe(Direction.right);
+            case "pipeTop":
+                return Prefabs.generatePipe(Direction.top);
+            case "pipeBottom":
+                return Prefabs.generatePipe(Direction.bottom);
+        }
+        assert false: "No such prefab as "+ prefab;
+        GameObject broken = new GameObject("broken");
+        broken.addComponent(new SpriteRenderer());
+        return broken;
     }
 
 

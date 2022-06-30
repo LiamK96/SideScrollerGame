@@ -1,6 +1,7 @@
 package engine;
 
 import components.*;
+import components.enums.Direction;
 import org.joml.Vector2f;
 import physics2d.components.Box2DCollider;
 import physics2d.components.Circle2DCollider;
@@ -370,6 +371,22 @@ public class Prefabs {
         flower.addComponent(new Flower());
 
         return flower;
+    }
+
+    public static GameObject generatePipe(Direction direction){
+        Spritesheet pipes = AssetPool.getSpriteSheet("assets/images/spritesheets/pipes.png");
+        GameObject pipe = generateSpriteObject(pipes.getSprite(0),0.5f,0.5f);
+
+
+        RigidBody2D rb = new RigidBody2D();
+        rb.setBodyType(BodyType.STATIC);
+        pipe.addComponent(rb);
+        Box2DCollider b2d = new Box2DCollider();
+        b2d.setHalfSize(new Vector2f(0.5f,0.5f));
+        pipe.addComponent(b2d);
+        pipe.addComponent(new Ground());
+
+        return pipe;
     }
 
 }
