@@ -257,6 +257,11 @@ public class PlayerController extends Component {
         }
     }
 
+    public void setPosition(Vector2f newPos){
+        this.gameObject.transform.position.set(newPos);
+        this.rb.setPosition(newPos);
+    }
+
     public void enemyBounce() {
         this.enemyBounce = 8;
     }

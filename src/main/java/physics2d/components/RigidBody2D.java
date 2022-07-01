@@ -167,6 +167,10 @@ public class RigidBody2D extends Component {
         }
     }
 
-
+    public void setPosition(Vector2f newPos){
+        if (rawBody != null){
+            rawBody.setTransform(new Vec2(newPos.x, newPos.y), gameObject.transform.rotation);
+        }
+    }
 
 }

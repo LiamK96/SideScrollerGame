@@ -10,8 +10,6 @@ import physics2d.components.RigidBody2D;
 import physics2d.enums.BodyType;
 import util.AssetPool;
 
-import javax.swing.plaf.nimbus.State;
-
 public class Prefabs {
 
     public static GameObject generateSpriteObject(Sprite spr, float sizeX, float sizeY){
@@ -375,15 +373,34 @@ public class Prefabs {
 
     public static GameObject generatePipe(Direction direction){
         Spritesheet pipes = AssetPool.getSpriteSheet("assets/images/spritesheets/pipes.png");
-        GameObject pipe = generateSpriteObject(pipes.getSprite(0),0.5f,0.5f);
 
+        int spriteIndex = -1;
+        switch (direction){
+            case Down:
+                spriteIndex = 0;
+                break;
+            case Up:
+                spriteIndex = 1;
+                break;
+            case Right:
+                spriteIndex = 2;
+                break;
+            case Left:
+                spriteIndex = 3;
+                break;
+        }
+
+        GameObject pipe = generateSpriteObject(pipes.getSprite(spriteIndex),0.5f,0.5f);
 
         RigidBody2D rb = new RigidBody2D();
         rb.setBodyType(BodyType.STATIC);
+        rb.setFixedRotation(true);
+        rb.setContinuousCollision(false);
         pipe.addComponent(rb);
         Box2DCollider b2d = new Box2DCollider();
         b2d.setHalfSize(new Vector2f(0.5f,0.5f));
         pipe.addComponent(b2d);
+        pipe.addComponent(new Pipe(direction));
         pipe.addComponent(new Ground());
 
         return pipe;

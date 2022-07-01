@@ -246,10 +246,10 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 prefabs.put("player", playerSprites.getSprite(0));
                 prefabs.put("questionBlock", items.getSprite(0));
                 prefabs.put("goomba", playerSprites.getSprite(14));
-                prefabs.put("pipeLeft", pipes.getSprite(0));
-                prefabs.put("pipeRight", pipes.getSprite(1));
-                prefabs.put("pipeTop", pipes.getSprite(2));
-                prefabs.put("pipeBottom", pipes.getSprite(3));
+                prefabs.put("pipeDown", pipes.getSprite(0));
+                prefabs.put("pipeUp", pipes.getSprite(1));
+                prefabs.put("pipeRight", pipes.getSprite(2));
+                prefabs.put("pipeLeft", pipes.getSprite(3));
 
                 int uid = 0;
 
@@ -325,13 +325,13 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
             case "goomba":
                 return Prefabs.generateGoomba();
             case "pipeLeft":
-                return Prefabs.generatePipe(Direction.left);
+                return Prefabs.generatePipe(Direction.Left);
             case "pipeRight":
-                return Prefabs.generatePipe(Direction.right);
-            case "pipeTop":
-                return Prefabs.generatePipe(Direction.top);
-            case "pipeBottom":
-                return Prefabs.generatePipe(Direction.bottom);
+                return Prefabs.generatePipe(Direction.Right);
+            case "pipeUp":
+                return Prefabs.generatePipe(Direction.Up);
+            case "pipeDown":
+                return Prefabs.generatePipe(Direction.Down);
         }
         assert false: "No such prefab as "+ prefab;
         GameObject broken = new GameObject("broken");
