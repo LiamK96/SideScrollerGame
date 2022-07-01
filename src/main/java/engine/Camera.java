@@ -3,6 +3,7 @@ package engine;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
+import org.joml.Vector4f;
 
 public class Camera {
 
@@ -14,6 +15,8 @@ public class Camera {
     private float projectionWidth = 6;
     private float projectionHeight = 3;
     private Vector2f projectionSize = new Vector2f(projectionWidth,projectionHeight);
+
+    public Vector4f clearColor = new Vector4f(1,1,1,1);
 
     public Camera(Vector2f pos){
         this.position = pos;

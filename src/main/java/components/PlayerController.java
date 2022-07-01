@@ -11,6 +11,7 @@ import physics2d.components.PillboxCollider;
 import physics2d.components.RigidBody2D;
 import physics2d.enums.BodyType;
 import scenes.LevelEditorSceneInitializer;
+import scenes.LevelSceneInitializer;
 import util.AssetPool;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -77,7 +78,9 @@ public class PlayerController extends Component {
                 this.rb.setVelocity(this.velocity);
                 this.rb.setAngularVelocity(0);
             } else if (!deadGoingUp && this.gameObject.transform.position.y <= deadMinHeight) {
-                Window.changeScene(new LevelEditorSceneInitializer());
+                if (!AssetPool.getSound("assets/sounds/mario_die.ogg").isPlaying()){
+                    Window.changeScene(new LevelSceneInitializer());
+                }
             }
             return;
         }
@@ -233,6 +236,7 @@ public class PlayerController extends Component {
             this.rb.setVelocity(new Vector2f());
             this.isDead = true;
             this.rb.setAsSensor();
+            AssetPool.getSound("assets/sounds/main-theme-overworld.ogg").stop();
             AssetPool.getSound("assets/sounds/mario_die.ogg").play();
             deadMaxHeight = this.gameObject.transform.position.y + 0.3f;
             this.rb.setBodyType(BodyType.STATIC);
@@ -280,5 +284,9 @@ public class PlayerController extends Component {
 
     public boolean isInvincible() {
         return this.playerState == PlayerState.Invincible || this.hurtInvicibilityTimeLeft > 0;
+    }
+
+    public boolean hasWon(){
+        return false;
     }
 }

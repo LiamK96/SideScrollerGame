@@ -4,6 +4,7 @@ import components.MouseControls;
 import observers.EventSystem;
 import observers.Observer;
 import observers.events.Event;
+import org.joml.Vector4f;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.openal.AL;
@@ -14,6 +15,7 @@ import org.lwjgl.opengl.GL;
 import physics2d.Physics2D;
 import renderer.*;
 import scenes.LevelEditorSceneInitializer;
+import scenes.LevelSceneInitializer;
 import scenes.Scene;
 import scenes.SceneInitializer;
 import util.AssetPool;
@@ -76,6 +78,7 @@ public class Window implements Observer {
 
     @Override
     public void onNotify(GameObject go, Event event) {
+        AssetPool.getSound("assets/sounds/main-theme-overworld.ogg").stop();
         switch (event.type){
             case GameEngineStartPlay:
                 if (currentScene.getSceneInitializerComponentsObject().getComponent(MouseControls.class) != null){
@@ -85,7 +88,7 @@ public class Window implements Observer {
                 }
                 this.runtimePlaying = true;
                 currentScene.save();
-                Window.changeScene(new LevelEditorSceneInitializer());
+                Window.changeScene(new LevelSceneInitializer());
                 break;
             case GameEngineStopPlay:
                 this.runtimePlaying = false;
@@ -242,7 +245,8 @@ public class Window implements Observer {
             //bind framebuffer
             this.framebuffer.bind();
 
-            glClearColor(1,1,1,1);
+            Vector4f clearColor = currentScene.getCamera().clearColor;
+            glClearColor(clearColor.x,clearColor.y,clearColor.z,clearColor.w);
             glClear(GL_COLOR_BUFFER_BIT);
 
 

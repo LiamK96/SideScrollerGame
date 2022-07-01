@@ -91,6 +91,15 @@ public class Scene {
         return result.orElse(null);
     }
 
+    public <T extends Component> GameObject getGameObjectWith(Class<T> classToGet){
+        for (GameObject go : gameObjects){
+            if (go.getComponent(classToGet) != null){
+                return go;
+            }
+        }
+        return null;
+    }
+
     public void editorUpdate(float dt){
         this.camera.adjustProjection();
         for (int i = 0; i < gameObjects.size(); i++) {
