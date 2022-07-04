@@ -108,49 +108,4 @@ public class LevelSceneInitializer extends SceneInitializer {
         return this.levelSceneComponents;
     }
 
-    private void createPrefab(Sprite sprite, int uid, String prefab){
-
-        float spriteWidth = sprite.getWidth() * 4;
-        float spriteHeight = sprite.getHeight() * 4;
-        if (prefab.contains("pipe")){
-            spriteWidth = sprite.getWidth() * 2;
-            spriteHeight = sprite.getHeight() * 2;
-        }
-        int id = sprite.getTexId();
-        Vector2f[] texCoords = sprite.getTexCoords();
-
-        ImGui.pushID(uid);
-        if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
-            GameObject object = getPrefabObject(prefab);
-
-            //Attach to mouse cursor
-            levelSceneComponents.getComponent(MouseControls.class).pickupObject(object);
-        }
-        ImGui.popID();
-    }
-
-    private GameObject getPrefabObject(String prefab){
-        switch (prefab){
-            case "player":
-                return Prefabs.generatePlayer();
-            case "questionBlock":
-                return Prefabs.generateQuestionBlock();
-            case "goomba":
-                return Prefabs.generateGoomba();
-            case "pipeLeft":
-                return Prefabs.generatePipe(Direction.Left);
-            case "pipeRight":
-                return Prefabs.generatePipe(Direction.Right);
-            case "pipeUp":
-                return Prefabs.generatePipe(Direction.Up);
-            case "pipeDown":
-                return Prefabs.generatePipe(Direction.Down);
-        }
-        assert false: "No such prefab as "+ prefab;
-        GameObject broken = new GameObject("broken");
-        broken.addComponent(new SpriteRenderer());
-        return broken;
-    }
-
-
 }

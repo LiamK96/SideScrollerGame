@@ -240,6 +240,8 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 Spritesheet playerSprites = AssetPool.getSpriteSheet("assets/images/spritesheet.png");
                 Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
                 Spritesheet pipes = AssetPool.getSpriteSheet("assets/images/spritesheets/pipes.png");
+                Spritesheet turtle = AssetPool.getSpriteSheet("assets/images/turtle.png");
+
 
                 Map<String, Sprite> prefabs = new HashMap<>();
                 //Add prefabs
@@ -250,6 +252,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 prefabs.put("pipeUp", pipes.getSprite(1));
                 prefabs.put("pipeRight", pipes.getSprite(2));
                 prefabs.put("pipeLeft", pipes.getSprite(3));
+                prefabs.put("turtle", turtle.getSprite(0));
 
                 int uid = 0;
 
@@ -297,12 +300,9 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
     private void createPrefab(Sprite sprite, int uid, String prefab){
 
-        float spriteWidth = sprite.getWidth() * 4;
-        float spriteHeight = sprite.getHeight() * 4;
-        if (prefab.contains("pipe")){
-            spriteWidth = sprite.getWidth() * 2;
-            spriteHeight = sprite.getHeight() * 2;
-        }
+        float spriteWidth = 64;
+        float spriteHeight = 64;
+
         int id = sprite.getTexId();
         Vector2f[] texCoords = sprite.getTexCoords();
 
@@ -332,6 +332,8 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 return Prefabs.generatePipe(Direction.Up);
             case "pipeDown":
                 return Prefabs.generatePipe(Direction.Down);
+            case "turtle":
+                return Prefabs.generateTurtle();
         }
         assert false: "No such prefab as "+ prefab;
         GameObject broken = new GameObject("broken");
