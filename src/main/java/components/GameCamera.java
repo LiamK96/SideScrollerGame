@@ -36,12 +36,14 @@ public class GameCamera extends Component{
             gameCamera.position.x = Math.max(player.transform.position.x - 2.5f, highestX);
             highestX = Math.max(highestX, gameCamera.position.x);
 
-            if (player.transform.position.y < -playerBuffer){
-                this.gameCamera.position.y = undergroundYLevel;
-                this.gameCamera.clearColor.set(undergroundColor);
-            } else if (player.transform.position.y >= 0.0f){
-                this.gameCamera.position.y = 0.0f;
-                this.gameCamera.clearColor.set(skyColor);
+            if (!player.getComponent(PlayerController.class).isDead()) {
+                if (player.transform.position.y < -playerBuffer) {
+                    this.gameCamera.position.y = undergroundYLevel;
+                    this.gameCamera.clearColor.set(undergroundColor);
+                } else if (player.transform.position.y >= 0.0f) {
+                    this.gameCamera.position.y = 0.0f;
+                    this.gameCamera.clearColor.set(skyColor);
+                }
             }
         }
     }
