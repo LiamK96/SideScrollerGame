@@ -27,13 +27,15 @@ public class EditorCamera extends Component{
 
     @Override
     public void editorUpdate(float dt){
-        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_RIGHT) && dragDebounce > 0){
+        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)
+                && KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL) && dragDebounce > 0){
             this.clickOrigin = MouseListener.getWorld();
             dragDebounce -= dt;
             return;
-        } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_RIGHT)){
+        } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)
+                && KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)){
             Vector2f mousePos = MouseListener.getWorld();
-            Vector2f delta = new Vector2f(mousePos).sub(clickOrigin);
+            Vector2f delta = new Vector2f(mousePos).sub(clickOrigin).mul(10.0f);
             levelEditorCamera.position.sub(delta.mul(dt).mul(dragSensitivity));
             this.clickOrigin.lerp(mousePos,dt);
         }

@@ -72,7 +72,10 @@ public class MouseControls extends Component {
         PickingTexture pickingTexture = Window.getImGuiLayer().getPropertiesWindow().getPickingTexture();
         Scene currentScene = Window.getScene();
 
-        if (holdingObject != null && debounce <=0){
+        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)
+                && KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)){
+            //Let the EditorCamera Handle it
+        }else if (holdingObject != null && debounce <=0){
             holdingObject.transform.position.x = MouseListener.getWorldX();
             holdingObject.transform.position.y = MouseListener.getWorldY();
             holdingObject.transform.position.x =
