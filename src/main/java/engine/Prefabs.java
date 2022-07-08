@@ -214,10 +214,8 @@ public class Prefabs {
         PillboxCollider pb = new PillboxCollider();
         pb.width = 0.39f;
         pb.height =0.31f;
-        RigidBody2D rb = new RigidBody2D();
-        rb.setBodyType(BodyType.DYNAMIC);
-        rb.setContinuousCollision(false);
-        rb.setFixedRotation(true);
+
+        RigidBody2D rb = createRigidBody(BodyType.DYNAMIC, 25.0f);
         rb.setMass(25.0f);
 
         player.addComponent(rb);
@@ -254,10 +252,7 @@ public class Prefabs {
         stateMachine.setDefaultState(walk.title);
         goomba.addComponent(stateMachine);
 
-        RigidBody2D rb = new RigidBody2D();
-        rb.setBodyType(BodyType.DYNAMIC);
-        rb.setMass(0.1f);
-        rb.setFixedRotation(true);
+        RigidBody2D rb = createRigidBody(BodyType.DYNAMIC, 0.1f);
         goomba.addComponent(rb);
 
         Circle2DCollider circle = new Circle2DCollider();
@@ -298,9 +293,9 @@ public class Prefabs {
         questionBlock.addComponent(stateMachine);
         questionBlock.addComponent(new QuestionBlock());
 
-        RigidBody2D rb = new RigidBody2D();
-        rb.setBodyType(BodyType.STATIC);
+        RigidBody2D rb = createRigidBody(BodyType.STATIC);
         questionBlock.addComponent(rb);
+
         Box2DCollider b2d = new Box2DCollider();
         b2d.setHalfSize(new Vector2f(0.25f,0.25f));
         questionBlock.addComponent(b2d);
@@ -338,10 +333,7 @@ public class Prefabs {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject mushroom = generateSpriteObject(items.getSprite(10),0.25f,0.25f);
 
-        RigidBody2D rb = new RigidBody2D();
-        rb.setBodyType(BodyType.DYNAMIC);
-        rb.setFixedRotation(true);
-        rb.setContinuousCollision(false);
+        RigidBody2D rb = createRigidBody(BodyType.DYNAMIC);
         mushroom.addComponent(rb);
 
         Circle2DCollider circleCollider = new Circle2DCollider();
@@ -358,10 +350,7 @@ public class Prefabs {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject flower = generateSpriteObject(items.getSprite(20),0.25f,0.25f);
 
-        RigidBody2D rb = new RigidBody2D();
-        rb.setBodyType(BodyType.STATIC);
-        rb.setFixedRotation(true);
-        rb.setContinuousCollision(false);
+        RigidBody2D rb = createRigidBody(BodyType.STATIC);
         flower.addComponent(rb);
 
         Circle2DCollider circleCollider = new Circle2DCollider();
@@ -394,11 +383,9 @@ public class Prefabs {
 
         GameObject pipe = generateSpriteObject(pipes.getSprite(spriteIndex),0.5f,0.5f);
 
-        RigidBody2D rb = new RigidBody2D();
-        rb.setBodyType(BodyType.STATIC);
-        rb.setFixedRotation(true);
-        rb.setContinuousCollision(false);
+        RigidBody2D rb = createRigidBody(BodyType.STATIC);
         pipe.addComponent(rb);
+
         Box2DCollider b2d = new Box2DCollider();
         b2d.setHalfSize(new Vector2f(0.5f,0.5f));
         pipe.addComponent(b2d);
@@ -434,10 +421,7 @@ public class Prefabs {
         stateMachine.setDefaultState(walk.title);
         turtle.addComponent(stateMachine);
 
-        RigidBody2D rb = new RigidBody2D();
-        rb.setBodyType(BodyType.DYNAMIC);
-        rb.setMass(0.1f);
-        rb.setFixedRotation(true);
+        RigidBody2D rb = createRigidBody(BodyType.DYNAMIC,0.1f);
         turtle.addComponent(rb);
 
         Circle2DCollider circle = new Circle2DCollider();
@@ -455,10 +439,7 @@ public class Prefabs {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject flagPole = generateSpriteObject(items.getSprite(33),0.25f,0.25f);
 
-        RigidBody2D rb = new RigidBody2D();
-        rb.setBodyType(BodyType.DYNAMIC);
-        rb.setFixedRotation(true);
-        rb.setContinuousCollision(false);
+        RigidBody2D rb = createRigidBody(BodyType.DYNAMIC);
         flagPole.addComponent(rb);
 
         Box2DCollider boxCollider = new Box2DCollider();
@@ -475,10 +456,7 @@ public class Prefabs {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject flagTop = generateSpriteObject(items.getSprite(6),0.25f,0.25f);
 
-        RigidBody2D rb = new RigidBody2D();
-        rb.setBodyType(BodyType.DYNAMIC);
-        rb.setFixedRotation(true);
-        rb.setContinuousCollision(false);
+        RigidBody2D rb = createRigidBody(BodyType.DYNAMIC);
         flagTop.addComponent(rb);
 
         Box2DCollider boxCollider = new Box2DCollider();
@@ -489,6 +467,25 @@ public class Prefabs {
         flagTop.addComponent(new FlagPole(true));
 
         return flagTop;
+    }
+
+    private static RigidBody2D createRigidBody(BodyType bodyType){
+         return createRigidBody(bodyType, 0.0f, true,false);
+    }
+
+    private static RigidBody2D createRigidBody(BodyType bodyType, float mass){
+        return createRigidBody(bodyType,mass, true, false);
+    }
+
+    private static RigidBody2D createRigidBody(BodyType bodyType,
+                                        float mass, boolean fixedRotation,
+                                        boolean continuousCollision){
+        RigidBody2D rb = new RigidBody2D();
+        rb.setBodyType(bodyType);
+        rb.setMass(mass);
+        rb.setFixedRotation(fixedRotation);
+        rb.setContinuousCollision(continuousCollision);
+        return rb;
     }
 
 }
