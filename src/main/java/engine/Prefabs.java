@@ -255,8 +255,7 @@ public class Prefabs {
         RigidBody2D rb = createRigidBody(BodyType.DYNAMIC, 0.1f);
         goomba.addComponent(rb);
 
-        Circle2DCollider circle = new Circle2DCollider();
-        circle.setRadius(0.12f);
+        Circle2DCollider circle = createCircleCollider(0.12f);
         goomba.addComponent(circle);
 
         goomba.addComponent(new GoombaAi());
@@ -296,9 +295,9 @@ public class Prefabs {
         RigidBody2D rb = createRigidBody(BodyType.STATIC);
         questionBlock.addComponent(rb);
 
-        Box2DCollider b2d = new Box2DCollider();
-        b2d.setHalfSize(new Vector2f(0.25f,0.25f));
+        Box2DCollider b2d = createBoxCollider(new Vector2f(0.25f,0.25f));
         questionBlock.addComponent(b2d);
+
         questionBlock.addComponent(new Ground());
 
         return questionBlock;
@@ -336,8 +335,7 @@ public class Prefabs {
         RigidBody2D rb = createRigidBody(BodyType.DYNAMIC);
         mushroom.addComponent(rb);
 
-        Circle2DCollider circleCollider = new Circle2DCollider();
-        circleCollider.setRadius(0.14f);
+        Circle2DCollider circleCollider = createCircleCollider(0.14f);
         mushroom.addComponent(circleCollider);
 
         mushroom.addComponent(new MushroomAI());
@@ -353,8 +351,7 @@ public class Prefabs {
         RigidBody2D rb = createRigidBody(BodyType.STATIC);
         flower.addComponent(rb);
 
-        Circle2DCollider circleCollider = new Circle2DCollider();
-        circleCollider.setRadius(0.14f);
+        Circle2DCollider circleCollider = createCircleCollider(0.14f);
         flower.addComponent(circleCollider);
 
         flower.addComponent(new Flower());
@@ -386,9 +383,9 @@ public class Prefabs {
         RigidBody2D rb = createRigidBody(BodyType.STATIC);
         pipe.addComponent(rb);
 
-        Box2DCollider b2d = new Box2DCollider();
-        b2d.setHalfSize(new Vector2f(0.5f,0.5f));
+        Box2DCollider b2d = createBoxCollider(new Vector2f(0.5f,0.5f));
         pipe.addComponent(b2d);
+
         pipe.addComponent(new Pipe(direction));
         pipe.addComponent(new Ground());
 
@@ -424,9 +421,8 @@ public class Prefabs {
         RigidBody2D rb = createRigidBody(BodyType.DYNAMIC,0.1f);
         turtle.addComponent(rb);
 
-        Circle2DCollider circle = new Circle2DCollider();
-        circle.setRadius(0.13f);
-        circle.setOffset(new Vector2f(0, -0.05f));
+        Circle2DCollider circle = createCircleCollider(0.13f,
+                new Vector2f(0.0f, -0.05f));
         turtle.addComponent(circle);
 
         turtle.addComponent(new TurtleAi());
@@ -442,9 +438,8 @@ public class Prefabs {
         RigidBody2D rb = createRigidBody(BodyType.DYNAMIC);
         flagPole.addComponent(rb);
 
-        Box2DCollider boxCollider = new Box2DCollider();
-        boxCollider.setHalfSize(new Vector2f(0.1f,0.25f));
-        boxCollider.setOffset(new Vector2f(-0.075f, 0.0f));
+        Box2DCollider boxCollider = createBoxCollider(new Vector2f(0.1f,0.25f),
+                new Vector2f(-0.075f, 0.0f));
         flagPole.addComponent(boxCollider);
 
         flagPole.addComponent(new FlagPole(false));
@@ -459,9 +454,8 @@ public class Prefabs {
         RigidBody2D rb = createRigidBody(BodyType.DYNAMIC);
         flagTop.addComponent(rb);
 
-        Box2DCollider boxCollider = new Box2DCollider();
-        boxCollider.setHalfSize(new Vector2f(0.1f,0.25f));
-        boxCollider.setOffset(new Vector2f(-0.075f, 0.0f));
+        Box2DCollider boxCollider = createBoxCollider(new Vector2f(0.1f,0.25f),
+                new Vector2f(-0.075f,0.0f));
         flagTop.addComponent(boxCollider);
 
         flagTop.addComponent(new FlagPole(true));
@@ -486,6 +480,28 @@ public class Prefabs {
         rb.setFixedRotation(fixedRotation);
         rb.setContinuousCollision(continuousCollision);
         return rb;
+    }
+
+    private static Box2DCollider createBoxCollider(Vector2f halfSize){
+        return createBoxCollider(halfSize, new Vector2f());
+    }
+
+    private static Box2DCollider createBoxCollider(Vector2f halfSize, Vector2f offset){
+        Box2DCollider boxCollider = new Box2DCollider();
+        boxCollider.setHalfSize(halfSize);
+        boxCollider.setOffset(offset);
+        return boxCollider;
+    }
+
+    private static Circle2DCollider createCircleCollider(float radius){
+        return createCircleCollider(radius, new Vector2f());
+    }
+
+    private static Circle2DCollider createCircleCollider(float radius, Vector2f offset){
+        Circle2DCollider circleCollider = new Circle2DCollider();
+        circleCollider.setRadius(radius);
+        circleCollider.setOffset(offset);
+        return circleCollider;
     }
 
 }

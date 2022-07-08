@@ -8855,438 +8855,6 @@
   },
   {
     "uid": 71,
-    "name": "Block: 79",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 2.875,
-            "y": 0.875
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 1582
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/items.png",
-              "width": 112,
-              "height": 80
-            },
-            "texCoords": [
-              {
-                "x": 0.85714287,
-                "y": 0.2
-              },
-              {
-                "x": 0.85714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.2
-              }
-            ]
-          },
-          "uid": 1583
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "DYNAMIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": true,
-          "continuousCollision": false,
-          "uid": 1584
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.1,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": -0.075,
-            "y": 0.0
-          },
-          "uid": 1585
-        }
-      },
-      {
-        "type": "components.FlagPole",
-        "properties": {
-          "isTop": false,
-          "uid": 1586
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 72,
-    "name": "Block: 81",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 2.875,
-            "y": 1.125
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 1582
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/items.png",
-              "width": 112,
-              "height": 80
-            },
-            "texCoords": [
-              {
-                "x": 0.85714287,
-                "y": 0.2
-              },
-              {
-                "x": 0.85714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.2
-              }
-            ]
-          },
-          "uid": 1583
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "DYNAMIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": true,
-          "continuousCollision": false,
-          "uid": 1584
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.1,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": -0.075,
-            "y": 0.0
-          },
-          "uid": 1585
-        }
-      },
-      {
-        "type": "components.FlagPole",
-        "properties": {
-          "isTop": false,
-          "uid": 1586
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 73,
-    "name": "Block: 83",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 2.875,
-            "y": 1.375
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 1582
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/items.png",
-              "width": 112,
-              "height": 80
-            },
-            "texCoords": [
-              {
-                "x": 0.85714287,
-                "y": 0.2
-              },
-              {
-                "x": 0.85714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.2
-              }
-            ]
-          },
-          "uid": 1583
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "DYNAMIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": true,
-          "continuousCollision": false,
-          "uid": 1584
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.1,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": -0.075,
-            "y": 0.0
-          },
-          "uid": 1585
-        }
-      },
-      {
-        "type": "components.FlagPole",
-        "properties": {
-          "isTop": false,
-          "uid": 1586
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 74,
-    "name": "Block: 86",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 2.875,
-            "y": 1.625
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 1588
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/items.png",
-              "width": 112,
-              "height": 80
-            },
-            "texCoords": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.8
-              },
-              {
-                "x": 0.85714287,
-                "y": 0.8
-              },
-              {
-                "x": 0.85714287,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 1589
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "DYNAMIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": true,
-          "continuousCollision": false,
-          "uid": 1590
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.1,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": -0.075,
-            "y": 0.0
-          },
-          "uid": 1591
-        }
-      },
-      {
-        "type": "components.FlagPole",
-        "properties": {
-          "isTop": true,
-          "uid": 1592
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 75,
     "name": "Block: 84",
     "components": [
       {
@@ -9393,7 +8961,7 @@
     "isDead": false
   },
   {
-    "uid": 76,
+    "uid": 72,
     "name": "Block: 86",
     "components": [
       {
@@ -9500,7 +9068,7 @@
     "isDead": false
   },
   {
-    "uid": 77,
+    "uid": 73,
     "name": "Block: 88",
     "components": [
       {
@@ -9607,7 +9175,7 @@
     "isDead": false
   },
   {
-    "uid": 78,
+    "uid": 74,
     "name": "Block: 90",
     "components": [
       {
@@ -9714,7 +9282,7 @@
     "isDead": false
   },
   {
-    "uid": 79,
+    "uid": 75,
     "name": "Block: 92",
     "components": [
       {
@@ -9821,7 +9389,7 @@
     "isDead": false
   },
   {
-    "uid": 80,
+    "uid": 76,
     "name": "Block: 94",
     "components": [
       {
@@ -9928,7 +9496,7 @@
     "isDead": false
   },
   {
-    "uid": 81,
+    "uid": 77,
     "name": "Block: 96",
     "components": [
       {
@@ -10035,7 +9603,7 @@
     "isDead": false
   },
   {
-    "uid": 82,
+    "uid": 78,
     "name": "Block: 98",
     "components": [
       {
@@ -10142,7 +9710,7 @@
     "isDead": false
   },
   {
-    "uid": 83,
+    "uid": 79,
     "name": "Block: 100",
     "components": [
       {
@@ -10249,7 +9817,7 @@
     "isDead": false
   },
   {
-    "uid": 84,
+    "uid": 80,
     "name": "Block: 102",
     "components": [
       {
@@ -10356,7 +9924,7 @@
     "isDead": false
   },
   {
-    "uid": 97,
+    "uid": 81,
     "name": "Block: 97",
     "components": [
       {
@@ -10582,7 +10150,7 @@
     "isDead": false
   },
   {
-    "uid": 99,
+    "uid": 82,
     "name": "Block: 99",
     "components": [
       {
@@ -10808,7 +10376,7 @@
     "isDead": false
   },
   {
-    "uid": 101,
+    "uid": 83,
     "name": "Block: 101",
     "components": [
       {
@@ -11034,7 +10602,7 @@
     "isDead": false
   },
   {
-    "uid": 103,
+    "uid": 84,
     "name": "Block: 103",
     "components": [
       {
@@ -11072,19 +10640,19 @@
             },
             "texCoords": [
               {
-                "x": 0.14285715,
+                "x": 0.071428575,
                 "y": 0.5
               },
               {
-                "x": 0.14285715,
-                "y": 0.0
-              },
-              {
                 "x": 0.071428575,
                 "y": 0.0
               },
               {
-                "x": 0.071428575,
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
                 "y": 0.5
               }
             ]
@@ -11260,7 +10828,7 @@
     "isDead": false
   },
   {
-    "uid": 106,
+    "uid": 85,
     "name": "Block: 106",
     "components": [
       {
@@ -11298,19 +10866,19 @@
             },
             "texCoords": [
               {
-                "x": 0.2857143,
+                "x": 0.14285715,
                 "y": 1.0
               },
               {
-                "x": 0.2857143,
-                "y": 0.8
-              },
-              {
                 "x": 0.14285715,
                 "y": 0.8
               },
               {
-                "x": 0.14285715,
+                "x": 0.0,
+                "y": 0.8
+              },
+              {
+                "x": 0.0,
                 "y": 1.0
               }
             ]
@@ -11525,7 +11093,7 @@
     "isDead": false
   },
   {
-    "uid": 108,
+    "uid": 86,
     "name": "Block: 108",
     "components": [
       {
@@ -11790,7 +11358,7 @@
     "isDead": false
   },
   {
-    "uid": 110,
+    "uid": 87,
     "name": "Block: 110",
     "components": [
       {
@@ -12048,6 +11616,438 @@
         "type": "components.Ground",
         "properties": {
           "uid": 1721
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 88,
+    "name": "Block: 99",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 2.875,
+            "y": 0.875
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 1742
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.85714287,
+                "y": 0.2
+              },
+              {
+                "x": 0.85714287,
+                "y": 0.0
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.0
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.2
+              }
+            ]
+          },
+          "uid": 1743
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 1744
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.1,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": -0.075,
+            "y": 0.0
+          },
+          "uid": 1745
+        }
+      },
+      {
+        "type": "components.FlagPole",
+        "properties": {
+          "isTop": false,
+          "uid": 1746
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 89,
+    "name": "Block: 101",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 2.875,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 1742
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.85714287,
+                "y": 0.2
+              },
+              {
+                "x": 0.85714287,
+                "y": 0.0
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.0
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.2
+              }
+            ]
+          },
+          "uid": 1743
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 1744
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.1,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": -0.075,
+            "y": 0.0
+          },
+          "uid": 1745
+        }
+      },
+      {
+        "type": "components.FlagPole",
+        "properties": {
+          "isTop": false,
+          "uid": 1746
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 90,
+    "name": "Block: 103",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 2.875,
+            "y": 1.375
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 1742
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.85714287,
+                "y": 0.2
+              },
+              {
+                "x": 0.85714287,
+                "y": 0.0
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.0
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.2
+              }
+            ]
+          },
+          "uid": 1743
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 1744
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.1,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": -0.075,
+            "y": 0.0
+          },
+          "uid": 1745
+        }
+      },
+      {
+        "type": "components.FlagPole",
+        "properties": {
+          "isTop": false,
+          "uid": 1746
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 91,
+    "name": "Block: 106",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 2.875,
+            "y": 1.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 1748
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 1.0,
+                "y": 1.0
+              },
+              {
+                "x": 1.0,
+                "y": 0.8
+              },
+              {
+                "x": 0.85714287,
+                "y": 0.8
+              },
+              {
+                "x": 0.85714287,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 1749
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 1750
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.1,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": -0.075,
+            "y": 0.0
+          },
+          "uid": 1751
+        }
+      },
+      {
+        "type": "components.FlagPole",
+        "properties": {
+          "isTop": true,
+          "uid": 1752
         }
       }
     ],
