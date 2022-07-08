@@ -265,6 +265,7 @@ public class Prefabs {
         goomba.addComponent(circle);
 
         goomba.addComponent(new GoombaAi());
+        goomba.addComponent(new Mob());
 
         return goomba;
     }
@@ -348,6 +349,7 @@ public class Prefabs {
         mushroom.addComponent(circleCollider);
 
         mushroom.addComponent(new MushroomAI());
+        mushroom.addComponent(new Mob());
 
         return mushroom;
     }
@@ -444,6 +446,7 @@ public class Prefabs {
         turtle.addComponent(circle);
 
         turtle.addComponent(new TurtleAi());
+        turtle.addComponent(new Mob());
 
         return turtle;
     }

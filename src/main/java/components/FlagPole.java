@@ -13,6 +13,14 @@ public class FlagPole extends Component{
     }
 
     @Override
+    public void preSolve(GameObject obj, Contact contact, Vector2f contactNormal){
+        Mob mob = obj.getComponent(Mob.class);
+        if (mob != null){
+            contact.setEnabled(false);
+        }
+    }
+
+    @Override
     public void beginCollision(GameObject obj, Contact contact, Vector2f contactNormal){
         PlayerController playerController = obj.getComponent(PlayerController.class);
         if (playerController != null){
