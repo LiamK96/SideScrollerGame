@@ -9,6 +9,7 @@ import observers.EventSystem;
 import observers.events.Event;
 import observers.events.EventType;
 import org.joml.Vector2f;
+import util.AssetPool;
 
 public class GameViewWindow {
 
@@ -16,6 +17,13 @@ public class GameViewWindow {
     private boolean isPlaying = false;
 
     public void imgui(){
+        if (Window.isGameRunning() != isPlaying){
+            if (Window.isGameRunning()){
+                startScene();
+            } else {
+                stopScene();
+            }
+        }
         ImGui.begin("Game Viewport", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse
                     | ImGuiWindowFlags.MenuBar);
 
@@ -23,13 +31,10 @@ public class GameViewWindow {
         ImGui.beginMenuBar();
 
         if (ImGui.menuItem("Play", "", isPlaying, !isPlaying)){
-            isPlaying = true;
-
-            EventSystem.notify(null, new Event(EventType.GameEngineStartPlay));
+            startScene();
         }
         if (ImGui.menuItem("Stop", "", !isPlaying, isPlaying)){
-            isPlaying = false;
-            EventSystem.notify(null, new Event(EventType.GameEngineStopPlay));
+            stopScene();
         }
 
         ImGui.endMenuBar();
@@ -90,6 +95,17 @@ public class GameViewWindow {
     public boolean getWantCaptureMouse(){
         return MouseListener.getX() >= leftX && MouseListener.getX() <= rightX &&
                 MouseListener.getY() >= bottomY && MouseListener.getY() <= topY;
+    }
+
+    public void stopScene(){
+        isPlaying = false;
+        AssetPool.stopAllSounds();
+        EventSystem.notify(null, new Event(EventType.GameEngineStopPlay));
+    }
+
+    public void startScene(){
+        isPlaying = true;
+        EventSystem.notify(null, new Event(EventType.GameEngineStartPlay));
     }
 
 }

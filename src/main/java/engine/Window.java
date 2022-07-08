@@ -78,7 +78,6 @@ public class Window implements Observer {
 
     @Override
     public void onNotify(GameObject go, Event event) {
-        AssetPool.getSound("assets/sounds/main-theme-overworld.ogg").stop();
         switch (event.type){
             case GameEngineStartPlay:
                 if (currentScene.getSceneInitializerComponentsObject().getComponent(MouseControls.class) != null){
@@ -319,6 +318,10 @@ public class Window implements Observer {
 
     public static Physics2D getPhysics(){
         return currentScene.getPhysics();
+    }
+
+    public static boolean isGameRunning(){
+        return get().runtimePlaying;
     }
 
 

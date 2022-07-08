@@ -83,4 +83,10 @@ public class AssetPool {
         return sounds.values();
     }
 
+    public static void stopAllSounds(){
+        for (Sound sound : sounds.values()){
+            sound.stop();
+        }
+    }
+
 }

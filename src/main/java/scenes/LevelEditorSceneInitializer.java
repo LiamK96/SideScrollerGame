@@ -64,7 +64,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                         16,24,4,0));
         AssetPool.addSpriteSheet("assets/images/items.png",
                 new Spritesheet(AssetPool.getTexture("assets/images/items.png"),
-                        16,16,33,0));
+                        16,16,34,0));
         AssetPool.addSpriteSheet("assets/images/gizmos.png",
                 new Spritesheet(AssetPool.getTexture("assets/images/gizmos.png"),
                         24,48,3,0));
@@ -253,6 +253,8 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 prefabs.put("pipeRight", pipes.getSprite(2));
                 prefabs.put("pipeLeft", pipes.getSprite(3));
                 prefabs.put("turtle", turtle.getSprite(0));
+                prefabs.put("flagPole", items.getSprite(33));
+                prefabs.put("flagTop", items.getSprite(6));
 
                 int uid = 0;
 
@@ -334,6 +336,10 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 return Prefabs.generatePipe(Direction.Down);
             case "turtle":
                 return Prefabs.generateTurtle();
+            case "flagPole":
+                return Prefabs.generateFlagPole();
+            case "flagTop":
+                return Prefabs.generateFlagTop();
         }
         assert false: "No such prefab as "+ prefab;
         GameObject broken = new GameObject("broken");

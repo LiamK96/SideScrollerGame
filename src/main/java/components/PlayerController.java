@@ -3,6 +3,9 @@ package components;
 import engine.GameObject;
 import engine.KeyListener;
 import engine.Window;
+import observers.EventSystem;
+import observers.events.Event;
+import observers.events.EventType;
 import org.jbox2d.dynamics.contacts.Contact;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
@@ -17,6 +20,8 @@ import util.AssetPool;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class PlayerController extends Component {
+
+
 
 
     private enum PlayerState {
@@ -55,6 +60,10 @@ public class PlayerController extends Component {
     private transient int enemyBounce = 0;
     private transient SpriteRenderer spr;
 
+    private transient boolean playWinAnimation = false;
+    private transient float timeToCastle = 4.5f;
+    private transient float walkTime = 2.2f;
+
     @Override
     public void start() {
         this.rb = gameObject.getComponent(RigidBody2D.class);
@@ -65,6 +74,34 @@ public class PlayerController extends Component {
 
     @Override
     public void update(float dt) {
+        //System.out.println(playWinAnimation);
+        if (playWinAnimation){
+            checkOnGround();
+            if (!onGround){
+                gameObject.transform.scale.x = -0.25f;
+                gameObject.transform.position.y -= dt;
+                stateMachine.trigger("stopRunning");
+                stateMachine.trigger("stopJumping");
+            } else {
+                if (this.walkTime > 0){
+                    gameObject.transform.scale.x = 0.25f;
+                    gameObject.transform.position.x += dt;
+                    stateMachine.trigger("startRunning");
+                }
+                if (!AssetPool.getSound("assets/sounds/stage_clear.ogg").isPlaying()){
+                    AssetPool.getSound("assets/sounds/main-theme-overworld.ogg").stop();
+                    AssetPool.getSound("assets/sounds/stage_clear.ogg").play();
+                }
+                timeToCastle -= dt;
+                walkTime -= dt;
+
+                if (timeToCastle <= 0){
+
+                    EventSystem.notify(null, new Event(EventType.GameEngineStopPlay));
+                }
+            }
+            return;
+        }
         if (isDead) {
             if (this.gameObject.transform.position.y < deadMaxHeight && deadGoingUp) {
                 this.gameObject.transform.position.y += dt * walkSpeed / 2.0f;
@@ -186,6 +223,19 @@ public class PlayerController extends Component {
         onGround = Physics2D.checkOnGround(this.gameObject, innerPlayerWidth, yVal);
     }
 
+    public void playWinAnimation(GameObject flagPole){
+        if (!playWinAnimation){
+            playWinAnimation = true;
+            velocity.zero();
+            acceleration.zero();
+            rb.setVelocity(velocity);
+            rb.setAsSensor();
+            rb.setBodyType(BodyType.STATIC);
+            gameObject.transform.position.x = flagPole.transform.position.x;
+            AssetPool.getSound("assets/sounds/flagpole.ogg").play();
+        }
+    }
+
     @Override
     public void beginCollision(GameObject collidingObject, Contact contact, Vector2f contactNormal) {
         if (isDead) return;
@@ -279,11 +329,11 @@ public class PlayerController extends Component {
     }
 
     public boolean isHurtInvincible() {
-        return this.hurtInvicibilityTimeLeft > 0;
+        return this.hurtInvicibilityTimeLeft > 0 || playWinAnimation;
     }
 
     public boolean isInvincible() {
-        return this.playerState == PlayerState.Invincible || this.hurtInvicibilityTimeLeft > 0;
+        return this.playerState == PlayerState.Invincible || this.hurtInvicibilityTimeLeft > 0 || playWinAnimation;
     }
 
     public boolean hasWon(){
