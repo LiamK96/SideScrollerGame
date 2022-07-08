@@ -279,6 +279,7 @@ public class PlayerController extends Component {
     }
 
     public void die() {
+        this.gameObject.transform.zIndex++;
         stateMachine.trigger("die");
         if (playerState == PlayerState.Small) {
             this.velocity.zero();
