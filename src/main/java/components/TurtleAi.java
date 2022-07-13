@@ -118,6 +118,17 @@ public class TurtleAi extends Component {
                 AssetPool.getSound("assets/sounds/bump.ogg").play();
             }
         }
+
+        if (obj.getComponent(Fireball.class) != null){
+            if (!isDead){
+                stomp();
+            } else {
+                isMoving = true;
+                goingRight = contactNormal.x < 0;
+                movingDebounce = 0.32f;
+            }
+            obj.getComponent(Fireball.class).disappear();
+        }
     }
 
     @Override

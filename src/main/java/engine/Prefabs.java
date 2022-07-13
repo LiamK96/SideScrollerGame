@@ -447,6 +447,20 @@ public class Prefabs {
         return flagTop;
     }
 
+    public static GameObject generateFireball(Vector2f position){
+        Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
+        GameObject fireball = generateSpriteObject(items.getSprite(32),0.18f,0.18f);
+        fireball.transform.position = position;
+
+        fireball.addComponent(createRigidBody(BodyType.DYNAMIC));
+
+        fireball.addComponent(createCircleCollider(0.08f));
+
+        fireball.addComponent(new Fireball());
+
+        return fireball;
+    }
+
     private static RigidBody2D createRigidBody(BodyType bodyType){
          return createRigidBody(bodyType, 0.0f, true,false);
     }

@@ -62,7 +62,6 @@ public class GoombaAi extends Component{
         this.velocity.y += this.acceleration.y * dt;
         this.velocity.y = Math.max(Math.min(this.velocity.y, this.terminalVelocity.y), -terminalVelocity.y);
         this.rb.setVelocity(velocity);
-
     }
 //
 //    @Override
@@ -94,6 +93,11 @@ public class GoombaAi extends Component{
             }
         } else if (Math.abs(contactNormal.y) < 0.1f){
             goingRight = contactNormal.x < 0;
+        }
+
+        if (go.getComponent(Fireball.class) != null){
+            stomp();
+            go.getComponent(Fireball.class).disappear();
         }
     }
 

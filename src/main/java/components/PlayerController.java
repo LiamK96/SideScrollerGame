@@ -2,6 +2,7 @@ package components;
 
 import engine.GameObject;
 import engine.KeyListener;
+import engine.Prefabs;
 import engine.Window;
 import observers.EventSystem;
 import observers.events.Event;
@@ -111,7 +112,8 @@ public class PlayerController extends Component {
                 this.rb.setBodyType(BodyType.KINEMATIC);
                 this.acceleration.y = Window.getPhysics().getGravity().y * 0.7f;
                 this.velocity.y += this.acceleration.y * dt;
-                this.velocity.y = Math.max(Math.min(this.velocity.y, this.terminalVelocity.y), -this.terminalVelocity.y);
+                this.velocity.y = Math.max(
+                        Math.min(this.velocity.y, this.terminalVelocity.y), -this.terminalVelocity.y);
                 this.rb.setVelocity(this.velocity);
                 this.rb.setAngularVelocity(0);
             } else if (!deadGoingUp && this.gameObject.transform.position.y <= deadMinHeight) {
@@ -169,6 +171,18 @@ public class PlayerController extends Component {
             if (this.velocity.x == 0) {
                 this.stateMachine.trigger("stopRunning");
             }
+        }
+
+        if (KeyListener.keyBeginPress(GLFW_KEY_E) && playerState == PlayerState.Fire
+                && Fireball.canSpawn()){
+            Vector2f position = new Vector2f(this.gameObject.transform.position)
+                    .add(this.gameObject.transform.scale.x > 0
+                            ? new Vector2f(0.26f, 0.0f)
+                            : new Vector2f(-0.26f, 0.0f));
+            GameObject fireball = Prefabs.generateFireball(position);
+            fireball.getComponent(Fireball.class).goingRight = this.gameObject.transform.scale.x > 0;
+            Window.getScene().addGameObjectToScene(fireball);
+
         }
 
         checkOnGround();
@@ -334,7 +348,8 @@ public class PlayerController extends Component {
     }
 
     public boolean isInvincible() {
-        return this.playerState == PlayerState.Invincible || this.hurtInvicibilityTimeLeft > 0 || playWinAnimation;
+        return this.playerState == PlayerState.Invincible
+                || this.hurtInvicibilityTimeLeft > 0 || playWinAnimation;
     }
 
     public boolean hasWon(){
