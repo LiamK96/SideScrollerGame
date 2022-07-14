@@ -135,7 +135,7 @@ public class DebugDraw {
                 || ((to.x >= cameraLeft.x && to.x <= cameraRight.x)
                 && (to.y >= cameraLeft.y && to.y <= cameraRight.y));
 
-        if (lines.size() >= MAX_LINES || !lineInView){
+        if (lines.size() >= MAX_LINES || !lineInView || camera.getZoom() > 4.5f){
             return;
         }
         DebugDraw.lines.add(new Line2D(from, to, color, lifetime));

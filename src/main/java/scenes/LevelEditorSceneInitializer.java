@@ -127,7 +127,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
             ImGui.text("Inverse Projection:\n" +Window.getScene().getCamera().getInverseProjection());
         }
 
-
+        ImGui.text("Camera Zoom = "+ Window.getScene().getCamera().getZoom());
         levelEditorComponents.imgui();
         ImGui.end();
 
