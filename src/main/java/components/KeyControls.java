@@ -42,7 +42,7 @@ public class KeyControls extends Component{
                 && !propertiesWindow.getActiveGameObjects().isEmpty()
                 && debounce <= 0){
             List<GameObject> gameObjects = new ArrayList<>(propertiesWindow.getActiveGameObjects());
-            propertiesWindow.clearSelected();
+            propertiesWindow.resetActiveGameObject();
             for (GameObject go : gameObjects){
                 GameObject copy = go.copy();
                 Window.getScene().addGameObjectToScene(copy);
@@ -60,7 +60,7 @@ public class KeyControls extends Component{
             if (propertiesWindow.getActiveGameObject() != null){
                 propertiesWindow.getActiveGameObject().destroy();
             }
-            propertiesWindow.clearSelected();
+            propertiesWindow.resetActiveGameObject();
 
             debounce = debounceTime;
         }

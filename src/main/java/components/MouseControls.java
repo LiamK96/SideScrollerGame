@@ -20,6 +20,7 @@ public class MouseControls extends Component {
     private float debounceTime = 0.05f;
     private float debounce = debounceTime;
     private boolean boxSelectSet = false;
+    private boolean isPickup = false;
     private Vector2f boxSelectStart = new Vector2f();
     private Vector2f boxSelectEnd = new Vector2f();
 
@@ -87,7 +88,7 @@ public class MouseControls extends Component {
 
             if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)){
                 if(!place()){
-                    Window.getImGuiLayer().getPropertiesWindow().setActiveGameObject(null);
+                    Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
                 }
                 debounce = debounceTime;
             }
@@ -105,8 +106,7 @@ public class MouseControls extends Component {
             if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null){
                 Window.getImGuiLayer().getPropertiesWindow().setActiveGameObject(pickedObj);
             } else if (pickedObj == null && !MouseListener.isDragging()){
-                Window.getImGuiLayer().getPropertiesWindow().setActiveGameObject(null);
-                Window.getImGuiLayer().getPropertiesWindow().clearSelected();
+                Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
             }
 
             this.debounce = 0.2f;
@@ -116,7 +116,7 @@ public class MouseControls extends Component {
                 && this.holdingObject == null){
 
             if (!boxSelectSet){
-                Window.getImGuiLayer().getPropertiesWindow().clearSelected();
+                Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
                 boxSelectStart = MouseListener.getScreen();
                 boxSelectSet = true;
             }
@@ -159,6 +159,8 @@ public class MouseControls extends Component {
             for (float objId : gameObjectIds){
                 uniqueGameObjectIds.add((int)objId);
             }
+
+            Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
 
             for (Integer objId : uniqueGameObjectIds){
                 GameObject pickedObj = Window.getScene().getGameObject(objId);

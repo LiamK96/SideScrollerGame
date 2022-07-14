@@ -15,6 +15,7 @@ import scenes.Scene;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
 
@@ -23,6 +24,7 @@ public class PropertiesWindow {
     private List<GameObject> activeGameObjects = new ArrayList<>();
     private List<Vector4f> activeGameObjectsOgColor = new ArrayList<>();
     private GameObject activeGameObject = null;
+    private Vector4f activeGameObjectOgColor = new Vector4f();
     private PickingTexture pickingTexture;
 
     private float debounceTime = 0.2f;
@@ -62,7 +64,7 @@ public class PropertiesWindow {
         }
     }
 
-    public void clearSelected(){
+    private void clearSelected(){
         if (activeGameObjectsOgColor.size()>0){
             int i = 0;
             for (GameObject go : activeGameObjects){
@@ -78,6 +80,22 @@ public class PropertiesWindow {
         this.activeGameObject = null;
     }
 
+    public void resetActiveGameObject(){
+        if (this.activeGameObjects.size() > 0){
+            clearSelected();
+        }
+        if (this.activeGameObject == null){
+            System.out.println("here");
+            return;
+        }
+        SpriteRenderer spr = this.activeGameObject.getComponent(SpriteRenderer.class);
+        if (spr != null){
+            spr.setColor(this.activeGameObjectOgColor);
+        }
+        this.activeGameObjectOgColor = new Vector4f();
+        this.activeGameObject = null;
+    }
+
     public GameObject getActiveGameObject(){
         return activeGameObjects.isEmpty() ? activeGameObject : null;
     }
@@ -86,7 +104,19 @@ public class PropertiesWindow {
         if (activeGameObjects.size() > 0){
             clearSelected();
         }
+        if (this.activeGameObject != null){
+            resetActiveGameObject();
+        }
+        if (go == null){
+            this.activeGameObject = null;
+            return;
+        }
         this.activeGameObject = go;
+        SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
+        if (spr != null){
+            this.activeGameObjectOgColor.set(spr.getColor());
+            spr.setColor(new Vector4f(0.8f,0.8f,0.0f,0.8f));
+        }
     }
 
     public List<GameObject> getActiveGameObjects(){
@@ -94,7 +124,6 @@ public class PropertiesWindow {
     }
 
     public void addActiveGameObject(GameObject go){
-        this.activeGameObject = null;
         SpriteRenderer spriteRenderer = go.getComponent(SpriteRenderer.class);
         if (spriteRenderer != null){
             this.activeGameObjectsOgColor.add(new Vector4f(spriteRenderer.getColor()));
