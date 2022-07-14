@@ -83,8 +83,9 @@ public class Window implements Observer {
                 if (currentScene.getSceneInitializerComponentsObject().getComponent(MouseControls.class) != null){
                     currentScene.getSceneInitializerComponentsObject()
                             .getComponent(MouseControls.class).destroyHoldingObject();
-                    currentScene.editorUpdate(0.0f);
                 }
+                Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
+                currentScene.editorUpdate(0.0f);
                 this.runtimePlaying = true;
                 currentScene.save();
                 Window.changeScene(new LevelSceneInitializer());
