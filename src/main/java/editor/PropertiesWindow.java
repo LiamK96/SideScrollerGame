@@ -85,7 +85,6 @@ public class PropertiesWindow {
             clearSelected();
         }
         if (this.activeGameObject == null){
-            System.out.println("here");
             return;
         }
         SpriteRenderer spr = this.activeGameObject.getComponent(SpriteRenderer.class);

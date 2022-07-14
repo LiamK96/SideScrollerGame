@@ -30,7 +30,7 @@ public class MouseControls extends Component {
             this.holdingObject.destroy();
         }
         this.holdingObject = go;
-        this.holdingObject.getComponent(SpriteRenderer.class).setColor(new Vector4f(0.8f,0.8f,0.8f,0.5f));
+        this.holdingObject.getComponent(SpriteRenderer.class).setColor(new Vector4f(0.8f, 0.8f, 0.8f, 0.5f));
         this.holdingObject.addComponent(new NonPickable());
         if (this.holdingObject.name.equals("Sprite_Object_Gen")) {
             this.holdingObject.name = "Holding Object";
@@ -52,6 +52,7 @@ public class MouseControls extends Component {
             }
         }
         GameObject newObj = this.holdingObject.copy();
+        newObj.name = this.holdingObject.name;
         newObj.getComponent(SpriteRenderer.class).setColor(new Vector4f(1,1,1,1));
         newObj.removeComponent(NonPickable.class);
         if (newObj.name.equals("Holding Object")) {
@@ -90,12 +91,18 @@ public class MouseControls extends Component {
                 if(!place()){
                     Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
                 }
+                if (isPickup){
+                    holdingObject.destroy();
+                    holdingObject = null;
+                    isPickup = false;
+                }
                 debounce = debounceTime;
             }
 
             if (KeyListener.isKeyPressed(GLFW_KEY_BACKSPACE)){
                 holdingObject.destroy();
                 holdingObject = null;
+                isPickup = false;
             }
         } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && debounce < 0
                 && !MouseListener.isDragging()){
@@ -104,7 +111,17 @@ public class MouseControls extends Component {
             int gameObjectId = pickingTexture.readPixel(x,y);
             GameObject pickedObj = currentScene.getGameObject(gameObjectId);
             if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null){
-                Window.getImGuiLayer().getPropertiesWindow().setActiveGameObject(pickedObj);
+                //Check to see if we clicked the same obj twice
+                if (pickedObj == Window.getImGuiLayer().getPropertiesWindow().getActiveGameObject()){
+                    isPickup = true;
+                    GameObject newObj = pickedObj.copy();
+                    newObj.name = pickedObj.name;
+                    pickupObject(newObj);
+                    pickedObj.destroy();
+                    Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
+                } else {
+                    Window.getImGuiLayer().getPropertiesWindow().setActiveGameObject(pickedObj);
+                }
             } else if (pickedObj == null && !MouseListener.isDragging()){
                 Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
             }
@@ -185,5 +202,9 @@ public class MouseControls extends Component {
             holdingObject.destroy();
             holdingObject = null;
         }
+    }
+
+    public void destroyBlock(){
+
     }
 }
