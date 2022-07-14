@@ -1,5 +1,6 @@
 package components;
 
+import editor.PropertiesWindow;
 import engine.*;
 import org.joml.Vector2f;
 import org.joml.Vector2i;
@@ -24,6 +25,8 @@ public class MouseControls extends Component {
     private Vector2f boxSelectStart = new Vector2f();
     private Vector2f boxSelectEnd = new Vector2f();
 
+    private PropertiesWindow propertiesWindow = Window.getImGuiLayer().getPropertiesWindow();
+
 
     public void pickupObject(GameObject go){
         if (this.holdingObject != null){
@@ -39,6 +42,7 @@ public class MouseControls extends Component {
     }
 
     public boolean place(){
+        //Check to see if space is vacant
         List<GameObject> gameObjects = Window.getScene().getGameObjects();
         for (GameObject go : gameObjects){
             if (go.equals(this.holdingObject)){
@@ -71,7 +75,7 @@ public class MouseControls extends Component {
     public void editorUpdate(float dt){
         debounce -=dt;
 
-        PickingTexture pickingTexture = Window.getImGuiLayer().getPropertiesWindow().getPickingTexture();
+        PickingTexture pickingTexture = propertiesWindow.getPickingTexture();
         Scene currentScene = Window.getScene();
 
         if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)
@@ -89,20 +93,16 @@ public class MouseControls extends Component {
 
             if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)){
                 if(!place()){
-                    Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
+                    propertiesWindow.resetActiveGameObject();
                 }
                 if (isPickup){
-                    holdingObject.destroy();
-                    holdingObject = null;
-                    isPickup = false;
+                    destroyHoldingObject();
                 }
                 debounce = debounceTime;
             }
 
             if (KeyListener.isKeyPressed(GLFW_KEY_BACKSPACE)){
-                holdingObject.destroy();
-                holdingObject = null;
-                isPickup = false;
+                destroyHoldingObject();
             }
         } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && debounce < 0
                 && !MouseListener.isDragging()){
@@ -112,18 +112,18 @@ public class MouseControls extends Component {
             GameObject pickedObj = currentScene.getGameObject(gameObjectId);
             if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null){
                 //Check to see if we clicked the same obj twice
-                if (pickedObj == Window.getImGuiLayer().getPropertiesWindow().getActiveGameObject()){
+                if (pickedObj == propertiesWindow.getActiveGameObject()){
                     isPickup = true;
                     GameObject newObj = pickedObj.copy();
                     newObj.name = pickedObj.name;
                     pickupObject(newObj);
                     pickedObj.destroy();
-                    Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
+                    propertiesWindow.resetActiveGameObject();
                 } else {
-                    Window.getImGuiLayer().getPropertiesWindow().setActiveGameObject(pickedObj);
+                    propertiesWindow.setActiveGameObject(pickedObj);
                 }
             } else if (pickedObj == null && !MouseListener.isDragging()){
-                Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
+                propertiesWindow.resetActiveGameObject();
             }
 
             this.debounce = 0.2f;
@@ -133,7 +133,7 @@ public class MouseControls extends Component {
                 && this.holdingObject == null){
 
             if (!boxSelectSet){
-                Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
+                propertiesWindow.resetActiveGameObject();
                 boxSelectStart = MouseListener.getScreen();
                 boxSelectSet = true;
             }
@@ -177,18 +177,18 @@ public class MouseControls extends Component {
                 uniqueGameObjectIds.add((int)objId);
             }
 
-            Window.getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
+            propertiesWindow.resetActiveGameObject();
 
             for (Integer objId : uniqueGameObjectIds){
                 GameObject pickedObj = Window.getScene().getGameObject(objId);
                 if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null){
-                    Window.getImGuiLayer().getPropertiesWindow().addActiveGameObject(pickedObj);
+                    propertiesWindow.addActiveGameObject(pickedObj);
                 }
             }
 
-            if (Window.getImGuiLayer().getPropertiesWindow().getActiveGameObjects().size() == 1){
-                Window.getImGuiLayer().getPropertiesWindow().setActiveGameObject(
-                        Window.getImGuiLayer().getPropertiesWindow().getActiveGameObjects().get(0));
+            if (propertiesWindow.getActiveGameObjects().size() == 1){
+                propertiesWindow.setActiveGameObject(
+                        propertiesWindow.getActiveGameObjects().get(0));
             }
         }
     }
@@ -201,10 +201,7 @@ public class MouseControls extends Component {
         if (holdingObject != null) {
             holdingObject.destroy();
             holdingObject = null;
+            isPickup = false;
         }
-    }
-
-    public void destroyBlock(){
-
     }
 }
