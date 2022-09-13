@@ -65,10 +65,15 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         AssetPool.addSpriteSheet("assets/images/items.png",
                 new Spritesheet(AssetPool.getTexture("assets/images/items.png"),
                         16,16,34,0));
+        AssetPool.addSpriteSheet("assets/images/spritesheets/icons.png",
+                new Spritesheet(AssetPool.getTexture("assets/images/spritesheets/icons.png"),
+                        32,32,16,0));
         AssetPool.addSpriteSheet("assets/images/gizmos.png",
                 new Spritesheet(AssetPool.getTexture("assets/images/gizmos.png"),
                         24,48,3,0));
-        AssetPool.getTexture("assets/images/blendImage1.png");
+        AssetPool.addSpriteSheet("assets/images/blendImage1.png",
+                new Spritesheet(AssetPool.getTexture("assets/images/blendImage1.png"),
+                        16,16,1,0));
 
         AssetPool.addSound("assets/sounds/1-up.ogg", false);
         AssetPool.addSound("assets/sounds/bowserfalls.ogg", false);
@@ -241,6 +246,8 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
                 Spritesheet pipes = AssetPool.getSpriteSheet("assets/images/spritesheets/pipes.png");
                 Spritesheet turtle = AssetPool.getSpriteSheet("assets/images/turtle.png");
+                Spritesheet icons = AssetPool.getSpriteSheet("assets/images/spritesheets/icons.png");
+                Spritesheet deathBlock = AssetPool.getSpriteSheet("assets/images/blendImage1.png");
 
 
                 Map<String, Sprite> prefabs = new HashMap<>();
@@ -255,6 +262,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 prefabs.put("turtle", turtle.getSprite(0));
                 prefabs.put("flagPole", items.getSprite(33));
                 prefabs.put("flagTop", items.getSprite(6));
+                prefabs.put("deathBlock", deathBlock.getSprite(0));
 
                 int uid = 0;
 
@@ -340,6 +348,8 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 return Prefabs.generateFlagPole();
             case "flagTop":
                 return Prefabs.generateFlagTop();
+            case "deathBlock":
+                return Prefabs.generateDeathBlock();
         }
         assert false: "No such prefab as "+ prefab;
         GameObject broken = new GameObject("broken");

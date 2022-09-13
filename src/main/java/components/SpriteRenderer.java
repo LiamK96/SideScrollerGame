@@ -9,6 +9,7 @@ import renderer.Texture;
 public class SpriteRenderer extends Component {
 
     private Vector4f color = new Vector4f(1,1,1,1);
+    private Vector4f storedColor = new Vector4f(1,1,1,1);
     private Sprite sprite = new Sprite();
 
     private transient Transform lastTransform;
@@ -39,7 +40,8 @@ public class SpriteRenderer extends Component {
 
     @Override
     public void imgui(){
-         if (EImGui.colourPicker4("Color Picker", this.color)){
+         if (EImGui.colourPicker4("Color Picker", this.storedColor)){
+             this.color.set(this.storedColor);
              this.isDirty = true;
          }
 
@@ -67,6 +69,17 @@ public class SpriteRenderer extends Component {
             this.isDirty = true;
             this.color.set(color);
         }
+    }
+
+    public void setStoredColor(Vector4f color){
+        if (!this.storedColor.equals(color)) {
+            this.isDirty = true;
+            this.storedColor.set(color);
+        }
+    }
+
+    public Vector4f getStoredColor(){
+        return this.storedColor;
     }
 
     public boolean isDirty(){

@@ -292,10 +292,14 @@ public class PlayerController extends Component {
         stateMachine.trigger("powerup");
     }
 
-    public void die() {
+    public void die(){
+        die(false);
+    }
+
+    public void die(boolean isTouchingDeathBlock) {
         this.gameObject.transform.zIndex++;
         stateMachine.trigger("die");
-        if (playerState == PlayerState.Small) {
+        if (playerState == PlayerState.Small || isTouchingDeathBlock) {
             this.velocity.zero();
             this.acceleration.zero();
             this.rb.setVelocity(new Vector2f());

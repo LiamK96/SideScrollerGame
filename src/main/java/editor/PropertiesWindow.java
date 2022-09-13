@@ -24,7 +24,6 @@ public class PropertiesWindow {
     private List<GameObject> activeGameObjects = new ArrayList<>();
     private List<Vector4f> activeGameObjectsOgColor = new ArrayList<>();
     private GameObject activeGameObject = null;
-    private Vector4f activeGameObjectOgColor = new Vector4f();
     private PickingTexture pickingTexture;
 
     private float debounceTime = 0.2f;
@@ -89,9 +88,8 @@ public class PropertiesWindow {
         }
         SpriteRenderer spr = this.activeGameObject.getComponent(SpriteRenderer.class);
         if (spr != null){
-            spr.setColor(this.activeGameObjectOgColor);
+            spr.setColor(spr.getStoredColor());
         }
-        this.activeGameObjectOgColor = new Vector4f();
         this.activeGameObject = null;
     }
 
@@ -113,7 +111,7 @@ public class PropertiesWindow {
         this.activeGameObject = go;
         SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
         if (spr != null){
-            this.activeGameObjectOgColor.set(spr.getColor());
+            spr.setStoredColor(spr.getColor());
             spr.setColor(new Vector4f(0.8f,0.8f,0.0f,0.8f));
         }
     }

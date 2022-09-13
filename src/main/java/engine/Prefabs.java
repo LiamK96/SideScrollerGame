@@ -3,6 +3,7 @@ package engine;
 import components.*;
 import components.enums.Direction;
 import org.joml.Vector2f;
+import org.joml.Vector4f;
 import physics2d.components.Box2DCollider;
 import physics2d.components.Circle2DCollider;
 import physics2d.components.PillboxCollider;
@@ -297,6 +298,17 @@ public class Prefabs {
         questionBlock.addComponent(new Ground());
 
         return questionBlock;
+    }
+
+    public static GameObject generateDeathBlock(){
+        Spritesheet deathBlocks = AssetPool.getSpriteSheet("assets/images/blendImage1.png");
+        GameObject deathBlock = generateSpriteObject(deathBlocks.getSprite(0),0.25f,0.25f);
+
+        deathBlock.addComponent(createRigidBody(BodyType.STATIC));
+        deathBlock.addComponent(createBoxCollider(new Vector2f(0.25f,0.25f)));
+        deathBlock.addComponent(new DeathBlock());
+
+        return deathBlock;
     }
 
     public static GameObject generateBlockCoin(){

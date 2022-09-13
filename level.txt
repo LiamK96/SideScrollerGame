@@ -28,6 +28,12 @@
             "z": 1.0,
             "w": 1.0
           },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
           "sprite": {
             "width": 16.0,
             "height": 16.0,
@@ -130,6 +136,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -242,6 +254,12 @@
             "z": 1.0,
             "w": 1.0
           },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
           "sprite": {
             "width": 16.0,
             "height": 16.0,
@@ -344,6 +362,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -456,6 +480,12 @@
             "z": 1.0,
             "w": 1.0
           },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
           "sprite": {
             "width": 16.0,
             "height": 16.0,
@@ -558,6 +588,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -670,6 +706,12 @@
             "z": 1.0,
             "w": 1.0
           },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
           "sprite": {
             "width": 16.0,
             "height": 16.0,
@@ -772,6 +814,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -884,6 +932,12 @@
             "z": 1.0,
             "w": 1.0
           },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
           "sprite": {
             "width": 16.0,
             "height": 16.0,
@@ -964,13 +1018,13 @@
   },
   {
     "uid": 9,
-    "name": "Block: 26",
+    "name": "Block: 30",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 2.375,
+            "x": 2.875,
             "y": 0.125
           },
           "scale": {
@@ -986,6 +1040,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -1071,13 +1131,13 @@
   },
   {
     "uid": 10,
-    "name": "Block: 28",
+    "name": "Block: 32",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 2.625,
+            "x": 3.125,
             "y": 0.125
           },
           "scale": {
@@ -1093,6 +1153,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -1178,14 +1244,14 @@
   },
   {
     "uid": 11,
-    "name": "Block: 30",
+    "name": "Block: 34",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 2.875,
-            "y": 0.125
+            "x": 3.125,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -1200,6 +1266,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -1285,14 +1357,14 @@
   },
   {
     "uid": 12,
-    "name": "Block: 32",
+    "name": "Block: 36",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 3.125,
-            "y": 0.125
+            "x": 2.875,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -1307,6 +1379,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -1392,13 +1470,13 @@
   },
   {
     "uid": 13,
-    "name": "Block: 34",
+    "name": "Block: 42",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 3.125,
+            "x": 2.125,
             "y": 0.375
           },
           "scale": {
@@ -1414,6 +1492,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -1499,13 +1583,13 @@
   },
   {
     "uid": 14,
-    "name": "Block: 36",
+    "name": "Block: 44",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 2.875,
+            "x": 1.875,
             "y": 0.375
           },
           "scale": {
@@ -1521,6 +1605,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -1606,13 +1696,13 @@
   },
   {
     "uid": 15,
-    "name": "Block: 38",
+    "name": "Block: 46",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 2.625,
+            "x": 1.625,
             "y": 0.375
           },
           "scale": {
@@ -1628,6 +1718,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -1713,13 +1809,13 @@
   },
   {
     "uid": 16,
-    "name": "Block: 40",
+    "name": "Block: 48",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 2.375,
+            "x": 1.375,
             "y": 0.375
           },
           "scale": {
@@ -1735,6 +1831,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -1820,13 +1922,13 @@
   },
   {
     "uid": 17,
-    "name": "Block: 42",
+    "name": "Block: 50",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 2.125,
+            "x": 1.125,
             "y": 0.375
           },
           "scale": {
@@ -1842,6 +1944,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -1927,13 +2035,13 @@
   },
   {
     "uid": 18,
-    "name": "Block: 44",
+    "name": "Block: 52",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 1.875,
+            "x": 0.875,
             "y": 0.375
           },
           "scale": {
@@ -1949,6 +2057,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -2034,13 +2148,13 @@
   },
   {
     "uid": 19,
-    "name": "Block: 46",
+    "name": "Block: 54",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 1.625,
+            "x": 0.625,
             "y": 0.375
           },
           "scale": {
@@ -2056,6 +2170,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -2141,13 +2261,13 @@
   },
   {
     "uid": 20,
-    "name": "Block: 48",
+    "name": "Block: 56",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 1.375,
+            "x": 0.375,
             "y": 0.375
           },
           "scale": {
@@ -2163,6 +2283,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -2248,14 +2374,14 @@
   },
   {
     "uid": 21,
-    "name": "Block: 50",
+    "name": "Block: 22",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 1.125,
-            "y": 0.375
+            "x": 1.875,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -2270,6 +2396,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -2355,13 +2487,13 @@
   },
   {
     "uid": 22,
-    "name": "Block: 52",
+    "name": "Block: 62",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 0.875,
+            "x": 3.375,
             "y": 0.375
           },
           "scale": {
@@ -2377,6 +2509,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -2462,14 +2600,14 @@
   },
   {
     "uid": 23,
-    "name": "Block: 54",
+    "name": "Block: 64",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 0.625,
-            "y": 0.375
+            "x": 3.375,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -2484,6 +2622,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -2569,14 +2713,14 @@
   },
   {
     "uid": 24,
-    "name": "Block: 56",
+    "name": "Block: 66",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 0.375,
-            "y": 0.375
+            "x": 3.625,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -2591,6 +2735,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -2676,13 +2826,13 @@
   },
   {
     "uid": 25,
-    "name": "Block: 22",
+    "name": "Block: 68",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 1.875,
+            "x": 3.875,
             "y": 0.125
           },
           "scale": {
@@ -2698,6 +2848,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -2783,14 +2939,14 @@
   },
   {
     "uid": 26,
-    "name": "Block: 62",
+    "name": "Block: 70",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 3.375,
-            "y": 0.375
+            "x": 4.125,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -2805,6 +2961,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -2890,13 +3052,13 @@
   },
   {
     "uid": 27,
-    "name": "Block: 64",
+    "name": "Block: 72",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 3.375,
+            "x": 4.375,
             "y": 0.125
           },
           "scale": {
@@ -2912,6 +3074,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -2997,13 +3165,13 @@
   },
   {
     "uid": 28,
-    "name": "Block: 66",
+    "name": "Block: 74",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 3.625,
+            "x": 4.625,
             "y": 0.125
           },
           "scale": {
@@ -3019,6 +3187,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -3104,13 +3278,13 @@
   },
   {
     "uid": 29,
-    "name": "Block: 68",
+    "name": "Block: 76",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 3.875,
+            "x": 4.875,
             "y": 0.125
           },
           "scale": {
@@ -3126,6 +3300,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -3211,13 +3391,13 @@
   },
   {
     "uid": 30,
-    "name": "Block: 70",
+    "name": "Block: 78",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 4.125,
+            "x": 5.375,
             "y": 0.125
           },
           "scale": {
@@ -3233,6 +3413,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -3318,13 +3504,13 @@
   },
   {
     "uid": 31,
-    "name": "Block: 72",
+    "name": "Block: 80",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 4.375,
+            "x": 5.625,
             "y": 0.125
           },
           "scale": {
@@ -3340,6 +3526,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -3425,13 +3617,13 @@
   },
   {
     "uid": 32,
-    "name": "Block: 74",
+    "name": "Block: 82",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 4.625,
+            "x": 5.875,
             "y": 0.125
           },
           "scale": {
@@ -3447,6 +3639,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -3532,13 +3730,13 @@
   },
   {
     "uid": 33,
-    "name": "Block: 76",
+    "name": "Block: 84",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 4.875,
+            "x": 6.125,
             "y": 0.125
           },
           "scale": {
@@ -3554,6 +3752,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -3639,13 +3843,13 @@
   },
   {
     "uid": 34,
-    "name": "Block: 78",
+    "name": "Block: 86",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 5.375,
+            "x": 6.375,
             "y": 0.125
           },
           "scale": {
@@ -3661,6 +3865,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -3746,14 +3956,14 @@
   },
   {
     "uid": 35,
-    "name": "Block: 80",
+    "name": "Block: 88",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 5.625,
-            "y": 0.125
+            "x": 6.375,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -3768,6 +3978,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -3853,14 +4069,14 @@
   },
   {
     "uid": 36,
-    "name": "Block: 82",
+    "name": "Block: 90",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 5.875,
-            "y": 0.125
+            "x": 6.125,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -3875,6 +4091,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -3960,14 +4182,14 @@
   },
   {
     "uid": 37,
-    "name": "Block: 84",
+    "name": "Block: 92",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 6.125,
-            "y": 0.125
+            "x": 5.875,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -3982,6 +4204,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -4067,14 +4295,14 @@
   },
   {
     "uid": 38,
-    "name": "Block: 86",
+    "name": "Block: 94",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 6.375,
-            "y": 0.125
+            "x": 5.625,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -4089,6 +4317,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -4174,13 +4408,13 @@
   },
   {
     "uid": 39,
-    "name": "Block: 88",
+    "name": "Block: 96",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 6.375,
+            "x": 5.375,
             "y": 0.375
           },
           "scale": {
@@ -4196,6 +4430,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -4281,13 +4521,13 @@
   },
   {
     "uid": 40,
-    "name": "Block: 90",
+    "name": "Block: 98",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 6.125,
+            "x": 5.125,
             "y": 0.375
           },
           "scale": {
@@ -4303,6 +4543,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -4388,13 +4634,13 @@
   },
   {
     "uid": 41,
-    "name": "Block: 92",
+    "name": "Block: 100",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 5.875,
+            "x": 4.875,
             "y": 0.375
           },
           "scale": {
@@ -4410,6 +4656,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -4495,13 +4747,13 @@
   },
   {
     "uid": 42,
-    "name": "Block: 94",
+    "name": "Block: 102",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 5.625,
+            "x": 4.625,
             "y": 0.375
           },
           "scale": {
@@ -4517,6 +4769,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -4602,13 +4860,13 @@
   },
   {
     "uid": 43,
-    "name": "Block: 96",
+    "name": "Block: 104",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 5.375,
+            "x": 4.375,
             "y": 0.375
           },
           "scale": {
@@ -4624,6 +4882,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -4709,13 +4973,13 @@
   },
   {
     "uid": 44,
-    "name": "Block: 98",
+    "name": "Block: 106",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 5.125,
+            "x": 4.125,
             "y": 0.375
           },
           "scale": {
@@ -4731,6 +4995,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -4816,13 +5086,13 @@
   },
   {
     "uid": 45,
-    "name": "Block: 100",
+    "name": "Block: 108",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 4.875,
+            "x": 3.875,
             "y": 0.375
           },
           "scale": {
@@ -4838,6 +5108,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -4923,13 +5199,13 @@
   },
   {
     "uid": 46,
-    "name": "Block: 102",
+    "name": "Block: 110",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 4.625,
+            "x": 3.625,
             "y": 0.375
           },
           "scale": {
@@ -4945,6 +5221,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -5030,14 +5312,14 @@
   },
   {
     "uid": 47,
-    "name": "Block: 104",
+    "name": "Block: 112",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 4.375,
-            "y": 0.375
+            "x": 5.125,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -5052,6 +5334,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -5137,13 +5425,13 @@
   },
   {
     "uid": 48,
-    "name": "Block: 106",
+    "name": "Block: 114",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 4.125,
+            "x": 7.375,
             "y": 0.375
           },
           "scale": {
@@ -5159,6 +5447,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -5244,13 +5538,13 @@
   },
   {
     "uid": 49,
-    "name": "Block: 108",
+    "name": "Block: 116",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 3.875,
+            "x": 7.125,
             "y": 0.375
           },
           "scale": {
@@ -5266,6 +5560,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -5351,13 +5651,13 @@
   },
   {
     "uid": 50,
-    "name": "Block: 110",
+    "name": "Block: 118",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 3.625,
+            "x": 6.875,
             "y": 0.375
           },
           "scale": {
@@ -5373,6 +5673,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -5458,14 +5764,14 @@
   },
   {
     "uid": 51,
-    "name": "Block: 112",
+    "name": "Block: 120",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 5.125,
-            "y": 0.125
+            "x": 6.625,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -5480,6 +5786,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -5565,14 +5877,14 @@
   },
   {
     "uid": 52,
-    "name": "Block: 114",
+    "name": "Block: 122",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 7.375,
-            "y": 0.375
+            "x": 6.625,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -5587,6 +5899,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -5672,14 +5990,14 @@
   },
   {
     "uid": 53,
-    "name": "Block: 116",
+    "name": "Block: 124",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 7.125,
-            "y": 0.375
+            "x": 6.875,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -5694,6 +6012,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -5779,14 +6103,14 @@
   },
   {
     "uid": 54,
-    "name": "Block: 118",
+    "name": "Block: 126",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 6.875,
-            "y": 0.375
+            "x": 7.375,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -5801,6 +6125,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -5886,14 +6216,14 @@
   },
   {
     "uid": 55,
-    "name": "Block: 120",
+    "name": "Block: 128",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 6.625,
-            "y": 0.375
+            "x": 7.125,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -5908,6 +6238,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -5993,13 +6329,13 @@
   },
   {
     "uid": 56,
-    "name": "Block: 122",
+    "name": "Block: 130",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 6.625,
+            "x": 7.625,
             "y": 0.125
           },
           "scale": {
@@ -6015,6 +6351,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -6100,13 +6442,13 @@
   },
   {
     "uid": 57,
-    "name": "Block: 124",
+    "name": "Block: 132",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 6.875,
+            "x": 7.875,
             "y": 0.125
           },
           "scale": {
@@ -6122,6 +6464,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -6207,13 +6555,13 @@
   },
   {
     "uid": 58,
-    "name": "Block: 126",
+    "name": "Block: 134",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 7.375,
+            "x": 8.125,
             "y": 0.125
           },
           "scale": {
@@ -6229,6 +6577,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -6314,13 +6668,13 @@
   },
   {
     "uid": 59,
-    "name": "Block: 128",
+    "name": "Block: 136",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 7.125,
+            "x": 8.375,
             "y": 0.125
           },
           "scale": {
@@ -6336,6 +6690,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -6421,14 +6781,14 @@
   },
   {
     "uid": 60,
-    "name": "Block: 130",
+    "name": "Block: 138",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 7.625,
-            "y": 0.125
+            "x": 8.375,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -6443,6 +6803,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -6528,14 +6894,14 @@
   },
   {
     "uid": 61,
-    "name": "Block: 132",
+    "name": "Block: 140",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 7.875,
-            "y": 0.125
+            "x": 8.125,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -6550,6 +6916,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -6635,14 +7007,14 @@
   },
   {
     "uid": 62,
-    "name": "Block: 134",
+    "name": "Block: 142",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 8.125,
-            "y": 0.125
+            "x": 7.875,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -6657,6 +7029,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -6742,14 +7120,14 @@
   },
   {
     "uid": 63,
-    "name": "Block: 136",
+    "name": "Block: 144",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 8.375,
-            "y": 0.125
+            "x": 7.625,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -6764,6 +7142,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -6849,13 +7233,13 @@
   },
   {
     "uid": 64,
-    "name": "Block: 138",
+    "name": "Block: 146",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 8.375,
+            "x": 9.375,
             "y": 0.375
           },
           "scale": {
@@ -6871,6 +7255,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -6956,13 +7346,13 @@
   },
   {
     "uid": 65,
-    "name": "Block: 140",
+    "name": "Block: 148",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 8.125,
+            "x": 9.125,
             "y": 0.375
           },
           "scale": {
@@ -6978,6 +7368,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -7063,13 +7459,13 @@
   },
   {
     "uid": 66,
-    "name": "Block: 142",
+    "name": "Block: 150",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 7.875,
+            "x": 8.875,
             "y": 0.375
           },
           "scale": {
@@ -7085,6 +7481,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -7170,13 +7572,13 @@
   },
   {
     "uid": 67,
-    "name": "Block: 144",
+    "name": "Block: 152",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 7.625,
+            "x": 8.625,
             "y": 0.375
           },
           "scale": {
@@ -7192,6 +7594,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -7277,14 +7685,14 @@
   },
   {
     "uid": 68,
-    "name": "Block: 146",
+    "name": "Block: 154",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 9.375,
-            "y": 0.375
+            "x": 8.625,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -7299,6 +7707,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -7384,14 +7798,14 @@
   },
   {
     "uid": 69,
-    "name": "Block: 148",
+    "name": "Block: 156",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 9.125,
-            "y": 0.375
+            "x": 8.875,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -7406,6 +7820,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -7491,14 +7911,14 @@
   },
   {
     "uid": 70,
-    "name": "Block: 150",
+    "name": "Block: 158",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 8.875,
-            "y": 0.375
+            "x": 9.375,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -7513,6 +7933,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -7598,14 +8024,14 @@
   },
   {
     "uid": 71,
-    "name": "Block: 152",
+    "name": "Block: 160",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 8.625,
-            "y": 0.375
+            "x": 9.125,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -7620,6 +8046,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -7705,13 +8137,13 @@
   },
   {
     "uid": 72,
-    "name": "Block: 154",
+    "name": "Block: 162",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 8.625,
+            "x": 9.625,
             "y": 0.125
           },
           "scale": {
@@ -7727,6 +8159,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -7812,13 +8250,13 @@
   },
   {
     "uid": 73,
-    "name": "Block: 156",
+    "name": "Block: 164",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 8.875,
+            "x": 9.875,
             "y": 0.125
           },
           "scale": {
@@ -7834,6 +8272,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -7919,13 +8363,13 @@
   },
   {
     "uid": 74,
-    "name": "Block: 158",
+    "name": "Block: 166",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 9.375,
+            "x": 10.125,
             "y": 0.125
           },
           "scale": {
@@ -7941,6 +8385,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -8026,13 +8476,13 @@
   },
   {
     "uid": 75,
-    "name": "Block: 160",
+    "name": "Block: 168",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 9.125,
+            "x": 10.375,
             "y": 0.125
           },
           "scale": {
@@ -8048,6 +8498,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -8133,14 +8589,14 @@
   },
   {
     "uid": 76,
-    "name": "Block: 162",
+    "name": "Block: 170",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 9.625,
-            "y": 0.125
+            "x": 10.375,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -8155,6 +8611,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -8240,14 +8702,14 @@
   },
   {
     "uid": 77,
-    "name": "Block: 164",
+    "name": "Block: 172",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 9.875,
-            "y": 0.125
+            "x": 10.125,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -8262,6 +8724,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -8347,14 +8815,14 @@
   },
   {
     "uid": 78,
-    "name": "Block: 166",
+    "name": "Block: 174",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 10.125,
-            "y": 0.125
+            "x": 9.875,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -8369,6 +8837,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -8454,14 +8928,14 @@
   },
   {
     "uid": 79,
-    "name": "Block: 168",
+    "name": "Block: 176",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 10.375,
-            "y": 0.125
+            "x": 9.625,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -8476,6 +8950,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -8561,13 +9041,13 @@
   },
   {
     "uid": 80,
-    "name": "Block: 170",
+    "name": "Block: 178",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 10.375,
+            "x": 11.125,
             "y": 0.375
           },
           "scale": {
@@ -8583,6 +9063,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -8668,13 +9154,13 @@
   },
   {
     "uid": 81,
-    "name": "Block: 172",
+    "name": "Block: 180",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 10.125,
+            "x": 10.875,
             "y": 0.375
           },
           "scale": {
@@ -8690,6 +9176,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -8775,13 +9267,13 @@
   },
   {
     "uid": 82,
-    "name": "Block: 174",
+    "name": "Block: 182",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 9.875,
+            "x": 10.625,
             "y": 0.375
           },
           "scale": {
@@ -8797,6 +9289,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -8882,13 +9380,13 @@
   },
   {
     "uid": 83,
-    "name": "Block: 176",
+    "name": "Block: 184",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 9.625,
+            "x": 10.375,
             "y": 0.375
           },
           "scale": {
@@ -8904,6 +9402,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -8989,14 +9493,14 @@
   },
   {
     "uid": 84,
-    "name": "Block: 178",
+    "name": "Block: 186",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 11.125,
-            "y": 0.375
+            "x": 10.375,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -9011,6 +9515,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -9096,14 +9606,14 @@
   },
   {
     "uid": 85,
-    "name": "Block: 180",
+    "name": "Block: 188",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 10.875,
-            "y": 0.375
+            "x": 10.625,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -9118,6 +9628,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -9203,14 +9719,14 @@
   },
   {
     "uid": 86,
-    "name": "Block: 182",
+    "name": "Block: 190",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 10.625,
-            "y": 0.375
+            "x": 11.125,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -9225,6 +9741,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -9310,14 +9832,14 @@
   },
   {
     "uid": 87,
-    "name": "Block: 184",
+    "name": "Block: 192",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 10.375,
-            "y": 0.375
+            "x": 10.875,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -9332,6 +9854,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -9417,13 +9945,13 @@
   },
   {
     "uid": 88,
-    "name": "Block: 186",
+    "name": "Block: 194",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 10.375,
+            "x": 11.375,
             "y": 0.125
           },
           "scale": {
@@ -9439,6 +9967,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -9524,13 +10058,13 @@
   },
   {
     "uid": 89,
-    "name": "Block: 188",
+    "name": "Block: 196",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 10.625,
+            "x": 11.625,
             "y": 0.125
           },
           "scale": {
@@ -9546,6 +10080,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -9631,13 +10171,13 @@
   },
   {
     "uid": 90,
-    "name": "Block: 190",
+    "name": "Block: 198",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 11.125,
+            "x": 11.875,
             "y": 0.125
           },
           "scale": {
@@ -9653,6 +10193,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -9738,13 +10284,13 @@
   },
   {
     "uid": 91,
-    "name": "Block: 192",
+    "name": "Block: 200",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 10.875,
+            "x": 12.125,
             "y": 0.125
           },
           "scale": {
@@ -9760,6 +10306,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -9845,14 +10397,14 @@
   },
   {
     "uid": 92,
-    "name": "Block: 194",
+    "name": "Block: 202",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 11.375,
-            "y": 0.125
+            "x": 12.125,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -9867,6 +10419,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -9952,14 +10510,14 @@
   },
   {
     "uid": 93,
-    "name": "Block: 196",
+    "name": "Block: 204",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 11.625,
-            "y": 0.125
+            "x": 11.875,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -9974,6 +10532,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -10059,14 +10623,14 @@
   },
   {
     "uid": 94,
-    "name": "Block: 198",
+    "name": "Block: 206",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 11.875,
-            "y": 0.125
+            "x": 11.625,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -10081,6 +10645,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -10166,14 +10736,14 @@
   },
   {
     "uid": 95,
-    "name": "Block: 200",
+    "name": "Block: 208",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 12.125,
-            "y": 0.125
+            "x": 11.375,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -10188,6 +10758,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -10273,13 +10849,13 @@
   },
   {
     "uid": 96,
-    "name": "Block: 202",
+    "name": "Block: 210",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 12.125,
+            "x": 13.125,
             "y": 0.375
           },
           "scale": {
@@ -10295,6 +10871,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -10380,13 +10962,13 @@
   },
   {
     "uid": 97,
-    "name": "Block: 204",
+    "name": "Block: 212",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 11.875,
+            "x": 12.875,
             "y": 0.375
           },
           "scale": {
@@ -10402,6 +10984,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -10487,13 +11075,13 @@
   },
   {
     "uid": 98,
-    "name": "Block: 206",
+    "name": "Block: 214",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 11.625,
+            "x": 12.625,
             "y": 0.375
           },
           "scale": {
@@ -10509,6 +11097,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -10594,13 +11188,13 @@
   },
   {
     "uid": 99,
-    "name": "Block: 208",
+    "name": "Block: 216",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 11.375,
+            "x": 12.375,
             "y": 0.375
           },
           "scale": {
@@ -10616,6 +11210,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -10701,14 +11301,14 @@
   },
   {
     "uid": 100,
-    "name": "Block: 210",
+    "name": "Block: 218",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 13.125,
-            "y": 0.375
+            "x": 12.375,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -10723,6 +11323,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -10808,14 +11414,14 @@
   },
   {
     "uid": 101,
-    "name": "Block: 212",
+    "name": "Block: 220",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 12.875,
-            "y": 0.375
+            "x": 12.625,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -10830,6 +11436,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -10915,14 +11527,14 @@
   },
   {
     "uid": 102,
-    "name": "Block: 214",
+    "name": "Block: 222",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 12.625,
-            "y": 0.375
+            "x": 13.125,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -10937,6 +11549,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -11022,14 +11640,14 @@
   },
   {
     "uid": 103,
-    "name": "Block: 216",
+    "name": "Block: 224",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 12.375,
-            "y": 0.375
+            "x": 12.875,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -11044,6 +11662,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -11129,13 +11753,13 @@
   },
   {
     "uid": 104,
-    "name": "Block: 218",
+    "name": "Block: 226",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 12.375,
+            "x": 13.375,
             "y": 0.125
           },
           "scale": {
@@ -11151,6 +11775,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -11236,13 +11866,13 @@
   },
   {
     "uid": 105,
-    "name": "Block: 220",
+    "name": "Block: 228",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 12.625,
+            "x": 13.625,
             "y": 0.125
           },
           "scale": {
@@ -11258,6 +11888,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -11343,13 +11979,13 @@
   },
   {
     "uid": 106,
-    "name": "Block: 222",
+    "name": "Block: 230",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 13.125,
+            "x": 13.875,
             "y": 0.125
           },
           "scale": {
@@ -11365,6 +12001,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -11450,13 +12092,13 @@
   },
   {
     "uid": 107,
-    "name": "Block: 224",
+    "name": "Block: 232",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 12.875,
+            "x": 14.125,
             "y": 0.125
           },
           "scale": {
@@ -11472,6 +12114,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -11557,14 +12205,14 @@
   },
   {
     "uid": 108,
-    "name": "Block: 226",
+    "name": "Block: 234",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 13.375,
-            "y": 0.125
+            "x": 14.125,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -11579,6 +12227,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -11664,14 +12318,14 @@
   },
   {
     "uid": 109,
-    "name": "Block: 228",
+    "name": "Block: 236",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 13.625,
-            "y": 0.125
+            "x": 13.875,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -11686,6 +12340,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -11771,14 +12431,14 @@
   },
   {
     "uid": 110,
-    "name": "Block: 230",
+    "name": "Block: 238",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 13.875,
-            "y": 0.125
+            "x": 13.625,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -11793,6 +12453,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -11878,14 +12544,14 @@
   },
   {
     "uid": 111,
-    "name": "Block: 232",
+    "name": "Block: 240",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 14.125,
-            "y": 0.125
+            "x": 13.375,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -11900,6 +12566,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -11985,13 +12657,13 @@
   },
   {
     "uid": 112,
-    "name": "Block: 234",
+    "name": "Block: 242",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 14.125,
+            "x": 15.125,
             "y": 0.375
           },
           "scale": {
@@ -12007,6 +12679,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -12092,13 +12770,13 @@
   },
   {
     "uid": 113,
-    "name": "Block: 236",
+    "name": "Block: 244",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 13.875,
+            "x": 14.875,
             "y": 0.375
           },
           "scale": {
@@ -12114,6 +12792,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -12199,13 +12883,13 @@
   },
   {
     "uid": 114,
-    "name": "Block: 238",
+    "name": "Block: 246",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 13.625,
+            "x": 14.625,
             "y": 0.375
           },
           "scale": {
@@ -12221,6 +12905,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -12306,13 +12996,13 @@
   },
   {
     "uid": 115,
-    "name": "Block: 240",
+    "name": "Block: 248",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 13.375,
+            "x": 14.375,
             "y": 0.375
           },
           "scale": {
@@ -12328,6 +13018,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -12413,14 +13109,14 @@
   },
   {
     "uid": 116,
-    "name": "Block: 242",
+    "name": "Block: 250",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 15.125,
-            "y": 0.375
+            "x": 14.375,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -12435,6 +13131,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -12520,14 +13222,14 @@
   },
   {
     "uid": 117,
-    "name": "Block: 244",
+    "name": "Block: 252",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 14.875,
-            "y": 0.375
+            "x": 14.625,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -12542,6 +13244,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -12627,14 +13335,14 @@
   },
   {
     "uid": 118,
-    "name": "Block: 246",
+    "name": "Block: 254",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 14.625,
-            "y": 0.375
+            "x": 15.125,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -12649,6 +13357,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -12734,14 +13448,14 @@
   },
   {
     "uid": 119,
-    "name": "Block: 248",
+    "name": "Block: 256",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 14.375,
-            "y": 0.375
+            "x": 14.875,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -12756,6 +13470,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -12841,13 +13561,13 @@
   },
   {
     "uid": 120,
-    "name": "Block: 250",
+    "name": "Block: 258",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 14.375,
+            "x": 15.375,
             "y": 0.125
           },
           "scale": {
@@ -12863,6 +13583,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -12948,13 +13674,13 @@
   },
   {
     "uid": 121,
-    "name": "Block: 252",
+    "name": "Block: 260",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 14.625,
+            "x": 15.625,
             "y": 0.125
           },
           "scale": {
@@ -12970,6 +13696,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -13055,13 +13787,13 @@
   },
   {
     "uid": 122,
-    "name": "Block: 254",
+    "name": "Block: 262",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 15.125,
+            "x": 15.875,
             "y": 0.125
           },
           "scale": {
@@ -13077,6 +13809,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -13162,13 +13900,13 @@
   },
   {
     "uid": 123,
-    "name": "Block: 256",
+    "name": "Block: 264",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 14.875,
+            "x": 16.125,
             "y": 0.125
           },
           "scale": {
@@ -13184,6 +13922,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -13269,14 +14013,14 @@
   },
   {
     "uid": 124,
-    "name": "Block: 258",
+    "name": "Block: 266",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 15.375,
-            "y": 0.125
+            "x": 16.125,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -13291,6 +14035,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -13376,14 +14126,14 @@
   },
   {
     "uid": 125,
-    "name": "Block: 260",
+    "name": "Block: 268",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 15.625,
-            "y": 0.125
+            "x": 15.875,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -13398,6 +14148,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -13483,14 +14239,14 @@
   },
   {
     "uid": 126,
-    "name": "Block: 262",
+    "name": "Block: 270",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 15.875,
-            "y": 0.125
+            "x": 15.625,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -13505,6 +14261,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -13590,14 +14352,14 @@
   },
   {
     "uid": 127,
-    "name": "Block: 264",
+    "name": "Block: 272",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 16.125,
-            "y": 0.125
+            "x": 15.375,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -13612,6 +14374,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -13697,13 +14465,13 @@
   },
   {
     "uid": 128,
-    "name": "Block: 266",
+    "name": "Block: 274",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 16.125,
+            "x": 17.125,
             "y": 0.375
           },
           "scale": {
@@ -13719,6 +14487,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -13804,13 +14578,13 @@
   },
   {
     "uid": 129,
-    "name": "Block: 268",
+    "name": "Block: 276",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 15.875,
+            "x": 16.875,
             "y": 0.375
           },
           "scale": {
@@ -13826,6 +14600,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -13911,13 +14691,13 @@
   },
   {
     "uid": 130,
-    "name": "Block: 270",
+    "name": "Block: 278",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 15.625,
+            "x": 16.625,
             "y": 0.375
           },
           "scale": {
@@ -13933,6 +14713,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -14018,13 +14804,13 @@
   },
   {
     "uid": 131,
-    "name": "Block: 272",
+    "name": "Block: 280",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 15.375,
+            "x": 16.375,
             "y": 0.375
           },
           "scale": {
@@ -14040,6 +14826,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -14125,14 +14917,14 @@
   },
   {
     "uid": 132,
-    "name": "Block: 274",
+    "name": "Block: 282",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 17.125,
-            "y": 0.375
+            "x": 16.375,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -14147,6 +14939,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -14232,14 +15030,14 @@
   },
   {
     "uid": 133,
-    "name": "Block: 276",
+    "name": "Block: 284",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 16.875,
-            "y": 0.375
+            "x": 16.625,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -14254,6 +15052,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -14339,14 +15143,14 @@
   },
   {
     "uid": 134,
-    "name": "Block: 278",
+    "name": "Block: 286",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 16.625,
-            "y": 0.375
+            "x": 17.125,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -14361,6 +15165,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -14446,14 +15256,14 @@
   },
   {
     "uid": 135,
-    "name": "Block: 280",
+    "name": "Block: 288",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 16.375,
-            "y": 0.375
+            "x": 16.875,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -14468,6 +15278,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -14553,13 +15369,13 @@
   },
   {
     "uid": 136,
-    "name": "Block: 282",
+    "name": "Block: 290",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 16.375,
+            "x": 17.375,
             "y": 0.125
           },
           "scale": {
@@ -14575,6 +15391,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -14660,13 +15482,13 @@
   },
   {
     "uid": 137,
-    "name": "Block: 284",
+    "name": "Block: 292",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 16.625,
+            "x": 17.625,
             "y": 0.125
           },
           "scale": {
@@ -14682,6 +15504,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -14767,13 +15595,13 @@
   },
   {
     "uid": 138,
-    "name": "Block: 286",
+    "name": "Block: 294",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 17.125,
+            "x": 17.875,
             "y": 0.125
           },
           "scale": {
@@ -14789,6 +15617,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -14874,13 +15708,13 @@
   },
   {
     "uid": 139,
-    "name": "Block: 288",
+    "name": "Block: 296",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 16.875,
+            "x": 18.125,
             "y": 0.125
           },
           "scale": {
@@ -14896,6 +15730,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -14981,14 +15821,14 @@
   },
   {
     "uid": 140,
-    "name": "Block: 290",
+    "name": "Block: 298",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 17.375,
-            "y": 0.125
+            "x": 18.125,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -15003,6 +15843,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -15088,14 +15934,14 @@
   },
   {
     "uid": 141,
-    "name": "Block: 292",
+    "name": "Block: 300",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 17.625,
-            "y": 0.125
+            "x": 17.875,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -15110,6 +15956,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -15195,14 +16047,14 @@
   },
   {
     "uid": 142,
-    "name": "Block: 294",
+    "name": "Block: 302",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 17.875,
-            "y": 0.125
+            "x": 17.625,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -15217,6 +16069,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -15302,14 +16160,14 @@
   },
   {
     "uid": 143,
-    "name": "Block: 296",
+    "name": "Block: 304",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 18.125,
-            "y": 0.125
+            "x": 17.375,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -15324,6 +16182,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -15409,13 +16273,13 @@
   },
   {
     "uid": 144,
-    "name": "Block: 298",
+    "name": "Block: 306",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 18.125,
+            "x": 19.125,
             "y": 0.375
           },
           "scale": {
@@ -15431,6 +16295,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -15516,13 +16386,13 @@
   },
   {
     "uid": 145,
-    "name": "Block: 300",
+    "name": "Block: 308",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 17.875,
+            "x": 18.875,
             "y": 0.375
           },
           "scale": {
@@ -15538,6 +16408,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -15623,13 +16499,13 @@
   },
   {
     "uid": 146,
-    "name": "Block: 302",
+    "name": "Block: 310",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 17.625,
+            "x": 18.625,
             "y": 0.375
           },
           "scale": {
@@ -15645,6 +16521,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -15730,13 +16612,13 @@
   },
   {
     "uid": 147,
-    "name": "Block: 304",
+    "name": "Block: 312",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 17.375,
+            "x": 18.375,
             "y": 0.375
           },
           "scale": {
@@ -15752,6 +16634,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -15837,14 +16725,14 @@
   },
   {
     "uid": 148,
-    "name": "Block: 306",
+    "name": "Block: 314",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 19.125,
-            "y": 0.375
+            "x": 18.375,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -15859,6 +16747,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -15944,14 +16838,14 @@
   },
   {
     "uid": 149,
-    "name": "Block: 308",
+    "name": "Block: 316",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 18.875,
-            "y": 0.375
+            "x": 18.625,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -15966,6 +16860,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -16051,14 +16951,14 @@
   },
   {
     "uid": 150,
-    "name": "Block: 310",
+    "name": "Block: 318",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 18.625,
-            "y": 0.375
+            "x": 19.125,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -16073,6 +16973,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -16158,14 +17064,14 @@
   },
   {
     "uid": 151,
-    "name": "Block: 312",
+    "name": "Block: 320",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 18.375,
-            "y": 0.375
+            "x": 18.875,
+            "y": 0.125
           },
           "scale": {
             "x": 0.25,
@@ -16180,6 +17086,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -16265,13 +17177,13 @@
   },
   {
     "uid": 152,
-    "name": "Block: 314",
+    "name": "Block: 322",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 18.375,
+            "x": 19.375,
             "y": 0.125
           },
           "scale": {
@@ -16287,6 +17199,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -16372,13 +17290,13 @@
   },
   {
     "uid": 153,
-    "name": "Block: 316",
+    "name": "Block: 324",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 18.625,
+            "x": 19.625,
             "y": 0.125
           },
           "scale": {
@@ -16394,6 +17312,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -16479,13 +17403,13 @@
   },
   {
     "uid": 154,
-    "name": "Block: 318",
+    "name": "Block: 326",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 19.125,
+            "x": 19.875,
             "y": 0.125
           },
           "scale": {
@@ -16501,6 +17425,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -16586,13 +17516,13 @@
   },
   {
     "uid": 155,
-    "name": "Block: 320",
+    "name": "Block: 328",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 18.875,
+            "x": 20.125,
             "y": 0.125
           },
           "scale": {
@@ -16608,6 +17538,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -16693,14 +17629,14 @@
   },
   {
     "uid": 156,
-    "name": "Block: 322",
+    "name": "Block: 330",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 19.375,
-            "y": 0.125
+            "x": 20.125,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -16715,6 +17651,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -16800,14 +17742,14 @@
   },
   {
     "uid": 157,
-    "name": "Block: 324",
+    "name": "Block: 332",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 19.625,
-            "y": 0.125
+            "x": 19.875,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -16822,6 +17764,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -16907,14 +17855,14 @@
   },
   {
     "uid": 158,
-    "name": "Block: 326",
+    "name": "Block: 334",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 19.875,
-            "y": 0.125
+            "x": 19.625,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -16929,6 +17877,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -17014,14 +17968,14 @@
   },
   {
     "uid": 159,
-    "name": "Block: 328",
+    "name": "Block: 336",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 20.125,
-            "y": 0.125
+            "x": 19.375,
+            "y": 0.375
           },
           "scale": {
             "x": 0.25,
@@ -17036,6 +17990,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -17121,434 +18081,6 @@
   },
   {
     "uid": 160,
-    "name": "Block: 330",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 20.125,
-            "y": 0.375
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 15
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
-              "width": 112,
-              "height": 192
-            },
-            "texCoords": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.0,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 16
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "STATIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uid": 17
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 18
-        }
-      },
-      {
-        "type": "components.Ground",
-        "properties": {
-          "uid": 19
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 161,
-    "name": "Block: 332",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 19.875,
-            "y": 0.375
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 15
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
-              "width": 112,
-              "height": 192
-            },
-            "texCoords": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.0,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 16
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "STATIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uid": 17
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 18
-        }
-      },
-      {
-        "type": "components.Ground",
-        "properties": {
-          "uid": 19
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 162,
-    "name": "Block: 334",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 19.625,
-            "y": 0.375
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 15
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
-              "width": 112,
-              "height": 192
-            },
-            "texCoords": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.0,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 16
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "STATIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uid": 17
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 18
-        }
-      },
-      {
-        "type": "components.Ground",
-        "properties": {
-          "uid": 19
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 163,
-    "name": "Block: 336",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 19.375,
-            "y": 0.375
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 15
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
-              "width": 112,
-              "height": 192
-            },
-            "texCoords": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.0,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 16
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "STATIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uid": 17
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 18
-        }
-      },
-      {
-        "type": "components.Ground",
-        "properties": {
-          "uid": 19
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 164,
     "name": "Block: 339",
     "components": [
       {
@@ -17576,6 +18108,12 @@
             "z": 1.0,
             "w": 1.0
           },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
           "sprite": {
             "width": 16.0,
             "height": 16.0,
@@ -17655,7 +18193,7 @@
     "isDead": false
   },
   {
-    "uid": 165,
+    "uid": 161,
     "name": "Block: 341",
     "components": [
       {
@@ -17683,6 +18221,12 @@
             "z": 1.0,
             "w": 1.0
           },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
           "sprite": {
             "width": 16.0,
             "height": 16.0,
@@ -17762,7 +18306,7 @@
     "isDead": false
   },
   {
-    "uid": 166,
+    "uid": 162,
     "name": "Block: 343",
     "components": [
       {
@@ -17790,108 +18334,7 @@
             "z": 1.0,
             "w": 1.0
           },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
-              "width": 112,
-              "height": 192
-            },
-            "texCoords": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.0,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 23
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "STATIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uid": 24
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 25
-        }
-      },
-      {
-        "type": "components.Ground",
-        "properties": {
-          "uid": 26
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 167,
-    "name": "Block: 345",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 20.375,
-            "y": 0.375
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 22
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -17976,7 +18419,120 @@
     "isDead": false
   },
   {
-    "uid": 168,
+    "uid": 163,
+    "name": "Block: 345",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 20.375,
+            "y": 0.375
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 22
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.0,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 23
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uid": 24
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 25
+        }
+      },
+      {
+        "type": "components.Ground",
+        "properties": {
+          "uid": 26
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 164,
     "name": "Block: 351",
     "components": [
       {
@@ -17999,6 +18555,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -18083,7 +18645,7 @@
     "isDead": false
   },
   {
-    "uid": 169,
+    "uid": 165,
     "name": "Block: 357",
     "components": [
       {
@@ -18106,6 +18668,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -18190,7 +18758,7 @@
     "isDead": false
   },
   {
-    "uid": 170,
+    "uid": 166,
     "name": "Block: 360",
     "components": [
       {
@@ -18218,109 +18786,7 @@
             "z": 1.0,
             "w": 1.0
           },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/items.png",
-              "width": 112,
-              "height": 80
-            },
-            "texCoords": [
-              {
-                "x": 0.85714287,
-                "y": 0.2
-              },
-              {
-                "x": 0.85714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.2
-              }
-            ]
-          },
-          "uid": 53
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "DYNAMIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": true,
-          "continuousCollision": false,
-          "uid": 54
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.1,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": -0.075,
-            "y": 0.0
-          },
-          "uid": 55
-        }
-      },
-      {
-        "type": "components.FlagPole",
-        "properties": {
-          "isTop": false,
-          "uid": 56
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 171,
-    "name": "Block: 362",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 17.625,
-            "y": 0.875
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 52
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -18406,7 +18872,121 @@
     "isDead": false
   },
   {
-    "uid": 172,
+    "uid": 167,
+    "name": "Block: 362",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 17.625,
+            "y": 0.875
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 52
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.85714287,
+                "y": 0.2
+              },
+              {
+                "x": 0.85714287,
+                "y": 0.0
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.0
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.2
+              }
+            ]
+          },
+          "uid": 53
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 54
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.1,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": -0.075,
+            "y": 0.0
+          },
+          "uid": 55
+        }
+      },
+      {
+        "type": "components.FlagPole",
+        "properties": {
+          "isTop": false,
+          "uid": 56
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 168,
     "name": "Block: 365",
     "components": [
       {
@@ -18429,6 +19009,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -18514,7 +19100,7 @@
     "isDead": false
   },
   {
-    "uid": 173,
+    "uid": 169,
     "name": "Block: 902",
     "components": [
       {
@@ -18542,6 +19128,12 @@
             "z": 1.0,
             "w": 1.0
           },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
           "sprite": {
             "width": 16.0,
             "height": 16.0,
@@ -18621,7 +19213,7 @@
     "isDead": false
   },
   {
-    "uid": 174,
+    "uid": 170,
     "name": "Block: 904",
     "components": [
       {
@@ -18649,6 +19241,12 @@
             "z": 1.0,
             "w": 1.0
           },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
           "sprite": {
             "width": 16.0,
             "height": 16.0,
@@ -18728,7 +19326,7 @@
     "isDead": false
   },
   {
-    "uid": 175,
+    "uid": 171,
     "name": "Block: 907",
     "components": [
       {
@@ -18756,108 +19354,7 @@
             "z": 1.0,
             "w": 1.0
           },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
-              "width": 112,
-              "height": 192
-            },
-            "texCoords": [
-              {
-                "x": 0.71428573,
-                "y": 1.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 82
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "STATIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uid": 83
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 84
-        }
-      },
-      {
-        "type": "components.Ground",
-        "properties": {
-          "uid": 85
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 176,
-    "name": "Block: 909",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 19.125,
-            "y": 0.875
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 11,
-          "uid": 81
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -18942,7 +19439,120 @@
     "isDead": false
   },
   {
-    "uid": 177,
+    "uid": 172,
+    "name": "Block: 909",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 19.125,
+            "y": 0.875
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 11,
+          "uid": 81
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.71428573,
+                "y": 1.0
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.5714286,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 82
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uid": 83
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 84
+        }
+      },
+      {
+        "type": "components.Ground",
+        "properties": {
+          "uid": 85
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 173,
     "name": "Block: 912",
     "components": [
       {
@@ -18965,6 +19575,464 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 88
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uid": 89
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 90
+        }
+      },
+      {
+        "type": "components.Ground",
+        "properties": {
+          "uid": 91
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 174,
+    "name": "Block: 914",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 18.625,
+            "y": 0.875
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 87
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 88
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uid": 89
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 90
+        }
+      },
+      {
+        "type": "components.Ground",
+        "properties": {
+          "uid": 91
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 175,
+    "name": "Block: 916",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 18.875,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 87
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 88
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uid": 89
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 90
+        }
+      },
+      {
+        "type": "components.Ground",
+        "properties": {
+          "uid": 91
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 176,
+    "name": "Block: 918",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 19.125,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 87
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 88
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": false,
+          "uid": 89
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 90
+        }
+      },
+      {
+        "type": "components.Ground",
+        "properties": {
+          "uid": 91
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 177,
+    "name": "Block: 920",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 19.375,
+            "y": 0.875
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 11,
+          "uid": 87
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -19050,13 +20118,13 @@
   },
   {
     "uid": 178,
-    "name": "Block: 914",
+    "name": "Block: 922",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 18.625,
+            "x": 19.625,
             "y": 0.875
           },
           "scale": {
@@ -19064,7 +20132,7 @@
             "y": 0.25
           },
           "rotation": 0.0,
-          "zIndex": 0,
+          "zIndex": 11,
           "uid": 87
         }
       },
@@ -19072,6 +20140,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -19157,21 +20231,21 @@
   },
   {
     "uid": 179,
-    "name": "Block: 916",
+    "name": "Block: 924",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 18.875,
-            "y": 1.125
+            "x": 19.875,
+            "y": 0.875
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
           "rotation": 0.0,
-          "zIndex": 0,
+          "zIndex": 11,
           "uid": 87
         }
       },
@@ -19179,6 +20253,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -19264,21 +20344,21 @@
   },
   {
     "uid": 180,
-    "name": "Block: 918",
+    "name": "Block: 926",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 19.125,
-            "y": 1.125
+            "x": 19.375,
+            "y": 0.625
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
           "rotation": 0.0,
-          "zIndex": 0,
+          "zIndex": 11,
           "uid": 87
         }
       },
@@ -19286,6 +20366,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -19371,14 +20457,14 @@
   },
   {
     "uid": 181,
-    "name": "Block: 920",
+    "name": "Block: 928",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 19.375,
-            "y": 0.875
+            "x": 19.625,
+            "y": 0.625
           },
           "scale": {
             "x": 0.25,
@@ -19393,6 +20479,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -19478,13 +20570,13 @@
   },
   {
     "uid": 182,
-    "name": "Block: 922",
+    "name": "Block: 930",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 19.625,
+            "x": 20.125,
             "y": 0.875
           },
           "scale": {
@@ -19492,7 +20584,7 @@
             "y": 0.25
           },
           "rotation": 0.0,
-          "zIndex": 11,
+          "zIndex": 13,
           "uid": 87
         }
       },
@@ -19500,6 +20592,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -19585,21 +20683,21 @@
   },
   {
     "uid": 183,
-    "name": "Block: 924",
+    "name": "Block: 934",
     "components": [
       {
         "type": "engine.Transform",
         "properties": {
           "position": {
-            "x": 19.875,
-            "y": 0.875
+            "x": 19.375,
+            "y": 1.125
           },
           "scale": {
             "x": 0.25,
             "y": 0.25
           },
           "rotation": 0.0,
-          "zIndex": 11,
+          "zIndex": 0,
           "uid": 87
         }
       },
@@ -19607,6 +20705,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -19692,434 +20796,6 @@
   },
   {
     "uid": 184,
-    "name": "Block: 926",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 19.375,
-            "y": 0.625
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 11,
-          "uid": 87
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
-              "width": 112,
-              "height": 192
-            },
-            "texCoords": [
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 88
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "STATIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uid": 89
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 90
-        }
-      },
-      {
-        "type": "components.Ground",
-        "properties": {
-          "uid": 91
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 185,
-    "name": "Block: 928",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 19.625,
-            "y": 0.625
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 11,
-          "uid": 87
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
-              "width": 112,
-              "height": 192
-            },
-            "texCoords": [
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 88
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "STATIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uid": 89
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 90
-        }
-      },
-      {
-        "type": "components.Ground",
-        "properties": {
-          "uid": 91
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 186,
-    "name": "Block: 930",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 20.125,
-            "y": 0.875
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 13,
-          "uid": 87
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
-              "width": 112,
-              "height": 192
-            },
-            "texCoords": [
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 88
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "STATIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uid": 89
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 90
-        }
-      },
-      {
-        "type": "components.Ground",
-        "properties": {
-          "uid": 91
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 187,
-    "name": "Block: 934",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 19.375,
-            "y": 1.125
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 87
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
-              "width": 112,
-              "height": 192
-            },
-            "texCoords": [
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.9166667
-              },
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              }
-            ]
-          },
-          "uid": 88
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.0,
-          "bodyType": "STATIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": false,
-          "continuousCollision": false,
-          "uid": 89
-        }
-      },
-      {
-        "type": "physics2d.components.Box2DCollider",
-        "properties": {
-          "halfSize": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "origin": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 90
-        }
-      },
-      {
-        "type": "components.Ground",
-        "properties": {
-          "uid": 91
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 188,
     "name": "Block: 1510",
     "components": [
       {
@@ -20142,6 +20818,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -20226,7 +20908,7 @@
     "isDead": false
   },
   {
-    "uid": 189,
+    "uid": 185,
     "name": "player",
     "components": [
       {
@@ -20249,6 +20931,12 @@
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
@@ -21583,6 +22271,1045 @@
           },
           "playerState": "Small",
           "uid": 112
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 186,
+    "name": "Block: 196",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 2.375,
+            "y": -0.375
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 151
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/blendImage1.png",
+              "width": 256,
+              "height": 256
+            },
+            "texCoords": [
+              {
+                "x": 0.0625,
+                "y": 1.0
+              },
+              {
+                "x": 0.0625,
+                "y": 0.9375
+              },
+              {
+                "x": 0.0,
+                "y": 0.9375
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 152
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 153
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 154
+        }
+      },
+      {
+        "type": "components.DeathBlock",
+        "properties": {
+          "uid": 155
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 187,
+    "name": "Block: 198",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 2.625,
+            "y": -0.375
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 151
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/blendImage1.png",
+              "width": 256,
+              "height": 256
+            },
+            "texCoords": [
+              {
+                "x": 0.0625,
+                "y": 1.0
+              },
+              {
+                "x": 0.0625,
+                "y": 0.9375
+              },
+              {
+                "x": 0.0,
+                "y": 0.9375
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 152
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 153
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 154
+        }
+      },
+      {
+        "type": "components.DeathBlock",
+        "properties": {
+          "uid": 155
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 188,
+    "name": "Block: 953",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 1.375,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 161
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 0.8,
+            "y": 0.8,
+            "z": 0.0,
+            "w": 0.8
+          },
+          "storedColor": {
+            "x": 0.8,
+            "y": 0.8,
+            "z": 0.0,
+            "w": 0.8
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.8
+              },
+              {
+                "x": 0.0,
+                "y": 0.8
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 162
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Blink",
+                "trigger": "setInactive"
+              },
+              "Inactive"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Blink",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.57
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Inactive",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.5714286,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.5714286,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Blink",
+          "uid": 163
+        }
+      },
+      {
+        "type": "components.QuestionBlock",
+        "properties": {
+          "blockType": "PowerUp",
+          "bopSpeed": 0.6,
+          "uid": 164
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 165
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 166
+        }
+      },
+      {
+        "type": "components.Ground",
+        "properties": {
+          "uid": 167
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 189,
+    "name": "Block: 947",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 0.875,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 161
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.8
+              },
+              {
+                "x": 0.0,
+                "y": 0.8
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 162
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Blink",
+                "trigger": "setInactive"
+              },
+              "Inactive"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Blink",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.57
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Inactive",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.5714286,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.5714286,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Blink",
+          "uid": 163
+        }
+      },
+      {
+        "type": "components.QuestionBlock",
+        "properties": {
+          "blockType": "PowerUp",
+          "bopSpeed": 0.6,
+          "uid": 164
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 165
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 166
+        }
+      },
+      {
+        "type": "components.Ground",
+        "properties": {
+          "uid": 167
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 190,
+    "name": "Block: 959",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 1.125,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 161
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 0.8,
+            "y": 0.8,
+            "z": 0.0,
+            "w": 0.8
+          },
+          "storedColor": {
+            "x": 0.8,
+            "y": 0.8,
+            "z": 0.0,
+            "w": 0.8
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.8
+              },
+              {
+                "x": 0.0,
+                "y": 0.8
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 162
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Blink",
+                "trigger": "setInactive"
+              },
+              "Inactive"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Blink",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.57
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Inactive",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.5714286,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.5714286,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Blink",
+          "uid": 163
+        }
+      },
+      {
+        "type": "components.QuestionBlock",
+        "properties": {
+          "blockType": "PowerUp",
+          "bopSpeed": 0.6,
+          "uid": 164
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "STATIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 165
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 166
+        }
+      },
+      {
+        "type": "components.Ground",
+        "properties": {
+          "uid": 167
         }
       }
     ],
