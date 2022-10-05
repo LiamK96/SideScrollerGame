@@ -117,6 +117,11 @@ public class PropertiesWindow {
     }
 
     public List<GameObject> getActiveGameObjects(){
+        if (activeGameObjects.isEmpty() && this.activeGameObject != null){
+            List<GameObject> activeObject = new ArrayList<>();
+            activeObject.add(this.activeGameObject);
+            return activeObject;
+        }
         return activeGameObjects;
     }
 
