@@ -180,7 +180,7 @@ public class ImGuiLayer {
         //ImGui.showDemoWindow(); //Demo window to see possible functions
         gameViewWindow.imgui();
         propertiesWindow.imgui();
-        sceneHierarchyWindow.imgui();
+        //sceneHierarchyWindow.imgui();
 
 
             //Imgui.render moved to endFrame

@@ -25,7 +25,7 @@ public class GameViewWindow {
             }
         }
         ImGui.begin("Game Viewport", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse
-                    | ImGuiWindowFlags.MenuBar);
+                | ImGuiWindowFlags.MenuBar  | ImGuiWindowFlags.NoMove| ImGuiWindowFlags.NoTitleBar);
 
         //Play Stop menubar
         ImGui.beginMenuBar();

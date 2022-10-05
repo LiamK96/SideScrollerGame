@@ -31,6 +31,11 @@ public class KeyControls extends Component{
             GameObject newObject = propertiesWindow.getActiveGameObject().copy();
             Window.getScene().addGameObjectToScene(newObject);
             newObject.transform.position.add(new Vector2f(Settings.gridWidth, 0.0f));
+            if (newObject.getComponent(SpriteRenderer.class) != null
+                    && newObject.getComponent(SpriteRenderer.class).getColor()
+                    != newObject.getComponent(SpriteRenderer.class).getStoredColor()){
+                newObject.getComponent(SpriteRenderer.class).setColor(newObject.getComponent(SpriteRenderer.class).getStoredColor());
+            }
             propertiesWindow.setActiveGameObject(newObject);
             if (newObject.getComponent(StateMachine.class) != null) {
                 newObject.getComponent(StateMachine.class).refreshTextures();
