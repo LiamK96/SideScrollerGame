@@ -34,7 +34,7 @@ public class Prefabs {
         //Little player animations
         AnimationState run = new AnimationState();
         run.title = "Run";
-        run.addFrame(playerSprites.getSprite(0), defaultFrameTime);
+        //run.addFrame(playerSprites.getSprite(0), defaultFrameTime);
         run.addFrame(playerSprites.getSprite(2), defaultFrameTime);
         run.addFrame(playerSprites.getSprite(3), defaultFrameTime);
         run.addFrame(playerSprites.getSprite(2), defaultFrameTime);
@@ -58,7 +58,7 @@ public class Prefabs {
         //Big player Animations
         AnimationState bigRun = new AnimationState();
         bigRun.title = "Big Run";
-        bigRun.addFrame(bigPlayerSprites.getSprite(0),defaultFrameTime);
+        //bigRun.addFrame(bigPlayerSprites.getSprite(0),defaultFrameTime);
         bigRun.addFrame(bigPlayerSprites.getSprite(1),defaultFrameTime);
         bigRun.addFrame(bigPlayerSprites.getSprite(2),defaultFrameTime);
         bigRun.addFrame(bigPlayerSprites.getSprite(3),defaultFrameTime);
@@ -86,7 +86,7 @@ public class Prefabs {
 
         AnimationState fireRun = new AnimationState();
         fireRun.title = "Fire Run";
-        fireRun.addFrame(bigPlayerSprites.getSprite(fireOffset + 0), defaultFrameTime);
+        //fireRun.addFrame(bigPlayerSprites.getSprite(fireOffset + 0), defaultFrameTime);
         fireRun.addFrame(bigPlayerSprites.getSprite(fireOffset + 1), defaultFrameTime);
         fireRun.addFrame(bigPlayerSprites.getSprite(fireOffset + 2), defaultFrameTime);
         fireRun.addFrame(bigPlayerSprites.getSprite(fireOffset + 3), defaultFrameTime);
