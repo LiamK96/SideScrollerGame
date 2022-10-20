@@ -74,4 +74,8 @@ public class GameCamera extends Component{
         }
     }
 
+    public void resetHighestX(){
+        highestX = Float.MIN_VALUE;
+    }
+
 }

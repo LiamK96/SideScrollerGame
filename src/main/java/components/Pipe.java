@@ -69,6 +69,12 @@ public class Pipe extends Component{
 
             if (playerEntering){
                 collidingPlayer.setPosition(getPlayerPosition(connectingPipe));
+                GameCamera gameCamera = Window.getScene().getSceneComponent(GameCamera.class);
+                if (gameCamera != null){
+                    gameCamera.resetHighestX();
+                }
+                Window.getScene().getCamera().position.set(collidingPlayer.gameObject.transform.position);
+
                 AssetPool.getSound("assets/sounds/pipe.ogg").play();
             }
         }
