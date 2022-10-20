@@ -3,6 +3,7 @@ package components;
 import engine.Camera;
 import engine.KeyListener;
 import engine.MouseListener;
+import engine.Window;
 import org.joml.Vector2f;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -16,6 +17,8 @@ public class EditorCamera extends Component{
     private float lerpTime = 0.0f;
     private float dragSensitivity = 20.0f;
     private float scrollSensitivity = 0.1f;
+
+    private Vector2f resetCoords = new Vector2f();
 
     private Camera levelEditorCamera;
     private Vector2f clickOrigin;
@@ -57,8 +60,21 @@ public class EditorCamera extends Component{
             }
         }
 
-        if (KeyListener.isKeyPressed(GLFW_KEY_TAB)){
-            reset = true;
+        if (!reset){
+            if (KeyListener.isKeyPressed(GLFW_KEY_TAB) && KeyListener.isKeyPressed(GLFW_KEY_LEFT_SHIFT)){
+                if (Window.getScene().getGameObject("player") != null){
+                    resetCoords.set(Window.getScene().getGameObject("player").transform.position);
+                    resetCoords.add(-0.125f,-0.125f);
+                    resetCoords.add(-0.25f*12,-0.25f*6);
+                    //resetCoords.mul(6,12);
+                    System.out.println(resetCoords);
+
+                    reset = true;
+                }
+            } else if (KeyListener.isKeyPressed(GLFW_KEY_TAB)){
+                resetCoords.zero();
+                reset = true;
+            }
         }
 
         if (reset){
@@ -66,9 +82,9 @@ public class EditorCamera extends Component{
             this.lerpTime += dt;
             levelEditorCamera.setZoom(this.levelEditorCamera.getZoom() +
                     ((1.0f - levelEditorCamera.getZoom()) * lerpTime));
-            if (Math.abs(levelEditorCamera.position.x) <= 5.0f &&
-                    Math.abs(levelEditorCamera.position.y) <= 5.0f){
-                levelEditorCamera.position.set(0f,0f);
+            if (Math.abs(levelEditorCamera.position.x) <= resetCoords.x + 5.0f &&
+                    Math.abs(levelEditorCamera.position.y) <= resetCoords.y + 5.0f){
+                levelEditorCamera.position.set(resetCoords);
                 this.levelEditorCamera.setZoom(1.0f);
                 this.lerpTime = 0f;
                 reset = false;
