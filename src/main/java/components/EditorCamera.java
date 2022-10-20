@@ -66,8 +66,6 @@ public class EditorCamera extends Component{
                     resetCoords.set(Window.getScene().getGameObject("player").transform.position);
                     resetCoords.add(-0.125f,-0.125f);
                     resetCoords.add(-0.25f*12,-0.25f*6);
-                    //resetCoords.mul(6,12);
-                    System.out.println(resetCoords);
 
                     reset = true;
                 }

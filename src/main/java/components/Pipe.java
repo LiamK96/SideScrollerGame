@@ -6,6 +6,8 @@ import engine.KeyListener;
 import engine.Window;
 import org.jbox2d.dynamics.contacts.Contact;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
+import renderer.DebugDraw;
 import util.AssetPool;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -92,7 +94,7 @@ public class Pipe extends Component{
         Vector2f playerMin = new Vector2f(collidingPlayer.gameObject.transform.position)
                 .sub(new Vector2f(collidingPlayer.gameObject.transform.scale).mul(0.5f));
         Vector2f playerMax = new Vector2f(collidingPlayer.gameObject.transform.position)
-                .add(new Vector2f(collidingPlayer.gameObject.transform.scale).mul(0.5f));
+                .add(new Vector2f(collidingPlayer.gameObject.transform.scale).mul(0.43f));
 
         switch (direction){
             case Up:
@@ -104,7 +106,7 @@ public class Pipe extends Component{
                         && playerMax.x > min.x
                         && playerMin.x < max.x;
             case Left:
-                return playerMax.x <= min.x
+               return playerMax.x <= min.x
                         && playerMax.y > min.y
                         && playerMin.y < max.y;
             case Right:
