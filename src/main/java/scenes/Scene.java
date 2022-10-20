@@ -8,6 +8,7 @@ import engine.Camera;
 import engine.GameObject;
 import engine.GameObjectDeserializer;
 import engine.Transform;
+import imgui.ImGui;
 import org.joml.Vector2f;
 import physics2d.Physics2D;
 import renderer.Renderer;
@@ -239,6 +240,20 @@ public class Scene {
 
     public GameObject getSceneInitializerComponentsObject(){
         return sceneInitializer.getSceneComponentObject();
+    }
+
+    public <T extends Component> T getSceneComponent(Class<T> componentClass){
+        for (Component c : sceneInitializer.getSceneComponentObject().getAllComponents()){
+            if (componentClass.isAssignableFrom(c.getClass())){
+                try {
+                    return componentClass.cast(c);
+                } catch (ClassCastException e){
+                    e.printStackTrace();
+                    assert false: "Error (Scene): getSceneComponent could not cast component";
+                }
+            }
+        }
+        return null;
     }
 
 //    public static GameObject getActiveGameObject() {

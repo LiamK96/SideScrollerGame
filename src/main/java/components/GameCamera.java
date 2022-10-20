@@ -5,10 +5,16 @@ import engine.GameObject;
 import engine.Window;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
+import physics2d.components.Box2DCollider;
+import physics2d.components.RigidBody2D;
+import physics2d.enums.BodyType;
+
+import javax.management.monitor.GaugeMonitor;
 
 public class GameCamera extends Component{
 
     private transient GameObject player;
+    private transient GameObject border;
     private transient Camera gameCamera;
     private transient float highestX = Float.MIN_VALUE;
     private transient float undergroundYLevel = 0.0f;
@@ -20,6 +26,7 @@ public class GameCamera extends Component{
 
     public GameCamera(Camera gameCamera){
         this.gameCamera = gameCamera;
+
     }
 
     @Override
@@ -28,12 +35,31 @@ public class GameCamera extends Component{
         this.gameCamera.clearColor.set(skyColor);
         this.undergroundYLevel = this.gameCamera.position.y
                 - this.gameCamera.getProjectionSize().y - this.cameraBuffer;
+
+        this.border = new GameObject("border");
+        RigidBody2D rb = new RigidBody2D();
+        rb.setBodyType(BodyType.STATIC);
+        rb.setMass(0.0f);
+        rb.setFixedRotation(true);
+        rb.setContinuousCollision(false);
+
+        Box2DCollider boxCollider = new Box2DCollider();
+        boxCollider.setHalfSize(new Vector2f(0.05f, 0.5f * 24.0f));
+        boxCollider.setOffset(new Vector2f(-0.05f,0.0f));
+
+        border.addComponent(rb);
+        border.addComponent(boxCollider);
+        border.setNoSerialize();
+        Window.getScene().addGameObjectToScene(border);
+        border.transform.position.set(0,0);
+
     }
 
     @Override
     public void update(float dt){
         if (player != null && !player.getComponent(PlayerController.class).hasWon()){
             gameCamera.position.x = Math.max(player.transform.position.x - 2.5f, highestX);
+            border.transform.position.x = gameCamera.position.x;
             highestX = Math.max(highestX, gameCamera.position.x);
 
             if (!player.getComponent(PlayerController.class).isDead()) {

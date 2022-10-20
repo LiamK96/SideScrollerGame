@@ -101,7 +101,8 @@ public class LevelSceneInitializer extends SceneInitializer {
     }
 
     @Override
-    public void imgui() {}
+    public void imgui() {
+    }
 
     @Override
     public GameObject getSceneComponentObject(){

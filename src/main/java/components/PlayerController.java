@@ -1,9 +1,6 @@
 package components;
 
-import engine.GameObject;
-import engine.KeyListener;
-import engine.Prefabs;
-import engine.Window;
+import engine.*;
 import observers.EventSystem;
 import observers.events.Event;
 import observers.events.EventType;
@@ -14,7 +11,6 @@ import physics2d.Physics2D;
 import physics2d.components.PillboxCollider;
 import physics2d.components.RigidBody2D;
 import physics2d.enums.BodyType;
-import scenes.LevelEditorSceneInitializer;
 import scenes.LevelSceneInitializer;
 import util.AssetPool;
 
@@ -54,8 +50,11 @@ public class PlayerController extends Component {
     private transient float deadMaxHeight = 0;
     private transient float blinkTime = 0.0f;
     private transient int jumpTime = 0;
-    private transient Vector2f acceleration = new Vector2f();
     private transient Vector2f velocity = new Vector2f();
+    private transient Vector2f acceleration = new Vector2f();
+
+
+
     private transient boolean isDead = false;
     private transient boolean deadGoingUp = true;
     private transient int enemyBounce = 0;
