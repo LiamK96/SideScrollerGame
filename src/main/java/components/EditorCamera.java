@@ -45,10 +45,16 @@ public class EditorCamera extends Component{
         }
 
         if (MouseListener.getScrollY() != 0.0f){
-            float addValue = (float) Math.pow(Math.abs(MouseListener.getScrollY() * scrollSensitivity
-            ), 1 / levelEditorCamera.getZoom());
+            float addValue = (float) Math.pow(Math.abs(MouseListener.getScrollY() * scrollSensitivity)
+                    , 1 / levelEditorCamera.getZoom());
             addValue *= -Math.signum(MouseListener.getScrollY());
-            levelEditorCamera.addZoom(addValue);
+            if (levelEditorCamera.getZoom() + addValue > 10.0f){
+                levelEditorCamera.setZoom(10.0f);
+            } else if (levelEditorCamera.getZoom() + addValue < 0.25f){
+                levelEditorCamera.setZoom(0.25f);
+            } else {
+                levelEditorCamera.addZoom(addValue);
+            }
         }
 
         if (KeyListener.isKeyPressed(GLFW_KEY_TAB)){
