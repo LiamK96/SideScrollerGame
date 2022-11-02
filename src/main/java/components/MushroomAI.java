@@ -33,6 +33,7 @@ public class MushroomAI extends Component{
     public void preSolve(GameObject go, Contact contact, Vector2f contactNormal){
 
         PlayerController playerController = go.getComponent(PlayerController.class);
+        Mob mob = go.getComponent(Mob.class);
         if (playerController != null){
             contact.setEnabled(false);
             if (!hitPlayer){
@@ -45,8 +46,14 @@ public class MushroomAI extends Component{
                 hitPlayer = true;
             }
             return;
+        } else if (mob != null){
+            contact.setEnabled(false);
         }
 
+
+    }
+
+    public void postSolve (GameObject go, Contact contact, Vector2f contactNormal){
         if (Math.abs(contactNormal.y) < 0.1f){
             goingRight = contactNormal.x < 0;
         }

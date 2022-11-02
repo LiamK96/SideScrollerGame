@@ -40,7 +40,7 @@ public class GoombaAi extends Component{
         }
 
         Camera camera = Window.getScene().getCamera();
-        if (this.gameObject.transform.position.x > camera.position.x + camera.getProjectionSize().x * camera.getZoom()){
+        if (this.gameObject.transform.position.x > (camera.position.x + camera.getProjectionSize().x * camera.getZoom()) + 2.0f){
             return;
         }
 
@@ -74,11 +74,23 @@ public class GoombaAi extends Component{
 //    }
 
     @Override
+    public void preSolve(GameObject go, Contact contact, Vector2f contactNormal){
+        GameBorder gameBorder = go.getComponent(GameBorder.class);
+        if (gameBorder != null){
+            contact.setEnabled(false);
+        }
+    }
+
+    @Override
     public void beginCollision(GameObject go, Contact contact, Vector2f contactNormal){
         if (isDead){
             return;
         }
 
+    }
+
+    @Override
+    public void postSolve(GameObject go, Contact contact, Vector2f contactNormal){
         PlayerController playerController = go.getComponent(PlayerController.class);
         if (playerController != null){
             if (!playerController.isDead()

@@ -88,6 +88,21 @@ public class TurtleAi extends Component {
 
     @Override
     public void beginCollision(GameObject obj, Contact contact, Vector2f contactNormal){
+
+    }
+
+    @Override
+    public void preSolve(GameObject obj, Contact contact, Vector2f contactNormal){
+        GoombaAi goomba = obj.getComponent(GoombaAi.class);
+        if (goomba != null && isDead && isMoving){
+            goomba.stomp();
+            contact.setEnabled(false);
+            AssetPool.getSound("assets/sounds/kick.ogg").play();
+        }
+    }
+
+    @Override
+    public void postSolve(GameObject obj, Contact contact, Vector2f contactNormal){
         PlayerController playerController = obj.getComponent(PlayerController.class);
         if (playerController != null){
             if (!isDead && !playerController.isDead()
@@ -128,16 +143,6 @@ public class TurtleAi extends Component {
                 movingDebounce = 0.32f;
             }
             obj.getComponent(Fireball.class).disappear();
-        }
-    }
-
-    @Override
-    public void preSolve(GameObject obj, Contact contact, Vector2f contactNormal){
-        GoombaAi goomba = obj.getComponent(GoombaAi.class);
-        if (goomba != null && isDead && isMoving){
-            goomba.stomp();
-            contact.setEnabled(false);
-            AssetPool.getSound("assets/sounds/kick.ogg").play();
         }
     }
 

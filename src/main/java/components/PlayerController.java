@@ -264,6 +264,11 @@ public class PlayerController extends Component {
         }
     }
 
+    public void stopMovementLeft(){
+        this.velocity.x = 0;
+        this.acceleration.x = 0;
+    }
+
     public void powerUp() {
         powerUp(false);
     }

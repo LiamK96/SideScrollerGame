@@ -50,6 +50,7 @@ public class GameCamera extends Component{
         border.addComponent(rb);
         border.addComponent(boxCollider);
         border.setNoSerialize();
+        border.addComponent(new GameBorder());
         Window.getScene().addGameObjectToScene(border);
         border.transform.position.set(0,0);
 
