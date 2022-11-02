@@ -100868,238 +100868,6 @@
   },
   {
     "uid": 944,
-    "name": "Block: 948",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 5.625,
-            "y": 0.625
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 875
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "storedColor": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheet.png",
-              "width": 224,
-              "height": 32
-            },
-            "texCoords": [
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.0
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.0
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              }
-            ]
-          },
-          "uid": 876
-        }
-      },
-      {
-        "type": "components.StateMachine",
-        "properties": {
-          "stateTransfers": [
-            [
-              {
-                "state": "Walk",
-                "trigger": "squashMe"
-              },
-              "Squash"
-            ]
-          ],
-          "states": [
-            {
-              "title": "Walk",
-              "animationFrames": [
-                {
-                  "sprite": {
-                    "width": 16.0,
-                    "height": 16.0,
-                    "texture": {
-                      "filepath": "assets/images/spritesheet.png",
-                      "width": 224,
-                      "height": 32
-                    },
-                    "texCoords": [
-                      {
-                        "x": 0.071428575,
-                        "y": 0.5
-                      },
-                      {
-                        "x": 0.071428575,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.0,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.0,
-                        "y": 0.5
-                      }
-                    ]
-                  },
-                  "frameTime": 0.23
-                },
-                {
-                  "sprite": {
-                    "width": 16.0,
-                    "height": 16.0,
-                    "texture": {
-                      "filepath": "assets/images/spritesheet.png",
-                      "width": 224,
-                      "height": 32
-                    },
-                    "texCoords": [
-                      {
-                        "x": 0.14285715,
-                        "y": 0.5
-                      },
-                      {
-                        "x": 0.14285715,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.071428575,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.071428575,
-                        "y": 0.5
-                      }
-                    ]
-                  },
-                  "frameTime": 0.23
-                }
-              ],
-              "doesLoop": true
-            },
-            {
-              "title": "Squash",
-              "animationFrames": [
-                {
-                  "sprite": {
-                    "width": 16.0,
-                    "height": 16.0,
-                    "texture": {
-                      "filepath": "assets/images/spritesheet.png",
-                      "width": 224,
-                      "height": 32
-                    },
-                    "texCoords": [
-                      {
-                        "x": 0.21428572,
-                        "y": 0.5
-                      },
-                      {
-                        "x": 0.21428572,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.14285715,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.14285715,
-                        "y": 0.5
-                      }
-                    ]
-                  },
-                  "frameTime": 0.1
-                }
-              ],
-              "doesLoop": false
-            }
-          ],
-          "defaultStateTitle": "Walk",
-          "uid": 877
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.1,
-          "bodyType": "DYNAMIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": true,
-          "continuousCollision": false,
-          "uid": 878
-        }
-      },
-      {
-        "type": "physics2d.components.Circle2DCollider",
-        "properties": {
-          "radius": 0.12,
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 879
-        }
-      },
-      {
-        "type": "components.GoombaAi",
-        "properties": {
-          "uid": 880
-        }
-      },
-      {
-        "type": "components.Mob",
-        "properties": {
-          "uid": 881
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 945,
     "name": "Block: 951",
     "components": [
       {
@@ -101143,19 +100911,19 @@
             },
             "texCoords": [
               {
-                "x": 0.14285715,
+                "x": 0.071428575,
                 "y": 0.5
               },
               {
-                "x": 0.14285715,
-                "y": 0.0
-              },
-              {
                 "x": 0.071428575,
                 "y": 0.0
               },
               {
-                "x": 0.071428575,
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
                 "y": 0.5
               }
             ]
@@ -101331,7 +101099,7 @@
     "isDead": false
   },
   {
-    "uid": 946,
+    "uid": 945,
     "name": "Block: 954",
     "components": [
       {
@@ -101375,19 +101143,251 @@
             },
             "texCoords": [
               {
-                "x": 0.14285715,
+                "x": 0.071428575,
                 "y": 0.5
               },
               {
-                "x": 0.14285715,
+                "x": 0.071428575,
                 "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 892
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 893
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 894
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 895
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 896
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 897
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 946,
+    "name": "Block: 956",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 13.625,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 891
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
               },
               {
                 "x": 0.071428575,
                 "y": 0.0
               },
               {
-                "x": 0.071428575,
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
                 "y": 0.5
               }
             ]
@@ -101564,238 +101564,6 @@
   },
   {
     "uid": 947,
-    "name": "Block: 956",
-    "components": [
-      {
-        "type": "engine.Transform",
-        "properties": {
-          "position": {
-            "x": 13.625,
-            "y": 0.625
-          },
-          "scale": {
-            "x": 0.25,
-            "y": 0.25
-          },
-          "rotation": 0.0,
-          "zIndex": 0,
-          "uid": 891
-        }
-      },
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "storedColor": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "sprite": {
-            "width": 16.0,
-            "height": 16.0,
-            "texture": {
-              "filepath": "assets/images/spritesheet.png",
-              "width": 224,
-              "height": 32
-            },
-            "texCoords": [
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.0
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.0
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              }
-            ]
-          },
-          "uid": 892
-        }
-      },
-      {
-        "type": "components.StateMachine",
-        "properties": {
-          "stateTransfers": [
-            [
-              {
-                "state": "Walk",
-                "trigger": "squashMe"
-              },
-              "Squash"
-            ]
-          ],
-          "states": [
-            {
-              "title": "Walk",
-              "animationFrames": [
-                {
-                  "sprite": {
-                    "width": 16.0,
-                    "height": 16.0,
-                    "texture": {
-                      "filepath": "assets/images/spritesheet.png",
-                      "width": 224,
-                      "height": 32
-                    },
-                    "texCoords": [
-                      {
-                        "x": 0.071428575,
-                        "y": 0.5
-                      },
-                      {
-                        "x": 0.071428575,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.0,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.0,
-                        "y": 0.5
-                      }
-                    ]
-                  },
-                  "frameTime": 0.23
-                },
-                {
-                  "sprite": {
-                    "width": 16.0,
-                    "height": 16.0,
-                    "texture": {
-                      "filepath": "assets/images/spritesheet.png",
-                      "width": 224,
-                      "height": 32
-                    },
-                    "texCoords": [
-                      {
-                        "x": 0.14285715,
-                        "y": 0.5
-                      },
-                      {
-                        "x": 0.14285715,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.071428575,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.071428575,
-                        "y": 0.5
-                      }
-                    ]
-                  },
-                  "frameTime": 0.23
-                }
-              ],
-              "doesLoop": true
-            },
-            {
-              "title": "Squash",
-              "animationFrames": [
-                {
-                  "sprite": {
-                    "width": 16.0,
-                    "height": 16.0,
-                    "texture": {
-                      "filepath": "assets/images/spritesheet.png",
-                      "width": 224,
-                      "height": 32
-                    },
-                    "texCoords": [
-                      {
-                        "x": 0.21428572,
-                        "y": 0.5
-                      },
-                      {
-                        "x": 0.21428572,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.14285715,
-                        "y": 0.0
-                      },
-                      {
-                        "x": 0.14285715,
-                        "y": 0.5
-                      }
-                    ]
-                  },
-                  "frameTime": 0.1
-                }
-              ],
-              "doesLoop": false
-            }
-          ],
-          "defaultStateTitle": "Walk",
-          "uid": 893
-        }
-      },
-      {
-        "type": "physics2d.components.RigidBody2D",
-        "properties": {
-          "velocity": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "angularDamping": 0.8,
-          "linearDamping": 0.9,
-          "mass": 0.1,
-          "bodyType": "DYNAMIC",
-          "friction": 0.1,
-          "angularVelocity": 0.0,
-          "gravityScale": 1.0,
-          "isSensor": false,
-          "fixedRotation": true,
-          "continuousCollision": false,
-          "uid": 894
-        }
-      },
-      {
-        "type": "physics2d.components.Circle2DCollider",
-        "properties": {
-          "radius": 0.12,
-          "offset": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "uid": 895
-        }
-      },
-      {
-        "type": "components.GoombaAi",
-        "properties": {
-          "uid": 896
-        }
-      },
-      {
-        "type": "components.Mob",
-        "properties": {
-          "uid": 897
-        }
-      }
-    ],
-    "doSerialization": true,
-    "isDead": false
-  },
-  {
-    "uid": 948,
     "name": "player",
     "components": [
       {
@@ -103068,6 +102836,3254 @@
           },
           "playerState": "Small",
           "uid": 768
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 948,
+    "name": "Block: 952",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 20.375,
+            "y": 2.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 903
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 904
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 905
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 906
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 907
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 908
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 909
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 949,
+    "name": "Block: 954",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 20.875,
+            "y": 2.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 903
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 904
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 905
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 906
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 907
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 908
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 909
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 950,
+    "name": "Block: 957",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 25.125,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 911
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 912
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 913
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 914
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 915
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 916
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 917
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 951,
+    "name": "Block: 959",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 25.625,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 911
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 912
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 913
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 914
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 915
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 916
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 917
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 952,
+    "name": "Block: 962",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 27.115,
+            "y": 0.695
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.35
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 919
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 24.0,
+            "texture": {
+              "filepath": "assets/images/turtle.png",
+              "width": 64,
+              "height": 24
+            },
+            "texCoords": [
+              {
+                "x": 0.25,
+                "y": 1.0
+              },
+              {
+                "x": 0.25,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 920
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "TurtleShellSpin"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 24.0,
+                    "texture": {
+                      "filepath": "assets/images/turtle.png",
+                      "width": 64,
+                      "height": 24
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.25,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.25,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 24.0,
+                    "texture": {
+                      "filepath": "assets/images/turtle.png",
+                      "width": 64,
+                      "height": 24
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.5,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.5,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.25,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.25,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "TurtleShellSpin",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 24.0,
+                    "texture": {
+                      "filepath": "assets/images/turtle.png",
+                      "width": 64,
+                      "height": 24
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.75,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.75,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.5,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.5,
+                        "y": 1.0
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 921
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 922
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.13,
+          "offset": {
+            "x": 0.0,
+            "y": -0.05
+          },
+          "uid": 923
+        }
+      },
+      {
+        "type": "components.TurtleAi",
+        "properties": {
+          "uid": 924
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 925
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 953,
+    "name": "Block: 965",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 28.875,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 927
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 928
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 929
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 930
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 931
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 932
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 933
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 954,
+    "name": "Block: 967",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 29.125,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 927
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 928
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 929
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 930
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 931
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 932
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 933
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 955,
+    "name": "Block: 970",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 30.875,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 935
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 936
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 937
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 938
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 939
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 940
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 941
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 956,
+    "name": "Block: 972",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 31.375,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 935
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 936
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 937
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 938
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 939
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 940
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 941
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 957,
+    "name": "Block: 974",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 31.875,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 935
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 936
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 937
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 938
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 939
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 940
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 941
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 958,
+    "name": "Block: 976",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 32.375,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 935
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 936
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 937
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 938
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 939
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 940
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 941
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 959,
+    "name": "Block: 979",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 42.875,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 943
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 944
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 945
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 946
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 947
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 948
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 949
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 960,
+    "name": "Block: 981",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 43.625,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 943
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 944
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 945
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 946
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 947
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 948
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 949
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 961,
+    "name": "Block: 948",
+    "components": [
+      {
+        "type": "engine.Transform",
+        "properties": {
+          "position": {
+            "x": 7.375,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 875
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "storedColor": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheet.png",
+              "width": 224,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.071428575,
+                "y": 0.5
+              },
+              {
+                "x": 0.071428575,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              }
+            ]
+          },
+          "uid": 876
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Walk",
+                "trigger": "squashMe"
+              },
+              "Squash"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Walk",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.071428575,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Squash",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "width": 16.0,
+                    "height": 16.0,
+                    "texture": {
+                      "filepath": "assets/images/spritesheet.png",
+                      "width": 224,
+                      "height": 32
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.21428572,
+                        "y": 0.5
+                      },
+                      {
+                        "x": 0.21428572,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.5
+                      }
+                    ]
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Walk",
+          "uid": 877
+        }
+      },
+      {
+        "type": "physics2d.components.RigidBody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.1,
+          "bodyType": "DYNAMIC",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 878
+        }
+      },
+      {
+        "type": "physics2d.components.Circle2DCollider",
+        "properties": {
+          "radius": 0.12,
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 879
+        }
+      },
+      {
+        "type": "components.GoombaAi",
+        "properties": {
+          "uid": 880
+        }
+      },
+      {
+        "type": "components.Mob",
+        "properties": {
+          "uid": 881
         }
       }
     ],
