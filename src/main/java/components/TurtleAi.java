@@ -14,6 +14,7 @@ public class TurtleAi extends Component {
     private transient boolean goingRight = false;
     private transient RigidBody2D rb;
     private transient float walkSpeed = 0.6f;
+    private transient float runSpeed = walkSpeed*3.0f;
     private transient Vector2f velocity = new Vector2f();
     private transient Vector2f acceleration = new Vector2f();
     private transient Vector2f terminalVelocity = new Vector2f(2.1f,3.1f);
@@ -94,8 +95,13 @@ public class TurtleAi extends Component {
     @Override
     public void preSolve(GameObject obj, Contact contact, Vector2f contactNormal){
         GoombaAi goomba = obj.getComponent(GoombaAi.class);
+        TurtleAi otherTurtle = obj.getComponent(TurtleAi.class);
         if (goomba != null && isDead && isMoving){
             goomba.stomp();
+            contact.setEnabled(false);
+            AssetPool.getSound("assets/sounds/kick.ogg").play();
+        } else if (otherTurtle != null && !otherTurtle.isDead && isDead && isMoving){
+            otherTurtle.stomp();
             contact.setEnabled(false);
             AssetPool.getSound("assets/sounds/kick.ogg").play();
         }
@@ -110,7 +116,7 @@ public class TurtleAi extends Component {
                     && contactNormal.y > 0.58f){
                 playerController.enemyBounce();
                 stomp();
-                walkSpeed *= 3.0f;
+                walkSpeed = runSpeed;
             } else if (movingDebounce < 0
                     && !playerController.isDead()
                     && !playerController.isHurtInvincible()
@@ -119,8 +125,15 @@ public class TurtleAi extends Component {
             } else if (!playerController.isDead() && !playerController.isHurtInvincible()){
                 if (isDead && contactNormal.y > 0.58f){
                     playerController.enemyBounce();
+                    if (isMoving){
+                        this.velocity.zero();
+                        this.rb.setVelocity(this.velocity);
+                        this.rb.setAngularVelocity(0.0f);
+                        this.rb.setGravityScale(0.0f);
+                    }
                     isMoving = !isMoving;
                     goingRight = contactNormal.x < 0;
+                    //movingDebounce = 0.32f;
                 } else if (isDead && !isMoving){
                     isMoving = true;
                     goingRight = contactNormal.x < 0;
@@ -131,6 +144,16 @@ public class TurtleAi extends Component {
             goingRight = contactNormal.x < 0;
             if (isMoving && isDead){
                 AssetPool.getSound("assets/sounds/bump.ogg").play();
+            }
+        }
+
+        if (obj.getComponent(TurtleAi.class) != null){
+            TurtleAi otherTurtle = obj.getComponent(TurtleAi.class);
+            if (otherTurtle.isDead && isDead && !isMoving){
+                isMoving = true;
+                goingRight = contactNormal.x < 0;
+                movingDebounce = 0.32f;
+                walkSpeed = runSpeed;
             }
         }
 
