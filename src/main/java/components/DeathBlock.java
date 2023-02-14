@@ -29,14 +29,17 @@ public class DeathBlock extends Component{
         if (playerController != null && playerController.isDead()){
             contact.setEnabled(false);
         }
+        if (go.getComponent(Mob.class) != null){
+            go.destroy();
+        }
     }
 
     @Override
     public void beginCollision(GameObject go, Contact contact, Vector2f contactNormal){
         PlayerController playerController = go.getComponent(PlayerController.class);
-        if (playerController != null){
+        if (playerController != null && !playerController.isDead()){
             playerController.die(true);
-            this.gameObject.destroy();
+            //this.gameObject.destroy();
         }
     }
 }

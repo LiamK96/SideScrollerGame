@@ -64,10 +64,6 @@ public class TurtleAi extends Component {
         this.velocity.y = Math.max(Math.min(this.velocity.y, this.terminalVelocity.y), -terminalVelocity.y);
         this.rb.setVelocity(velocity);
 
-        if (this.gameObject.transform.position.x < camera.position.x - 0.5f){
-                //|| this.gameObject.transform.position.y < 0.0f){ //Todo: add support for this
-            this.gameObject.destroy();
-        }
     }
 
     public void checkOnGround(){
