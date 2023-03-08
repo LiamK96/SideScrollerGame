@@ -18,13 +18,13 @@ public class Texture {
 //    public Texture(String filePath){}
 
     //Causes error, this should not be used like this.
-    public Texture(){
+    public Texture() {
         this.width = -1;
         this.height = -1;
         this.texID = -1;
     }
     //for framebuffers
-    public Texture(int width, int height){
+    public Texture(int width, int height) {
         this.filepath = "Generated";
 
         //Generate texture on GPU
@@ -37,7 +37,7 @@ public class Texture {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE,0);
     }
 
-    public void init(String filePath){
+    public void init(String filePath) {
         this.filepath = filePath;
 
         //Generate texture on GPU
@@ -64,14 +64,14 @@ public class Texture {
 
         ByteBuffer image = stbi_load(filePath,width,height,channels,0);
 
-        if (image!= null){
+        if (image!= null) {
             this.width = width.get(0);
             this.height = height.get(0);
 
             if (channels.get(0)==4) {
                 glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width.get(0), height.get(0),
                         0, GL_RGBA, GL_UNSIGNED_BYTE, image);
-            } else if (channels.get(0)==3){
+            } else if (channels.get(0)==3) {
                 glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width.get(0), height.get(0),
                         0, GL_RGB, GL_UNSIGNED_BYTE, image);
             } else {
@@ -85,40 +85,42 @@ public class Texture {
         stbi_image_free(image);
     }
 
-    public void bind(){
+    public void bind() {
         glBindTexture(GL_TEXTURE_2D,texID);
     }
 
-    public void unbind(){
+    public void unbind() {
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
-    public int getWidth(){
+    public int getWidth() {
         return this.width;
     }
 
-    public int getHeight(){
+    public int getHeight() {
         return this.height;
     }
 
-    public int getTexID(){
+    public int getTexID() {
         return this.texID;
     }
 
-    public String getFilepath(){
+    public String getFilepath() {
         return this.filepath;
     }
 
     @Override
-    public boolean equals(Object o){
-        if (o == null){
+    public boolean equals(Object o) {
+        if (o == null) {
             return false;
         }
-        if (!(o instanceof Texture)){
+        if (!(o instanceof Texture)) {
             return false;
         }
         Texture oText = (Texture) o;
-        return oText.getWidth()==this.width && oText.getHeight() == this.height && oText.getTexID() == this.texID
-                && oText.getFilepath() == this.filepath;
+        return oText.getWidth() == this.width
+                && oText.getHeight() == this.height
+                && oText.getTexID() == this.texID
+                && oText.getFilepath().equals(this.filepath);
     }
 }
