@@ -16,24 +16,25 @@ public class GameViewWindow {
     private float leftX, rightX, topY, bottomY;
     private boolean isPlaying = false;
 
-    public void imgui(){
-        if (Window.isGameRunning() != isPlaying){
-            if (Window.isGameRunning()){
+    public void imgui() {
+        if (Window.isGameRunning() != isPlaying) {
+            if (Window.isGameRunning()) {
                 startScene();
             } else {
                 stopScene();
             }
         }
-        ImGui.begin("Game Viewport", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse
+        ImGui.begin("Game Viewport",
+                ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse
                 | ImGuiWindowFlags.MenuBar  | ImGuiWindowFlags.NoMove| ImGuiWindowFlags.NoTitleBar);
 
         //Play Stop menubar
         ImGui.beginMenuBar();
 
-        if (ImGui.menuItem("Play", "", isPlaying, !isPlaying)){
+        if (ImGui.menuItem("Play", "", isPlaying, !isPlaying)) {
             startScene();
         }
-        if (ImGui.menuItem("Stop", "", !isPlaying, isPlaying)){
+        if (ImGui.menuItem("Stop", "", !isPlaying, isPlaying)) {
             stopScene();
         }
 
@@ -65,7 +66,7 @@ public class GameViewWindow {
         ImGui.end();
     }
 
-    private ImVec2 getLargestSizeForViewport(){
+    private ImVec2 getLargestSizeForViewport() {
         //           16/9 aspect ratio
         final float ASPECT_RATIO_X = 16.0f;
         final float ASPECT_RATIO_Y = 9.0f;
@@ -74,7 +75,7 @@ public class GameViewWindow {
 
         float aspectX = windowSize.x;
         float aspectY = (aspectX/ASPECT_RATIO_X) * ASPECT_RATIO_Y;
-        if (aspectY> windowSize.y){
+        if (aspectY> windowSize.y) {
             aspectY = windowSize.y;
             aspectX = (aspectY/ASPECT_RATIO_Y) * ASPECT_RATIO_X;
         }
@@ -82,7 +83,7 @@ public class GameViewWindow {
         return new ImVec2(aspectX,aspectY);
     }
 
-    private ImVec2 getCenteredPositionForViewport(ImVec2 gameScreenSize){
+    private ImVec2 getCenteredPositionForViewport(ImVec2 gameScreenSize) {
         ImVec2 windowSize = new ImVec2();
         ImGui.getContentRegionAvail(windowSize);
 
@@ -92,18 +93,18 @@ public class GameViewWindow {
         return new ImVec2(centerX + ImGui.getCursorPosX(),centerY + ImGui.getCursorPosY());
     }
 
-    public boolean getWantCaptureMouse(){
+    public boolean getWantCaptureMouse() {
         return MouseListener.getX() >= leftX && MouseListener.getX() <= rightX &&
                 MouseListener.getY() >= bottomY && MouseListener.getY() <= topY;
     }
 
-    public void stopScene(){
+    public void stopScene() {
         isPlaying = false;
         AssetPool.stopAllSounds();
         EventSystem.notify(null, new Event(EventType.GameEngineStopPlay));
     }
 
-    public void startScene(){
+    public void startScene() {
         isPlaying = true;
         EventSystem.notify(null, new Event(EventType.GameEngineStartPlay));
     }

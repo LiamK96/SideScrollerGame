@@ -11,15 +11,15 @@ public class Transform extends Component {
     public float rotation;
     public int zIndex;
 
-    public Transform(){
+    public Transform() {
         this.init(new Vector2f(), new Vector2f());
     }
 
-    public Transform(Vector2f position){
+    public Transform(Vector2f position) {
         this.init(position, new Vector2f());
     }
 
-    public Transform(Vector2f position, Vector2f scale){
+    public Transform(Vector2f position, Vector2f scale) {
         this.init(position, scale);
     }
 
@@ -30,18 +30,17 @@ public class Transform extends Component {
         this.zIndex = 0;
     }
 
-    public Transform copy(){
-        Transform t = new Transform(new Vector2f(this.position), new Vector2f(this.scale));
-        return t;
+    public Transform copy() {
+        return new Transform(new Vector2f(this.position), new Vector2f(this.scale));
     }
 
-    public void copy(Transform to){
+    public void copy(Transform to) {
         to.position.set(this.position);
         to.scale.set(this.scale);
     }
 
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         if (o == null) return false;
         if (!(o instanceof Transform)) return false;
 
@@ -51,7 +50,7 @@ public class Transform extends Component {
     }
 
     @Override
-    public void imgui(){
+    public void imgui() {
         gameObject.name = EImGui.inputText("Name: ", gameObject.name);
         EImGui.drawVec2Control("Position", this.position, 0.125f,150.0f, 0.01f);
         EImGui.drawVec2Control("Scale", this.scale, .250f, 150.0f, 0.01f);

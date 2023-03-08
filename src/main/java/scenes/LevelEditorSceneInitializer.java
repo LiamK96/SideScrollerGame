@@ -22,12 +22,12 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
     private GameObject levelEditorComponents;
 
-    public LevelEditorSceneInitializer(){
+    public LevelEditorSceneInitializer() {
 
     }
 
     @Override
-    public void init(Scene scene){
+    public void init(Scene scene) {
 
         sprites = AssetPool.getSpriteSheet("assets/images/spritesheets/decorationsAndBlocks.png");
         Spritesheet gizmos = AssetPool.getSpriteSheet("assets/images/gizmos.png");
@@ -44,7 +44,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
     }
 
-    public void loadResources(Scene scene){
+    public void loadResources(Scene scene) {
         AssetPool.getShader("assets/shaders/default.glsl");
 
         AssetPool.addSpriteSheet("assets/images/spritesheets/decorationsAndBlocks.png",
@@ -100,15 +100,15 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         AssetPool.addSound("assets/sounds/warning.ogg", false);
         AssetPool.addSound("assets/sounds/world_clear.ogg", false);
 
-        for (GameObject go : scene.getGameObjects()){
-            if (go.getComponent(SpriteRenderer.class) != null){
+        for (GameObject go : scene.getGameObjects()) {
+            if (go.getComponent(SpriteRenderer.class) != null) {
                 SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
-                if (spr.getTexture()!=null){
+                if (spr.getTexture()!=null) {
                     spr.setTexture(AssetPool.getTexture(spr.getTexture().getFilepath()));
                 }
             }
 
-            if (go.getComponent(StateMachine.class) != null){
+            if (go.getComponent(StateMachine.class) != null) {
                 StateMachine stateMachine = go.getComponent(StateMachine.class);
                 stateMachine.refreshTextures();
             }
@@ -117,10 +117,10 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
     }
 
     @Override
-    public void imgui(){
+    public void imgui() {
 
         ImGui.begin("Level Editor Stuff");
-        if (ImGui.collapsingHeader("Mouse Stuff")){
+        if (ImGui.collapsingHeader("Mouse Stuff")) {
             ImGui.text("Mouse is dragging: "+MouseListener.isDragging());
             ImGui.text("Mouse World Coords ("+MouseListener.getWorldX()+" : "+MouseListener.getWorldY()+")");
             ImGui.text("Mouse Screen Coords ("+MouseListener.getScreenX()+" : "+MouseListener.getScreenY()+")");
@@ -166,7 +166,9 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                     //Push Custom ID to sprite, since without this they all share the spritesheet id
                     ImGui.pushID(i);
 
-                    if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
+                    if (ImGui.imageButton(id, spriteWidth, spriteHeight,
+                            texCoords[2].x, texCoords[0].y,
+                            texCoords[0].x, texCoords[2].y)) {
                         GameObject object = Prefabs.generateSpriteObject(sprite, 0.25f, 0.25f); //old (sprite, spriteWidth, spriteHeight)
                         RigidBody2D rb = new RigidBody2D();
                         rb.setBodyType(BodyType.STATIC);
@@ -175,7 +177,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                         b2d.setHalfSize(new Vector2f(0.25f,0.25f));
                         object.addComponent(b2d);
                         object.addComponent(new Ground());
-                        if (i ==12){
+                        if (i ==12) {
                             object.addComponent(new BreakableBrick());
                         }
                         //Attach to mouse cursor
@@ -194,7 +196,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 }
                 ImGui.endTabItem();
             }
-            if (ImGui.beginTabItem("Decoration Blocks")){
+            if (ImGui.beginTabItem("Decoration Blocks")) {
 
                 ImVec2 windowPos = new ImVec2();
                 ImGui.getWindowPos(windowPos);
@@ -220,7 +222,9 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                     //Push Custom ID to sprite, since without this they all share the spritesheet id
                     ImGui.pushID(i);
 
-                    if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
+                    if (ImGui.imageButton(id, spriteWidth, spriteHeight,
+                            texCoords[2].x, texCoords[0].y,
+                            texCoords[0].x, texCoords[2].y)) {
                         GameObject object = Prefabs.generateSpriteObject(sprite, 0.25f, 0.25f); //old (sprite, spriteWidth, spriteHeight)
                         //Attach to mouse cursor
                         levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
@@ -239,7 +243,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
                 ImGui.endTabItem();
             }
-            if (ImGui.beginTabItem("Prefabs")){
+            if (ImGui.beginTabItem("Prefabs")) {
 
                 //SpriteSheets used
                 Spritesheet playerSprites = AssetPool.getSpriteSheet("assets/images/spritesheet.png");
@@ -266,7 +270,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
                 int uid = 0;
 
-                for (String prefab : prefabs.keySet()){
+                for (String prefab : prefabs.keySet()) {
                     createPrefab(prefabs.get(prefab), uid, prefab);
                     uid++;
                     ImGui.sameLine();
@@ -277,20 +281,20 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 ImGui.endTabItem();
             }
 
-            if (ImGui.beginTabItem("Sounds")){
+            if (ImGui.beginTabItem("Sounds")) {
                 Collection<Sound> sounds = AssetPool.getAllSounds();
 
                 ImVec2 windowSize= new ImVec2(ImGui.getWindowPos());
-                for (Sound sound : sounds){
+                for (Sound sound : sounds) {
                     File tmp = new File(sound.getFilepath());
-                    if (ImGui.button(tmp.getName())){
-                        if (!sound.isPlaying()){
+                    if (ImGui.button(tmp.getName())) {
+                        if (!sound.isPlaying()) {
                             sound.play();
                         } else {
                             sound.stop();
                         }
                     }
-                    if (ImGui.getContentRegionAvailX() > 100){
+                    if (ImGui.getContentRegionAvailX() > 100) {
                         ImGui.sameLine();
                     }
                 }
@@ -304,11 +308,11 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
     }
 
     @Override
-    public GameObject getSceneComponentObject(){
+    public GameObject getSceneComponentObject() {
         return this.levelEditorComponents;
     }
 
-    private void createPrefab(Sprite sprite, int uid, String prefab){
+    private void createPrefab(Sprite sprite, int uid, String prefab) {
 
         float spriteWidth = 64;
         float spriteHeight = 64;
@@ -326,8 +330,8 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         ImGui.popID();
     }
 
-    private GameObject getPrefabObject(String prefab){
-        switch (prefab){
+    private GameObject getPrefabObject(String prefab) {
+        switch (prefab) {
             case "player":
                 return Prefabs.generatePlayer();
             case "questionBlock":

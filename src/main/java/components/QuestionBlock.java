@@ -4,9 +4,9 @@ import engine.GameObject;
 import engine.Prefabs;
 import engine.Window;
 
-public class QuestionBlock extends Block{
+public class QuestionBlock extends Block {
 
-    private enum BlockType{
+    private enum BlockType {
         Coin,
         PowerUp,
         Invincibility
@@ -16,7 +16,7 @@ public class QuestionBlock extends Block{
 
     @Override
     public void playerHit(PlayerController playerController) {
-        switch(blockType){
+        switch(blockType) {
             case Coin:
                 doCoin(playerController);
                 break;
@@ -29,7 +29,7 @@ public class QuestionBlock extends Block{
         }
 
         StateMachine stateMachine = gameObject.getComponent(StateMachine.class);
-        if (stateMachine != null){
+        if (stateMachine != null) {
             stateMachine.trigger("setInactive");
             this.setInactive();
         }
@@ -54,14 +54,14 @@ public class QuestionBlock extends Block{
         Window.getScene().addGameObjectToScene(coin);
     }
 
-    private void spawnMushroom(){
+    private void spawnMushroom() {
         GameObject mushroom = Prefabs.generateMushroom();
         mushroom.transform.position.set(gameObject.transform.position);
         mushroom.transform.position.y += 0.25f;
         Window.getScene().addGameObjectToScene(mushroom);
     }
 
-    private void spawnFlower(){
+    private void spawnFlower() {
         GameObject flower = Prefabs.generateFlower();
         flower.transform.position.set(gameObject.transform.position);
         flower.transform.position.y += 0.25f;

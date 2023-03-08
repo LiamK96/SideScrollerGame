@@ -1,4 +1,4 @@
 package components;
 
-public class Ground extends Component{
+public class Ground extends Component {
 }

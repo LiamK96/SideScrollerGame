@@ -4,11 +4,11 @@ public class Event {
 
     public EventType type;
 
-    public Event(EventType type){
+    public Event(EventType type) {
         this.type = type;
     }
 
-    public Event(){
+    public Event() {
         this.type = EventType.UserEvent;
     }
 

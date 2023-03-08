@@ -28,7 +28,7 @@ public class MouseControls extends Component {
     private PropertiesWindow propertiesWindow = Window.getImGuiLayer().getPropertiesWindow();
 
 
-    public void pickupObject(GameObject go){
+    public void pickupObject(GameObject go) {
         if (this.holdingObject != null){
             this.holdingObject.destroy();
         }
@@ -44,14 +44,14 @@ public class MouseControls extends Component {
     public boolean place(){
         //Check to see if space is vacant
         List<GameObject> gameObjects = Window.getScene().getGameObjects();
-        for (GameObject go : gameObjects){
-            if (go.equals(this.holdingObject)){
+        for (GameObject go : gameObjects) {
+            if (go.equals(this.holdingObject)) {
                 continue;
             }
             if (go.transform.position.x == this.holdingObject.transform.position.x
                     && go.transform.position.y == this.holdingObject.transform.position.y
                     && go.transform.zIndex == this.holdingObject.transform.zIndex
-                    && go.getComponent(NonPickable.class) == null){
+                    && go.getComponent(NonPickable.class) == null) {
                 return false;
             }
         }
@@ -62,7 +62,7 @@ public class MouseControls extends Component {
         if (newObj.name.equals("Holding Object")) {
             newObj.name = "Block: " + newObj.getUid();
         }
-        if (newObj.getComponent(StateMachine.class) != null){
+        if (newObj.getComponent(StateMachine.class) != null) {
             StateMachine stateMachine = newObj.getComponent(StateMachine.class);
             stateMachine.refreshTextures();
         }
@@ -72,16 +72,16 @@ public class MouseControls extends Component {
     }
 
     @Override
-    public void editorUpdate(float dt){
+    public void editorUpdate(float dt) {
         debounce -=dt;
 
         PickingTexture pickingTexture = propertiesWindow.getPickingTexture();
         Scene currentScene = Window.getScene();
 
         if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)
-                && KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)){
+                && KeyListener.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
             //Let the EditorCamera Handle it
-        }else if (holdingObject != null && debounce <=0){
+        }else if (holdingObject != null && debounce <=0) {
             holdingObject.transform.position.x = MouseListener.getWorldX();
             holdingObject.transform.position.y = MouseListener.getWorldY();
             holdingObject.transform.position.x =
@@ -91,28 +91,28 @@ public class MouseControls extends Component {
                     ((int)Math.floor(holdingObject.transform.position.y / Settings.gridHeight) * Settings.gridHeight)
                             + Settings.gridHeight / 2.0f;
 
-            if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)){
-                if(!place()){
+            if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
+                if(!place()) {
                     propertiesWindow.resetActiveGameObject();
                 }
-                if (isPickup){
+                if (isPickup) {
                     destroyHoldingObject();
                 }
                 debounce = debounceTime;
             }
 
-            if (KeyListener.isKeyPressed(GLFW_KEY_BACKSPACE)){
+            if (KeyListener.isKeyPressed(GLFW_KEY_BACKSPACE)) {
                 destroyHoldingObject();
             }
         } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && debounce < 0
-                && !MouseListener.isDragging()){
+                && !MouseListener.isDragging()) {
             int x = (int)MouseListener.getScreenX();
             int y = (int)MouseListener.getScreenY();
             int gameObjectId = pickingTexture.readPixel(x,y);
             GameObject pickedObj = currentScene.getGameObject(gameObjectId);
-            if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null){
+            if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null) {
                 //Check to see if we clicked the same obj twice
-                if (pickedObj == propertiesWindow.getActiveGameObject()){
+                if (pickedObj == propertiesWindow.getActiveGameObject()) {
                     isPickup = true;
                     GameObject newObj = pickedObj.copy();
                     newObj.name = pickedObj.name;
@@ -122,7 +122,7 @@ public class MouseControls extends Component {
                 } else {
                     propertiesWindow.setActiveGameObject(pickedObj);
                 }
-            } else if (pickedObj == null && !MouseListener.isDragging()){
+            } else if (pickedObj == null && !MouseListener.isDragging()) {
                 propertiesWindow.resetActiveGameObject();
             }
 
@@ -130,9 +130,9 @@ public class MouseControls extends Component {
         } else if (MouseListener.isDragging()
                 && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)
                 && !GizmoSystem.isUsingGizmos
-                && this.holdingObject == null){
+                && this.holdingObject == null) {
 
-            if (!boxSelectSet){
+            if (!boxSelectSet) {
                 propertiesWindow.resetActiveGameObject();
                 boxSelectStart = MouseListener.getScreen();
                 boxSelectSet = true;
@@ -145,7 +145,7 @@ public class MouseControls extends Component {
             DebugDraw.addBox2D(new Vector2f(boxSelectStartWorld).add(halfSize),
                     new Vector2f(halfSize).mul(2.0f), 0);
 
-        } else if (boxSelectSet){
+        } else if (boxSelectSet) {
             boxSelectSet = false;
             int screenStartX = (int)boxSelectStart.x;
             int screenStartY = (int)boxSelectStart.y;
@@ -154,12 +154,12 @@ public class MouseControls extends Component {
             boxSelectStart.zero();
             boxSelectEnd.zero();
 
-            if (screenEndX < screenStartX){
+            if (screenEndX < screenStartX) {
                 int temp = screenStartX;
                 screenStartX = screenEndX;
                 screenEndX = temp;
             }
-            if (screenEndY < screenStartY){
+            if (screenEndY < screenStartY) {
                 int temp = screenStartY;
                 screenStartY = screenEndY;
                 screenEndY = temp;
@@ -173,15 +173,15 @@ public class MouseControls extends Component {
 
             Set<Integer> uniqueGameObjectIds = new HashSet<>();
 
-            for (float objId : gameObjectIds){
+            for (float objId : gameObjectIds) {
                 uniqueGameObjectIds.add((int)objId);
             }
 
             propertiesWindow.resetActiveGameObject();
 
-            for (Integer objId : uniqueGameObjectIds){
+            for (Integer objId : uniqueGameObjectIds) {
                 GameObject pickedObj = Window.getScene().getGameObject(objId);
-                if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null){
+                if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null) {
                     propertiesWindow.addActiveGameObject(pickedObj);
                 }
             }
@@ -197,7 +197,7 @@ public class MouseControls extends Component {
         return holdingObject;
     }
 
-    public void destroyHoldingObject(){
+    public void destroyHoldingObject() {
         if (holdingObject != null) {
             holdingObject.destroy();
             holdingObject = null;

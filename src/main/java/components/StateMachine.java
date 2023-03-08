@@ -12,19 +12,19 @@ import java.util.Objects;
 
 public class StateMachine extends Component {
 
-    private class StateTrigger{
+    private class StateTrigger {
         public String state;
         public String trigger;
 
         public StateTrigger(){}
-        public StateTrigger(String state, String trigger){
+        public StateTrigger(String state, String trigger) {
             this.state = state;
             this.trigger = trigger;
         }
 
         @Override
-        public boolean equals(Object o){
-            if (o.getClass() != StateTrigger.class){
+        public boolean equals(Object o) {
+            if (o.getClass() != StateTrigger.class) {
                 return false;
             }
             StateTrigger t2 = (StateTrigger)o;
@@ -32,7 +32,7 @@ public class StateMachine extends Component {
         }
 
         @Override
-        public int hashCode(){
+        public int hashCode() {
             return Objects.hash(trigger,state);
         }
     }
@@ -42,25 +42,25 @@ public class StateMachine extends Component {
     private transient AnimationState currentState = null;
     private String defaultStateTitle = "";
 
-    public void addStateTrigger(String from, String to, String onTrigger){
+    public void addStateTrigger(String from, String to, String onTrigger) {
         this.stateTransfers.put(new StateTrigger(from, onTrigger), to);
     }
 
-    public void addState(AnimationState state){
+    public void addState(AnimationState state) {
         this.states.add(state);
     }
 
-    public void refreshTextures(){
-        for (AnimationState state : states){
+    public void refreshTextures() {
+        for (AnimationState state : states) {
             state.refreshTextures();
         }
     }
 
-    public void setDefaultState(String animationTitle){
-        for (AnimationState state : states){
-            if (state.title.equals(animationTitle)){
+    public void setDefaultState(String animationTitle) {
+        for (AnimationState state : states) {
+            if (state.title.equals(animationTitle)) {
                 defaultStateTitle = animationTitle;
-                if (currentState == null){
+                if (currentState == null) {
                     currentState = state;
                     return;
                 }
@@ -70,12 +70,12 @@ public class StateMachine extends Component {
     }
 
 
-    public boolean trigger(String trigger){
-        for (StateTrigger state : stateTransfers.keySet()){
-            if (state.state.equals(currentState.title) && state.trigger.equals(trigger)){
-                if (stateTransfers.get(state) != null){
+    public boolean trigger(String trigger) {
+        for (StateTrigger state : stateTransfers.keySet()) {
+            if (state.state.equals(currentState.title) && state.trigger.equals(trigger)) {
+                if (stateTransfers.get(state) != null) {
                     int newStateIndex = stateIndexOf(stateTransfers.get(state));
-                    if (newStateIndex > -1){
+                    if (newStateIndex > -1) {
                         currentState = states.get(newStateIndex);
                         return true;
                     }
@@ -85,10 +85,10 @@ public class StateMachine extends Component {
         return false;
     }
 
-    public int stateIndexOf(String stateTitle){
+    public int stateIndexOf(String stateTitle) {
         int index = 0;
-        for (AnimationState state : states){
-            if (state.title.equals(stateTitle)){
+        for (AnimationState state : states) {
+            if (state.title.equals(stateTitle)) {
                 return index;
             }
             index++;
@@ -97,9 +97,9 @@ public class StateMachine extends Component {
     }
 
     @Override
-    public void start(){
-        for (AnimationState state : states){
-            if (state.title.equals(defaultStateTitle)){
+    public void start() {
+        for (AnimationState state : states) {
+            if (state.title.equals(defaultStateTitle)) {
                 currentState = state;
                 break;
             }
@@ -107,34 +107,34 @@ public class StateMachine extends Component {
     }
 
     @Override
-    public void update(float dt){
-        if (currentState != null){
+    public void update(float dt) {
+        if (currentState != null) {
             currentState.update(dt);
             SpriteRenderer sprite = gameObject.getComponent(SpriteRenderer.class);
-            if (sprite != null){
+            if (sprite != null) {
                 sprite.setSprite(currentState.getCurrentSprite());
             }
         }
     }
 
     @Override
-    public void editorUpdate(float dt){
-        if (currentState != null){
+    public void editorUpdate(float dt) {
+        if (currentState != null) {
             currentState.update(dt);
             SpriteRenderer sprite = gameObject.getComponent(SpriteRenderer.class);
-            if (sprite != null){
+            if (sprite != null) {
                 sprite.setSprite(currentState.getCurrentSprite());
             }
         }
     }
 
     @Override
-    public void imgui(){
+    public void imgui() {
 
         ImGui.text("Current State : "+currentState.title);
 
         int index = 0;
-        for (AnimationState state : states){
+        for (AnimationState state : states) {
             ImString title = new ImString(state.title);
             ImGui.inputText("State: ", title);
             state.title = title.get();
@@ -143,7 +143,7 @@ public class StateMachine extends Component {
             ImGui.checkbox("Loops: ", doesLoop);
             state.setLoop(doesLoop.get());
 
-            for (Frame frame : state.animationFrames){
+            for (Frame frame : state.animationFrames) {
                 float[] temp = new float[1];
                 temp[0] = frame.frameTime;
                 ImGui.dragFloat("Frame("+ index +") Time: ", temp, 0.01f);
@@ -154,7 +154,7 @@ public class StateMachine extends Component {
         }
     }
 
-    public AnimationState getCurrentState(){
+    public AnimationState getCurrentState() {
         return currentState;
     }
 

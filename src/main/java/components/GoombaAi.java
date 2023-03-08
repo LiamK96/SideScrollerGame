@@ -9,7 +9,7 @@ import physics2d.Physics2D;
 import physics2d.components.RigidBody2D;
 import util.AssetPool;
 
-public class GoombaAi extends Component{
+public class GoombaAi extends Component {
 
     private transient boolean onGround = false;
     private transient boolean goingRight = false;
@@ -23,35 +23,36 @@ public class GoombaAi extends Component{
     private transient StateMachine stateMachine;
 
     @Override
-    public void start(){
+    public void start() {
         this.stateMachine = gameObject.getComponent(StateMachine.class);
         this.rb = gameObject.getComponent(RigidBody2D.class);
         this.acceleration.y = Window.getPhysics().getGravity().y * 0.7f;
     }
 
     @Override
-    public void update(float dt){
+    public void update(float dt) {
         if (isDead){
             timeToKill -= dt;
-            if (timeToKill <= 0){
+            if (timeToKill <= 0) {
                 this.gameObject.destroy();
             }
             return;
         }
 
         Camera camera = Window.getScene().getCamera();
-        if (this.gameObject.transform.position.x > (camera.position.x + camera.getProjectionSize().x * camera.getZoom()) + 2.0f){
+        if (this.gameObject.transform.position.x
+                > (camera.position.x + camera.getProjectionSize().x * camera.getZoom()) + 2.0f) {
             return;
         }
 
-        if (goingRight){
+        if (goingRight) {
             velocity.x = walkSpeed;
         } else {
             velocity.x = -walkSpeed;
         }
 
         checkOnGround();
-        if (onGround){
+        if (onGround) {
             this.acceleration.y = 0;
             this.velocity.y = 0;
         } else {
@@ -65,59 +66,59 @@ public class GoombaAi extends Component{
     }
 //
 //    @Override
-//    public void preSolve(GameObject go, Contact contact, Vector2f contactNormal){
+//    public void preSolve(GameObject go, Contact contact, Vector2f contactNormal) {
 //        if (isDead) return;
 //        PlayerController playerController = go.getComponent(PlayerController.class);
-//        if (playerController != null && playerController.isHurtInvincible() && !playerController.isDead()){
+//        if (playerController != null && playerController.isHurtInvincible() && !playerController.isDead()) {
 //            contact.setEnabled(false);
 //        }
 //    }
 
     @Override
-    public void preSolve(GameObject go, Contact contact, Vector2f contactNormal){
+    public void preSolve(GameObject go, Contact contact, Vector2f contactNormal) {
         GameBorder gameBorder = go.getComponent(GameBorder.class);
-        if (gameBorder != null){
+        if (gameBorder != null) {
             contact.setEnabled(false);
         }
     }
 
     @Override
-    public void beginCollision(GameObject go, Contact contact, Vector2f contactNormal){
-        if (isDead){
+    public void beginCollision(GameObject go, Contact contact, Vector2f contactNormal) {
+        if (isDead) {
             return;
         }
 
     }
 
     @Override
-    public void postSolve(GameObject go, Contact contact, Vector2f contactNormal){
+    public void postSolve(GameObject go, Contact contact, Vector2f contactNormal) {
         PlayerController playerController = go.getComponent(PlayerController.class);
-        if (playerController != null){
+        if (playerController != null) {
             if (!playerController.isDead()
                     && !playerController.isHurtInvincible()
                     && contactNormal.y > 0.58f) {
                 playerController.enemyBounce();
                 stomp();
-            } else if (!playerController.isDead() && !playerController.isInvincible()){
+            } else if (!playerController.isDead() && !playerController.isInvincible()) {
                 playerController.die();
-            } else if (!playerController.isDead() && playerController.isHurtInvincible()){
+            } else if (!playerController.isDead() && playerController.isHurtInvincible()) {
                 playerController.enemyBounce();
             }
-        } else if (Math.abs(contactNormal.y) < 0.1f){
+        } else if (Math.abs(contactNormal.y) < 0.1f) {
             goingRight = contactNormal.x < 0;
         }
 
-        if (go.getComponent(Fireball.class) != null){
+        if (go.getComponent(Fireball.class) != null) {
             stomp();
             go.getComponent(Fireball.class).disappear();
         }
     }
 
-    public void stomp(){
+    public void stomp() {
         stomp(true);
     }
 
-    public void stomp(boolean playSound){
+    public void stomp(boolean playSound) {
         this.isDead = true;
         this.velocity.zero();
         this.rb.setVelocity(new Vector2f());
@@ -125,12 +126,12 @@ public class GoombaAi extends Component{
         this.rb.setGravityScale(0.0f);
         this.stateMachine.trigger("squashMe");
         this.rb.setAsSensor();
-        if (playSound){
+        if (playSound) {
             AssetPool.getSound("assets/sounds/bump.ogg").play();
         }
     }
 
-    public void checkOnGround(){
+    public void checkOnGround() {
         float innerPlayerWidth = 0.25f * 0.7f;
         float yVal = -0.14f;
         onGround = Physics2D.checkOnGround(this.gameObject, innerPlayerWidth, yVal);

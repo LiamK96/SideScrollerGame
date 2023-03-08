@@ -18,7 +18,7 @@ public class PillboxCollider extends Component {
 
 
     @Override
-    public void start(){
+    public void start() {
         this.topCircle.gameObject = this.gameObject;
         this.bottomCircle.gameObject = this.gameObject;
         this.box.gameObject = this.gameObject;
@@ -27,39 +27,39 @@ public class PillboxCollider extends Component {
     }
 
     @Override
-    public void update(float dt){
-        if (resetFixtureNextFrame){
+    public void update(float dt) {
+        if (resetFixtureNextFrame) {
             resetFixture();
         }
     }
 
     @Override
-    public void editorUpdate(float dt){
+    public void editorUpdate(float dt) {
         topCircle.editorUpdate(dt);
         bottomCircle.editorUpdate(dt);
         box.editorUpdate(dt);
 
-        if (resetFixtureNextFrame){
+        if (resetFixtureNextFrame) {
             resetFixture();
         }
     }
 
-    public void resetFixture(){
-        if (Window.getPhysics().isLocked()){
+    public void resetFixture() {
+        if (Window.getPhysics().isLocked()) {
             resetFixtureNextFrame = true;
             return;
         }
         resetFixtureNextFrame = false;
 
-        if (gameObject != null){
+        if (gameObject != null) {
             RigidBody2D rb = gameObject.getComponent(RigidBody2D.class);
-            if (rb != null){
+            if (rb != null) {
                 Window.getPhysics().resetPillboxCollider(rb, this);
             }
         }
     }
 
-    public void recalculateColliders(){
+    public void recalculateColliders() {
         float circleRadius = width/4;
         float boxHeight = height - 2 * circleRadius;
         topCircle.setRadius(circleRadius);
@@ -82,12 +82,12 @@ public class PillboxCollider extends Component {
         return box;
     }
 
-    public void setWidth(float newWidth){
+    public void setWidth(float newWidth) {
         this.width = newWidth;
         recalculateColliders();
         resetFixture();
     }
-    public void setHeight(float newHeight){
+    public void setHeight(float newHeight) {
         this.height = newHeight;
         recalculateColliders();
         resetFixture();

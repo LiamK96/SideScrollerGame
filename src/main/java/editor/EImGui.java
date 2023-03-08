@@ -11,16 +11,17 @@ public class EImGui {
 
     private static float defaultColumnWidth = 150.0f;
 
-    public static void drawVec2Control(String label, Vector2f values){
+    public static void drawVec2Control(String label, Vector2f values) {
         drawVec2Control(label,values,0.0f,defaultColumnWidth, 0.1f);
     }
-    public static void drawVec2Control(String label, Vector2f values, float resetValue){
+    public static void drawVec2Control(String label, Vector2f values, float resetValue) {
         drawVec2Control(label, values, resetValue, defaultColumnWidth, 0.1f);
     }
-    public static void drawVec2Control(String label, Vector2f values, float resetValue, float columnWidth){
+    public static void drawVec2Control(String label, Vector2f values, float resetValue, float columnWidth) {
         drawVec2Control(label,values,resetValue,columnWidth,0.1f);
     }
-    public static void drawVec2Control(String label, Vector2f values, float resetValue, float columnWidth, float stepSize){
+    public static void drawVec2Control(String label, Vector2f values,
+                                       float resetValue, float columnWidth, float stepSize) {
         ImGui.pushID(label);
 
         ImGui.columns(2);
@@ -39,7 +40,7 @@ public class EImGui {
         ImGui.pushStyleColor(ImGuiCol.Button, 0.8f, 0.1f, 0.15f, 1.0f);
         ImGui.pushStyleColor(ImGuiCol.ButtonHovered, 0.9f, 0.2f, 0.16f, 1.0f);
         ImGui.pushStyleColor(ImGuiCol.ButtonActive, 0.7f, 0.0f, 0.14f, 1.0f);
-        if (ImGui.button("X", buttonSize.x, buttonSize.y)){
+        if (ImGui.button("X", buttonSize.x, buttonSize.y)) {
             values.x = resetValue;
         }
         ImGui.popStyleColor(3);
@@ -55,7 +56,7 @@ public class EImGui {
         ImGui.pushStyleColor(ImGuiCol.Button, 0.2f, 0.7f, 0.2f, 1.0f);
         ImGui.pushStyleColor(ImGuiCol.ButtonHovered, 0.3f, 0.8f, 0.3f, 1.0f);
         ImGui.pushStyleColor(ImGuiCol.ButtonActive, 0.2f, 0.7f, 0.2f, 1.0f);
-        if (ImGui.button("Y", buttonSize.x, buttonSize.y)){
+        if (ImGui.button("Y", buttonSize.x, buttonSize.y)) {
             values.y = resetValue;
         }
         ImGui.popStyleColor(3);
@@ -78,7 +79,7 @@ public class EImGui {
         ImGui.popID();
     }
 
-    public static float dragFloat(String label, float value){
+    public static float dragFloat(String label, float value) {
         ImGui.pushID(label);
 
         ImGui.columns(2);
@@ -95,7 +96,7 @@ public class EImGui {
         return valArr[0];
     }
 
-    public static int dragInt(String label, int value){
+    public static int dragInt(String label, int value) {
         ImGui.pushID(label);
 
         ImGui.columns(2);
@@ -112,7 +113,7 @@ public class EImGui {
         return valArr[0];
     }
 
-    public static boolean colourPicker4(String label, Vector4f color){
+    public static boolean colourPicker4(String label, Vector4f color) {
         boolean res = false;
         ImGui.pushID(label);
 
@@ -133,7 +134,7 @@ public class EImGui {
         return res;
     }
 
-    public static String inputText(String label, String text){
+    public static String inputText(String label, String text) {
         ImGui.pushID(label);
 
         ImGui.columns(2);
@@ -142,7 +143,7 @@ public class EImGui {
         ImGui.nextColumn();
 
         ImString outString = new ImString(text,256);
-        if (ImGui.inputText("##"+label, outString)){
+        if (ImGui.inputText("##"+label, outString)) {
             ImGui.columns(1);
             ImGui.popID();
             return outString.get();

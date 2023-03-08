@@ -6,7 +6,7 @@ import org.joml.Vector2f;
 import physics2d.components.RigidBody2D;
 import util.AssetPool;
 
-public class MushroomAI extends Component{
+public class MushroomAI extends Component {
 
     private transient boolean goingRight = true;
     private transient RigidBody2D rb;
@@ -15,28 +15,28 @@ public class MushroomAI extends Component{
     private transient boolean hitPlayer = false;
 
     @Override
-    public void start(){
+    public void start() {
         this.rb = gameObject.getComponent(RigidBody2D.class);
         AssetPool.getSound("assets/sounds/powerup_appears.ogg").play();
     }
 
     @Override
-    public void update(float dt){
-        if (goingRight && Math.abs(rb.getVelocity().x) < MAX_SPEED){
+    public void update(float dt) {
+        if (goingRight && Math.abs(rb.getVelocity().x) < MAX_SPEED) {
             rb.addVelocity(speed);
-        } else if (!goingRight && Math.abs(rb.getVelocity().x) < MAX_SPEED){
+        } else if (!goingRight && Math.abs(rb.getVelocity().x) < MAX_SPEED) {
             rb.addVelocity(new Vector2f(-speed.x,speed.y));
         }
     }
 
     @Override
-    public void preSolve(GameObject go, Contact contact, Vector2f contactNormal){
+    public void preSolve(GameObject go, Contact contact, Vector2f contactNormal) {
 
         PlayerController playerController = go.getComponent(PlayerController.class);
         Mob mob = go.getComponent(Mob.class);
-        if (playerController != null){
+        if (playerController != null) {
             contact.setEnabled(false);
-            if (!hitPlayer){
+            if (!hitPlayer) {
                 if (playerController.isSmall()) {
                     playerController.powerUp();
                 } else {
@@ -45,16 +45,15 @@ public class MushroomAI extends Component{
                 this.gameObject.destroy();
                 hitPlayer = true;
             }
-            return;
-        } else if (mob != null){
+        } else if (mob != null) {
             contact.setEnabled(false);
         }
 
 
     }
 
-    public void postSolve (GameObject go, Contact contact, Vector2f contactNormal){
-        if (Math.abs(contactNormal.y) < 0.1f){
+    public void postSolve (GameObject go, Contact contact, Vector2f contactNormal) {
+        if (Math.abs(contactNormal.y) < 0.1f) {
             goingRight = contactNormal.x < 0;
         }
     }

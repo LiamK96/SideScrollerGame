@@ -12,14 +12,14 @@ public class PickingTexture {
     private int fbo;
     private int depthTexture;
 
-    public PickingTexture(int width, int height){
-        if (!init(width, height)){
+    public PickingTexture(int width, int height) {
+        if (!init(width, height)) {
             assert false: "Error Initialising Picking Texture";
         }
 
     }
 
-    public boolean init(int width, int height){
+    public boolean init(int width, int height) {
         //Generate PickingTexture
         fbo = glGenFramebuffers();
         glBindFramebuffer(GL_FRAMEBUFFER, fbo);
@@ -49,7 +49,7 @@ public class PickingTexture {
         glReadBuffer(GL_NONE);
         glDrawBuffer(GL_COLOR_ATTACHMENT0);
 
-        if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE){
+        if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
             assert false : "Error(Framebuffer): GL framebuffer is not complete";
             return false;
         }
@@ -60,15 +60,15 @@ public class PickingTexture {
         return true;
     }
 
-    public void enableWriting(){
+    public void enableWriting() {
         glBindFramebuffer(GL_DRAW_FRAMEBUFFER, fbo);
     }
 
-    public void disableWriting(){
+    public void disableWriting() {
         glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
     }
 
-    public int readPixel(int x, int y){
+    public int readPixel(int x, int y) {
         glBindFramebuffer(GL_READ_FRAMEBUFFER, fbo);
         glReadBuffer(GL_COLOR_ATTACHMENT0);
 
@@ -78,7 +78,7 @@ public class PickingTexture {
         return (int)(pixels[0]) -1;
     }
 
-    public float[] readPixels(Vector2i start, Vector2i end){
+    public float[] readPixels(Vector2i start, Vector2i end) {
         glBindFramebuffer(GL_READ_FRAMEBUFFER, fbo);
         glReadBuffer(GL_COLOR_ATTACHMENT0);
 
@@ -86,7 +86,7 @@ public class PickingTexture {
         int numPixels = size.x * size.y;
         float[] pixels = new float[3 * numPixels];
         glReadPixels(start.x,start.y,size.x,size.y,GL_RGB, GL_FLOAT, pixels);
-        for (int i = 0; i < pixels.length; i++){
+        for (int i = 0; i < pixels.length; i++) {
             pixels[i]--;
         }
 

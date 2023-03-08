@@ -10,12 +10,12 @@ public class EventSystem {
 
     private static List<Observer> observers = new ArrayList<>();
 
-    public static void addObserver(Observer observer){
+    public static void addObserver(Observer observer) {
         observers.add(observer);
     }
 
-    public static void notify(GameObject go, Event event){
-        for (Observer observer : observers){
+    public static void notify(GameObject go, Event event) {
+        for (Observer observer : observers) {
             observer.onNotify(go, event);
         }
     }

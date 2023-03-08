@@ -2,7 +2,7 @@ package components;
 
 import util.AssetPool;
 
-public class BreakableBrick extends Block{
+public class BreakableBrick extends Block {
 
 
     @Override

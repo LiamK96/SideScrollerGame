@@ -35,7 +35,7 @@ public class Scene {
 
     //private static GameObject activeGameObject = null;
 
-    public Scene(SceneInitializer sceneInitializer){
+    public Scene(SceneInitializer sceneInitializer) {
         this.sceneInitializer = sceneInitializer;
         this.physics2D = new Physics2D();
         this.renderer = new Renderer();
@@ -44,14 +44,14 @@ public class Scene {
         this.isRunning = false;
     }
 
-    public void init(){
+    public void init() {
         this.camera = new Camera(new Vector2f());
         this.sceneInitializer.loadResources(this);
         this.sceneInitializer.init(this);
     }
 
-    public void start(){
-        for (int i = 0; i < gameObjects.size(); i++){
+    public void start() {
+        for (int i = 0; i < gameObjects.size(); i++) {
             GameObject go = gameObjects.get(i);
             go.start();
             this.renderer.add(go);
@@ -60,7 +60,7 @@ public class Scene {
         isRunning = true;
     }
 
-    public void addGameObjectToScene(GameObject go){
+    public void addGameObjectToScene(GameObject go) {
         if (!isRunning){
             gameObjects.add(go);
         }else {
@@ -68,53 +68,53 @@ public class Scene {
         }
     }
 
-    public void destroy(){
-        for (GameObject go : gameObjects){
+    public void destroy() {
+        for (GameObject go : gameObjects) {
             go.destroy();
         }
     }
 
-    public List<GameObject> getGameObjects(){
+    public List<GameObject> getGameObjects() {
         return this.gameObjects;
     }
 
-    public GameObject getGameObject(int gameObjectId){
+    public GameObject getGameObject(int gameObjectId) {
         Optional<GameObject> result = this.gameObjects.stream()
                 .filter(GameObject -> GameObject.getUid() == gameObjectId)
                 .findFirst();
         return result.orElse(null);
     }
 
-    public GameObject getGameObject(String gameObjectName){
+    public GameObject getGameObject(String gameObjectName) {
         Optional<GameObject> result = this.gameObjects.stream()
                 .filter(GameObject -> GameObject.name.equals(gameObjectName))
                 .findFirst();
         return result.orElse(null);
     }
 
-    public <T extends Component> GameObject getGameObjectWith(Class<T> classToGet){
-        for (GameObject go : gameObjects){
-            if (go.getComponent(classToGet) != null){
+    public <T extends Component> GameObject getGameObjectWith(Class<T> classToGet) {
+        for (GameObject go : gameObjects) {
+            if (go.getComponent(classToGet) != null) {
                 return go;
             }
         }
         return null;
     }
 
-    public void editorUpdate(float dt){
+    public void editorUpdate(float dt) {
         this.camera.adjustProjection();
         for (int i = 0; i < gameObjects.size(); i++) {
             GameObject go = gameObjects.get(i);
             go.editorUpdate(dt);
 
-            if (go.isDead()){
+            if (go.isDead()) {
                 gameObjects.remove(i);
                 this.renderer.destroyGameObject(go);
                 this.physics2D.destroyGameObject(go);
                 i--;
             }
         }
-        for (GameObject go : pendingObjects){
+        for (GameObject go : pendingObjects) {
             gameObjects.add(go);
             go.start();
             this.renderer.add(go);
@@ -123,7 +123,7 @@ public class Scene {
         pendingObjects.clear();
     }
 
-    public void update(float dt){
+    public void update(float dt) {
         this.camera.adjustProjection();
         this.physics2D.update(dt);
 
@@ -131,14 +131,14 @@ public class Scene {
             GameObject go = gameObjects.get(i);
             go.update(dt);
 
-            if (go.isDead()){
+            if (go.isDead()) {
                 gameObjects.remove(i);
                 this.renderer.destroyGameObject(go);
                 this.physics2D.destroyGameObject(go);
                 i--;
             }
         }
-        for (GameObject go : pendingObjects){
+        for (GameObject go : pendingObjects) {
             gameObjects.add(go);
             go.start();
             this.renderer.add(go);
@@ -146,26 +146,26 @@ public class Scene {
         }
         pendingObjects.clear();
     }
-    public void render(){
+    public void render() {
         this.renderer.render();
     }
 
-    public Camera getCamera(){
+    public Camera getCamera() {
         return this.camera;
     }
 
-    public void imgui(){
+    public void imgui() {
         this.sceneInitializer.imgui();
     }
 
-    public GameObject createGameobject(String name){
+    public GameObject createGameobject(String name) {
         GameObject go = new GameObject(name);
         go.addComponent(new Transform());
         go.transform = go.getComponent(Transform.class);
         return go;
     }
 
-    public void save(){
+    public void save() {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .registerTypeAdapter(Component.class, new ComponentDeserializer())
@@ -176,14 +176,14 @@ public class Scene {
         try {
             FileWriter writer = new FileWriter("level.txt",false);
             List<GameObject> objsToSerialize = new ArrayList<>();
-            for (GameObject obj : this.gameObjects){
-                if (obj.doSerialization()){
+            for (GameObject obj : this.gameObjects) {
+                if (obj.doSerialization()) {
                     objsToSerialize.add(obj);
                 }
             }
             writer.write(gson.toJson(objsToSerialize));
             writer.close();
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -198,7 +198,7 @@ public class Scene {
         String inFile = "";
         try {
             inFile = new String(Files.readAllBytes(Paths.get("level.txt")));
-        } catch (NoSuchFileException e){
+        } catch (NoSuchFileException e) {
             try {
                 FileWriter writer = new FileWriter("level.txt",false);
                 writer.write("[]");
@@ -206,24 +206,24 @@ public class Scene {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println("level.txt file not found:"+inFile);
             e.printStackTrace();
         }
 
-        if (!inFile.equals("")&&!inFile.equals("[]")){
+        if (!inFile.equals("")&&!inFile.equals("[]")) {
             int maxCompId = -1;
             int maxGoId = -1;
             GameObject[] objs = gson.fromJson(inFile,GameObject[].class);
-            for (int i = 0; i<objs.length; i++){
+            for (int i = 0; i<objs.length; i++) {
                 addGameObjectToScene(objs[i]);
 
-                for (Component c : objs[i].getAllComponents()){
+                for (Component c : objs[i].getAllComponents()) {
                     if (c.getUid()>maxCompId){
                         maxCompId = c.getUid();
                     }
                 }
-                if (objs[i].getUid() > maxGoId){
+                if (objs[i].getUid() > maxGoId) {
                     maxGoId = objs[i].getUid();
                 }
             }
@@ -234,20 +234,20 @@ public class Scene {
         }
     }
 
-    public Physics2D getPhysics(){
+    public Physics2D getPhysics() {
         return this.physics2D;
     }
 
-    public GameObject getSceneInitializerComponentsObject(){
+    public GameObject getSceneInitializerComponentsObject() {
         return sceneInitializer.getSceneComponentObject();
     }
 
-    public <T extends Component> T getSceneComponent(Class<T> componentClass){
-        for (Component c : sceneInitializer.getSceneComponentObject().getAllComponents()){
-            if (componentClass.isAssignableFrom(c.getClass())){
+    public <T extends Component> T getSceneComponent(Class<T> componentClass) {
+        for (Component c : sceneInitializer.getSceneComponentObject().getAllComponents()) {
+            if (componentClass.isAssignableFrom(c.getClass())) {
                 try {
                     return componentClass.cast(c);
-                } catch (ClassCastException e){
+                } catch (ClassCastException e) {
                     e.printStackTrace();
                     assert false: "Error (Scene): getSceneComponent could not cast component";
                 }
@@ -260,7 +260,7 @@ public class Scene {
 //        return activeGameObject;
 //    }
 
-//    public static GameObject setActiveGameObject(GameObject go){
+//    public static GameObject setActiveGameObject(GameObject go) {
 //        activeGameObject = go;
 //        return activeGameObject;
 //    }

@@ -7,7 +7,7 @@ import org.joml.Vector4f;
 
 import static org.lwjgl.glfw.GLFW.*;
 
-public class Gizmo extends Component{
+public class Gizmo extends Component {
     private Vector4f xAxisColor = new Vector4f(1,0.3f,0.3f,1);
     private Vector4f xAxisColorHover = new Vector4f(1,0,0,1);
     private Vector4f yAxisColor = new Vector4f(0.3f,1,0.3f,1);
@@ -33,7 +33,7 @@ public class Gizmo extends Component{
 
     protected PropertiesWindow propertiesWindow;
 
-    public Gizmo(Sprite arrowSprite, PropertiesWindow propertiesWindow){
+    public Gizmo(Sprite arrowSprite, PropertiesWindow propertiesWindow) {
         this.xAxisObject = Prefabs.generateSpriteObject(arrowSprite, gizmoWidth, gizmoHeight);
         this.yAxisObject = Prefabs.generateSpriteObject(arrowSprite, gizmoWidth, gizmoHeight);
         this.xAxisSprite = this.xAxisObject.getComponent(SpriteRenderer.class);
@@ -59,8 +59,8 @@ public class Gizmo extends Component{
     }
 
     @Override
-    public void update(float dt){
-        if (using){
+    public void update(float dt) {
+        if (using) {
             this.setInactive();
         }
 
@@ -69,12 +69,12 @@ public class Gizmo extends Component{
     }
 
     @Override
-    public void editorUpdate(float dt){
-        if (!using){
+    public void editorUpdate(float dt) {
+        if (!using) {
             return;
         }
         //this.activeGameObject = Scene.getActiveGameObject();
-        if (propertiesWindow.getActiveGameObject() != null){
+        if (propertiesWindow.getActiveGameObject() != null) {
             setActive();
         } else{
             setInactive();
@@ -85,11 +85,11 @@ public class Gizmo extends Component{
         boolean yAxisHot = checkYHoverState();
 
         if (((xAxisHot || xAxisActive) && !yAxisActive) && MouseListener.isDragging()
-                && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)){
+                && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
             xAxisActive = true;
             yAxisActive = false;
         } else if (((yAxisHot || yAxisActive)&& !xAxisActive) && MouseListener.isDragging()
-                && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)){
+                && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
             xAxisActive = false;
             yAxisActive = true;
         } else {
@@ -97,7 +97,7 @@ public class Gizmo extends Component{
             yAxisActive = false;
         }
 
-        if (propertiesWindow.getActiveGameObject() != null){
+        if (propertiesWindow.getActiveGameObject() != null) {
             this.xAxisObject.transform.position.set(propertiesWindow.getActiveGameObject().transform.position);
             this.yAxisObject.transform.position.set(propertiesWindow.getActiveGameObject().transform.position);
             this.xAxisObject.transform.position.add(xAxisOffset);
@@ -105,40 +105,40 @@ public class Gizmo extends Component{
         }
     }
 
-    private void setActive(){
+    private void setActive() {
         this.xAxisSprite.setColor(xAxisColor);
         this.yAxisSprite.setColor(yAxisColor);
     }
 
-    private void setInactive(){
+    private void setInactive() {
         //Scene.setActiveGameObject(null);
         this.xAxisSprite.setColor(new Vector4f(0,0,0,0));
         this.yAxisSprite.setColor(new Vector4f(0,0,0,0));
     }
 
-    public boolean isHoveringOver(){
+    public boolean isHoveringOver() {
         return propertiesWindow.getActiveGameObject() != null && isBeingUsed();
     }
 
-    private boolean isBeingUsed(){
+    private boolean isBeingUsed() {
         if (isBeingUsed) {
-            if (!MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)){
+            if (!MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
                 isBeingUsed = false;
             }
         } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)
                 && this.using
-                && (checkXHoverState() || checkYHoverState())){
+                && (checkXHoverState() || checkYHoverState())) {
             this.isBeingUsed = true;
         }
         return isBeingUsed;
     }
 
-    private boolean checkXHoverState(){
+    private boolean checkXHoverState() {
         Vector2f mousePos = MouseListener.getWorld();
-        if (mousePos.x <= xAxisObject.transform.position.x + (gizmoHeight/2.0f) &&
-                mousePos.x >= xAxisObject.transform.position.x - (gizmoHeight/2.0f) &&
-                mousePos.y >= xAxisObject.transform.position.y - (gizmoWidth/2.0f) &&
-                mousePos.y <= xAxisObject.transform.position.y + (gizmoWidth/2.0f)){
+        if (mousePos.x <= xAxisObject.transform.position.x + (gizmoHeight/2.0f)
+                && mousePos.x >= xAxisObject.transform.position.x - (gizmoHeight/2.0f)
+                && mousePos.y >= xAxisObject.transform.position.y - (gizmoWidth/2.0f)
+                && mousePos.y <= xAxisObject.transform.position.y + (gizmoWidth/2.0f)) {
             xAxisSprite.setColor(xAxisColorHover);
             return true;
         }
@@ -148,10 +148,10 @@ public class Gizmo extends Component{
 
     private boolean checkYHoverState(){
         Vector2f mousePos = MouseListener.getWorld();
-        if (mousePos.x <= yAxisObject.transform.position.x + (gizmoWidth/2.0f) &&
-                mousePos.x >= yAxisObject.transform.position.x - (gizmoWidth/2.0f) &&
-                mousePos.y <= yAxisObject.transform.position.y + (gizmoHeight/2.0f) &&
-                mousePos.y >= yAxisObject.transform.position.y - (gizmoHeight/2.0f)){
+        if (mousePos.x <= yAxisObject.transform.position.x + (gizmoWidth/2.0f)
+                && mousePos.x >= yAxisObject.transform.position.x - (gizmoWidth/2.0f)
+                && mousePos.y <= yAxisObject.transform.position.y + (gizmoHeight/2.0f)
+                && mousePos.y >= yAxisObject.transform.position.y - (gizmoHeight/2.0f)) {
             yAxisSprite.setColor(yAxisColorHover);
             return true;
         }
@@ -159,16 +159,16 @@ public class Gizmo extends Component{
         return false;
     }
 
-    public void setUsing(){
+    public void setUsing() {
         this.using = true;
     }
 
-    public void notUsing(){
+    public void notUsing() {
         this.using = false;
         this.setInactive();
     }
 
-    public boolean isUsing(){
+    public boolean isUsing() {
         return this.using;
     }
 }

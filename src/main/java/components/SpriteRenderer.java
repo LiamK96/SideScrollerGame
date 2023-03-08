@@ -16,14 +16,14 @@ public class SpriteRenderer extends Component {
     private transient boolean isDirty = true;
 
     @Override
-    public void start(){
+    public void start() {
         this.lastTransform = this.gameObject.transform.copy();
     }
 
     @Override
     public void update(float dt) {
 
-        if (!this.lastTransform.equals(this.gameObject.transform)){
+        if (!this.lastTransform.equals(this.gameObject.transform)) {
             this.gameObject.transform.copy(this.lastTransform);
             this.isDirty = true;
         }
@@ -32,69 +32,69 @@ public class SpriteRenderer extends Component {
     @Override
     public void editorUpdate(float dt) {
 
-        if (!this.lastTransform.equals(this.gameObject.transform)){
+        if (!this.lastTransform.equals(this.gameObject.transform)) {
             this.gameObject.transform.copy(this.lastTransform);
             this.isDirty = true;
         }
     }
 
     @Override
-    public void imgui(){
-         if (EImGui.colourPicker4("Color Picker", this.storedColor)){
+    public void imgui() {
+         if (EImGui.colourPicker4("Color Picker", this.storedColor)) {
              this.color.set(this.storedColor);
              this.isDirty = true;
          }
 
     }
 
-    public Vector4f getColor(){
+    public Vector4f getColor() {
         return this.color;
     }
 
-    public Texture getTexture(){
+    public Texture getTexture() {
         return sprite.getTexture();
     }
 
-    public Vector2f[] getTexCoords(){
+    public Vector2f[] getTexCoords() {
         return sprite.getTexCoords();
     }
 
-    public void setSprite(Sprite sprite){
+    public void setSprite(Sprite sprite) {
         this.sprite = sprite;
         this.isDirty = true;
     }
 
-    public void setColor(Vector4f color){
+    public void setColor(Vector4f color) {
         if (!this.color.equals(color)) {
             this.isDirty = true;
             this.color.set(color);
         }
     }
 
-    public void setStoredColor(Vector4f color){
+    public void setStoredColor(Vector4f color) {
         if (!this.storedColor.equals(color)) {
             this.isDirty = true;
             this.storedColor.set(color);
         }
     }
 
-    public Vector4f getStoredColor(){
+    public Vector4f getStoredColor() {
         return this.storedColor;
     }
 
-    public boolean isDirty(){
+    public boolean isDirty() {
         return this.isDirty;
     }
 
-    public void setClean(){
+    public void setClean() {
         this.isDirty = false;
     }
 
-    public void setDirty(){
+    public void setDirty() {
         this.isDirty = true;
     }
 
-    public void setTexture(Texture tex){
+    public void setTexture(Texture tex) {
         this.sprite.setTexture(tex);
     }
 

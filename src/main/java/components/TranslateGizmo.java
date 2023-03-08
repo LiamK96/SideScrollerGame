@@ -5,19 +5,19 @@ import engine.MouseListener;
 import scenes.Scene;
 
 
-public class TranslateGizmo extends Gizmo{
+public class TranslateGizmo extends Gizmo {
 
-    public TranslateGizmo(Sprite arrowSprite, PropertiesWindow propertiesWindow){
+    public TranslateGizmo(Sprite arrowSprite, PropertiesWindow propertiesWindow) {
         super(arrowSprite, propertiesWindow);
     }
 
     @Override
-    public void editorUpdate(float dt){
-        if (propertiesWindow.getActiveGameObject() != null){
-            if (xAxisActive && !yAxisActive){
+    public void editorUpdate(float dt) {
+        if (propertiesWindow.getActiveGameObject() != null) {
+            if (xAxisActive && !yAxisActive) {
 
                 propertiesWindow.getActiveGameObject().transform.position.x = MouseListener.getWorldX();
-            } else if (yAxisActive){
+            } else if (yAxisActive) {
                 propertiesWindow.getActiveGameObject().transform.position.y = MouseListener.getWorldY();
             }
         }

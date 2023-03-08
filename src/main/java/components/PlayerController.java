@@ -75,27 +75,27 @@ public class PlayerController extends Component {
     @Override
     public void update(float dt) {
         //System.out.println(playWinAnimation);
-        if (playWinAnimation){
+        if (playWinAnimation) {
             checkOnGround();
-            if (!onGround){
+            if (!onGround) {
                 gameObject.transform.scale.x = -0.25f;
                 gameObject.transform.position.y -= dt;
                 stateMachine.trigger("stopRunning");
                 stateMachine.trigger("stopJumping");
             } else {
-                if (this.walkTime > 0){
+                if (this.walkTime > 0) {
                     gameObject.transform.scale.x = 0.25f;
                     gameObject.transform.position.x += dt;
                     stateMachine.trigger("startRunning");
                 }
-                if (!AssetPool.getSound("assets/sounds/stage_clear.ogg").isPlaying()){
+                if (!AssetPool.getSound("assets/sounds/stage_clear.ogg").isPlaying()) {
                     AssetPool.getSound("assets/sounds/main-theme-overworld.ogg").stop();
                     AssetPool.getSound("assets/sounds/stage_clear.ogg").play();
                 }
                 timeToCastle -= dt;
                 walkTime -= dt;
 
-                if (timeToCastle <= 0){
+                if (timeToCastle <= 0) {
 
                     EventSystem.notify(null, new Event(EventType.GameEngineStopPlay));
                 }
@@ -116,7 +116,7 @@ public class PlayerController extends Component {
                 this.rb.setVelocity(this.velocity);
                 this.rb.setAngularVelocity(0);
             } else if (!deadGoingUp && this.gameObject.transform.position.y <= deadMinHeight) {
-                if (!AssetPool.getSound("assets/sounds/mario_die.ogg").isPlaying()){
+                if (!AssetPool.getSound("assets/sounds/mario_die.ogg").isPlaying()) {
                     Window.changeScene(new LevelSceneInitializer());
                 }
             }
@@ -173,7 +173,7 @@ public class PlayerController extends Component {
         }
 
         if (KeyListener.keyBeginPress(GLFW_KEY_E) && playerState == PlayerState.Fire
-                && Fireball.canSpawn()){
+                && Fireball.canSpawn()) {
             Vector2f position = new Vector2f(this.gameObject.transform.position)
                     .add(this.gameObject.transform.scale.x > 0
                             ? new Vector2f(0.26f, 0.0f)
@@ -236,8 +236,8 @@ public class PlayerController extends Component {
         onGround = Physics2D.checkOnGround(this.gameObject, innerPlayerWidth, yVal);
     }
 
-    public void playWinAnimation(GameObject flagPole){
-        if (!playWinAnimation){
+    public void playWinAnimation(GameObject flagPole) {
+        if (!playWinAnimation) {
             playWinAnimation = true;
             velocity.zero();
             acceleration.zero();
@@ -264,7 +264,7 @@ public class PlayerController extends Component {
         }
     }
 
-    public void stopMovementLeft(){
+    public void stopMovementLeft() {
         this.velocity.x = 0;
         this.acceleration.x = 0;
     }
@@ -296,7 +296,7 @@ public class PlayerController extends Component {
         stateMachine.trigger("powerup");
     }
 
-    public void die(){
+    public void die() {
         die(false);
     }
 
@@ -334,7 +334,7 @@ public class PlayerController extends Component {
         }
     }
 
-    public void setPosition(Vector2f newPos){
+    public void setPosition(Vector2f newPos) {
         this.gameObject.transform.position.set(newPos);
         this.rb.setPosition(newPos);
     }
@@ -360,7 +360,7 @@ public class PlayerController extends Component {
                 || this.hurtInvicibilityTimeLeft > 0 || playWinAnimation;
     }
 
-    public boolean hasWon(){
+    public boolean hasWon() {
         return playWinAnimation;
     }
 }

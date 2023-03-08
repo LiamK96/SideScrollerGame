@@ -19,28 +19,29 @@ public class Box2DCollider extends Component {
         this.halfSize = halfSize;
     }
 
-    public Vector2f getOrigin(){
+    public Vector2f getOrigin() {
         return this.origin;
     }
 
     @Override
-    public void editorUpdate(float dt){
+    public void editorUpdate(float dt) {
             Vector2f center = new Vector2f(this.gameObject.transform.position).add(this.offset);
-            DebugDraw.addBox2D(center, this.halfSize, this.gameObject.transform.rotation, new Vector3f(1, 0, 0));
+            DebugDraw.addBox2D(center, this.halfSize,
+                    this.gameObject.transform.rotation, new Vector3f(1, 0, 0));
     }
 
     @Override
-    public void update(float dt){
+    public void update(float dt) {
 
         //Vector2f center = new Vector2f(this.gameObject.transform.position).add(this.offset);
         //DebugDraw.addBox2D(center, this.halfSize, this.gameObject.transform.rotation, new Vector3f(1, 0, 0));
     }
 
-    public Vector2f getOffset(){
+    public Vector2f getOffset() {
         return this.offset;
     }
 
-    public void setOffset(Vector2f newOffset){
+    public void setOffset(Vector2f newOffset) {
         this.offset.set(newOffset);
     }
 }

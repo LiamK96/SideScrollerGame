@@ -21,33 +21,33 @@ public class Fireball extends Component{
 
     public transient boolean goingRight = false;
 
-    public static boolean canSpawn(){
+    public static boolean canSpawn() {
         return fireballCount < 4;
     }
 
     @Override
-    public void start(){
+    public void start() {
         this.rb = this.gameObject.getComponent(RigidBody2D.class);
         this.acceleration.y = Window.getPhysics().getGravity().y * 0.7f;
         fireballCount++;
     }
 
     @Override
-    public void update(float dt){
+    public void update(float dt) {
         lifetime -=dt;
         if (lifetime <= 0){
             disappear();
             return;
         }
 
-        if (goingRight){
+        if (goingRight) {
             velocity.x = fireballSpeed;
         } else {
             velocity.x = -fireballSpeed;
         }
 
         checkOnGround();
-        if (onGround){
+        if (onGround) {
             this.acceleration.y = 1.5f;
             this.velocity.y = 2.5f;
         } else {
@@ -60,28 +60,28 @@ public class Fireball extends Component{
         this.rb.setVelocity(velocity);
     }
 
-    private void checkOnGround(){
+    private void checkOnGround() {
         float innerPlayerWidth = 0.25f * 0.7f;
         float yVal = -0.09f;
         onGround = Physics2D.checkOnGround(this.gameObject, innerPlayerWidth, yVal);
     }
 
     @Override
-    public void preSolve(GameObject obj, Contact contact, Vector2f contactNormal){
+    public void preSolve(GameObject obj, Contact contact, Vector2f contactNormal) {
         if (obj.getComponent(PlayerController.class) != null
-                || obj.getComponent(Fireball.class) != null){
+                || obj.getComponent(Fireball.class) != null) {
             contact.setEnabled(false);
         }
     }
 
     @Override
-    public void beginCollision(GameObject obj, Contact contact, Vector2f contactNormal){
-        if (Math.abs(contactNormal.x) > 0.8f){
+    public void beginCollision(GameObject obj, Contact contact, Vector2f contactNormal) {
+        if (Math.abs(contactNormal.x) > 0.8f) {
             this.goingRight = contactNormal.x < 0;
         }
     }
 
-    public void disappear(){
+    public void disappear() {
         fireballCount--;
         this.gameObject.destroy();
     }

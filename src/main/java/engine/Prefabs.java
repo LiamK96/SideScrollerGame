@@ -3,7 +3,6 @@ package engine;
 import components.*;
 import components.enums.Direction;
 import org.joml.Vector2f;
-import org.joml.Vector4f;
 import physics2d.components.Box2DCollider;
 import physics2d.components.Circle2DCollider;
 import physics2d.components.PillboxCollider;
@@ -13,7 +12,7 @@ import util.AssetPool;
 
 public class Prefabs {
 
-    public static GameObject generateSpriteObject(Sprite spr, float sizeX, float sizeY){
+    public static GameObject generateSpriteObject(Sprite spr, float sizeX, float sizeY) {
         GameObject block = Window.getScene().createGameobject("Sprite_Object_Gen");
         block.transform.scale.x = sizeX;
         block.transform.scale.y = sizeY;
@@ -24,7 +23,7 @@ public class Prefabs {
         return block;
     }
 
-    public static GameObject generatePlayer(){
+    public static GameObject generatePlayer() {
         Spritesheet playerSprites = AssetPool.getSpriteSheet("assets/images/spritesheet.png");
         Spritesheet bigPlayerSprites = AssetPool.getSpriteSheet("assets/images/bigSpritesheet.png");
         GameObject player = generateSpriteObject(playerSprites.getSprite(0),0.25f,0.25f);
@@ -227,7 +226,7 @@ public class Prefabs {
         return player;
     }
 
-    public static GameObject generateGoomba(){
+    public static GameObject generateGoomba() {
         Spritesheet sprites = AssetPool.getSpriteSheet("assets/images/spritesheet.png");
         GameObject goomba = generateSpriteObject(sprites.getSprite(14),0.25f,0.25f);
 
@@ -263,7 +262,7 @@ public class Prefabs {
         return goomba;
     }
 
-    public static GameObject generateQuestionBlock(){
+    public static GameObject generateQuestionBlock() {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject questionBlock = generateSpriteObject(items.getSprite(0),0.25f,0.25f);
 
@@ -300,7 +299,7 @@ public class Prefabs {
         return questionBlock;
     }
 
-    public static GameObject generateDeathBlock(){
+    public static GameObject generateDeathBlock() {
         Spritesheet deathBlocks = AssetPool.getSpriteSheet("assets/images/blendImage1.png");
         GameObject deathBlock = generateSpriteObject(deathBlocks.getSprite(0),0.25f,0.25f);
 
@@ -311,7 +310,7 @@ public class Prefabs {
         return deathBlock;
     }
 
-    public static GameObject generateBlockCoin(){
+    public static GameObject generateBlockCoin() {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject coin = generateSpriteObject(items.getSprite(7),0.25f,0.25f);
 
@@ -336,7 +335,7 @@ public class Prefabs {
         return coin;
     }
 
-    public static GameObject generateMushroom(){
+    public static GameObject generateMushroom() {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject mushroom = generateSpriteObject(items.getSprite(10),0.25f,0.25f);
 
@@ -350,7 +349,7 @@ public class Prefabs {
         return mushroom;
     }
 
-    public static GameObject generateFlower(){
+    public static GameObject generateFlower() {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject flower = generateSpriteObject(items.getSprite(20),0.25f,0.25f);
 
@@ -363,11 +362,11 @@ public class Prefabs {
         return flower;
     }
 
-    public static GameObject generatePipe(Direction direction){
+    public static GameObject generatePipe(Direction direction) {
         Spritesheet pipes = AssetPool.getSpriteSheet("assets/images/spritesheets/pipes.png");
 
         int spriteIndex = -1;
-        switch (direction){
+        switch (direction) {
             case Down:
                 spriteIndex = 0;
                 break;
@@ -394,7 +393,7 @@ public class Prefabs {
         return pipe;
     }
 
-    public static GameObject generateTurtle(){
+    public static GameObject generateTurtle() {
         Spritesheet turtleSprites = AssetPool.getSpriteSheet("assets/images/turtle.png");
         GameObject turtle = generateSpriteObject(turtleSprites.getSprite(0),0.25f,0.35f);
 
@@ -431,7 +430,7 @@ public class Prefabs {
         return turtle;
     }
 
-    public static GameObject generateFlagPole(){
+    public static GameObject generateFlagPole() {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject flagPole = generateSpriteObject(items.getSprite(33),0.25f,0.25f);
 
@@ -445,7 +444,7 @@ public class Prefabs {
         return flagPole;
     }
 
-    public static GameObject generateFlagTop(){
+    public static GameObject generateFlagTop() {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject flagTop = generateSpriteObject(items.getSprite(6),0.25f,0.25f);
 
@@ -459,7 +458,7 @@ public class Prefabs {
         return flagTop;
     }
 
-    public static GameObject generateFireball(Vector2f position){
+    public static GameObject generateFireball(Vector2f position) {
         Spritesheet items = AssetPool.getSpriteSheet("assets/images/items.png");
         GameObject fireball = generateSpriteObject(items.getSprite(32),0.18f,0.18f);
         fireball.transform.position = position;
@@ -473,17 +472,17 @@ public class Prefabs {
         return fireball;
     }
 
-    private static RigidBody2D createRigidBody(BodyType bodyType){
+    private static RigidBody2D createRigidBody(BodyType bodyType) {
          return createRigidBody(bodyType, 0.0f, true,false);
     }
 
-    private static RigidBody2D createRigidBody(BodyType bodyType, float mass){
+    private static RigidBody2D createRigidBody(BodyType bodyType, float mass) {
         return createRigidBody(bodyType,mass, true, false);
     }
 
     private static RigidBody2D createRigidBody(BodyType bodyType,
                                         float mass, boolean fixedRotation,
-                                        boolean continuousCollision){
+                                        boolean continuousCollision) {
         RigidBody2D rb = new RigidBody2D();
         rb.setBodyType(bodyType);
         rb.setMass(mass);
@@ -492,22 +491,22 @@ public class Prefabs {
         return rb;
     }
 
-    private static Box2DCollider createBoxCollider(Vector2f halfSize){
+    private static Box2DCollider createBoxCollider(Vector2f halfSize) {
         return createBoxCollider(halfSize, new Vector2f());
     }
 
-    private static Box2DCollider createBoxCollider(Vector2f halfSize, Vector2f offset){
+    private static Box2DCollider createBoxCollider(Vector2f halfSize, Vector2f offset) {
         Box2DCollider boxCollider = new Box2DCollider();
         boxCollider.setHalfSize(halfSize);
         boxCollider.setOffset(offset);
         return boxCollider;
     }
 
-    private static Circle2DCollider createCircleCollider(float radius){
+    private static Circle2DCollider createCircleCollider(float radius) {
         return createCircleCollider(radius, new Vector2f());
     }
 
-    private static Circle2DCollider createCircleCollider(float radius, Vector2f offset){
+    private static Circle2DCollider createCircleCollider(float radius, Vector2f offset) {
         Circle2DCollider circleCollider = new Circle2DCollider();
         circleCollider.setRadius(radius);
         circleCollider.setOffset(offset);

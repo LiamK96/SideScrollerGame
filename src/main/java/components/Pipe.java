@@ -13,7 +13,7 @@ import util.AssetPool;
 import static org.lwjgl.glfw.GLFW.*;
 
 
-public class Pipe extends Component{
+public class Pipe extends Component {
 
     private Direction direction;
     private String connectingPipeName = "";
@@ -22,48 +22,48 @@ public class Pipe extends Component{
     private transient float entranceVectorTolerance = 0.1f;
     private transient PlayerController collidingPlayer = null;
 
-    public Pipe(Direction direction){
+    public Pipe(Direction direction) {
         this.direction = direction;
     }
 
     @Override
-    public void start(){
+    public void start() {
         connectingPipe = Window.getScene().getGameObject(connectingPipeName);
     }
 
     @Override
-    public void update(float dt){
-        if (connectingPipe == null){
+    public void update(float dt) {
+        if (connectingPipe == null) {
             return;
         }
-        if (collidingPlayer != null){
+        if (collidingPlayer != null) {
             boolean playerEntering = false;
-            switch (direction){
+            switch (direction) {
                 case Up:
                     if ((KeyListener.isKeyPressed(GLFW_KEY_DOWN) || KeyListener.isKeyPressed(GLFW_KEY_S))
                             && this.isEntrance
-                            && playerAtEntrance()){
+                            && playerAtEntrance()) {
                         playerEntering = true;
                     }
                     break;
                 case Down:
                     if ((KeyListener.isKeyPressed(GLFW_KEY_UP) || KeyListener.isKeyPressed(GLFW_KEY_W))
                             && this.isEntrance
-                            && playerAtEntrance()){
+                            && playerAtEntrance()) {
                         playerEntering = true;
                     }
                     break;
                 case Left:
                     if ((KeyListener.isKeyPressed(GLFW_KEY_RIGHT) || KeyListener.isKeyPressed(GLFW_KEY_D))
                             && this.isEntrance
-                            && playerAtEntrance()){
+                            && playerAtEntrance()) {
                         playerEntering = true;
                     }
                     break;
                 case Right:
                     if ((KeyListener.isKeyPressed(GLFW_KEY_LEFT) || KeyListener.isKeyPressed(GLFW_KEY_A))
                             && this.isEntrance
-                            && playerAtEntrance()){
+                            && playerAtEntrance()) {
                         playerEntering = true;
                     }
                     break;
@@ -72,7 +72,7 @@ public class Pipe extends Component{
             if (playerEntering){
                 collidingPlayer.setPosition(getPlayerPosition(connectingPipe));
                 GameCamera gameCamera = Window.getScene().getSceneComponent(GameCamera.class);
-                if (gameCamera != null){
+                if (gameCamera != null) {
                     gameCamera.resetHighestX();
                 }
                 Window.getScene().getCamera().position.set(collidingPlayer.gameObject.transform.position);
@@ -82,7 +82,7 @@ public class Pipe extends Component{
         }
     }
 
-    private boolean playerAtEntrance(){
+    private boolean playerAtEntrance() {
         if (collidingPlayer == null){
             return false;
         }
@@ -96,7 +96,7 @@ public class Pipe extends Component{
         Vector2f playerMax = new Vector2f(collidingPlayer.gameObject.transform.position)
                 .add(new Vector2f(collidingPlayer.gameObject.transform.scale).mul(0.43f));
 
-        switch (direction){
+        switch (direction) {
             case Up:
                 return playerMin.y >= max.y
                         && playerMax.x > min.x
@@ -120,22 +120,22 @@ public class Pipe extends Component{
     @Override
     public void beginCollision(GameObject collidingObj, Contact contact, Vector2f contactNormal) {
         PlayerController playerController = collidingObj.getComponent(PlayerController.class);
-        if (playerController != null){
+        if (playerController != null) {
             collidingPlayer = playerController;
         }
     }
 
     @Override
-    public void endCollision(GameObject collidingObj, Contact contact, Vector2f contactNormal){
+    public void endCollision(GameObject collidingObj, Contact contact, Vector2f contactNormal) {
         PlayerController playerController = collidingObj.getComponent(PlayerController.class);
-        if (playerController != null){
+        if (playerController != null) {
             collidingPlayer = null;
         }
     }
 
-    private Vector2f getPlayerPosition(GameObject pipe){
+    private Vector2f getPlayerPosition(GameObject pipe) {
         Pipe pipeComponent = pipe.getComponent(Pipe.class);
-        switch (pipeComponent.direction){
+        switch (pipeComponent.direction) {
             case Up:
                 return new Vector2f(pipe.transform.position).add(0.0f, 0.5f);
             case Down:

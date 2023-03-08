@@ -11,21 +11,21 @@ public class SceneHierarchyWindow {
 
     private static String payloadDragDropType = "SceneHierarchy";
 
-    public void imgui(){
+    public void imgui() {
         ImGui.begin("Scene Hierarchy");
 
         List<GameObject> gameObjects = Window.getScene().getGameObjects();
 
         int index = 0;
         for (GameObject go : gameObjects){
-            if(!go.doSerialization()){
+            if(!go.doSerialization()) {
                 continue;
             }
 
             boolean treeNodeOpen = doTreeNode(go, index);
 
             //Pop the tree node to avoid stack overflow errors
-            if(treeNodeOpen){
+            if(treeNodeOpen) {
                 ImGui.treePop();
             }
             index++;
@@ -33,7 +33,7 @@ public class SceneHierarchyWindow {
         ImGui.end();
     }
 
-    private boolean doTreeNode(GameObject go, int index){
+    private boolean doTreeNode(GameObject go, int index) {
         ImGui.pushID(index);
         boolean treeNodeOpen = ImGui.treeNodeEx(
                 go.name,
@@ -45,17 +45,17 @@ public class SceneHierarchyWindow {
         );
         ImGui.popID();
 
-        if (ImGui.beginDragDropSource()){
+        if (ImGui.beginDragDropSource()) {
             ImGui.setDragDropPayload(payloadDragDropType,go);
             ImGui.text(go.name);
 
             ImGui.endDragDropSource();
         }
 
-        if (ImGui.beginDragDropTarget()){
+        if (ImGui.beginDragDropTarget()) {
             Object payloadObj = ImGui.acceptDragDropPayload(payloadDragDropType);
-            if (payloadObj != null){
-                if (payloadObj.getClass().isAssignableFrom(GameObject.class)){
+            if (payloadObj != null) {
+                if (payloadObj.getClass().isAssignableFrom(GameObject.class)) {
                     GameObject playerGameObj = (GameObject)payloadObj;
                 }
             }

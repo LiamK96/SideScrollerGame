@@ -8,7 +8,7 @@ public class Sprite {
     private float width, height;
 
     private Texture texture = null;
-    private Vector2f[] texCoords = new Vector2f[]{
+    private Vector2f[] texCoords = new Vector2f[] {
                 new Vector2f(1,1),
                 new Vector2f(1,0),
                 new Vector2f(0,0),
@@ -16,19 +16,19 @@ public class Sprite {
     };
 
 
-    public Texture getTexture(){
+    public Texture getTexture() {
         return this.texture;
     }
 
-    public Vector2f[] getTexCoords(){
+    public Vector2f[] getTexCoords() {
         return this.texCoords;
     }
 
-    public void setTexture(Texture tex){
+    public void setTexture(Texture tex) {
         this.texture = tex;
     }
 
-    public void setTexCoords(Vector2f[] texCoords){
+    public void setTexCoords(Vector2f[] texCoords) {
         this.texCoords = texCoords;
     }
 
@@ -48,7 +48,7 @@ public class Sprite {
         this.height = height;
     }
 
-    public int getTexId(){
+    public int getTexId() {
         return (this.texture==null)? -1 : this.texture.getTexID();
     }
 

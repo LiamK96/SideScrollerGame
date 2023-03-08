@@ -24,7 +24,7 @@ public class GameObject {
 
     private boolean isDead = false;
 
-    public GameObject(String name){
+    public GameObject(String name) {
         this.name = name;
         this.components = new ArrayList<>();
         this.transform = new Transform();
@@ -33,12 +33,12 @@ public class GameObject {
                                  // refer to drag n drop.
     }
 
-    public <T extends Component> T getComponent(Class<T> componentClass){
-        for (Component c : components){
+    public <T extends Component> T getComponent(Class<T> componentClass) {
+        for (Component c : components) {
             if (componentClass.isAssignableFrom(c.getClass())) {
                 try {
                     return componentClass.cast(c);
-                } catch (ClassCastException e){
+                } catch (ClassCastException e) {
                     e.printStackTrace();
                     assert false : "Error (GameObject) : Casting component";
                 }
@@ -47,56 +47,56 @@ public class GameObject {
         return null;
     }
 
-    public <T extends Component> void removeComponent(Class<T> componentClass){
+    public <T extends Component> void removeComponent(Class<T> componentClass) {
         for (int i = 0; i < components.size(); i++) {
             Component c = components.get(i);
-            if (componentClass.isAssignableFrom(c.getClass())){
+            if (componentClass.isAssignableFrom(c.getClass())) {
                 components.remove(i);
                 return;
             }
         }
     }
 
-    public void addComponent(Component c){
+    public void addComponent(Component c) {
         c.generateId();
         this.components.add(c);
         c.gameObject = this;
     }
 
-    public void editorUpdate(float dt){
-        for (int i = 0; i<components.size();i++){
+    public void editorUpdate(float dt) {
+        for (int i = 0; i<components.size();i++) {
             components.get(i).editorUpdate(dt);
         }
     }
 
-    public void update(float dt){
-        for (int i = 0; i<components.size();i++){
+    public void update(float dt) {
+        for (int i = 0; i<components.size();i++) {
             components.get(i).update(dt);
         }
     }
 
-    public void start(){
-        for (int i = 0; i<components.size();i++){
+    public void start() {
+        for (int i = 0; i<components.size();i++) {
             components.get(i).start();
         }
     }
 
-    public void imgui(){
+    public void imgui() {
         ImGui.text("Unique ID: "+ uid);
-        for (Component c : components){
+        for (Component c : components) {
             if (ImGui.collapsingHeader(c.getClass().getSimpleName()))
                 c.imgui();
         }
     }
 
-    public void destroy(){
+    public void destroy() {
         this.isDead = true;
-        for (int i = 0; i < components.size(); i++){
+        for (int i = 0; i < components.size(); i++) {
             components.get(i).destroy();
         }
     }
 
-    public GameObject copy(){
+    public GameObject copy() {
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(Component.class, new ComponentDeserializer())
                 .registerTypeAdapter(GameObject.class, new GameObjectDeserializer())
@@ -105,27 +105,27 @@ public class GameObject {
         String objAsJson = gson.toJson(this);
         GameObject obj = gson.fromJson(objAsJson,GameObject.class);
         obj.generateUid();
-        for (Component c : this.getAllComponents()){
+        for (Component c : this.getAllComponents()) {
             c.generateId();
         }
 
         SpriteRenderer spr = obj.getComponent(SpriteRenderer.class);
-        if (spr != null && spr.getTexture() != null){
+        if (spr != null && spr.getTexture() != null) {
             spr.setTexture(AssetPool.getTexture(spr.getTexture().getFilepath()));
         }
         obj.name = "Block: "+obj.getUid();
         return obj;
     }
 
-    public static void init(int maxId){
+    public static void init(int maxId) {
         ID_COUNTER = maxId;
     }
 
-    public boolean isDead(){
+    public boolean isDead() {
         return this.isDead;
     }
 
-    public int getUid(){
+    public int getUid() {
         return this.uid;
     }
 
@@ -133,15 +133,15 @@ public class GameObject {
         return this.components;
     }
 
-    public void setNoSerialize(){
+    public void setNoSerialize() {
         this.doSerialization = false;
     }
 
-    public boolean doSerialization(){
+    public boolean doSerialization() {
         return this.doSerialization;
     }
 
-    public void generateUid(){
+    public void generateUid() {
         this.uid = ID_COUNTER++;
     }
 

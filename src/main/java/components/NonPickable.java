@@ -1,7 +1,5 @@
 package components;
 
-public class NonPickable extends Component{
-
-
+public class NonPickable extends Component {
 
 }

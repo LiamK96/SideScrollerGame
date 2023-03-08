@@ -12,12 +12,12 @@ public class LevelSceneInitializer extends SceneInitializer {
 
     private GameObject levelSceneComponents;
 
-    public LevelSceneInitializer(){
+    public LevelSceneInitializer() {
 
     }
 
     @Override
-    public void init(Scene scene){
+    public void init(Scene scene) {
 
         Spritesheet sprites = AssetPool.getSpriteSheet("assets/images/spritesheets/decorationsAndBlocks.png");
 
@@ -33,7 +33,7 @@ public class LevelSceneInitializer extends SceneInitializer {
 
     }
 
-    public void loadResources(Scene scene){
+    public void loadResources(Scene scene) {
         AssetPool.getShader("assets/shaders/default.glsl");
 
         AssetPool.addSpriteSheet("assets/images/spritesheets/decorationsAndBlocks.png",
@@ -84,15 +84,15 @@ public class LevelSceneInitializer extends SceneInitializer {
         AssetPool.addSound("assets/sounds/warning.ogg", false);
         AssetPool.addSound("assets/sounds/world_clear.ogg", false);
 
-        for (GameObject go : scene.getGameObjects()){
+        for (GameObject go : scene.getGameObjects()) {
             if (go.getComponent(SpriteRenderer.class) != null){
                 SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
-                if (spr.getTexture()!=null){
+                if (spr.getTexture()!=null) {
                     spr.setTexture(AssetPool.getTexture(spr.getTexture().getFilepath()));
                 }
             }
 
-            if (go.getComponent(StateMachine.class) != null){
+            if (go.getComponent(StateMachine.class) != null) {
                 StateMachine stateMachine = go.getComponent(StateMachine.class);
                 stateMachine.refreshTextures();
             }
@@ -105,7 +105,7 @@ public class LevelSceneInitializer extends SceneInitializer {
     }
 
     @Override
-    public GameObject getSceneComponentObject(){
+    public GameObject getSceneComponentObject() {
         return this.levelSceneComponents;
     }
 

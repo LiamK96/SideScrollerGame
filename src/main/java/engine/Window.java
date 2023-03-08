@@ -48,14 +48,14 @@ public class Window implements Observer {
     private static Scene currentScene = null;
 
 
-    private Window(){
+    private Window() {
         this.title = "Definitely not an Italian Plumber";
 
         EventSystem.addObserver(this);
     }
 
-    public static void changeScene(SceneInitializer sceneInitializer){
-        if (currentScene != null){
+    public static void changeScene(SceneInitializer sceneInitializer) {
+        if (currentScene != null) {
             currentScene.destroy();
         }
         getImGuiLayer().getPropertiesWindow().resetActiveGameObject();
@@ -65,22 +65,22 @@ public class Window implements Observer {
         currentScene.start();
     }
 
-    public static Window get(){
-        if (Window.window == null){
+    public static Window get() {
+        if (Window.window == null) {
             Window.window = new Window();
         }
         return Window.window;
     }
 
-    public static Scene getScene(){
+    public static Scene getScene() {
         return get().currentScene;
     }
 
     @Override
     public void onNotify(GameObject go, Event event) {
-        switch (event.type){
+        switch (event.type) {
             case GameEngineStartPlay:
-                if (currentScene.getSceneInitializerComponentsObject().getComponent(MouseControls.class) != null){
+                if (currentScene.getSceneInitializerComponentsObject().getComponent(MouseControls.class) != null) {
                     currentScene.getSceneInitializerComponentsObject()
                             .getComponent(MouseControls.class).destroyHoldingObject();
                 }
@@ -105,7 +105,7 @@ public class Window implements Observer {
         }
     }
 
-    public void run(){
+    public void run() {
         System.out.println("LWJGL version: "+ Version.getVersion());
         init();
         loop();
@@ -126,10 +126,10 @@ public class Window implements Observer {
         glfwSetErrorCallback(null).free();
     }
 
-    public void init(){
+    public void init() {
         //Setup error callback
         GLFWErrorCallback.createPrint(System.err).set();
-        if (!glfwInit()){
+        if (!glfwInit()) {
             throw new IllegalStateException("Unable to initialise GLFW");
         }
 
@@ -183,7 +183,7 @@ public class Window implements Observer {
         ALCCapabilities alcCapabilities = ALC.createCapabilities(audioDevice);
         ALCapabilities alCapabilities = AL.createCapabilities(alcCapabilities);
 
-        if (!alCapabilities.OpenAL10){
+        if (!alCapabilities.OpenAL10) {
             assert false: "Audio library not supported";
         }
 
@@ -210,7 +210,7 @@ public class Window implements Observer {
         Window.changeScene(new LevelEditorSceneInitializer());
     }
 
-    public void loop(){
+    public void loop() {
         float beginTime = (float)glfwGetTime();
         float endTime;
         float dt = -1.0f;
@@ -219,7 +219,7 @@ public class Window implements Observer {
         Shader pickingShader = AssetPool.getShader("assets/shaders/pickingShader.glsl");
 
         System.out.println("loading");
-        while (!glfwWindowShouldClose(glfwWindow)){
+        while (!glfwWindowShouldClose(glfwWindow)) {
             //Poll events
             glfwPollEvents();
 
@@ -255,7 +255,7 @@ public class Window implements Observer {
                 Renderer.bindShader(defaultShader);
                 if (runtimePlaying) {
                     currentScene.update(dt);
-                } else{
+                } else {
                     currentScene.editorUpdate(dt);
                 }
                 currentScene.render();
@@ -264,7 +264,7 @@ public class Window implements Observer {
             this.framebuffer.unbind();
 
 
-            if (KeyListener.isKeyPressed(GLFW_KEY_ESCAPE)){
+            if (KeyListener.isKeyPressed(GLFW_KEY_ESCAPE)) {
                 glfwSetWindowShouldClose(glfwWindow, true);
             }
 
@@ -283,45 +283,45 @@ public class Window implements Observer {
         }
     }
 
-//    public static int getWidth(){
+//    public static int getWidth() {
 //        return get().width;
 //    }
-    public static int getWidth(){
+    public static int getWidth() {
         return Settings.getWindowWidth();
     }
 
-//    public static int getHeight(){
+//    public static int getHeight() {
 //        return get().height;
 //    }
-    public static int getHeight(){
+    public static int getHeight() {
         return Settings.getWindowHeight();
     }
 
-    public static void setWidth(int newWidth){
+    public static void setWidth(int newWidth) {
         get().width = newWidth;
     }
 
-    public static void setHeight(int newHeight){
+    public static void setHeight(int newHeight) {
         get().height = newHeight;
     }
 
-    public static Framebuffer getFramebuffer(){
+    public static Framebuffer getFramebuffer() {
         return get().framebuffer;
     }
 
-    public static ImGuiLayer getImGuiLayer(){
+    public static ImGuiLayer getImGuiLayer() {
         return get().imGuiLayer;
     }
 
-    public static long getGlfwWindow(){
+    public static long getGlfwWindow() {
         return get().glfwWindow;
     }
 
-    public static Physics2D getPhysics(){
+    public static Physics2D getPhysics() {
         return currentScene.getPhysics();
     }
 
-    public static boolean isGameRunning(){
+    public static boolean isGameRunning() {
         return get().runtimePlaying;
     }
 

@@ -41,7 +41,7 @@ public class ImGuiLayer {
     //Scene Hierarchy
     private SceneHierarchyWindow sceneHierarchyWindow;
 
-    public ImGuiLayer(long glfwWindow, PickingTexture pickingTexture){
+    public ImGuiLayer(long glfwWindow, PickingTexture pickingTexture) {
         this.glfwWindow = glfwWindow;
         this.gameViewWindow = new GameViewWindow();
         this.propertiesWindow = new PropertiesWindow(pickingTexture);
@@ -110,7 +110,7 @@ public class ImGuiLayer {
                 ImGui.setWindowFocus(null);
             }
             //Allow engine to override ImGUI mouselistener if ImGUI does not need mouse or in gameView Window
-            if (!io.getWantCaptureMouse() || gameViewWindow.getWantCaptureMouse()){
+            if (!io.getWantCaptureMouse() || gameViewWindow.getWantCaptureMouse()) {
                 MouseListener.mouseButtonCallback(w,button,action,mods);
             }
         });
@@ -169,7 +169,7 @@ public class ImGuiLayer {
         imGuiGl3.init("#version 330 core");
     }
 
-    public void update(float dt, Scene currentScene){
+    public void update(float dt, Scene currentScene) {
         startFrame(dt);
 
         //any dear Imgui code should go between Imgui.newFrame and Imgui.render methods
@@ -180,7 +180,7 @@ public class ImGuiLayer {
         //ImGui.showDemoWindow(); //Demo window to see possible functions
         gameViewWindow.imgui();
         propertiesWindow.imgui();
-        //sceneHierarchyWindow.imgui();
+        //sceneHierarchyWindow.imgui(); scene hierarchy abandoned
 
 
             //Imgui.render moved to endFrame
@@ -221,7 +221,7 @@ public class ImGuiLayer {
         ImGui.destroyContext();
     }
 
-    private void setupDockspace(){
+    private void setupDockspace() {
         int windowFlags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
 
         ImGuiViewport mainViewport = ImGui.getMainViewport();
@@ -248,7 +248,7 @@ public class ImGuiLayer {
         ImGui.end();
     }
 
-    public PropertiesWindow getPropertiesWindow(){
+    public PropertiesWindow getPropertiesWindow() {
         return this.propertiesWindow;
     }
 

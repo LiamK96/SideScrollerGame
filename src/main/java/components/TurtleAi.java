@@ -26,22 +26,22 @@ public class TurtleAi extends Component {
 
 
     @Override
-    public void start(){
+    public void start() {
         this.stateMachine = this.gameObject.getComponent(StateMachine.class);
         this.rb = this.gameObject.getComponent(RigidBody2D.class);
         this.acceleration.y = Window.getPhysics().getGravity().y * 0.7f;
     }
 
     @Override
-    public void update(float dt){
+    public void update(float dt) {
         movingDebounce -=dt;
         Camera camera = Window.getScene().getCamera();
         if (this.gameObject.transform.position.x
-                > camera.position.x + camera.getProjectionSize().x + camera.getZoom()){
+                > camera.position.x + camera.getProjectionSize().x + camera.getZoom()) {
             return;
         }
 
-        if (!isDead || isMoving){
+        if (!isDead || isMoving) {
             if (goingRight) {
                 gameObject.transform.scale.x = -0.25f;
                 velocity.x = walkSpeed;
@@ -54,7 +54,7 @@ public class TurtleAi extends Component {
         }
 
         checkOnGround();
-        if (onGround){
+        if (onGround) {
             this.acceleration.y = 0;
             this.velocity.y = 0;
         } else {
@@ -66,13 +66,13 @@ public class TurtleAi extends Component {
 
     }
 
-    public void checkOnGround(){
+    public void checkOnGround() {
         float innerPlayerWidth = 0.25f * 0.7f;
         float yVal = -0.2f;
         onGround = Physics2D.checkOnGround(this.gameObject, innerPlayerWidth, yVal);
     }
 
-    public void stomp(){
+    public void stomp() {
         this.isDead = true;
         this.isMoving = false;
         this.velocity.zero();
@@ -84,19 +84,19 @@ public class TurtleAi extends Component {
     }
 
     @Override
-    public void beginCollision(GameObject obj, Contact contact, Vector2f contactNormal){
+    public void beginCollision(GameObject obj, Contact contact, Vector2f contactNormal) {
 
     }
 
     @Override
-    public void preSolve(GameObject obj, Contact contact, Vector2f contactNormal){
+    public void preSolve(GameObject obj, Contact contact, Vector2f contactNormal) {
         GoombaAi goomba = obj.getComponent(GoombaAi.class);
         TurtleAi otherTurtle = obj.getComponent(TurtleAi.class);
-        if (goomba != null && isDead && isMoving){
+        if (goomba != null && isDead && isMoving) {
             goomba.stomp();
             contact.setEnabled(false);
             AssetPool.getSound("assets/sounds/kick.ogg").play();
-        } else if (otherTurtle != null && !otherTurtle.isDead && isDead && isMoving){
+        } else if (otherTurtle != null && !otherTurtle.isDead && isDead && isMoving) {
             otherTurtle.stomp();
             contact.setEnabled(false);
             AssetPool.getSound("assets/sounds/kick.ogg").play();
@@ -104,24 +104,24 @@ public class TurtleAi extends Component {
     }
 
     @Override
-    public void postSolve(GameObject obj, Contact contact, Vector2f contactNormal){
+    public void postSolve(GameObject obj, Contact contact, Vector2f contactNormal) {
         PlayerController playerController = obj.getComponent(PlayerController.class);
-        if (playerController != null){
+        if (playerController != null) {
             if (!isDead && !playerController.isDead()
                     && !playerController.isHurtInvincible()
-                    && contactNormal.y > 0.58f){
+                    && contactNormal.y > 0.58f) {
                 playerController.enemyBounce();
                 stomp();
                 walkSpeed = runSpeed;
             } else if (movingDebounce < 0
                     && !playerController.isDead()
                     && !playerController.isHurtInvincible()
-                    && (isMoving || !isDead) && contactNormal.y < 0.58f){
+                    && (isMoving || !isDead) && contactNormal.y < 0.58f) {
                 playerController.die();
-            } else if (!playerController.isDead() && !playerController.isHurtInvincible()){
-                if (isDead && contactNormal.y > 0.58f){
+            } else if (!playerController.isDead() && !playerController.isHurtInvincible()) {
+                if (isDead && contactNormal.y > 0.58f) {
                     playerController.enemyBounce();
-                    if (isMoving){
+                    if (isMoving) {
                         this.velocity.zero();
                         this.rb.setVelocity(this.velocity);
                         this.rb.setAngularVelocity(0.0f);
@@ -130,22 +130,22 @@ public class TurtleAi extends Component {
                     isMoving = !isMoving;
                     goingRight = contactNormal.x < 0;
                     //movingDebounce = 0.32f;
-                } else if (isDead && !isMoving){
+                } else if (isDead && !isMoving) {
                     isMoving = true;
                     goingRight = contactNormal.x < 0;
                     movingDebounce = 0.32f;
                 }
             }
-        } else if (Math.abs(contactNormal.y)<0.1f && !obj.isDead()){
+        } else if (Math.abs(contactNormal.y)<0.1f && !obj.isDead()) {
             goingRight = contactNormal.x < 0;
-            if (isMoving && isDead){
+            if (isMoving && isDead) {
                 AssetPool.getSound("assets/sounds/bump.ogg").play();
             }
         }
 
-        if (obj.getComponent(TurtleAi.class) != null){
+        if (obj.getComponent(TurtleAi.class) != null) {
             TurtleAi otherTurtle = obj.getComponent(TurtleAi.class);
-            if (otherTurtle.isDead && isDead && !isMoving){
+            if (otherTurtle.isDead && isDead && !isMoving) {
                 isMoving = true;
                 goingRight = contactNormal.x < 0;
                 movingDebounce = 0.32f;
@@ -153,8 +153,8 @@ public class TurtleAi extends Component {
             }
         }
 
-        if (obj.getComponent(Fireball.class) != null){
-            if (!isDead){
+        if (obj.getComponent(Fireball.class) != null) {
+            if (!isDead) {
                 stomp();
             } else {
                 isMoving = true;

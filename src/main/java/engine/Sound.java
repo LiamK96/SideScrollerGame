@@ -15,7 +15,7 @@ public class Sound {
 
     private boolean isPlaying = false;
 
-    public Sound(String filepath, boolean loops){
+    public Sound(String filepath, boolean loops) {
         this.filepath = filepath;
 
         //Allocate space to store return information from stb
@@ -27,7 +27,7 @@ public class Sound {
         ShortBuffer rawAudioBuffer = stb_vorbis_decode_filename(filepath,channelsBuffer,sampleRateBuffer);
 
         //check is succeeded
-        if (rawAudioBuffer == null){
+        if (rawAudioBuffer == null) {
             System.out.println("Could not load sound: "+ filepath);
             stackPop();
             stackPop();
@@ -66,29 +66,30 @@ public class Sound {
         free(rawAudioBuffer);
     }
 
-    public void delete(){
+    public void delete() {
         alDeleteBuffers(bufferId);
         alDeleteSources(sourceId);
     }
-
-    public void play(){
+    //TODO: no NullPointerException for play
+    public void play() {
         int state = alGetSourcei(sourceId, AL_SOURCE_STATE);
-        if (state == AL_STOPPED){
+        if (state == AL_STOPPED) {
             isPlaying = false;
             alSourcei(sourceId, AL_POSITION, 0);
         }
 
-        if (!isPlaying){
+        if (!isPlaying) {
             alSourcePlay(sourceId);
             isPlaying = true;
         }
-    }    public void playWithOverlap(){
+    }    public void playWithOverlap() {
             alSourcePlay(sourceId);
             isPlaying = true;
     }
 
-    public void stop(){
-        if (this.isPlaying){
+    //TODO: clear NullPointerException
+    public void stop() {
+        if (this.isPlaying) {
             alSourceStop(sourceId);
             isPlaying = false;
         }
@@ -98,9 +99,10 @@ public class Sound {
         return this.filepath;
     }
 
+    //TODO: cleat NullPointerException
     public boolean isPlaying() {
         int state = alGetSourcei(sourceId,AL_SOURCE_STATE);
-        if (state == AL_STOPPED){
+        if (state == AL_STOPPED) {
             isPlaying = false;
         }
         return isPlaying;

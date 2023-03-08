@@ -17,9 +17,9 @@ public class AssetPool {
     private static Map<String, Spritesheet> spritesheets = new HashMap<>();
     private static Map<String, Sound> sounds = new HashMap<>();
 
-    public static Shader getShader(String resourceName){
+    public static Shader getShader(String resourceName) {
         File file = new File(resourceName);
-        if (AssetPool.shaders.containsKey(file.getAbsolutePath())){
+        if (AssetPool.shaders.containsKey(file.getAbsolutePath())) {
             return AssetPool.shaders.get(file.getAbsolutePath());
         } else {
             Shader shader = new Shader(resourceName);
@@ -29,9 +29,9 @@ public class AssetPool {
         }
     }
 
-    public static Texture getTexture(String resourceName){
+    public static Texture getTexture(String resourceName) {
         File file = new File(resourceName);
-        if (AssetPool.textures.containsKey(file.getAbsolutePath())){
+        if (AssetPool.textures.containsKey(file.getAbsolutePath())) {
             return AssetPool.textures.get(file.getAbsolutePath());
         } else {
             Texture texture = new Texture();
@@ -41,16 +41,16 @@ public class AssetPool {
         }
     }
 
-    public static void addSpriteSheet(String resourceName, Spritesheet spritesheet){
+    public static void addSpriteSheet(String resourceName, Spritesheet spritesheet) {
         File file = new File(resourceName);
-        if (!AssetPool.spritesheets.containsKey(file.getAbsolutePath())){
+        if (!AssetPool.spritesheets.containsKey(file.getAbsolutePath())) {
             AssetPool.spritesheets.put(file.getAbsolutePath(), spritesheet);
         }
     }
 
-    public static Spritesheet getSpriteSheet(String resourceName){
+    public static Spritesheet getSpriteSheet(String resourceName) {
         File file = new File(resourceName);
-        if (!AssetPool.spritesheets.containsKey(file.getAbsolutePath())){
+        if (!AssetPool.spritesheets.containsKey(file.getAbsolutePath())) {
             assert false : "Error (AssetPool) : Spritesheet " + resourceName + " is not found and has not been added";
             return null;
         } else {
@@ -58,9 +58,9 @@ public class AssetPool {
         }
     }
 
-    public static Sound getSound(String soundFile){
+    public static Sound getSound(String soundFile) {
         File file = new File(soundFile);
-        if (sounds.containsKey(file.getAbsolutePath())){
+        if (sounds.containsKey(file.getAbsolutePath())) {
             return sounds.get(file.getAbsolutePath());
         } else {
             assert false : "Error (AssetPool) : Sound "+ soundFile +  " is not found";
@@ -68,9 +68,9 @@ public class AssetPool {
         return null;
     }
 
-    public static Sound addSound(String soundFile, boolean loops){
+    public static Sound addSound(String soundFile, boolean loops) {
         File file = new File(soundFile);
-        if (sounds.containsKey(file.getAbsolutePath())){
+        if (sounds.containsKey(file.getAbsolutePath())) {
             return sounds.get(file.getAbsolutePath());
         } else {
             Sound sound = new Sound(file.getAbsolutePath(), loops);
@@ -79,12 +79,12 @@ public class AssetPool {
         }
     }
 
-    public static Collection<Sound> getAllSounds(){
+    public static Collection<Sound> getAllSounds() {
         return sounds.values();
     }
 
-    public static void stopAllSounds(){
-        for (Sound sound : sounds.values()){
+    public static void stopAllSounds() {
+        for (Sound sound : sounds.values()) {
             sound.stop();
         }
     }

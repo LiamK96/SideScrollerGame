@@ -5,7 +5,7 @@ import org.jbox2d.dynamics.contacts.Contact;
 import org.joml.Vector2f;
 import util.AssetPool;
 
-public abstract class Block extends Component{
+public abstract class Block extends Component {
 
     private transient boolean bopGoingUp = true;
     private transient boolean doBopAnimation = false;
@@ -16,16 +16,16 @@ public abstract class Block extends Component{
     public float bopSpeed = 0.6f;
 
     @Override
-    public void start(){
+    public void start() {
         this.bopStart = new Vector2f(this.gameObject.transform.position);
         this.bopStopLocation = new Vector2f(bopStart).add(0.0f,0.02f);
     }
 
     @Override
-    public void update(float dt){
-        if (doBopAnimation){
-            if (bopGoingUp){
-                if (this.gameObject.transform.position.y < bopStopLocation.y){
+    public void update(float dt) {
+        if (doBopAnimation) {
+            if (bopGoingUp) {
+                if (this.gameObject.transform.position.y < bopStopLocation.y) {
                     this.gameObject.transform.position.y += bopSpeed * dt;
                 } else {
                     bopGoingUp = false;
@@ -43,20 +43,20 @@ public abstract class Block extends Component{
     }
 
     @Override
-    public void beginCollision(GameObject go, Contact contact, Vector2f contactNormal){
+    public void beginCollision(GameObject go, Contact contact, Vector2f contactNormal) {
         PlayerController playerController = go.getComponent(PlayerController.class);
-        if (active && playerController != null && contactNormal.y < -0.8f){
+        if (active && playerController != null && contactNormal.y < -0.8f) {
             doBopAnimation = true;
             AssetPool.getSound("assets/sounds/bump.ogg").play();
             playerHit(playerController);
         }
     }
 
-    public void setInactive(){
+    public void setInactive() {
         this.active = false;
     }
 
-    public void setActive(){
+    public void setActive() {
         this.active = true;
     }
 

@@ -16,7 +16,7 @@ public class RaycastInfo implements RayCastCallback {
 
     private GameObject requestingObj;
 
-    public RaycastInfo(GameObject obj){
+    public RaycastInfo(GameObject obj) {
         fixture = null;
         point = new Vector2f();
         normal = new Vector2f();
@@ -28,7 +28,7 @@ public class RaycastInfo implements RayCastCallback {
 
     @Override
     public float reportFixture(Fixture fixture, Vec2 point, Vec2 normal, float fraction) {
-        if (fixture.getUserData() == requestingObj){
+        if (fixture.getUserData() == requestingObj) {
             return 1;
         }
         this.fixture = fixture;

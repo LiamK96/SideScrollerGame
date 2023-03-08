@@ -18,7 +18,7 @@ public class Camera {
 
     public Vector4f clearColor = new Vector4f(1,1,1,1);
 
-    public Camera(Vector2f pos){
+    public Camera(Vector2f pos) {
         this.position = pos;
         this.projectionMatrix = new Matrix4f();
         this.viewMatrix = new Matrix4f();
@@ -34,7 +34,7 @@ public class Camera {
         projectionMatrix.invert(inverseProjection);
     }
 
-    public Matrix4f getViewMatrix(){
+    public Matrix4f getViewMatrix() {
         Vector3f cameraFront = new Vector3f(0.0f, 0.0f, -1.0f);
         Vector3f cameraUp = new Vector3f(0.0f, 1.0f, 0.0f);
         this.viewMatrix.identity();
@@ -45,7 +45,7 @@ public class Camera {
         return this.viewMatrix;
     }
 
-    public Matrix4f getProjectionMatrix(){
+    public Matrix4f getProjectionMatrix() {
         return this.projectionMatrix;
     }
 
@@ -69,7 +69,7 @@ public class Camera {
         this.zoom = zoom;
     }
 
-    public void addZoom(float value){
+    public void addZoom(float value) {
         this.zoom += value;
     }
 }
