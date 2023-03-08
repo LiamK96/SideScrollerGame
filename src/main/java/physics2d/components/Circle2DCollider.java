@@ -7,7 +7,7 @@ import renderer.DebugDraw;
 public class Circle2DCollider extends Component {
 
     private float radius = 1.0f;
-    protected Vector2f offset = new Vector2f();
+    private Vector2f offset = new Vector2f();
 
     @Override
     public void editorUpdate(float dt) {
